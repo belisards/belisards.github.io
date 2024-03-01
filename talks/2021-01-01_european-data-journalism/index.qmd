@@ -40,7 +40,7 @@ You can access the slides and notebook on the Github repository: [https://github
 
 ## Event details
 
-**Event:** [Beyond the hype: An introduction to NLP and language models](https://warwick.ac.uk/fac/sci/wdsi/events/wrug/){target="_blank"}
+**Event:** [Beyond the hype: An introduction to NLP and language models](https://github.com/belisards/nlp_intro){target="_blank"}
 
 **Date:** June 22, 2023
 

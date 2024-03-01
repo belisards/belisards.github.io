@@ -1,4 +1,6 @@
-![](images/profile.jpeg){.profile-pic fig-alt="Headshot of Adriano Belisario" fig-align="center" width="33%")
+![](images/profile.jpeg){.profile-pic fig-alt="Headshot of Adriano Belisario" fig-align="center" width="33%"}
+
+
 **Adriano Belisario** combines expertise in communication and data to address important human rights concerns. As a long-time open-source advocate, he has combined advanced technological applications with journalistic investigations and social research to address issues like police violence and socio-environmental challenges.
 
 Belisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he spearheaded the School of Data program at Open Knowledge Brasil and contributed to organizations like Witness, UNESCO, and Agência Pública. His publication portfolio includes books, academic articles, and journalistic pieces in Portuguese and English, and he has been invited to speak at several global events, such as Re: Publica and RightsCon.

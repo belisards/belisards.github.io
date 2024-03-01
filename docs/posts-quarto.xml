@@ -13,8 +13,6 @@
 <url>https://belisards.github.io/images/logo.png</url>
 <title>Adriano Belisario</title>
 <link>https://belisards.github.io/posts.html#category=Quarto</link>
-<height>144</height>
-<width>144</width>
 </image>
 <generator>quarto-1.2.269</generator>
 <lastBuildDate>Sat, 30 Dec 2023 03:00:00 GMT</lastBuildDate>
@@ -38,7 +36,7 @@
 <!-- -->
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belisario2023,
+<p>Created with <a href="https://quarto.org">Quarto</a> and adapted from <a href="https://ellakaye.co.uk/">Ella Kaye’s website</a></p><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belisario2023,
   author = {Adriano Belisario},
   title = {Creating a Personal Website with {Quarto}},
   date = {2023-12-30},

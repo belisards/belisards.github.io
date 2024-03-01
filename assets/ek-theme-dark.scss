@@ -45,7 +45,7 @@ $theme: "litera" !default;
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
 // fonts
-$font-family-sans-serif: Helvetica, sans-serif !default;
+$font-family-sans-serif: Fira, Fira Mono,Helvetica, sans-serif !default;
 $font-family-monospace:  monospace;
 $headings-font-family: Helvetica, sans-serif !default;
 
@@ -92,15 +92,15 @@ $cyan:    #17a2b8 !default;
 */
 
 //  my colors (comment out above)
-$pink: #D4006A;
-$blue: #006AD4;
-$green: #00D46A;
+$pink: #EF476F;
+$blue: #118AB2;
+$green: #06D6A0;
 $cyan: #00D4D4;
 $red: #D40000;
-$indigo: #0000D4;
+$indigo: #073B4C;
 $purple: #6A00D4;
 $orange: #D46A00;
-$yellow: #D4D400;
+$yellow: #FFD166;
 $green-bright: #6AD400;
 
 $primary:       $green !default;

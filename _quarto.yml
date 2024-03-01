@@ -11,12 +11,11 @@ website:
   title: "Adriano Belisario"
   site-url: https://belisards.github.io
   description: Personal website, portfolio and blog
+  body-footer: Created with [Quarto](https://quarto.org) and adapted from [Ella Kaye's website](https://ellakaye.co.uk/).
   repo-url: https://github.com/belisards/belisards.github.io
-  #repo-actions: issue
-  image: images/logo.png
+  # image: images/logo.png
   navbar:
-    #logo: ELLAKAYE-logo-light.png
-    title: "ADRIANO<span class='icon-line'></span>BELISARIO"
+    title: "ADRIANO BELISARIO"
     right:
       - text: about
         href: about.qmd
@@ -32,42 +31,42 @@ website:
       #  href: https://twitter.com/ellamkaye
   favicon: images/favicon.png
   twitter-card: 
-    title: Ella Kaye
-    description: The personal website of Ella Kaye
-    image: images/logo.png
-    image-alt: |
-      A square logo made from Ella Kaye's name - 
-      first name on top of last name in dark gray capital letters, 
-      separated by a horizontal bright pink line, on a very light grey background
+    title: Adriano Belisario
+    description: The personal website of Adriano Belisario
+    # image: images/logo.png
+    # image-alt: |
+    #   A square logo made from Ella Kaye's name - 
+    #   first name on top of last name in dark gray capital letters, 
+    #   separated by a horizontal bright pink line, on a very light grey background
     image-width: 500
     image-height: 500
     card-style: summary # alternative summary_large_image
-    creator: "@ellamkaye"
-    site: "@ellamkaye"
+    creator: "@belisards"
+    site: "@belisards"
   open-graph: 
     #description: The personal website of Ella Kaye
-    image: images/logo.png
-    image-alt: |
-      A square logo made from Ella Kaye's name - 
-      first name on top of last name in dark gray capital letters, 
-      separated by a horizontal bright pink line, on a very light grey background
+    # image: images/logo.png
+    # image-alt: |
+    #   A square logo made from Ella Kaye's name - 
+    #   first name on top of last name in dark gray capital letters, 
+    #   separated by a horizontal bright pink line, on a very light grey background
     image-width: 500
     image-height: 500
     locale: en-GB
-  google-analytics:
-    tracking-id: "G-7G8FLLRS4M"
-    anonymize-ip: true
+  # google-analytics:
+  #   tracking-id: "G-7G8FLLRS4M"
+  #   anonymize-ip: true
 
 format:
   html:
     theme: 
       light: assets/ek-theme-light.scss
-      dark: assets/ek-theme-dark.scss
+      # dark: assets/ek-theme-dark.scss
     css: assets/ek-styles.css
     code-block-border-left: true
     highlight-style: 
       light: assets/ek-light.theme
-      dark: assets/ek-dark.theme
+      # dark: assets/ek-dark.theme
     smooth-scroll: true
     link-external-newwindow: true
     

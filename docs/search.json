@@ -4,35 +4,35 @@
     "href": "posts/2024-02-29_tutorial/index.html",
     "title": "Creating a personal website with Quarto",
     "section": "",
-    "text": "https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{belisario2023,\n  author = {Adriano Belisario},\n  title = {Creating a Personal Website with {Quarto}},\n  date = {2023-12-30},\n  url = {https://belisards.github.io/posts/2024-02-29_tutorial},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAdriano Belisario. 2023. “Creating a Personal Website with\nQuarto.” December 30, 2023. https://belisards.github.io/posts/2024-02-29_tutorial."
+    "text": "https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/\n\n\n\n\n\nCreated with Quarto and adapted from Ella Kaye’s websiteReusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{belisario2023,\n  author = {Adriano Belisario},\n  title = {Creating a Personal Website with {Quarto}},\n  date = {2023-12-30},\n  url = {https://belisards.github.io/posts/2024-02-29_tutorial},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAdriano Belisario. 2023. “Creating a Personal Website with\nQuarto.” December 30, 2023. https://belisards.github.io/posts/2024-02-29_tutorial."
   },
   {
     "objectID": "talks.html",
     "href": "talks.html",
     "title": "Adriano Belisario",
     "section": "",
-    "text": "TALKS\nThis section features some of my talks and presentations.\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean DDJ\n\n\nWorkshop at the The Join Computation + Journalism European Data & Computational Journalism Conference 2023\n\n\n\nAdriano Belisario, Ajai Radhakrishnan\n\n\nJun 22, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "TALKS\nThis section features some of my talks and presentations.\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean DDJ\n\n\nWorkshop at the The Join Computation + Journalism European Data & Computational Journalism Conference 2023\n\n\n\nAdriano Belisario, Ajai Radhakrishnan\n\n\nJun 22, 2023\n\n\n\n\n\n\n\n\nNo matching items\n\nCreated with Quarto and adapted from Ella Kaye’s website"
   },
   {
     "objectID": "posts.html",
     "href": "posts.html",
     "title": "Adriano Belisario",
     "section": "",
-    "text": "POSTS\n\n\n\n\n\n\n\n\n\n\n\nCreating a personal website with Quarto\n\n\n\n\n\n\n\nQuarto\n\n\nGithub\n\n\n\n\nNotes of my own process\n\n\n\n\n\n\nDec 30, 2023\n\n\nAdriano Belisario\n\n\n\n\n\n\nNo matching items"
+    "text": "POSTS\n\n\n\n\n\n\n\n\n\n\n\nCreating a personal website with Quarto\n\n\n\n\n\n\n\nQuarto\n\n\nGithub\n\n\n\n\nNotes of my own process\n\n\n\n\n\n\nDec 30, 2023\n\n\nAdriano Belisario\n\n\n\n\n\n\nNo matching items\n\nCreated with Quarto and adapted from Ella Kaye’s website"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Adriano Belisario",
     "section": "",
-    "text": "{.profile-pic fig-alt=“Headshot of Adriano Belisario” fig-align=“center” width=“33%”) Adriano Belisario combines expertise in communication and data to address important human rights concerns. As a long-time open-source advocate, he has combined advanced technological applications with journalistic investigations and social research to address issues like police violence and socio-environmental challenges.\nBelisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he spearheaded the School of Data program at Open Knowledge Brasil and contributed to organizations like Witness, UNESCO, and Agência Pública. His publication portfolio includes books, academic articles, and journalistic pieces in Portuguese and English, and he has been invited to speak at several global events, such as Re: Publica and RightsCon.\nBelisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute. While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed Documental.xyz, an award-winning initiative that employs diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations."
+    "text": "Adriano Belisario combines expertise in communication and data to address important human rights concerns. As a long-time open-source advocate, he has combined advanced technological applications with journalistic investigations and social research to address issues like police violence and socio-environmental challenges.\nBelisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he spearheaded the School of Data program at Open Knowledge Brasil and contributed to organizations like Witness, UNESCO, and Agência Pública. His publication portfolio includes books, academic articles, and journalistic pieces in Portuguese and English, and he has been invited to speak at several global events, such as Re: Publica and RightsCon.\nBelisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute. While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed Documental.xyz, an award-winning initiative that employs diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations.\n\n\n\nCreated with Quarto and adapted from Ella Kaye’s website"
   },
   {
     "objectID": "talks/2021-01-01_european-data-journalism/index.html",
     "href": "talks/2021-01-01_european-data-journalism/index.html",
     "title": "European DDJ",
     "section": "",
-    "text": "ChatGPT and large language models have recently gained immense attention in the media. However, beyond the hype, there are still more questions than answers on how journalists can effectively use and report on these technologies. This workshop introduces concepts that lay at the heart of modern natural language processing (NLP) techniques, such as word vectorisation and transformer models, and then builds on those concepts to discuss the current journalistic coverage and practical applications in newsrooms.\nThe workshop is structured in two main parts. First, the objective is to arrive at an intuitive understanding of the underlying concepts and unpack the technical jargon that clouds the domain of large language models (LLMs). We will discuss how journalists currently cover critical emerging technologies, such as the risks in anthropomorphizing conversational models. This discussion will be informed by what language models can and cannot do, as well as where the field is headed.\nFollowing the discussion, a set of low-code NLP tools will be showcased. These tools are open-source, and many journalists can potentially integrate them into their daily workflow for tasks like text classification or entity recognition. One of these tools, Whisper, an audio transcription tool developed by OpenAI, will be explored in some depth through a hands-on demo. Ultimately, the purpose of the workshop is to explore the utility and limits of NLP, introduce key concepts that are required for greater critical reportage on the topic, and evaluate the potential and risks associated with the deployment of practical tools in newsrooms.\nYou can access the slides and notebook on the Github repository: https://github.com/belisards/nlp_intro"
+    "text": "ChatGPT and large language models have recently gained immense attention in the media. However, beyond the hype, there are still more questions than answers on how journalists can effectively use and report on these technologies. This workshop introduces concepts that lay at the heart of modern natural language processing (NLP) techniques, such as word vectorisation and transformer models, and then builds on those concepts to discuss the current journalistic coverage and practical applications in newsrooms.\nThe workshop is structured in two main parts. First, the objective is to arrive at an intuitive understanding of the underlying concepts and unpack the technical jargon that clouds the domain of large language models (LLMs). We will discuss how journalists currently cover critical emerging technologies, such as the risks in anthropomorphizing conversational models. This discussion will be informed by what language models can and cannot do, as well as where the field is headed.\nFollowing the discussion, a set of low-code NLP tools will be showcased. These tools are open-source, and many journalists can potentially integrate them into their daily workflow for tasks like text classification or entity recognition. One of these tools, Whisper, an audio transcription tool developed by OpenAI, will be explored in some depth through a hands-on demo. Ultimately, the purpose of the workshop is to explore the utility and limits of NLP, introduce key concepts that are required for greater critical reportage on the topic, and evaluate the potential and risks associated with the deployment of practical tools in newsrooms.\nYou can access the slides and notebook on the Github repository: https://github.com/belisards/nlp_intro\nCreated with Quarto and adapted from Ella Kaye’s website"
   },
   {
     "objectID": "talks/2021-01-01_european-data-journalism/index.html#event-details",
@@ -46,13 +46,13 @@
     "href": "contact.html",
     "title": "Adriano Belisario",
     "section": "",
-    "text": "I’d love to hear from you!\nYou can find on the following social networks:\n\n\n\n Mastodon  GitHub  LinkedIn\nOr, you can drop me an e-mail at adrianobf @ gmail.com"
+    "text": "I’d love to hear from you!\nYou can find on the following social networks:\n\n\n\n Mastodon  GitHub  LinkedIn\nOr, you can drop me an e-mail at adrianobf @ gmail.com\n\n\n\n\nCreated with Quarto and adapted from Ella Kaye’s website"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Adriano Belisario",
     "section": "",
-    "text": "Hi 👋\n\n\n\n\n\nAbout me, my interests and experience.\n\n\nABOUT\n\n\n\n\n\n\n\n\nCheck out my blog.\n\n\nPOSTS\n\n\n\n\n\n\n\n\nTalks and presentations featured.\n\n\nTALKS"
+    "text": "Hi 👋\n\n\n\n\n\nAbout me, my interests and experience.\n\n\nABOUT\n\n\n\n\n\n\n\n\nCheck out my blog.\n\n\nPOSTS\n\n\n\n\n\n\n\n\nTalks and presentations featured.\n\n\nTALKS\n\n\n\n\n\n\n\n\nCreated with Quarto and adapted from Ella Kaye’s website"
   }
 ]
