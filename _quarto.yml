@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
   resources:
     "_redirects"
     
@@ -7,15 +8,15 @@ execute:
   freeze: auto
 
 website:
-  title: "Ella Kaye"
-  site-url: https://ellakaye.co.uk
+  title: "Adriano Belisario"
+  site-url: https://belisards.github.io
   description: Personal website, portfolio and blog
-  repo-url: https://github.com/EllaKaye/ellakaye.co.uk
+  repo-url: https://github.com/belisards/belisards.github.io
   #repo-actions: issue
   image: images/logo.png
   navbar:
     #logo: ELLAKAYE-logo-light.png
-    title: "ELLA<span class='icon-line'></span>KAYE"
+    title: "ADRIANO<span class='icon-line'></span>BELISARIO"
     right:
       - text: about
         href: about.qmd

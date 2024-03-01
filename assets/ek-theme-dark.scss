@@ -19,7 +19,7 @@ $theme: "litera" !default;
  * Copyright: Copyright © 2014 Monotype Imaging Inc. All rights reserved.
  * 
  * © 2020 MyFonts Incn
- */
+
 
 @font-face {
   font-family: 'LEMONMILKPro-Regular';
@@ -30,7 +30,7 @@ $theme: "litera" !default;
   font-family: 'LEMONMILKPro-Light';
   src: local('LEMONMILKPro-Light'), url('fonts/LEMONMILKPro-Light.woff2') format('woff2'), url('fonts/LEMONMILKPro-Light.woff') format('woff');
 }
-
+ */
 /*!
   * @preserve
   * MonoLisa
@@ -38,25 +38,16 @@ $theme: "litera" !default;
   * This font is subject to a EULA. A user-licence can be acquired at:
   *   https://monolisa.dev
   * © 2022 FaceType Foundry. All Rights Reserved.
+
+
   */
-
-@font-face {
-  font-family: 'MonoLisa-Regular';
-  src: local('MonoLisa-Regular'), url('fonts/MonoLisa-Regular.woff2') format('woff2'), url('fonts/MonoLisa-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'MonoLisa-RegularItalic';
-  src: local('MonoLisa-RegularItalic'), url('fonts/MonoLisa-RegularItalic.woff2') format('woff2'), url('fonts/MonoLisa-RegularItalic.woff') format('woff');
-}
-
-// @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
 // fonts
-$font-family-sans-serif: "LEMONMILKPro-Light", Figtree, Helvetica, sans-serif !default;
-$font-family-monospace: "MonoLisa-Regular", "Fira Mono", monospace;
-$headings-font-family: "LEMONMILKPro-Regular", Figtree, Helvetica, sans-serif !default;
+$font-family-sans-serif: Helvetica, sans-serif !default;
+$font-family-monospace:  monospace;
+$headings-font-family: Helvetica, sans-serif !default;
 
 // litera bootswatch theme colors
 /*
@@ -155,7 +146,7 @@ pre code {
 }
 
 code span.co {
-  font-family: "MonoLisa-RegularItalic", "Fira Mono", monospace;
+  font-family: monospace;
 }
 
 h1 code {
