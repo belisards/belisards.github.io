@@ -1,0 +1,49 @@
+---
+title: European DDJ
+description: |
+  Workshop at the  The Join Computation + Journalism European Data & Computational Journalism Conference 2023 
+date: 2023-06-22
+author: 
+  - name: Adriano Belisario
+    url: https://github.com/belisards
+  - name: Ajai Radhakrishnan
+    url: https://github.com/ajax5687
+# site-url: https://ellakaye.co.uk
+# image: htmlwidgets-4.png
+# N.B. Don't use "" in image-alt
+# image-alt: |
+#   A screenshot of the htmlwidgets website featuring clips of the cards for the DiagrammeR, leaflet, DT and tmap packages.
+#categories:
+#  - TAG_1
+# #  - TAG_2
+# twitter-card: 
+# # uncomment lines below for different title and description to post
+# #  title: |
+# #  description: |
+# # uncomment for different image to post
+#   image: htmlwidgets-4.png
+#   image-alt: |
+#     A screenshot of the htmlwidgets website featuring clips of the cards for the DiagrammeR, leaflet, DT and tmap packages.
+# #  defaults to 500 x 500 summary: uncomment lines below for large card
+# #  image-width: 600 
+# #  image-height: 314
+# #  card-style: "summary_large_image" 
+draft: false
+---
+ChatGPT and large language models have recently gained immense attention in the media. However, beyond the hype, there are still more questions than answers on how journalists can effectively use and report on these technologies. This workshop introduces concepts that lay at the heart of modern natural language processing (NLP) techniques, such as word vectorisation and transformer models, and then builds on those concepts to discuss the current journalistic coverage and practical applications in newsrooms.
+
+The workshop is structured in two main parts. First, the objective is to arrive at an intuitive understanding of the underlying concepts and unpack the technical jargon that clouds the domain of large language models (LLMs). We will discuss how journalists currently cover critical emerging technologies, such as the risks in anthropomorphizing conversational models. This discussion will be informed by what language models can and cannot do, as well as where the field is headed.
+
+Following the discussion, a set of low-code NLP tools will be showcased. These tools are open-source, and many journalists can potentially integrate them into their daily workflow for tasks like text classification or entity recognition. One of these tools, Whisper, an audio transcription tool developed by OpenAI, will be explored in some depth through a hands-on demo. Ultimately, the purpose of the workshop is to explore the utility and limits of NLP, introduce key concepts that are required for greater critical reportage on the topic, and evaluate the potential and risks associated with the deployment of practical tools in newsrooms.
+
+You can access the slides and notebook on the Github repository: [https://github.com/belisards/nlp_intro](https://github.com/belisards/nlp_intro)
+
+## Event details
+
+**Event:** [Beyond the hype: An introduction to NLP and language models](https://warwick.ac.uk/fac/sci/wdsi/events/wrug/){target="_blank"}
+
+**Date:** June 22, 2023
+
+**Time:** 13:00 
+
+**Location:** Zurich, Switzerland

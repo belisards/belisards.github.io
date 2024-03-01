@@ -6,8 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adriano Belisario">
+<meta name="author" content="Ajai Radhakrishnan">
+<meta name="dcterms.date" content="2023-06-22">
+<meta name="description" content="Workshop at the The Join Computation + Journalism European Data &amp; Computational Journalism Conference 2023">
 
-<title>Adriano Belisario – about</title>
+<title>Adriano Belisario - European DDJ</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +27,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,27 +75,84 @@ gtag('js', new Date());
 gtag('config', 'G-7G8FLLRS4M', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script>
+  
+  function getGiscusTheme() {
+  const quartoTheme = localStorage.getItem("quarto-color-scheme");
+  const giscusTheme = quartoTheme === "alternate" ? "dark" : "light";
+  // const giscusTheme = quartoTheme === "alternate" ? "dark" : "assets/giscus-light-custom.css";
+  return giscusTheme;
+}
+
+function setGiscusTheme() {
+  function sendMessage(message) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  sendMessage({
+    setConfig: {
+      theme: getGiscusTheme(),
+    },
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const giscusAttributes = {
+    "src": "https://giscus.app/client.js",
+    "data-repo": "EllaKaye/ellakaye.co.uk",
+    "data-repo-id": "R_kgDOHwJk_g",
+    "data-category": "General",
+    "data-category-id": "DIC_kwDOHwJk_s4CQr7D",
+    "data-mapping": "title",
+    "data-strict": "0",
+    "data-reactions-enabled": "1",
+    "data-emit-metadata": "0",
+    "data-input-position": "top",
+    "data-theme": getGiscusTheme(),
+    "data-lang": "en",
+    "crossorigin": "anonymous",
+    "async": "",
+  };
+
+  // Dynamically create script tag
+  const giscusScript = document.createElement("script");
+  Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+  document.body.appendChild(giscusScript);
+
+  // Update giscus theme when theme switcher is clicked
+  const toggle = document.querySelector('.quarto-color-scheme-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', setGiscusTheme);
+  }
+});
+  
+</script>
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="assets/ek-styles.css">
+<link rel="stylesheet" href="../../assets/ek-styles.css">
+<meta property="og:title" content="Adriano Belisario - European DDJ">
+<meta property="og:description" content="Workshop at the  The Join Computation + Journalism European Data &amp; Computational Journalism Conference 2023">
+<meta property="og:site-name" content="Adriano Belisario">
 <meta name="twitter:title" content="Ella Kaye">
 <meta name="twitter:description" content="The personal website of Ella Kaye">
 <meta name="twitter:image" content="https://belisards.github.io/images/logo.png">
 <meta name="twitter:creator" content="@ellamkaye">
 <meta name="twitter:site" content="@ellamkaye">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="500">
 <meta name="twitter:image-width" content="500">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ADRIANO<span class="icon-line"></span>BELISARIO</span>
     </a>
   </div>
@@ -101,19 +162,19 @@ gtag('config', 'G-7G8FLLRS4M', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">
+    <a class="nav-link" href="../../about.html">
  <span class="menu-text">about</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html">
+    <a class="nav-link" href="../../posts.html">
  <span class="menu-text">posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks.html">
+    <a class="nav-link" href="../../talks.html">
  <span class="menu-text">talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html">
+    <a class="nav-link" href="../../contact.html">
  <span class="menu-text">contact</span></a>
   </li>  
 </ul>
@@ -126,22 +187,84 @@ gtag('config', 'G-7G8FLLRS4M', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">European DDJ</h1>
+                  <div>
+        <div class="description">
+          <p>Workshop at the The Join Computation + Journalism European Data &amp; Computational Journalism Conference 2023</p>
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Authors</div>
+      <div class="quarto-title-meta-contents">
+               <p>Adriano Belisario </p>
+               <p>Ajai Radhakrishnan </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 22, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#event-details" id="toc-event-details" class="nav-link active" data-scroll-target="#event-details">Event details</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<p><img src="images/profile.jpeg" class="img-fluid">{.profile-pic fig-alt=“Headshot of Adriano Belisario” fig-align=“center” width=“33%”) <strong>Adriano Belisario</strong> combines expertise in communication and data to address important human rights concerns. As a long-time open-source advocate, he has combined advanced technological applications with journalistic investigations and social research to address issues like police violence and socio-environmental challenges.</p>
-<p>Belisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he spearheaded the School of Data program at Open Knowledge Brasil and contributed to organizations like Witness, UNESCO, and Agência Pública. His publication portfolio includes books, academic articles, and journalistic pieces in Portuguese and English, and he has been invited to speak at several global events, such as Re: Publica and RightsCon.</p>
-<p>Belisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute. While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed Documental.xyz, an award-winning initiative that employs diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations.</p>
+
+<p>ChatGPT and large language models have recently gained immense attention in the media. However, beyond the hype, there are still more questions than answers on how journalists can effectively use and report on these technologies. This workshop introduces concepts that lay at the heart of modern natural language processing (NLP) techniques, such as word vectorisation and transformer models, and then builds on those concepts to discuss the current journalistic coverage and practical applications in newsrooms.</p>
+<p>The workshop is structured in two main parts. First, the objective is to arrive at an intuitive understanding of the underlying concepts and unpack the technical jargon that clouds the domain of large language models (LLMs). We will discuss how journalists currently cover critical emerging technologies, such as the risks in anthropomorphizing conversational models. This discussion will be informed by what language models can and cannot do, as well as where the field is headed.</p>
+<p>Following the discussion, a set of low-code NLP tools will be showcased. These tools are open-source, and many journalists can potentially integrate them into their daily workflow for tasks like text classification or entity recognition. One of these tools, Whisper, an audio transcription tool developed by OpenAI, will be explored in some depth through a hands-on demo. Ultimately, the purpose of the workshop is to explore the utility and limits of NLP, introduce key concepts that are required for greater critical reportage on the topic, and evaluate the potential and risks associated with the deployment of practical tools in newsrooms.</p>
+<p>You can access the slides and notebook on the Github repository: <a href="https://github.com/belisards/nlp_intro">https://github.com/belisards/nlp_intro</a></p>
+<section id="event-details" class="level2">
+<h2 class="anchored" data-anchor-id="event-details">Event details</h2>
+<p><strong>Event:</strong> <a href="https://warwick.ac.uk/fac/sci/wdsi/events/wrug/" target="_blank">Beyond the hype: An introduction to NLP and language models</a></p>
+<p><strong>Date:</strong> June 22, 2023</p>
+<p><strong>Time:</strong> 13:00</p>
+<p><strong>Location:</strong> Zurich, Switzerland</p>
 
 
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belisario2023,
+  author = {Adriano Belisario and Ajai Radhakrishnan},
+  title = {European {DDJ}},
+  date = {2023-06-22},
+  url = {https://belisards.github.io/talks/2021-01-01_european-data-journalism},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-belisario2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Adriano Belisario, and Ajai Radhakrishnan. 2023. <span>“European
+DDJ.”</span> June 22, 2023. <a href="https://belisards.github.io/talks/2021-01-01_european-data-journalism">https://belisards.github.io/talks/2021-01-01_european-data-journalism</a>.
+</div></div></section></div></main> <!-- /main -->
+<div class="giscus">
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -408,5 +531,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</div><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

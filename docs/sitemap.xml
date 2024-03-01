@@ -1,71 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://belisards.github.io/posts/2023-12-30_advent-of-code-2023/index.html</loc>
-    <lastmod>2024-03-01T04:31:41.598Z</lastmod>
+    <loc>https://belisards.github.io/posts/2024-02-29_tutorial/index.html</loc>
+    <lastmod>2024-03-01T05:41:53.175Z</lastmod>
   </url>
   <url>
     <loc>https://belisards.github.io/talks.html</loc>
-    <lastmod>2024-03-01T04:31:42.106Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/community.html</loc>
-    <lastmod>2024-03-01T04:31:42.566Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/packages/aochelpers/index.html</loc>
-    <lastmod>2024-03-01T04:31:43.178Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/packages/BradleyTerryScalable/index.html</loc>
-    <lastmod>2024-03-01T04:31:43.522Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/packages/EMK/index.html</loc>
-    <lastmod>2024-03-01T04:31:43.878Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/packages/distilltools/index.html</loc>
-    <lastmod>2024-03-01T04:31:44.442Z</lastmod>
+    <lastmod>2024-03-01T05:41:53.591Z</lastmod>
   </url>
   <url>
     <loc>https://belisards.github.io/posts.html</loc>
-    <lastmod>2024-03-01T04:31:44.806Z</lastmod>
+    <lastmod>2024-03-01T05:41:53.983Z</lastmod>
   </url>
   <url>
     <loc>https://belisards.github.io/about.html</loc>
-    <lastmod>2024-03-01T04:31:45.150Z</lastmod>
+    <lastmod>2024-03-01T05:41:54.347Z</lastmod>
   </url>
   <url>
-    <loc>https://belisards.github.io/talks/2020-10-29_how-to-get-help-in-r/index.html</loc>
-    <lastmod>2024-03-01T04:31:45.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/talks/2019-10-05_working-with-text-in-r/index.html</loc>
-    <lastmod>2024-03-01T04:31:46.394Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/talks/2017-05-25_overview-of-htmlwidgets/index.html</loc>
-    <lastmod>2024-03-01T04:31:46.850Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/talks/2017-07-06_introducing-BradleyTerryScalable/index.html</loc>
-    <lastmod>2024-03-01T04:31:47.358Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/talks/2018-08-23_phd-as-package/index.html</loc>
-    <lastmod>2024-03-01T04:31:47.878Z</lastmod>
-  </url>
-  <url>
-    <loc>https://belisards.github.io/packages.html</loc>
-    <lastmod>2024-03-01T04:31:48.278Z</lastmod>
+    <loc>https://belisards.github.io/talks/2021-01-01_european-data-journalism/index.html</loc>
+    <lastmod>2024-03-01T05:41:55.199Z</lastmod>
   </url>
   <url>
     <loc>https://belisards.github.io/contact.html</loc>
-    <lastmod>2024-03-01T04:31:48.598Z</lastmod>
+    <lastmod>2024-03-01T05:41:55.527Z</lastmod>
   </url>
   <url>
     <loc>https://belisards.github.io/index.html</loc>
-    <lastmod>2024-03-01T04:31:48.986Z</lastmod>
+    <lastmod>2024-03-01T05:41:55.859Z</lastmod>
   </url>
 </urlset>

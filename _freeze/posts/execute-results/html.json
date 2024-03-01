@@ -1,7 +1,7 @@
 {
-  "hash": "5d7874be9e696e87c720e46a168a445c",
+  "hash": "eaa6fc76416314a26f7db8eb95b2df09",
   "result": {
-    "markdown": "---\n#title: \"posts\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\n  feed: \n    categories: [R, Quarto]\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [POSTS]{.second-color}",
+    "markdown": "---\n#title: \"posts\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\n  feed: \n    categories: [Quarto]\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [POSTS]{.second-color}",
     "supporting": [
       "posts_files"
     ],

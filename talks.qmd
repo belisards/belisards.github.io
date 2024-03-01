@@ -18,3 +18,5 @@ execute:
 ---
 
 # [TALKS]{.third-color}
+
+This section features some of my talks and presentations. 

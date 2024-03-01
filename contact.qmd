@@ -9,9 +9,7 @@ execute:
 
 # [I'd love to hear from you!]{.primary}
 
-You can leave a note about any of my posts, talks or packages using the comment box at the bottom of its page.
-
-You can find me on elsewhere online:
+You can find on the following social networks:
 
 ```{r}
 #| echo: false
@@ -21,13 +19,13 @@ library(distilltools)
 `r icon_link(
   icon = "mastodon",
   text = "Mastodon",
-  url = "https://fosstodon.org/@ellakaye",
+  url = "https://fosstodon.org/@belisards",
   rel = "me noopener"
 )`
 `r icon_link(
   icon = "github",
   text = "GitHub",
-  url = "https://github.com/EllaKaye"
+  url = "https://github.com/belisards"
 )`
 `r icon_link(
   icon = "linkedin",
@@ -35,4 +33,4 @@ library(distilltools)
   url = "https://www.linkedin.com/in/ellakaye"
 )`
 
-Or, you can drop me an e-mail at [hello @ ellakaye.co.uk]{.heading-font}
+Or, you can drop me an e-mail at [adrianobf @ gmail.com]{.heading-font}

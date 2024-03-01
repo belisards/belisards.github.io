@@ -19,9 +19,9 @@
 <generator>quarto-1.2.269</generator>
 <lastBuildDate>Sat, 30 Dec 2023 03:00:00 GMT</lastBuildDate>
 <item>
-  <title>Advent of Code 2023 wrap up</title>
-  <dc:creator>Ella Kaye</dc:creator>
-  <link>https://belisards.github.io/posts/2023-12-30_advent-of-code-2023/index.html</link>
+  <title>Creating a personal website with Quarto</title>
+  <dc:creator>Adriano Belisario</dc:creator>
+  <link>https://belisards.github.io/posts/2024-02-29_tutorial/index.html</link>
   <description><![CDATA[ 
 
 
@@ -32,112 +32,27 @@
 
 </div>
 <!--------------- post content ----------------->
-<p>This year I’ve been writing up my Advent of Code solutions, with explanations, on a <a href="https://adventofcode.ellakaye.co.uk">dedicated site</a>. This is a cross-post of my final entry of the year from there.</p>
-<p>This was my first year taking Advent of Code seriously, attempting to complete puzzles on the day they were released.<sup>1</sup> Well, I say “seriously” – actually, it was a lot of fun!</p>
-<p>As of December 25th, I have 30 stars: 12 days with both parts<sup>2</sup> of the puzzle complete, 6 days with just part 1<sup>3</sup>. I’m happy with that.<sup>4</sup></p>
-<p>I stuck to my intention of solving most of the puzzles in <strong>base</strong> R, though taking a <strong>tidyverse</strong> approach when it struck me as the most appropriate, and making use of <strong>igraph</strong> and <strong>tidygraph</strong> when a graph structure was called for. I learnt a lot. I got more comfortable with base R, including learning how to use functions for working with regular expressions. I became familiar with new additions to the tidyverse, such as the <code>separate_*()</code> family of functions and <code>consectutive_id()</code>. Moreover, I met my goal of solving a puzzle in C, albeit only Part 1 of Day 1. I also picked up a little graph theory and learnt about algorithms such as Dijkstra’s, breadth-first search and depth-first search.</p>
-<section id="aochelpers" class="level2">
-<h2 class="anchored" data-anchor-id="aochelpers">aochelpers</h2>
-<p>In the run-up to Advent of Code this year, I built this website for my solutions and explanations, along with a companion package, <a href="https://ellakaye.github.io/aochelpers">aochelpers</a>. I wrote about those <a href="https://ellakaye.co.uk/posts/2023-11-29_aoc-project/">here</a>. That work paid off. It feels neat to have a dedicated site and <strong>aochelpers</strong> really streamlined the process of developing my solutions and producing the posts.</p>
-<p>As I expected, over the course of working on the challenges, I’ve written a few functions that I expect to use again in other iterations of Advent of Code, which I shall be adding to <strong>aochelpers</strong> in due course. I have other ideas to improve the package as well.</p>
-</section>
-<section id="use-of-llms" class="level2">
-<h2 class="anchored" data-anchor-id="use-of-llms">Use of LLMs</h2>
-<p>In my <a href="https://adventofcode.ellakaye.co.uk/2023/day/introduction.html">introduction post</a>, I wrote that I wanted to see what I could learn from/about working with LLMs in these challenges. They were useful on <a href="https://adventofcode.ellakaye.co.uk/2023/day/1">Day 1</a> when I was working in C. Other than that, I mostly abandoned them.</p>
-<p>On days when I knew how to solve the puzzles myself, having Copilot enabled in RStudio got in the way. I preferred writing out my own solution. On days when I thought Copilot might help, it instead introduced bugs into my code, e.g.&nbsp;on <a href="https://adventofcode.ellakaye.co.uk/2023/day/11">Day 11</a>, when I wanted it to figure out the indices on which to split the matrix. It did at least give me some code I could alter, though in retrospect, by the time I’d figured out where Copilot was wrong and fixed it, it would have been quicker to do it myself from scratch.</p>
-<p>Towards the end, I did try again with both ChatGPT and Copilot when I was stuck, for example on <a href="https://adventofcode.ellakaye.co.uk/2023/day/24#part-2">Day 24, Part 2</a>, but both were unable to help, suggesting code that generated errors, which no amount to trying to get it to correct itself, or attempting to myself, could resolve.</p>
-<p>One type of query I did find ChatGPT useful for was to have it remind me of fairly basic things that I had done or known before but forgotten, for example how to initiate an empty list of length <img src="https://latex.codecogs.com/png.latex?n"><sup>5</sup>, the equation of a straight line given a point and a gradient, or to check the ASCII value of a character. These are questions I would previously have googled, but these days, for these kinds of questions, getting the answer straight from ChatGPT is quicker and I trusted that it would be able to answer them correctly.</p>
-<p>It struck me that many of the puzzles this year had convoluted instructions and examples. Sometimes, the hardest part of a day was trying to comprehend the challenge, rather than writing the code itself. I wonder if that was a deliberate attempt to make it hard for the puzzles to be solved by LLMs – if the text is tricky for humans to parse, it’s going to be hard for a machine.</p>
-<p>LLMs have their uses but, for Advent of Code, where part of the fun is trying to challenge oneself, I preferred to do the coding myself.</p>
-</section>
-<section id="before-december-2024" class="level2">
-<h2 class="anchored" data-anchor-id="before-december-2024">Before December 2024</h2>
-<p>There’s much I want to learn before tackling Advent of Code again this time next year. The need for regular expressions comes up a lot and I’d like to improve my knowledge of those. I was pleased with my <a href="https://adventofcode.ellakaye.co.uk/2023/day/1">Day 1</a> when I wrote it but, in retrospect, with better regex skills, I would have found it easier, and been able to produce a more efficient solution.</p>
-<p>It’s clear that to be successful at Advent of Code puzzles, particularly in the latter stages, I need to know much more about data structures and algorithms. I’ve now bought the book <a href="https://www.packtpub.com/product/r-data-structures-and-algorithms/9781786465153">R Data Structures and Algorithms</a>, which seems like a good place to start. I also have the textbook <a href="https://link.springer.com/book/10.1007/978-3-642-32278-5">Graphs, Networks and Algorithms</a> which I’ve started to read, though I won’t have the time to work through the whole book in the next eleven months.<sup>6</sup></p>
-<p>Moreover, from January, I’m going to be participating in a C study group<sup>7</sup> which will be working through weeks 1-5 of the <a href="https://cs50.harvard.edu/x/">CS50</a> material. Session 3 of that covers algorithms and session 5 teaches data structures, both of which will be useful, no doubt, for Advent of Code. To practice what I’m learning, I am planning, over the next year, to work through the 2015 run of Advent of Code, implementing solutions in both R and C. I’ll update the site as I do.</p>
-<!--------------- appendices go here ----------------->
-</section>
-<div class="cell">
-<div class="cell-output-display">
-
-
-</div>
-</div>
-
-
-
-<div id="quarto-appendix" class="default"><section id="last-updated" class="level2 appendix"><h2 class="quarto-appendix-heading">Last updated</h2><div class="quarto-appendix-contents">
-
-<p>2023-12-30 22:09:08.17701</p>
-</div></section><section id="details" class="level2 appendix"><h2 class="quarto-appendix-heading">Details</h2><div class="quarto-appendix-contents">
-
-<p><a href="https://github.com/EllaKaye/ellakaye.co.uk/tree/main/posts/2023-12-30_advent-of-code-2023/index.qmd" target="_blank">source code</a>, <a href="https://github.com/EllaKaye/ellakaye.co.uk/tree/main/posts/2023-12-30_advent-of-code-2023/renv.lock" target="_blank">R environment</a></p>
-</div></section><section id="session-info" class="level5 appendix"><h2 class="quarto-appendix-heading">Session info</h2><div class="quarto-appendix-contents">
-
-<details>
-<summary>
-Toggle
-</summary>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>─ Session info ───────────────────────────────────────────────────────────────
- setting  value
- version  R version 4.3.2 (2023-10-31)
- os       macOS Sonoma 14.1
- system   aarch64, darwin20
- ui       X11
- language (EN)
- collate  en_US.UTF-8
- ctype    en_US.UTF-8
- tz       Europe/London
- date     2023-12-30
- pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
- quarto   1.4.526 @ /usr/local/bin/quarto
-
-─ Packages ───────────────────────────────────────────────────────────────────
- ! package     * version date (UTC) lib source
- P sessioninfo * 1.2.2   2021-12-06 [?] CRAN (R 4.3.0)
-
- [1] /Users/ellakaye/Rprojs/mine/ellakaye-quarto/renv/library/R-4.3/aarch64-apple-darwin20
- [2] /Users/ellakaye/Library/Caches/org.R-project.R/R/renv/sandbox/R-4.3/aarch64-apple-darwin20/ac5c2659
-
- P ── Loaded and on-disk path mismatch.
-
-──────────────────────────────────────────────────────────────────────────────</code></pre>
-</div>
-</div>
-</details>
+<p>https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/</p>
 
 
 <!-- -->
 
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-<ol>
-<li id="fn1"><p>At least to the extent that family and other commitments would allow.↩︎</p></li>
-<li id="fn2"><p>Days 1-4, 6-9, 11, 13, 15, 24↩︎</p></li>
-<li id="fn3"><p>Days 5, 10, 14, 21, 23, 25↩︎</p></li>
-<li id="fn4"><p>As of December 26th, it was enough to get me to 13th place on the <a href="https://rstats-aoc.netlify.app">#RStats AOC leaderboard</a>.↩︎</p></li>
-<li id="fn5"><p><code>vector("list", n)</code>↩︎</p></li>
-<li id="fn6"><p>I got over-excited a few years ago when my local bookshop (the wonderful Blackwell’s in Oxford) had a sale on Springer books. I bought several and am always glad when I have reason to return to any of them.↩︎</p></li>
-<li id="fn7"><p>Details are being finalised but I’ll come back and add a link once I have one.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kaye2023,
-  author = {Ella Kaye},
-  title = {Advent of {Code} 2023 Wrap Up},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belisario2023,
+  author = {Adriano Belisario},
+  title = {Creating a Personal Website with {Quarto}},
   date = {2023-12-30},
-  url = {https://belisards.github.io/posts/2023-12-30_advent-of-code-2023},
+  url = {https://belisards.github.io/posts/2024-02-29_tutorial},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kaye2023" class="csl-entry quarto-appendix-citeas">
-Ella Kaye. 2023. <span>“Advent of Code 2023 Wrap Up.”</span> December
-30, 2023. <a href="https://belisards.github.io/posts/2023-12-30_advent-of-code-2023">https://belisards.github.io/posts/2023-12-30_advent-of-code-2023</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-belisario2023" class="csl-entry quarto-appendix-citeas">
+Adriano Belisario. 2023. <span>“Creating a Personal Website with
+Quarto.”</span> December 30, 2023. <a href="https://belisards.github.io/posts/2024-02-29_tutorial">https://belisards.github.io/posts/2024-02-29_tutorial</a>.
 </div></div></section></div> ]]></description>
-  <category>Advent of Code</category>
-  <category>R</category>
-  <guid>https://belisards.github.io/posts/2023-12-30_advent-of-code-2023/index.html</guid>
+  <category>Quarto</category>
+  <category>Github</category>
+  <guid>https://belisards.github.io/posts/2024-02-29_tutorial/index.html</guid>
   <pubDate>Sat, 30 Dec 2023 03:00:00 GMT</pubDate>
-  <media:content url="https://belisards.github.io/posts/2023-12-30_advent-of-code-2023/Advent_Of_Code_Logo.png" medium="image" type="image/png" height="79" width="144"/>
 </item>
 </channel>
 </rss>

@@ -8,7 +8,7 @@ listing:
   sort-ui: false
   filter-ui: false
   feed: 
-    categories: [R, Quarto]
+    categories: [Quarto]
 page-layout: full
 title-block-banner: false
 knitr:

@@ -24,10 +24,6 @@ website:
         href: posts.qmd
       - text: talks
         href: talks.qmd
-      - text: packages
-        href: packages.qmd
-      - text: community
-        href: community.qmd
       - text: contact
         href: contact.qmd
       #- icon: github
