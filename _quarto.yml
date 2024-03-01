@@ -19,6 +19,8 @@ website:
     right:
       - text: about
         href: about.qmd
+      - text: publications
+        href: publications.qmd
       - text: posts
         href: posts.qmd
       - text: talks
