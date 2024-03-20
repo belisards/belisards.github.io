@@ -1,0 +1,14 @@
+{
+  "hash": "cf2fb0df38707a3670fc448b771845ec",
+  "result": {
+    "markdown": "---\n#title: \"Community\"\n#page-layout: full\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\ntoc: true\n---\n\n\nHere is a list of texts I've published in English. Below, you can find my publications in Portuguese.\n\n# English\n\n## Academic articles (Preprints)\n\n[Into the crossfire](https://arxiv.org/abs/2401.12989)\n\n[Analyzing misinformation claims](https://arxiv.org/abs/2401.02395)\n\n## Journalistic investigations\n\n[Territories of Exception](https://documental.xyz/intervencao)\n\n[Expulsions](https://documental.xyz/expulsions)\n\n## Article\n\n[Free spectrum and freedom of expression in the 21st century](https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century)\n\n# Portuguese\n\n## Academic articles\n\n\n## Books\n\n### Organizer\n\n- Copyfight\n\n- Economias Subversivas\n\n### Chapter published\n\nAMARC \n\nFGV Pontos de Cultura\n\n### Journalistic investigations\n#### Agência Pública\nhttps://apublica.org/2019/04/encontramos-mais-cinco-ex-assessoras-de-bolsonaro-que-nem-pisaram-no-congresso/\n\nhttps://apublica.org/2017/08/imobiliarias-podem-mascarar-sobrelucro-de-empresarios-de-onibus/\n\nhttps://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/\n\n#### Intercept\n\nhttps://www.intercept.com.br/2018/04/03/exercito-rio-empresa-investigada/\n\nhttps://www.intercept.com.br/2017/09/26/mapeamento-inedito-mostra-que-doacoes-legais-da-odebrecht-beneficiaram-1-087-candidatos-desde-2002/\n\n\n[Um jogo para poucos (Agência Pública)](https://apublica.org/2014/06/um-jogo-para-poucos/)\n\n#### RHBN\n\n...\n\n### Tutorials\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

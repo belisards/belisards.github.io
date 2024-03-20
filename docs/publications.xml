@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Adriano Belisario</title>
+<link>https://belisards.github.io/publications.html</link>
+<atom:link href="https://belisards.github.io/publications.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website, portfolio and blog</description>
+<generator>quarto-1.2.269</generator>
+<lastBuildDate>Wed, 30 Jan 2013 02:00:00 GMT</lastBuildDate>
+<item>
+  <title>Copyfight</title>
+  <dc:creator>Adriano Belisario</dc:creator>
+  <link>https://belisards.github.io/publications/2012-copyfight/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<!--------------- set up ----------------->
+<div class="cell">
+
+</div>
+<!--------------- post content ----------------->
+<p>https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/</p>
+
+
+<!-- -->
+
+
+<p>Created with <a href="https://quarto.org">Quarto</a> and adapted from <a href="https://ellakaye.co.uk/">Ella Kaye’s website</a>.</p><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belisario2013,
+  author = {Adriano Belisario},
+  title = {Copyfight},
+  date = {2013-01-30},
+  url = {https://belisards.github.io/publications/2012-copyfight},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-belisario2013" class="csl-entry quarto-appendix-citeas">
+Adriano Belisario. 2013. <span>“Copyfight.”</span> January 30, 2013. <a href="https://belisards.github.io/publications/2012-copyfight">https://belisards.github.io/publications/2012-copyfight</a>.
+</div></div></section></div> ]]></description>
+  <category>organizer</category>
+  <category>author</category>
+  <guid>https://belisards.github.io/publications/2012-copyfight/index.html</guid>
+  <pubDate>Wed, 30 Jan 2013 02:00:00 GMT</pubDate>
+  <media:content url="https://belisards.github.io/publications/2012-copyfight/cover.png" medium="image" type="image/png" height="205" width="144"/>
+</item>
+</channel>
+</rss>

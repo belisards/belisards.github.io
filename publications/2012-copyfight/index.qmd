@@ -1,0 +1,29 @@
+---
+title: "Copyfight"
+description: |
+  Book on piracy and free culture
+date: 2013-01-30
+author: 
+  - name: Adriano Belisario
+site-url: https://github.com/belisards/EPUB-Copyfight
+image: "cover.png"
+image-alt: Copyfight cover page.
+categories: [organizer, author]
+open-graph: false
+draft: false
+---
+
+<!--------------- set up ----------------->
+
+```{r}
+#| echo: false
+#| results: 'hide'
+
+long_slug <- "copyfight"
+
+# NOTE: after finishing post, run renv::snapshot() and copy the renv.lock file 
+# from the project root into the post directory
+# renv::use(lockfile = "renv.lock")
+```
+
+<!--------------- post content ----------------->

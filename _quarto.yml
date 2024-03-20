@@ -11,7 +11,6 @@ website:
   title: "Adriano Belisario"
   site-url: https://belisards.github.io
   description: Personal website, portfolio and blog
-  body-footer: Created with [Quarto](https://quarto.org) and adapted from [Ella Kaye's website](https://ellakaye.co.uk/).
   repo-url: https://github.com/belisards/belisards.github.io
   # image: images/logo.png
   navbar:
@@ -21,25 +20,20 @@ website:
         href: about.qmd
       - text: publications
         href: publications.qmd
-      - text: posts
+      - text: blog
         href: posts.qmd
       - text: talks
         href: talks.qmd
       - text: contact
         href: contact.qmd
-      #- icon: github
-      #  href: https://github.com/EllaKaye
-      #- icon: twitter
-      #  href: https://twitter.com/ellamkaye
-  favicon: images/favicon.png
+      - icon: github
+        href: https://github.com/belisards
+      - icon: twitter
+        href: https://twitter.com/belisards
+  favicon: images/favicon/favicon.ico
   twitter-card: 
     title: Adriano Belisario
     description: The personal website of Adriano Belisario
-    # image: images/logo.png
-    # image-alt: |
-    #   A square logo made from Ella Kaye's name - 
-    #   first name on top of last name in dark gray capital letters, 
-    #   separated by a horizontal bright pink line, on a very light grey background
     image-width: 500
     image-height: 500
     card-style: summary # alternative summary_large_image

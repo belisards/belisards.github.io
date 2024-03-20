@@ -5,15 +5,18 @@ knitr:
 execute: 
   echo: false
 page-layout: full
+
+
 include-in-header: 
   - _includes/fontawesome-2up.html
-  - _includes/mastodon.html
 ---
 
 ::: {.grid}
 
 ::: {.g-col-12}
 [Hi 👋]{.home-header}
+
+This site is unfinished and under development. Please come back soon.
 :::
 
 ::: {.g-col-12 .g-col-md-4}

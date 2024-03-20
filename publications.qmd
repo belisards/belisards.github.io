@@ -1,1 +1,72 @@
-Soon.
+---
+#title: "Community"
+#page-layout: full
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+toc: true
+---
+
+Here is a list of texts I've published in English. Below, you can find my publications in Portuguese.
+
+# English
+
+## Academic articles (Preprints)
+
+[Into the crossfire](https://arxiv.org/abs/2401.12989)
+
+[Analyzing misinformation claims](https://arxiv.org/abs/2401.02395)
+
+## Journalistic investigations
+
+[Territories of Exception](https://documental.xyz/intervencao)
+
+[Expulsions](https://documental.xyz/expulsions)
+
+## Article
+
+[Free spectrum and freedom of expression in the 21st century](https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century)
+
+# Portuguese
+
+## Academic articles
+
+
+## Books
+
+### Organizer
+
+- Copyfight
+
+- Economias Subversivas
+
+### Chapter published
+
+AMARC 
+
+FGV Pontos de Cultura
+
+### Journalistic investigations
+#### Agência Pública
+https://apublica.org/2019/04/encontramos-mais-cinco-ex-assessoras-de-bolsonaro-que-nem-pisaram-no-congresso/
+
+https://apublica.org/2017/08/imobiliarias-podem-mascarar-sobrelucro-de-empresarios-de-onibus/
+
+https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/
+
+#### Intercept
+
+https://www.intercept.com.br/2018/04/03/exercito-rio-empresa-investigada/
+
+https://www.intercept.com.br/2017/09/26/mapeamento-inedito-mostra-que-doacoes-legais-da-odebrecht-beneficiaram-1-087-candidatos-desde-2002/
+
+
+[Um jogo para poucos (Agência Pública)](https://apublica.org/2014/06/um-jogo-para-poucos/)
+
+#### RHBN
+
+...
+
+### Tutorials
