@@ -37,15 +37,6 @@ div.quarto-post .body .listing-subtitle {
     margin-bottom: .5em;
 }
 
-/*
-// left align edge of callout block with text
-// without this, text inside callout block is left aligned with body text,
-// which maybe looks better?
-div.callout.callout {
-  margin-left: 0;
-}
-*/
-
 code span.cf {
   font-weight: normal;
 }
@@ -57,30 +48,4 @@ code span.cf {
 .profile-pic {
   border-radius: 5px;
 }
-
-/*
-#quarto-content a {
-  text-decoration: none;
-  padding-bottom: 1px;
-  border-bottom: 1px solid;
-}
-
-#TOC > ul > li a {
-  border-bottom: 0 !important;
-}
-
-div.toc-actions a {
-  border-bottom: 0 !important;
-}
-
-div.quarto-listing a {
-  border-bottom: 0 !important;
-}
-
-a.anchorjs-link {
-  border-bottom: 0 !important;
-}
-*/
-
-
 

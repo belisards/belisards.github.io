@@ -2,37 +2,7 @@
 
 // use litera as the base
 // https://github.com/thomaspark/bootswatch/tree/v5/dist/litera
-$theme: "litera" !default;
-
-/*
- * @license
- * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
- * 
- * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are 
- * explicitly restricted from using the Licensed Webfonts(s).
- * 
- * You may obtain a valid license at the URLs below.
- * 
- * Webfont: Lemon Milk Pro™ by Marsnev
- * URL: https://www.myfonts.com/collections/lemon-milk-pro-font-marsnev
- * Copyright: Copyright © 2014 Monotype Imaging Inc. All rights reserved.
- * 
- * © 2020 MyFonts Incn
-
-
-*/
-/*!
-  * @preserve
-  * MonoLisa
-  * Release date: 2022-02-28
-  * This font is subject to a EULA. A user-licence can be acquired at:
-  *   https://monolisa.dev
-  * © 2022 FaceType Foundry. All Rights Reserved.
-
-
-  */
-
+$theme: "journal" !default;
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas:ital,wght@0,300..700;1,300..700&display=swap');
 
@@ -47,23 +17,9 @@ $font-family-sans-serif: Bebas, sans-serif !default;
 $font-family-monospace:  Source Code Pro, monospace;
 $headings-font-family: Dosis,sans-serif !default;
 
-// litera bootswatch theme colors
-/*
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #ddd !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
-*/
-
 // warmer grays (hue 240)
-$white:    #fff !default;
+$white:    #f7f8f8 !default;
+$gray: #e6e5da;
 $gray-100: #F8F8FA !default;
 $gray-200: #E9E9EF !default;
 $gray-300: #DCDCE6 !default;
@@ -75,43 +31,29 @@ $gray-800: #343440 !default;
 $gray-900: #212129 !default;
 $black:    #000 !default;
 
-
-/*
-$blue:    #4582ec !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #d9534f !default;
-$orange:  #fd7e14 !default;
-$yellow:  #f0ad4e !default;
-$green:   #02b875 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
-*/
-
 //  my colors (comment out above)
-$pink: #EF476F;
-$blue: #118AB2;
-$green: #06D6A0;
-$cyan: #00D4D4;
-$red: #D40000;
+$pink: #b55c5c;
+$blue: #444275;
+$green: #948e70;
+$cyan: #3B74BF;
+$red: #b55c5c;
 $indigo: #073B4C;
-$purple: #6A00D4;
-$orange: #D46A00;
+$purple: #6576E0;
+$orange: #543f38;
 $yellow: #FFD166;
 $darker-green: #008542;
 
-$primary:       $pink !default;
-$secondary:     $gray-500 !default;
+$primary:       $blue !default;
+$secondary:     $cyan !default;
 $success:       $green !default;
-$info:          $cyan !default;
+$info:          #FBF9F1 !default;
 $warning:       $orange !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$light:         #f7f8f8 !default;
+$dark:          #543f38 !default;
 
-$second-color:  $purple;
-$third-color:   $blue;
+$second-color:  $orange;
+$third-color:   $pink;
 
 // font sizes;
 $font-size-base:   1rem; //!default; // Assumes the browser default, typically `16px`

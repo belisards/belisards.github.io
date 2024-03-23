@@ -15,13 +15,9 @@ twitter-card:
     image-width: 600
     image-height: 314
     card-style: summary_large_image
-    creator: "@ellamkaye"
-    site: "@ellamkaye"
+    creator: "@belisards"
+    site: "@belisards"
 
-include-in-header: 
-  - ../_includes/giscus.html
-  - ../../_includes/fontawesome-2up.html
-include-after-body: ../_includes/div-giscus.html
 
 toc: true    
 toc-title: Contents

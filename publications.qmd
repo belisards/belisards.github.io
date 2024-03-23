@@ -9,64 +9,208 @@ execute:
 toc: true
 ---
 
-Here is a list of texts I've published in English. Below, you can find my publications in Portuguese.
+Here are my investigations and articles published in English, along with my main publications - books, academic articles, journalistic investigations, and tutorials - in Portuguese.
 
 # English
 
-## Academic articles (Preprints)
+## Data-driven investigations
 
-[Into the crossfire](https://arxiv.org/abs/2401.12989)
+[**Territories of Exception**](https://documental.xyz/intervencao)
 
-[Analyzing misinformation claims](https://arxiv.org/abs/2401.02395)
+Violation of rights and the use of police helicopters in Rio de Janeiro.
 
-## Journalistic investigations
+[**Expulsions**](https://documental.xyz/expulsions)
 
-[Territories of Exception](https://documental.xyz/intervencao)
+Forced displacements and archaeological destruction by the mega-mining project Mirador in the Ecuadorian Amazonia
 
-[Expulsions](https://documental.xyz/expulsions)
+## Academic articles
+
+[**Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports**](https://arxiv.org/abs/2401.12989)
+
+arXiv preprint, 2024. With Scott Hale and Luc Rocher.
+
+[**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://arxiv.org/abs/2401.02395)
+
+arXiv preprint, 2024. With Scott Hale, Ahmed Mostafa and Chico Camargo.
+
+[**Activism in landscapes: culture, spectrum and Latin America**](https://spheres-journal.org/contribution/activism-in-landscapes-culture-spectrum-and-latin-america/)
+
+Spheres - Journal for Digital Cultures, 2016. With Paulo Lara and Francisco Caminati.
 
 ## Article
 
-[Free spectrum and freedom of expression in the 21st century](https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century)
+[**Free spectrum and freedom of expression in the 21st century**](https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century)
+
+The article explores the differences between the concepts of "free spectrum" and "open spectrum" in relation to challenges around freedom of expression in the 21st century.
 
 # Portuguese
 
 ## Academic articles
 
+BELISARIO, ADRIANO. [**A Terra à Vista**](https://periodicos.unb.br/index.php/dasquestoes/article/view/18647/17367). DAS QUESTÕES, v. 6, p. 1, 2018.
+
+ZASSO, MARIEL ROSAURO ; POPPI, RICARDO ; KONOPACKI, MARCO ANTONIO ; BELISARIO, ADRIANO ; ASTORQUIZA, LUIS ; BEJARANO, PABLO ; SALLAS, NORMA RUIZ ; YAÑEZ FIGUEROA, JOSÉ ANTONIO. [**Caixa Mágica: chronicle of a civic innovation project**](https://revista.ibict.br/liinc/article/view/3747/3222). LIINC EM REVISTA, v. 13, p. 237, 2017.
+
+Lara, Paulo José O. M. ; BELISARIO, Adriano. [**Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum**.](https://revista.ibict.br/liinc/article/view/3722) Liinc em Revista, v. 12, p. 271-285, 2016.
+
+BELISARIO, Adriano.; FERREIRA, P. P. [**Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente: uma trajetória possível**](https://www.contemporanea.ufscar.br/index.php/contemporanea/article/view/434). Contemporânea, v. 6, p. 335-367, 2016.
+
+BELISARIO, Adriano. [**Tecnoxamanismo: por uma cibernética insurgente**](https://revistas.ufrj.br/index.php/lc/article/view/50155). Lugar Comum (UFRJ), v. 43, p. 265, 2015.
+
+BELISARIO, Adriano. [**Espectro livre como alternativa tecnopolítica à vigilância**](https://politics.org.br/edicoes/espectro-livre-como-alternativa-tecnopol%C3%ADtica-%C3%A0-vigil%C3%A2ncia). Politics (Impresso), v. 1, p. 15, 2015.
+
+BENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. **Midialivristas, uni-vos!**. Lugar Comum (UFRJ), v. 25-26, p. 137-141, 2009.
 
 ## Books
 
-### Organizer
+**Espectro e vigilância** (chapter authorship). In: Tecnopolíticas da vigilância: perspectivas da margem. Editora Boitempo. 2018.
 
-- Copyfight
+**Espectro e Vigilância** (chapter authorship). In: Rádios Comunitárias em Tempos Digitais. 2017.
 
-- Economias Subversivas
+**Tecnoxamanismo - Antropofagia da técnica** (chapter authorship). In: Tecnoxamanismo. 2016.
 
-### Chapter published
+**Economias subversivas** (book organization), Editora Imotirõ, 2017.
 
-AMARC 
+**Tecnomagia** (book organization). Editora Imotirõ, 2016.
 
-FGV Pontos de Cultura
+[**Copyfight: pirataria e cultura livre**](https://midiatatica.desarquivo.org/2010-2013/copyfight/)(book organization e chapter authorship). 2012.
 
-### Journalistic investigations
-#### Agência Pública
-https://apublica.org/2019/04/encontramos-mais-cinco-ex-assessoras-de-bolsonaro-que-nem-pisaram-no-congresso/
+**Submidialogias** (chapter coauthorship). In: Ideias Perigozas: submidialogias. Editora Córrego, 2011.
+
+[**As culturas digitais dos Pontos de Cultura e Lan houses**](https://editora.fgv.br/produto/pontos-de-cultura-e-lan-houses-estruturas-para-inovacao-na-base-da-piramide-social-2452)(co-chapter authorship). In: Pontos de Cultura e Lan houses: estruturas para inovação na base da pirâmide social. Editora Fundação Getúlio Vargas. 2011
+
+**Ponha-se Na Rua** (chapter coauthorship). Editora Luminatti, 2008.
+
+**Comunicação Comunitária: Contexto e Produção em Núcleos de Estudo do Rio de Janeiro** (chapter coauthorship). In: COMUNIDADE E CONTRA-HEGEMONIA: ROTAS DE COMUNICAÇAO ALTERNATIVA. 2008.
+
+### Tutorials
+
+[Checagem de imagens: cronolocalização de fotos](https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/), authorship, 2022.
+
+[Pseudonimização de dados com editores de planilha](https://escoladedados.org/tutoriais/pseudonimizacao-de-dados-com-editores-de-planilha/), authorship.
+
+[Geocodificando endereços: transforme tabelas em mapas](https://escoladedados.org/tutoriais/geocodificando-enderecos-transforme-tabelas-em-mapas/), authorship.
+
+[Caixa de ferramentas para jornalistas de dados ambientais](https://escoladedados.org/tutoriais/caixa-de-ferramentas-para-jornalistas-de-dados-ambientais/), coauthorship.
+
+[Raspe um Diário Oficial e contribua com o Querido Diário](https://escoladedados.org/tutoriais/raspe-um-diario-oficial-e-contribua-com-o-querido-diario/), coauthorship.
+
+[Limpando dados da COVID-19 com R](https://escoladedados.org/tutoriais/limpando-dados-da-covid-19-com-r/), authorship, 2020.
+
+[Veja como monitorar em tempo real ataques coordenados no Twitter](https://escoladedados.org/tutoriais/veja-como-monitorar-em-tempo-real-ataques-coordenados-no-twitter/), co-authorship, 2020.
+
+[Deu match! Cruzando tabelas no Google Sheets](https://escoladedados.org/tutoriais/deu-match-cruzando-tabelas-no-google-sheets/), authorship.
+
+Entrevistando dados: uma introdução prática -- [parte I](https://escoladedados.org/tutoriais/entrevistando-dados-uma-introducao-pratica/) e [parte II](https://escoladedados.org/tutoriais/entrevistando-dados-uma-introducao-pratica-parte-ii/), authorship.
+
+[Expressão regular pode melhorar sua vida](https://escoladedados.org/tutoriais/expressao-regular-pode-melhorar-sua-vida/), authorship.
+
+[Tidy data: dados arrumados e 5 problemas comuns](https://escoladedados.org/tutoriais/tidy-data-dados-arrumados-e-5-problemas-comuns/), translation, 2019.
+
+[Operadores de busca avançada](https://escoladedados.org/tutoriais/operadores-de-busca-avancada/), translation, 2019.
+
+[Mergulhando no jornalismo de dados](https://escoladedados.org/tutoriais/mergulhando-no-jornalismo-de-dados/), translation, 2019.
+
+### Journalistic articles
+
+[Encontramos mais cinco ex-assessoras de Bolsonaro que nem pisaram no Congresso](https://apublica.org/2019/04/encontramos-mais-cinco-ex-assessoras-de-bolsonaro-que-nem-pisaram-no-congresso/). Agência Pública, 2019.
 
 https://apublica.org/2017/08/imobiliarias-podem-mascarar-sobrelucro-de-empresarios-de-onibus/
 
 https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/
 
-#### Intercept
-
 https://www.intercept.com.br/2018/04/03/exercito-rio-empresa-investigada/
 
 https://www.intercept.com.br/2017/09/26/mapeamento-inedito-mostra-que-doacoes-legais-da-odebrecht-beneficiaram-1-087-candidatos-desde-2002/
 
+[Um jogo para poucos](https://apublica.org/2014/06/um-jogo-para-poucos/)
 
-[Um jogo para poucos (Agência Pública)](https://apublica.org/2014/06/um-jogo-para-poucos/)
+Cidades sob o verde. Revista de História da Biblioteca Nacional. 2008.
 
-#### RHBN
+O senhor dos mares. Revista de História da Biblioteca Nacional. 2008.
 
-...
+O verdadeiro futebol-arte. Revista de História da Biblioteca Nacional. 2008
 
-### Tutorials
+Entrevista com Ruy Castro. Revista de História da Biblioteca Nacional. 2008
+
+Casas cobiçadas. Revista de História da Biblioteca Nacional.
+
+As quatro irmãs. Agência Pública.
+
+Um jogo para poucos. Agência Pública.
+
+Documento da Lava Jato sugere cartel na Olimpíada. Agência Pública.
+
+Engenharia financeira subvalorizou terrenos públicos no Porto Maravilha. Agência Pública..
+
+Concremat: de 'braço auxiliar' das remoções à queda da ciclovia. Agência Pública.
+
+A outra história do Porto Maravilha. Agência Pública.
+
+Desconto bilionário concedido a empresas é fator-chave no rombo do Rio. Agência Pública.
+
+Todos querem sê-lo. Revista de História da Biblioteca Nacional.
+
+'Pelô' expressionista. Revista de História da Biblioteca Nacional.
+
+Polêmica entre arranha-céus e lampiões. Revista de História da Biblioteca Nacional.
+
+Imóvel velho, móvel novo. Revista de História da Biblioteca Nacional.
+
+Fé no caixa. Revista de História da Biblioteca Nacional.
+
+Regulamentação à vista. Revista de História da Biblioteca Nacional.
+
+Políticas dá cultura. Revista de História da Biblioteca Nacional.
+
+Auditoria Cidadã prepara estudo sobre dívida do Rio. Agência Pública.
+
+Presidente da Comissão de Transporte da Assembleia do Rio é sócio de diretor da Fetranspor foragido. Agência Pública.
+
+As offshores dos empresários de ônibus presos na Lava Jato. Agência Pública.
+
+O fiasco das CPIs dos ônibus no Rio de Janeiro. Agência Pública.
+
+Imobiliárias podem mascarar sobrelucro de empresários de ônibus. Agência Pública.
+
+O BRT não resolveu. Agência Pública.
+
+Exclusivo: O que revela (e o que esconde) a auditoria oficial dos ônibus no Rio. Agência Pública.
+
+A teia dos donos do transporte no Rio. Agência Pública.
+
+Muito além dos Barata. Agência Pública.
+
+Sorteio do Supremo é caixa preta. Agência Pública.
+
+Documentos da CPI confirmam: Jacob Barata superfaturou aluguel de garagens no Rio. Agência Pública.
+
+Porto Maravilha corre o risco de parar novamente em 2018. Agência Pública.
+
+Liderada pelos EUA, importação de diesel bate recorde. Agência Pública.
+
+Auditor: Sorteio de processos no Supremo é seguro pois guarda rastro de alterações. Agência Pública.
+
+Semanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição. Agência Pública.
+
+A tropa de choque de Bolsonaro no Congresso. Agência Pública.
+
+Como vota Rio das Pedras, reduto da mais antiga milícia carioca. Agência Pública.
+
+Não há registro de entrada na Câmara para assessor de Bolsonaro investigado pela Justiça. Agência Pública.
+
+Dois assessores de Jair Bolsonaro doaram mais de R\$ 100 mil para campanhas da família. Agência Pública.
+
+Encontramos mais cinco ex-assessoras de Bolsonaro que nem pisaram no Congresso. Agência Pública.
+
+Mapeamento inédito mostra que doações legais da Odebrecht beneficiaram 1.087 candidatos desde 2002. The Intercept Brasil.
+
+Operações do Exército no Rio geraram milhões para empresa da 'farra do guardanapo'. The Intercept Brasil.
+
+Oposição recebeu menos de 2% de doações da Odebrecht para eleições nacionais nos anos 1990. The Intercept Brasil.
+
+Mesmo após Lava Jato, família Odebrecht manteve doações de campanha em 2016. The Intercept Brasil.
+
+Auditoria inédita mostra prefeitura à mercê dos empresários de ônibus no Rio. Agência Pública.
+
+### 

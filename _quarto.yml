@@ -1,11 +1,13 @@
 project:
   type: website
   output-dir: docs
-  resources:
-    "_redirects"
+
     
 execute:
   freeze: auto
+  
+body-footer: | 
+  This page brought to you by <https://example.com>
 
 website:
   title: "Adriano Belisario"
@@ -33,7 +35,7 @@ website:
   favicon: images/favicon/favicon.ico
   twitter-card: 
     title: Adriano Belisario
-    description: The personal website of Adriano Belisario
+    description: Data, journalism and open-source 
     image-width: 500
     image-height: 500
     card-style: summary # alternative summary_large_image
@@ -57,12 +59,10 @@ format:
   html:
     theme: 
       light: assets/ek-theme-light.scss
-      # dark: assets/ek-theme-dark.scss
     css: assets/ek-styles.css
     code-block-border-left: true
     highlight-style: 
       light: assets/ek-light.theme
-      # dark: assets/ek-dark.theme
     smooth-scroll: true
     link-external-newwindow: true
     
