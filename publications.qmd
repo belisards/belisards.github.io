@@ -11,65 +11,50 @@ toc: true
 
 # [PUBLICATIONS]{.third-color}
 
-Here are my investigations and articles published in English, along with my main publications - books, academic articles, journalistic investigations, and tutorials - in Portuguese.
+Here are the main texts I've published since 2008. These include data-driven investigations and articles published in English, along with books, academic articles, journalistic investigations, and tutorials in Portuguese.
 
-# English
+# Works in English
 
-## Data-driven investigations
+[**Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports**](https://arxiv.org/abs/2401.12989). arXiv preprint, 2024. Co-authorship with Scott Hale and Luc Rocher.
 
-[**Territories of Exception**](https://documental.xyz/intervencao)
+[**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://arxiv.org/abs/2401.02395). arXiv preprint, 2024. Co-authorship with Scott Hale, Ahmed Mostafa and Chico Camargo.
 
-Violation of rights and the use of police helicopters in Rio de Janeiro.
+[**Territories of Exception**](https://documental.xyz/intervencao). Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also published in [Portuguese](https://documental.xyz/pt/intervencao) and [Spanish](https://documental.xyz/es/intervencao). 🌐
 
-[**Expulsions**](https://documental.xyz/expulsions)
+[**Expulsions - Forced displacements and archaeological destruction by the mega-mining project Mirador in the Ecuadorian Amazonia**](https://documental.xyz/expulsions). Documental.xyz, 2020. Research and data analysis. Also published in [Portuguese](https://documental.xyz/pt/expulsions) and [Spanish](https://documental.xyz/es/expulsions). 🌐
 
-Forced displacements and archaeological destruction by the mega-mining project Mirador in the Ecuadorian Amazonia
+[**Free spectrum and freedom of expression in the 21st century**](https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century). Association for Progressive Communications, 2018. Authorship.
 
-## Academic articles
-
-[**Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports**](https://arxiv.org/abs/2401.12989)
-
-arXiv preprint, 2024. With Scott Hale and Luc Rocher.
-
-[**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://arxiv.org/abs/2401.02395)
-
-arXiv preprint, 2024. With Scott Hale, Ahmed Mostafa and Chico Camargo.
-
-[**Activism in landscapes: culture, spectrum and Latin America**](https://spheres-journal.org/contribution/activism-in-landscapes-culture-spectrum-and-latin-america/)
-
-Spheres - Journal for Digital Cultures, 2016. With Paulo Lara and Francisco Caminati.
-
-## Article
-
-[**Free spectrum and freedom of expression in the 21st century**](https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century)
-
-The article explores the differences between the concepts of "free spectrum" and "open spectrum" in relation to challenges around freedom of expression in the 21st century.
+[**Activism in landscapes: culture, spectrum and Latin America**](https://spheres-journal.org/contribution/activism-in-landscapes-culture-spectrum-and-latin-america/). Spheres - Journal for Digital Cultures, 2016. Co-authorship With Paulo Lara and Francisco Caminati.
 
 # Portuguese
 
 ## Books
 
-**Espectro e vigilância** (chapter authorship). In: Tecnopolíticas da vigilância: perspectivas da margem. Editora Boitempo. 2018.
+[**Economias subversivas**](https://imotiro.org/livros/economias-subversivas-livro/) (book organization), Editora Imotirõ, 2017.
 
-**Espectro e Vigilância** (chapter authorship). In: Rádios Comunitárias em Tempos Digitais. 2017.
+[**Tecnomagia**](https://imotiro.org/livros/tecnomagia-2/) (book organization). Editora Imotirõ, 2016.
 
-**Tecnoxamanismo - Antropofagia da técnica** (chapter authorship). In: Tecnoxamanismo. 2016.
+[**Copyfight: pirataria e cultura livre**](https://midiatatica.desarquivo.org/2010-2013/copyfight/) (book organization and chapter authorship). 2012.
 
-**Economias subversivas** (book organization), Editora Imotirõ, 2017.
+**Ponha-se Na Rua** (coauthorship). Editora Luminatti, 2008.
 
-**Tecnomagia** (book organization). Editora Imotirõ, 2016.
 
-[**Copyfight: pirataria e cultura livre**](https://midiatatica.desarquivo.org/2010-2013/copyfight/)(book organization e chapter authorship). 2012.
+## Published chapters
 
-**Submidialogias** (chapter coauthorship). In: Ideias Perigozas: submidialogias. Editora Córrego, 2011.
+**Espectro e vigilância** (authorship). In: Tecnopolíticas da vigilância: perspectivas da margem. Editora Boitempo. 2018.
 
-[**As culturas digitais dos Pontos de Cultura e Lan houses**](https://editora.fgv.br/produto/pontos-de-cultura-e-lan-houses-estruturas-para-inovacao-na-base-da-piramide-social-2452)(co-chapter authorship). In: Pontos de Cultura e Lan houses: estruturas para inovação na base da pirâmide social. Editora Fundação Getúlio Vargas. 2011
+**Espectro e Vigilância** (authorship). In: Rádios Comunitárias em Tempos Digitais. AMARC Brasil. 2017.
 
-**Ponha-se Na Rua** (chapter coauthorship). Editora Luminatti, 2008.
+**Tecnoxamanismo - Antropofagia da técnica** (authorship). In: [Tecnoxamanismo](https://tecnoxamanismo.files.wordpress.com/2018/05/tcnxmnm-22_layout-2.pdf). 2016.
 
-**Comunicação Comunitária: Contexto e Produção em Núcleos de Estudo do Rio de Janeiro** (chapter coauthorship). In: COMUNIDADE E CONTRA-HEGEMONIA: ROTAS DE COMUNICAÇAO ALTERNATIVA. 2008.
+**Submidialogias** (co-authorship). In: Ideias Perigozas: submidialogias. Editora Córrego, 2011.
 
-## Academic articles
+[**As culturas digitais dos Pontos de Cultura e Lan houses**](https://editora.fgv.br/produto/pontos-de-cultura-e-lan-houses-estruturas-para-inovacao-na-base-da-piramide-social-2452) (co-authorship). In: Pontos de Cultura e Lan houses: estruturas para inovação na base da pirâmide social. Editora Fundação Getúlio Vargas. 2011.
+
+**Comunicação Comunitária: Contexto e Produção em Núcleos de Estudo do Rio de Janeiro** (co-authorship). In: COMUNIDADE E CONTRA-HEGEMONIA: ROTAS DE COMUNICAÇAO ALTERNATIVA. 2008.
+
+## Academic journals
 
 BELISARIO, ADRIANO. [**A Terra à Vista**](https://periodicos.unb.br/index.php/dasquestoes/article/view/18647/17367). DAS QUESTÕES, v. 6, p. 1, 2018.
 
