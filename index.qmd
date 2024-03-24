@@ -11,10 +11,13 @@ page-layout: full
 ::: {.grid}
 
 ::: {.g-col-12}
-[ထ]{.home-header}
+[my]{.colorchange .home-header} 
 
 Adriano Belisario combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the [Joint Data Center on Forced Displacement](https://www.jointdatacenter.org/) and the [Netlab](https://netlab.eco.ufrj.br/) laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the University of Oxford and collaborated previously with organizations like the Open Knowledge Brazil, Witness, UNESCO, and Agência Pública. 
 
+[works]{.colorchange .home-header}
+
+[free culture]{.word} | [osint]{.word} | open-source tools | data-driven investigations | journalism | social data science | independent media|open-source intelligence/OSINT | natural language processing |  human rights | digital culture | community-based infra-structure | free spectrum | cultural policies | activism | machine learning
 :::
 
 ::: {.g-col-12 .g-col-md-4}

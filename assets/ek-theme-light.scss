@@ -315,7 +315,7 @@ h1 {
 
 .home-header {
   font-family: $headings-font-family;
-  font-size: $font-size-base * 3;
+  font-size: $font-size-base * 1.5;
 }
 
 h2, .h2 {
@@ -420,5 +420,18 @@ iframe.slide-deck {
 }
 
 
+.colorchange {
+  color: $primary;
+  animation: animateText 4s infinite alternate;
+}
 
-
+@keyframes animateText {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}

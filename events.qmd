@@ -13,6 +13,8 @@ toc: true
 
 # [EVENTS]{.third-color}
 
+Since 2010, I have organized events in Brazil and actively participated in multiple international events. The list below is non-exhaustive list of activties I have developed, including conferences, lectures, workshops and courses.
+
 # Organization
 
 I organized several editions of the Brazilian Conference on Data Journalism and Digital Methods (Coda.Br) from 2018 to 2022, including the first regional meeting in the Amazon region. Previously, I conceived and collaborated on a series of events about free culture and piracy (Copyfight).
@@ -75,7 +77,7 @@ Belém, Brazil, 2018. Seminário Amazônia Interconectada. **Narrativas e dados*
 
 Rio de Janeiro, Brazil, 2016. Encontro Nacional de Artes Cênicas do SESC. **Redes e Culturas Colaborativas**.
 
-Quito, Ecuador, 2013. I CONGRESO INTERNACIONAL DE CULTURA VIVA Y COMUNITARIA. **Taller de software libre**. 2013.
+Quito, Ecuador, 2013. I Congreso Internacional de Cultura Viva y Comunitaria. **Taller de software libre**. 2013.
 
 Rio de Janeiro, Brazil, 2012. GNUGRAF. **Copyfight : Muito além do download grátis**.
 
@@ -83,10 +85,10 @@ Dakar, Senegal, 2011. World Social Forum. **Mandala: uma proposta de agregação
 
 # Courses
 
-**Brasiliense Institute of Public Law**. Courses taught as professor in the data journalism MBA program: “Low code” and “Invisible data: open source intelligence and fact-checking”. 2021 – 2022. 
+As head of the School of Data Brazil, I created, coordinated and taught several online and in-person trainings between 2019 and 2022, such as [Dados 360](https://escoladedados.org/dados-360-comunicacao-baseada-em-dados/), [Jornalismo de dados ambientais: no rastro do desmatamento da Amazônia](https://escoladedados.org/courses/jornalismo-de-dados-ambientais/), [Investigações digitais: OSINT para jornalistas e ativistas](https://escoladedados.org/courses/investigacoes-digitais/). The list below refers to my experience with post-graduate programs and universities.
 
-**School of Data Brazil**. Course creator, coordinator and professor of several online and in-person trainings, such as [Dados 360](https://escoladedados.org/dados-360-comunicacao-baseada-em-dados/), [Jornalismo de dados ambientais: no rastro do desmatamento da Amazônia](https://escoladedados.org/courses/jornalismo-de-dados-ambientais/), [Investigações digitais: OSINT para jornalistas e ativistas](https://escoladedados.org/courses/investigacoes-digitais/). 2019 – 2022.
+Brasília, Brazil, 2019. **Brasiliense Institute of Public Law.**. Courses taught as professor in the data journalism MBA program: “Low code” and “Invisible data: open source intelligence and fact-checking”. 2021 – 2022. 
 
-**Higher Education Institute of Brasilia**. Professor of data journalism in the digital journalism post-graduate program. 2019.
+Brasília, Brazil, 2019. **Higher Education Institute of Brasilia**. Professor of data journalism in the digital journalism post-graduate program. 2019.
 
-**University of Texas**. Teacher assitant at the Knight Center for Journalism in the Americas for the Data Journalism and Visualization with Free Tools course. 2019.
+Online, 2019. **University of Texas**. Teacher assitant at the Knight Center for Journalism in the Americas for the Data Journalism and Visualization with Free Tools course.
