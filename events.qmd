@@ -15,13 +15,13 @@ toc: true
 
 # Organization
 
-I organized the Brazilian Conference on Data Journalism and Digital Methods (Coda.Br) from 2018 to 2022, including the first regional edition in the Amazon region. Previously, I conceived and collaborated on a series of events about free culture and piracy (Copyfight).
+I organized several editions of the Brazilian Conference on Data Journalism and Digital Methods (Coda.Br) from 2018 to 2022, including the first regional meeting in the Amazon region. Previously, I conceived and collaborated on a series of events about free culture and piracy (Copyfight).
 
 Belém, Brazil, 2022. [**Coda Amazônia**](https://escoladedados.org/coda/coda-amazonia/). 1 ed.
 
-Online, 2021. **Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**. 4 ed.
+Online, 2021. [**Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**](https://escoladedados.org/coda/coda2021/). 6 ed.
 
-Online, 2020. [**Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**](https://escoladedados.org/coda/coda2020/). 4 ed.
+Online, 2020. [**Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**](https://escoladedados.org/coda/coda2020/). 5 ed.
 
 São Paulo, 2019. [**Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**](https://escoladedados.org/coda/coda2019/). 4 ed.
 
@@ -86,7 +86,6 @@ Dakar, Senegal, 2011. World Social Forum. **Mandala: uma proposta de agregação
 **Brasiliense Institute of Public Law**. Courses taught as professor in the data journalism MBA program: “Low code” and “Invisible data: open source intelligence and fact-checking”. 2021 – 2022. 
 
 **School of Data Brazil**. Course creator, coordinator and professor of several online and in-person trainings, such as [Dados 360](https://escoladedados.org/dados-360-comunicacao-baseada-em-dados/), [Jornalismo de dados ambientais: no rastro do desmatamento da Amazônia](https://escoladedados.org/courses/jornalismo-de-dados-ambientais/), [Investigações digitais: OSINT para jornalistas e ativistas](https://escoladedados.org/courses/investigacoes-digitais/). 2019 – 2022.
-
 
 **Higher Education Institute of Brasilia**. Professor of data journalism in the digital journalism post-graduate program. 2019.
 

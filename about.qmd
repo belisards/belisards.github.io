@@ -4,15 +4,15 @@ Belisario is currently part of the Joint Data Center on Forced Displacement, a c
 
 Belisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute. While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed Documental.xyz, an award-winning initiative that employs diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations.
 
-# Awards and fellowships
+# Awards and recognitions
 
 Bellingcat's technical writing fellowship (2024)
 
-Finalist in the category "Social Action" at the Study UK Alumni Award (2024).
+Finalist in the category "Social Action" at the Study UK Alumni Award (2024)
 
 Shortlisted at the Gabo Awards (2021)
 
-Winner of the Jornalismo-Mosca Award (2021?)
+Winner of the Jornalismo-Mosca Award (2021)
 
 Ling Institute's Visionary Journalist Scholarship (2020)
 
@@ -26,4 +26,4 @@ Ling Institute's Visionary Journalist Scholarship (2020)
 
 **Bachelor in Social Communication (Journalism)**. Federal University of Rio de Janeiro. 2010.
 
-**Philosophy** (unfinished). State University of Rio de Janeiro. 2005-2007.
+**Philosophy** (unfinished). State University of Rio de Janeiro. 2005-2008.
