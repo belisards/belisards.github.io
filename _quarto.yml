@@ -2,7 +2,6 @@ project:
   type: website
   output-dir: docs
 
-    
 execute:
   freeze: auto
   
@@ -18,14 +17,16 @@ website:
   navbar:
     title: "ADRIANO BELISARIO"
     right:
-      - text: about
+      - text: bio
         href: about.qmd
-      - text: publications
+      - text: text
         href: publications.qmd
-      - text: blog
-        href: posts.qmd
-      - text: talks
-        href: talks.qmd
+      # - text: blog
+      #   href: posts.qmd
+      - text: events
+        href: events.qmd
+# 			- text: code
+#         href: code.qmd
       - text: contact
         href: contact.qmd
       - icon: github

@@ -16,5 +16,11 @@
     "items": [
       "/posts/2024-02-29_tutorial/index.html"
     ]
+  },
+  {
+    "listing": "/events.html",
+    "items": [
+      "/events/2021-01-01_european-data-journalism/index.html"
+    ]
   }
 ]

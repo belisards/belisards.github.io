@@ -1,0 +1,87 @@
+---
+#title: "events"
+
+page-layout: full
+title-block-banner: false
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [EVENTS]{.third-color}
+
+# Organization
+
+I organized the Brazilian Conference on Data Journalism and Digital Methods (Coda.Br) between 2018 and 2022, including the first regional edition, in the Amazon region. Previously, I conceived and collaborate a series of event about free cultura and piracy (Copyfight).
+
+Belém, Brazil, 2022. [**Coda Amazônia**](https://escoladedados.org/coda/coda-amazonia/). 1 ed.
+
+Online, 2021. **Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**. 4 ed.
+
+Online, 2020. [**Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**](https://escoladedados.org/coda/coda2020/). 4 ed.
+
+São Paulo, 2019. [**Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**](https://escoladedados.org/coda/coda2019/). 4 ed.
+
+São Paulo, 2018. [**Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais**](https://escoladedados.org/coda/coda2018/). 3 ed.
+
+Rio de Janeiro, 2014. **Copyfight**. 3 ed.
+
+Rio de Janeiro, 2011. **Copyfight**. 2 ed.
+
+Rio de Janeiro, 2010. **Copyfight**. 1 ed.
+
+# Talks
+
+Online, 2021. RightsCon. [**Anatomy of a visual investigation**](https://visualinvestigations.netlify.app/). 2021.
+
+São Paulo, Brazil, 2019. Campus Party. **Jornalismo de dados no Brasil**. 2019.
+
+Viçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. **Jornalismo de dados no Brasil**. 2019.
+
+Berlin, Germany, 2017. Re:Publica. **Coolab - Community networks in Brazil**.
+
+Buenos Aires, Argentina, 2015. LAVITS. **III Simpósio Internacional da Rede Latinoamericana de Vigilância, Tecnologia e Sociedade**. Paper presentation.
+
+Rio de Janeiro, Brazil, 2007. Undergraduate research seminar. **Do cineclubismo enquanto prática de comunicação comunitária**.
+
+Duque de Caxias, Brazil, 2015. **Território Baixada.Web, Ficção, Relato e Amor: cartografia e resistências**.
+
+Berlin, Germany, 2014. Transmediale. **Micropolitics of the Post-Digital: From street protests to transitional spaces in Brazil**.
+
+Recife, Brazil, 2012. X. **Banditismo por uma questão de classe: música e hacktivismo na cultura contemporânea. 2012**.
+
+Geneva, Switzerland, 2013. Open Knowledge Conference, **Data driven campaigning**.
+
+# Labs
+
+Madrid, Spain, 2017. Visualizar17 - Medialab Prado. **Agrega.la**.
+
+Cartagena, Colombia, 2016. Laboratório Iberoamericano de Inovação Cidadã. **Agrega.la**.
+
+Mexico city, Mexico, 2016. **Openlabs - Caixa Mágica: dispositivo para participação social**.
+
+# Workshops
+
+São Paulo, Brazil, 2023. Coda.Br. [**Entendendo e usando Transformers, a tecnologia por trás do ChatGPT**](https://escoladedados.org/coda/coda2023/entendendo-e-usando-transformers-a-tecnologia-por-tras-do-chatgpt/)**.**
+
+Geneva, Switzerland, 2023. European Data and Computational Journalism Conference. [**Beyond the hype: an introduction to NLP and language models**](https://github.com/belisards/intro_nlp_ddj)**.**
+
+São Paulo, Brazil, 2019. Curso do Centro de Pesquisa e Formação do SESC-SP. **Espectro livre e redes comunitárias**.
+
+Belém, Brazil, 2018. Seminário Amazônia Interconectada. **Narrativas e dados**.
+
+Rio de Janeiro, Brazil, 2016. Encontro Nacional de Artes Cênicas do SESC. **Redes e Culturas Colaborativas**.
+
+Quito, Ecuador, 2013. I CONGRESO INTERNACIONAL DE CULTURA VIVA Y COMUNITARIA. **Taller de software libre**. 2013.
+
+Rio de Janeiro, Brazil, 2012. GNUGRAF. **Copyfight : Muito além do download grátis**.
+
+Dakar, Senegal, 2011. World Social Forum. **Mandala: uma proposta de agregação de conteúdo para a mídia independente**.
+
+# Courses
+
+To be completed.
+
+# 

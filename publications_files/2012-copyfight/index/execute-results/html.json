@@ -1,0 +1,14 @@
+{
+  "hash": "55e56c927691e172becd49673e1724b8",
+  "result": {
+    "markdown": "---\ntitle: \"Copyfight\"\ndescription: |\n  Book on piracy and free culture\ndate: 2013-01-30\nauthor: \n  - name: Adriano Belisario\nsite-url: https://github.com/belisards/EPUB-Copyfight\nimage: \"cover.png\"\nimage-alt: Copyfight cover page.\ncategories: [organizer, author]\nopen-graph: false\ndraft: false\n---\n\n\n<!--------------- set up ----------------->\n\n\n::: {.cell}\n\n:::\n\n\n<!--------------- post content ----------------->\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
