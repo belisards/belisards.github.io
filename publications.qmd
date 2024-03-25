@@ -1,6 +1,7 @@
 ---
 #title: "Publications"
 #page-layout: full
+lightbox: true
 knitr:
   opts_chunk: 
     collapse: true
@@ -12,6 +13,7 @@ toc: true
 # [PUBLICATIONS]{.third-color}
 
 Here are the main texts I've published since 2008. These include data-driven investigations and articles published in English, along with books, academic articles, journalistic investigations, and tutorials in Portuguese.
+
 
 # Works in English
 
@@ -32,14 +34,21 @@ Here are the main texts I've published since 2008. These include data-driven inv
 # Portuguese
 
 ## Books
+::: {layout-ncol=2}
 
-[**Economias subversivas**](https://imotiro.org/livros/economias-subversivas-livro/) (book organization), Editora Imotirõ, 2017.
+![**Economias subvervisas**](images/economias_subversivas.png){fig-alt="Economias subversivas"}
+Book organization, Editora Imotirõ, 2017.
 
-[**Tecnomagia**](https://imotiro.org/livros/tecnomagia-2/) (book organization). Editora Imotirõ, 2016.
+![Tecnomagia](images/tecnomagia.png){fig-alt="Tecnomagia"}
+Book organization, Editora Imotirõ, 2017.
 
-[**Copyfight: pirataria e cultura livre**](https://midiatatica.desarquivo.org/2010-2013/copyfight/) (book organization and chapter authorship). 2012.
+![Copyfight](images/copyfight.png){fig-alt="Copyfight - pirataria e cultura livre"}
+Book organization and chapter authorship, Editora Azougue, 2012.
 
-**Ponha-se Na Rua** (coauthorship). Editora Luminatti, 2008.
+![Ponha-se na Rua - Fatos e Curiosidades do Rio de Janeiro de Dom João VI](images/ponhasenarua.jpg){group="books" fig-alt="Ponha-se na Rua - Fatos e Curiosidades do Rio de Janeiro de Dom João VI"}
+Chapters authorship, Editora Luminatti, 2008.
+
+:::
 
 ## Published chapters
 

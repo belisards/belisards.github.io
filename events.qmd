@@ -17,7 +17,7 @@ Since 2010, I have organized events in Brazil and actively participated in multi
 
 # Organization
 
-I organized several editions of the [Brazilian Conference on Data Journalism and Digital Methods (Coda.Br)](https://escoladedados.org/coda/) from 2018 to 2022, including the first regional meeting in the Amazon region. Previously, I conceived and collaborated with [Witness](https://witness.org/) to organize the first national meeting on deepfakes and developed a series of events about free culture and piracy (Copyfight).
+I organized several editions of the [Brazilian Conference on Data Journalism and Digital Methods (Coda.Br)](https://escoladedados.org/coda/) from 2018 to 2022, including the first regional meeting in the Amazon region. Previously, I collaborated with [Witness](https://witness.org/) to organize the first national meeting on deepfakes and developed a series of events about free culture and piracy (Copyfight).
 
 Belém, Brazil, 2022. [**Coda Amazônia**](https://escoladedados.org/coda/coda-amazonia/). 1 ed.
 
@@ -39,11 +39,13 @@ Rio de Janeiro, 2010. **Copyfight**. 1 ed.
 
 # Talks
 
-Online, 2021. RightsCon. [**Anatomy of a visual investigation**](https://visualinvestigations.netlify.app/). 2021.
+Berlin, Germany, 2024. Disinfo Demasked/DW Akademy. [**AI uses for fact-checking in Brazil**](https://belisards.github.io/slides-bert-fact-checking/).
 
-São Paulo, Brazil, 2019. Campus Party. **Jornalismo de dados no Brasil**. 2019.
+Online, 2021. RightsCon. [**Anatomy of a visual investigation**](https://visualinvestigations.netlify.app/).
 
-Viçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. **Jornalismo de dados no Brasil**. 2019.
+São Paulo, Brazil, 2019. Campus Party. **Jornalismo de dados no Brasil**.
+
+Viçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. **Jornalismo de dados no Brasil**.
 
 Berlin, Germany, 2017. Re:Publica. **Coolab - Community networks in Brazil**.
 

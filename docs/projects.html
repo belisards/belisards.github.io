@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -97,12 +97,9 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="assets/ek-styles.css">
 <meta name="twitter:title" content="Adriano Belisario">
 <meta name="twitter:description" content="Data, journalism and open-source">
-<meta name="twitter:image" content="https://belisards.github.io/projects/gunviolenceptbr/cover.png">
 <meta name="twitter:creator" content="@belisards">
 <meta name="twitter:site" content="@belisards">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="463">
-<meta name="twitter:image-width" content="512">
 </head>
 
 <body class="nav-fixed">
@@ -126,16 +123,16 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">bio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page">
- <span class="menu-text">projects</span></a>
+    <a class="nav-link" href="./publications.html">
+ <span class="menu-text">publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./code.html">
+ <span class="menu-text">code</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./events.html">
  <span class="menu-text">events</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./publications.html">
- <span class="menu-text">publications</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./contact.html">
@@ -176,23 +173,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1705374000000" data-listing-file-modified-sort="1711346292207" data-listing-reading-time-sort="0.16">
-<a href="./projects/gunviolenceptbr/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./projects/gunviolenceptbr/cover.png" class="thumbnail-image card-img" style="height: 416px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-gun_violence_ptbr
-</h5>
-<div class="card-text listing-description">
-<p>Text classification model to detect gun violence reports in Brazilian Portuguese.</p>
-</div>
-</div>
-</div>
-</a>
-</div>
+
 </div>
 <div class="listing-no-matching d-none">
 No matching items
