@@ -1,0 +1,22 @@
+---
+#title: "Projects"
+listing:
+  contents: projects
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  image-height: 416px
+  date-format: yyyy
+  fields: [title, image, description]
+page-layout: full
+title-block-banner: false
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [PROJECTS]{.colorchange}

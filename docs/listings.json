@@ -1,8 +1,8 @@
 [
   {
-    "listing": "/talks.html",
+    "listing": "/projects.html",
     "items": [
-      "/talks/2021-01-01_european-data-journalism/index.html"
+      "/projects/gunviolenceptbr/index.html"
     ]
   },
   {
@@ -18,9 +18,11 @@
     ]
   },
   {
-    "listing": "/events.html",
+    "listing": "/code.html",
     "items": [
-      "/events/2021-01-01_european-data-journalism/index.html"
+      "/code/gunviolenceptbr/index.html",
+      "/code/fdpatlas/index.html",
+      "/code/quarto_slides/index.html"
     ]
   }
 ]

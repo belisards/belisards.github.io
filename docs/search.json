@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "projects/gunviolenceptbr/index.html",
+    "href": "projects/gunviolenceptbr/index.html",
+    "title": "gun_violence_ptbr",
+    "section": "",
+    "text": "The model is based on BERTimbau and fine-tuned with Twitter data labelled by Instituto Fogo Cruzado. It was developed as part of my research at the Oxford Internet Institute.\nModel: https://huggingface.co/belisards/gun_violence_ptbr\nPre-print: https://arxiv.org/abs/2401.12989\nCode: https://github.com/belisards/gunviolence_ptbr"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Adriano Belisario",
+    "section": "",
+    "text": "PROJECTS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngun_violence_ptbr\n\n\nText classification model to detect gun violence reports in Brazilian Portuguese.\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Adriano Belisario",
+    "section": "",
+    "text": "Adriano Belisario combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the Joint Data Center on Forced Displacement and the Netlab laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford) and collaborated with organizations like the Open Knowledge Brazil, Witness, Forensic Architecture, UNESCO, UNHCR, and Agência Pública.\n\n\nThis website showcases my previous work and research on a variety of topics such as data journalism & digital methods & open-source technologies & social data science & human rights & open-source intelligence (OSINT) & investigation of crimes and corruption & data-driven investigations & machine learning & natural language processing & independent media & digital culture & community-based infra-structure & free spectrum & independent media and networks & cultural policies & free culture & more.\n\n\n\n\n\n\n\n\n\nAbout me, my interests and experience.\n\n\nBIO\n\n\n\n\n\n\n\n\nAcademic and journalistic articles, data investigations and other publications in English and Portuguese.\n\n\nTEXT\n\n\n\n\n\n\n\n\nEvents I’ve organized and collaborated on.\n\n\nEVENTS\n\n\n\n\n\n\nThis website is under development, and not all sections have completed information yet.\nBuilt with Quarto inspired by Ella Kaye’s template."
+  },
+  {
     "objectID": "posts/2024-02-29_tutorial/index.html",
     "href": "posts/2024-02-29_tutorial/index.html",
     "title": "Creating a personal website with Quarto",
@@ -7,11 +28,18 @@
     "text": "Personal websites made with Quarto\nhttps://beamilz.com/talks/\nhttps://ellakaye.co.uk/\n\n\nReferences\nhttps://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{belisario2023,\n  author = {Adriano Belisario},\n  title = {Creating a Personal Website with {Quarto}},\n  date = {2023-12-30},\n  url = {https://belisards.github.io/posts/2024-02-29_tutorial},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAdriano Belisario. 2023. “Creating a Personal Website with\nQuarto.” December 30, 2023. https://belisards.github.io/posts/2024-02-29_tutorial."
   },
   {
-    "objectID": "talks.html",
-    "href": "talks.html",
+    "objectID": "todo.html",
+    "href": "todo.html",
     "title": "Adriano Belisario",
     "section": "",
-    "text": "TALKS\nThis section features some of my talks and presentations.\n\n\n\n\n\n\n\n\n\n\n\n\nEuropean DDJ\n\n\nWorkshop at the The Join Computation + Journalism European Data & Computational Journalism Conference 2023\n\n\n\nAdriano Belisario, Ajai Radhakrishnan\n\n\nJun 22, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "blog\nhttp://web.archive.org/web/20130126142404/http://pontaodaeco.org/cultura-viva-comunitaria-lapaz-2013"
+  },
+  {
+    "objectID": "events.html",
+    "href": "events.html",
+    "title": "Adriano Belisario",
+    "section": "",
+    "text": "EVENTS\nSince 2010, I have organized events in Brazil and actively participated in multiple international events. The list below is non-exhaustive list of activties I have developed, including conferences, lectures, workshops and courses.\n\n\nOrganization\nI organized several editions of the Brazilian Conference on Data Journalism and Digital Methods (Coda.Br) from 2018 to 2022, including the first regional meeting in the Amazon region. Previously, I conceived and collaborated with Witness to organize the first national meeting on deepfakes and developed a series of events about free culture and piracy (Copyfight).\nBelém, Brazil, 2022. Coda Amazônia. 1 ed.\nOnline, 2021. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 6 ed.\nOnline, 2020. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 5 ed.\nSão Paulo, 2019. Deepfakes - prepare-se agora. 1 ed.\nSão Paulo, 2019. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 4 ed.\nSão Paulo, 2018. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 3 ed.\nRio de Janeiro, 2014. Copyfight. 3 ed.\nRio de Janeiro, 2011. Copyfight. 2 ed.\nRio de Janeiro, 2010. Copyfight. 1 ed.\n\n\nTalks\nOnline, 2021. RightsCon. Anatomy of a visual investigation. 2021.\nSão Paulo, Brazil, 2019. Campus Party. Jornalismo de dados no Brasil. 2019.\nViçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. Jornalismo de dados no Brasil. 2019.\nBerlin, Germany, 2017. Re:Publica. Coolab - Community networks in Brazil.\nBuenos Aires, Argentina, 2015. LAVITS. III Simpósio Internacional da Rede Latinoamericana de Vigilância, Tecnologia e Sociedade. Paper presentation.\nRio de Janeiro, Brazil, 2007. Undergraduate research seminar. Do cineclubismo enquanto prática de comunicação comunitária.\nDuque de Caxias, Brazil, 2015. Território Baixada.Web, Ficção, Relato e Amor: cartografia e resistências.\nBerlin, Germany, 2014. Transmediale. Micropolitics of the Post-Digital: From street protests to transitional spaces in Brazil.\nRecife, Brazil, 2012. X. Banditismo por uma questão de classe: música e hacktivismo na cultura contemporânea. 2012.\nGeneva, Switzerland, 2013. Open Knowledge Conference, Data driven campaigning.\n\n\nLabs\nMadrid, Spain, 2017. Visualizar17 - Medialab Prado. Agrega.la.\nCartagena, Colombia, 2016. Laboratório Iberoamericano de Inovação Cidadã. Agrega.la.\nMexico city, Mexico, 2016. Openlabs - Caixa Mágica: dispositivo para participação social.\n\n\nWorkshops\nSão Paulo, Brazil, 2023. Coda.Br. Entendendo e usando Transformers, a tecnologia por trás do ChatGPT.\nGeneva, Switzerland, 2023. European Data and Computational Journalism Conference. Beyond the hype: an introduction to NLP and language models.\nSão Paulo, Brazil, 2019. Curso do Centro de Pesquisa e Formação do SESC-SP. Espectro livre e redes comunitárias.\nBelém, Brazil, 2018. Seminário Amazônia Interconectada. Narrativas e dados.\nRio de Janeiro, Brazil, 2016. Encontro Nacional de Artes Cênicas do SESC. Redes e Culturas Colaborativas.\nQuito, Ecuador, 2013. I Congreso Internacional de Cultura Viva y Comunitaria. Taller de software libre. 2013.\nRio de Janeiro, Brazil, 2012. GNUGRAF. Copyfight : Muito além do download grátis.\nDakar, Senegal, 2011. World Social Forum. Mandala: uma proposta de agregação de conteúdo para a mídia independente.\n\n\nCourses\nAs head of the School of Data Brazil, I created, coordinated and taught several online and in-person trainings between 2019 and 2022, such as Dados 360, Jornalismo de dados ambientais: no rastro do desmatamento da Amazônia, Investigações digitais: OSINT para jornalistas e ativistas. The list below refers to my experience with post-graduate programs and universities.\nBrasília, Brazil, 2019. Brasiliense Institute of Public Law.. Courses taught as professor in the data journalism MBA program: “Low code” and “Invisible data: open source intelligence and fact-checking”. 2021 – 2022.\nBrasília, Brazil, 2019. Higher Education Institute of Brasilia. Professor of data journalism in the digital journalism post-graduate program. 2019.\nOnline, 2019. University of Texas. Teacher assitant at the Knight Center for Journalism in the Americas for the Data Journalism and Visualization with Free Tools course."
   },
   {
     "objectID": "posts.html",
@@ -28,97 +56,6 @@
     "text": "Here are the main texts I’ve published since 2008. These include data-driven investigations and articles published in English, along with books, academic articles, journalistic investigations, and tutorials in Portuguese."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Adriano Belisario",
-    "section": "",
-    "text": "Adriano Belisario combines expertise in communication and data to address important human rights concerns. As a long-time open-source advocate, he has combined advanced technological applications with journalistic investigations and social research to address issues like police violence and socio-environmental challenges.\nBelisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he spearheaded the School of Data program at Open Knowledge Brasil and contributed to organizations like Witness, Forensic Architecture UNESCO, and Agência Pública. His publication portfolio includes books, academic articles, and journalistic pieces in Portuguese and English, and he has been invited to speak at several global events, such as Re: Publica and RightsCon.\nBelisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute. While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed Documental.xyz, an award-winning initiative that employs diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations.\n\nAwards and recognitions\nBellingcat’s technical writing fellowship (2024)\nFinalist in the category “Social Action” at the Study UK Alumni Award (2024)\nShortlisted at the Gabo Awards (2021)\nWinner of the Jornalismo-Mosca Award (2021)\nLing Institute’s Visionary Journalist Scholarship (2020)\n\n\nEducation\nMaster of Science in Social Data Science (with distinction). Oxford Internet Institute, University of Oxford. 2022-2023.\nPost-baccalaureate certification (with honors). Lede Program. Columbia University of the City of New York. 2021\nMasters of Arts in Communication and Culture. Federal University of Rio de Janeiro. 2016.\nBachelor in Social Communication (Journalism). Federal University of Rio de Janeiro. 2010.\nPhilosophy (unfinished). State University of Rio de Janeiro. 2005-2008."
-  },
-  {
-    "objectID": "talks/2021-01-01_european-data-journalism/index.html",
-    "href": "talks/2021-01-01_european-data-journalism/index.html",
-    "title": "European DDJ",
-    "section": "",
-    "text": "ChatGPT and large language models have recently gained immense attention in the media. However, beyond the hype, there are still more questions than answers on how journalists can effectively use and report on these technologies. This workshop introduces concepts that lay at the heart of modern natural language processing (NLP) techniques, such as word vectorisation and transformer models, and then builds on those concepts to discuss the current journalistic coverage and practical applications in newsrooms.\nThe workshop is structured in two main parts. First, the objective is to arrive at an intuitive understanding of the underlying concepts and unpack the technical jargon that clouds the domain of large language models (LLMs). We will discuss how journalists currently cover critical emerging technologies, such as the risks in anthropomorphizing conversational models. This discussion will be informed by what language models can and cannot do, as well as where the field is headed.\nFollowing the discussion, a set of low-code NLP tools will be showcased. These tools are open-source, and many journalists can potentially integrate them into their daily workflow for tasks like text classification or entity recognition. One of these tools, Whisper, an audio transcription tool developed by OpenAI, will be explored in some depth through a hands-on demo. Ultimately, the purpose of the workshop is to explore the utility and limits of NLP, introduce key concepts that are required for greater critical reportage on the topic, and evaluate the potential and risks associated with the deployment of practical tools in newsrooms.\nYou can access the slides and notebook on the Github repository: https://github.com/belisards/nlp_intro"
-  },
-  {
-    "objectID": "talks/2021-01-01_european-data-journalism/index.html#event-details",
-    "href": "talks/2021-01-01_european-data-journalism/index.html#event-details",
-    "title": "European DDJ",
-    "section": "Event details",
-    "text": "Event details\nEvent: Beyond the hype: An introduction to NLP and language models\nDate: June 22, 2023\nTime: 13:00\nLocation: Zurich, Switzerland"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Adriano Belisario",
-    "section": "",
-    "text": "I’d love to hear from you!\nYou can find on the following social networks:\n\n\n\n GitHub  LinkedIn  Mastodon\nYou can also drop me an e-mail at contact [at] belisario [dot] website"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Adriano Belisario",
-    "section": "",
-    "text": "my\nAdriano Belisario combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the Joint Data Center on Forced Displacement and the Netlab laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the University of Oxford and collaborated previously with organizations like the Open Knowledge Brazil, Witness, UNESCO, and Agência Pública.\nworks\nfree culture | osint | open-source tools | data-driven investigations | journalism | social data science | independent media|open-source intelligence/OSINT | natural language processing | human rights | digital culture | community-based infra-structure | free spectrum | cultural policies | activism | machine learning\n\n\n\n\n\nAbout me, my interests and experience.\n\n\nBIO\n\n\n\n\n\n\n\n\nAcademic and journalistic articles, data investigations and other publications in English and Portuguese.\n\n\nTEXT\n\n\n\n\n\n\n\n\nEvents I’ve organized and collaborated on.\n\n\nEVENTS\n\n\n\n\n\nThis website is still under development, and not all sections have completed information yet.\nBuilt with Quarto based on Ella Kaye’s template."
-  },
-  {
-    "objectID": "publications/2012-copyfight/index.html",
-    "href": "publications/2012-copyfight/index.html",
-    "title": "Copyfight",
-    "section": "",
-    "text": "Reusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{belisario2013,\n  author = {Adriano Belisario},\n  title = {Copyfight},\n  date = {2013-01-30},\n  url = {https://belisards.github.io/publications/2012-copyfight},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAdriano Belisario. 2013. “Copyfight.” January 30, 2013. https://belisards.github.io/publications/2012-copyfight."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Adriano Belisario",
-    "section": "",
-    "text": "POSTS\n\n\n\n\n\n\n\n\n\n\n\nCreating a personal website with Quarto\n\n\n\n\n\n\n\nQuarto\n\n\nGithub\n\n\n\n\nNotes of my own process\n\n\n\n\n\n\nDec 30, 2023\n\n\nAdriano Belisario\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "publications.html#organizer",
-    "href": "publications.html#organizer",
-    "title": "Adriano Belisario",
-    "section": "Organizer",
-    "text": "Organizer\n\nCopyfight\nEconomias Subversivas"
-  },
-  {
-    "objectID": "publications.html#chapter-published",
-    "href": "publications.html#chapter-published",
-    "title": "Adriano Belisario",
-    "section": "Chapter published",
-    "text": "Chapter published"
-  },
-  {
-    "objectID": "todo.html",
-    "href": "todo.html",
-    "title": "Adriano Belisario",
-    "section": "",
-    "text": "blog\nhttp://web.archive.org/web/20130126142404/http://pontaodaeco.org/cultura-viva-comunitaria-lapaz-2013"
-  },
-  {
-    "objectID": "publications.html#academic-articles-preprints",
-    "href": "publications.html#academic-articles-preprints",
-    "title": "Adriano Belisario",
-    "section": "Academic articles (Preprints)",
-    "text": "Academic articles (Preprints)\nInto the crossfire\nEvaluating the use of a language model to crowdsource gun violence reports.\nAnalyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai\nCross-platform misinformation analysis using data from social network and WhatsApp tiplines."
-  },
-  {
-    "objectID": "publications.html#journalistic-investigations",
-    "href": "publications.html#journalistic-investigations",
-    "title": "Adriano Belisario",
-    "section": "Journalistic investigations",
-    "text": "Journalistic investigations\nTerritories of Exception\nExpulsions"
-  },
-  {
-    "objectID": "publications.html#article",
-    "href": "publications.html#article",
-    "title": "Adriano Belisario",
-    "section": "Article",
-    "text": "Article\nFree spectrum and freedom of expression in the 21st century\nThe article explores the differences between the concepts of “free spectrum” and “open spectrum” in relation to challenges around freedom of expression in the 21st century."
-  },
-  {
     "objectID": "publications.html#books",
     "href": "publications.html#books",
     "title": "Adriano Belisario",
@@ -126,46 +63,25 @@
     "text": "Books\nEconomias subversivas (book organization), Editora Imotirõ, 2017.\nTecnomagia (book organization). Editora Imotirõ, 2016.\nCopyfight: pirataria e cultura livre (book organization and chapter authorship). 2012.\nPonha-se Na Rua (coauthorship). Editora Luminatti, 2008."
   },
   {
-    "objectID": "publications.html#section",
-    "href": "publications.html#section",
+    "objectID": "publications.html#published-chapters",
+    "href": "publications.html#published-chapters",
     "title": "Adriano Belisario",
-    "section": "2019",
-    "text": "2019"
+    "section": "Published chapters",
+    "text": "Published chapters\nEspectro e vigilância (authorship). In: Tecnopolíticas da vigilância: perspectivas da margem. Editora Boitempo. 2018.\nEspectro e Vigilância (authorship). In: Rádios Comunitárias em Tempos Digitais. AMARC Brasil. 2017.\nTecnoxamanismo - Antropofagia da técnica (authorship). In: Tecnoxamanismo. 2016.\nSubmidialogias (co-authorship). In: Ideias Perigozas: submidialogias. Editora Córrego, 2011.\nAs culturas digitais dos Pontos de Cultura e Lan houses (co-authorship). In: Pontos de Cultura e Lan houses: estruturas para inovação na base da pirâmide social. Editora Fundação Getúlio Vargas. 2011.\nComunicação Comunitária: Contexto e Produção em Núcleos de Estudo do Rio de Janeiro (co-authorship). In: Comunidade e Contra-hegemonia: Rotas de Comunicação Alternativa. Editora Mauad. 2008."
   },
   {
-    "objectID": "publications.html#section-1",
-    "href": "publications.html#section-1",
+    "objectID": "publications.html#academic-journals",
+    "href": "publications.html#academic-journals",
     "title": "Adriano Belisario",
-    "section": "2014",
-    "text": "2014\nUm jogo para poucos (Agência Pública)"
+    "section": "Academic journals",
+    "text": "Academic journals\nBELISARIO, ADRIANO. A Terra à Vista. DAS QUESTÕES, v. 6, p. 1, 2018.\nZASSO, MARIEL ROSAURO ; POPPI, RICARDO ; KONOPACKI, MARCO ANTONIO ; BELISARIO, ADRIANO ; ASTORQUIZA, LUIS ; BEJARANO, PABLO ; SALLAS, NORMA RUIZ ; YAÑEZ FIGUEROA, JOSÉ ANTONIO. Caixa Mágica: chronicle of a civic innovation project. LIINC EM REVISTA, v. 13, p. 237, 2017.\nLara, Paulo José O. M. ; BELISARIO, Adriano. Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum. Liinc em Revista, v. 12, p. 271-285, 2016.\nBELISARIO, Adriano.; FERREIRA, P. P. Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente: uma trajetória possível. Contemporânea, v. 6, p. 335-367, 2016.\nBELISARIO, Adriano. Tecnoxamanismo: por uma cibernética insurgente. Lugar Comum (UFRJ), v. 43, p. 265, 2015.\nBELISARIO, Adriano. Espectro livre como alternativa tecnopolítica à vigilância. Politics (Impresso), v. 1, p. 15, 2015.\nBENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. Midialivristas, uni-vos!. Lugar Comum (UFRJ), v. 25-26, p. 137-141, 2009."
   },
   {
-    "objectID": "publications.html#academic-articles",
-    "href": "publications.html#academic-articles",
+    "objectID": "publications.html#journalistic-articles",
+    "href": "publications.html#journalistic-articles",
     "title": "Adriano Belisario",
-    "section": "Academic articles",
-    "text": "Academic articles\nInto the crossfire: Evaluating the use of a language model to crowdsource gun violence reports\narXiv preprint, 2024. With Scott Hale and Luc Rocher.\nAnalyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai\narXiv preprint, 2024. With Scott Hale, Ahmed Mostafa and Chico Camargo.\nActivism in landscapes: culture, spectrum and Latin America\nSpheres - Journal for Digital Cultures, 2016. With Paulo Lara and Francisco Caminati."
-  },
-  {
-    "objectID": "publications.html#data-driven-investigations",
-    "href": "publications.html#data-driven-investigations",
-    "title": "Adriano Belisario",
-    "section": "Data-driven investigations",
-    "text": "Data-driven investigations\nTerritories of Exception\nViolation of rights and the use of police helicopters in Rio de Janeiro.\nExpulsions\nForced displacements and archaeological destruction by the mega-mining project Mirador in the Ecuadorian Amazonia"
-  },
-  {
-    "objectID": "publications.html#academic-articles-1",
-    "href": "publications.html#academic-articles-1",
-    "title": "Adriano Belisario",
-    "section": "Academic articles",
-    "text": "Academic articles\nBELISARIO, ADRIANO. A Terra à Vista. DAS QUESTÕES, v. 6, p. 1, 2018.\nZASSO, MARIEL ROSAURO ; POPPI, RICARDO ; KONOPACKI, MARCO ANTONIO ; BELISARIO, ADRIANO ; ASTORQUIZA, LUIS ; BEJARANO, PABLO ; SALLAS, NORMA RUIZ ; YAÑEZ FIGUEROA, JOSÉ ANTONIO. Caixa Mágica: chronicle of a civic innovation project. LIINC EM REVISTA, v. 13, p. 237, 2017.\nLara, Paulo José O. M. ; BELISARIO, Adriano. Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum. Liinc em Revista, v. 12, p. 271-285, 2016.\nBELISARIO, Adriano.; FERREIRA, P. P. Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente: uma trajetória possível. Contemporânea, v. 6, p. 335-367, 2016.\nBELISARIO, Adriano. Tecnoxamanismo: por uma cibernética insurgente. Lugar Comum (UFRJ), v. 43, p. 265, 2015.\nBELISARIO, Adriano. Espectro livre como alternativa tecnopolítica à vigilância. Politics (Impresso), v. 1, p. 15, 2015.\nBENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. Midialivristas, uni-vos!. Lugar Comum (UFRJ), v. 25-26, p. 137-141, 2009."
-  },
-  {
-    "objectID": "events.html",
-    "href": "events.html",
-    "title": "Adriano Belisario",
-    "section": "",
-    "text": "EVENTS\nSince 2010, I have organized events in Brazil and actively participated in multiple international events. The list below is non-exhaustive list of activties I have developed, including conferences, lectures, workshops and courses.\n\n\nOrganization\nI organized several editions of the Brazilian Conference on Data Journalism and Digital Methods (Coda.Br) from 2018 to 2022, including the first regional meeting in the Amazon region. Previously, I conceived and collaborated on a series of events about free culture and piracy (Copyfight).\nBelém, Brazil, 2022. Coda Amazônia. 1 ed.\nOnline, 2021. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 6 ed.\nOnline, 2020. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 5 ed.\nSão Paulo, 2019. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 4 ed.\nSão Paulo, 2018. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 3 ed.\nRio de Janeiro, 2014. Copyfight. 3 ed.\nRio de Janeiro, 2011. Copyfight. 2 ed.\nRio de Janeiro, 2010. Copyfight. 1 ed.\n\n\nTalks\nOnline, 2021. RightsCon. Anatomy of a visual investigation. 2021.\nSão Paulo, Brazil, 2019. Campus Party. Jornalismo de dados no Brasil. 2019.\nViçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. Jornalismo de dados no Brasil. 2019.\nBerlin, Germany, 2017. Re:Publica. Coolab - Community networks in Brazil.\nBuenos Aires, Argentina, 2015. LAVITS. III Simpósio Internacional da Rede Latinoamericana de Vigilância, Tecnologia e Sociedade. Paper presentation.\nRio de Janeiro, Brazil, 2007. Undergraduate research seminar. Do cineclubismo enquanto prática de comunicação comunitária.\nDuque de Caxias, Brazil, 2015. Território Baixada.Web, Ficção, Relato e Amor: cartografia e resistências.\nBerlin, Germany, 2014. Transmediale. Micropolitics of the Post-Digital: From street protests to transitional spaces in Brazil.\nRecife, Brazil, 2012. X. Banditismo por uma questão de classe: música e hacktivismo na cultura contemporânea. 2012.\nGeneva, Switzerland, 2013. Open Knowledge Conference, Data driven campaigning.\n\n\nLabs\nMadrid, Spain, 2017. Visualizar17 - Medialab Prado. Agrega.la.\nCartagena, Colombia, 2016. Laboratório Iberoamericano de Inovação Cidadã. Agrega.la.\nMexico city, Mexico, 2016. Openlabs - Caixa Mágica: dispositivo para participação social.\n\n\nWorkshops\nSão Paulo, Brazil, 2023. Coda.Br. Entendendo e usando Transformers, a tecnologia por trás do ChatGPT.\nGeneva, Switzerland, 2023. European Data and Computational Journalism Conference. Beyond the hype: an introduction to NLP and language models.\nSão Paulo, Brazil, 2019. Curso do Centro de Pesquisa e Formação do SESC-SP. Espectro livre e redes comunitárias.\nBelém, Brazil, 2018. Seminário Amazônia Interconectada. Narrativas e dados.\nRio de Janeiro, Brazil, 2016. Encontro Nacional de Artes Cênicas do SESC. Redes e Culturas Colaborativas.\nQuito, Ecuador, 2013. I Congreso Internacional de Cultura Viva y Comunitaria. Taller de software libre. 2013.\nRio de Janeiro, Brazil, 2012. GNUGRAF. Copyfight : Muito além do download grátis.\nDakar, Senegal, 2011. World Social Forum. Mandala: uma proposta de agregação de conteúdo para a mídia independente.\n\n\nCourses\nAs head of the School of Data Brazil, I created, coordinated and taught several online and in-person trainings between 2019 and 2022, such as Dados 360, Jornalismo de dados ambientais: no rastro do desmatamento da Amazônia, Investigações digitais: OSINT para jornalistas e ativistas. The list below refers to my experience with post-graduate programs and universities.\nBrasília, Brazil, 2019. Brasiliense Institute of Public Law.. Courses taught as professor in the data journalism MBA program: “Low code” and “Invisible data: open source intelligence and fact-checking”. 2021 – 2022.\nBrasília, Brazil, 2019. Higher Education Institute of Brasilia. Professor of data journalism in the digital journalism post-graduate program. 2019.\nOnline, 2019. University of Texas. Teacher assitant at the Knight Center for Journalism in the Americas for the Data Journalism and Visualization with Free Tools course."
+    "section": "Journalistic articles",
+    "text": "Journalistic articles\nA tropa de choque de Bolsonaro no Congresso. Agência Pública. 2019.\nComo vota Rio das Pedras, reduto da mais antiga milícia carioca. Agência Pública. 2019.\nNão há registro de entrada na Câmara para assessor de Bolsonaro investigado pela Justiça. Agência Pública. 2019.\nDois assessores de Jair Bolsonaro doaram mais de R$ 100 mil para campanhas da família. Agência Pública. 2019.\nEncontramos mais cinco ex-assessoras de Bolsonaro que nem pisaram no Congresso. Agência Pública. 2019.\nOperações do Exército no Rio geraram milhões para empresa da “farra do guardanapo”. The Intercept Brasil. 2018.\nSorteio do Supremo é caixa preta. Agência Pública. 2018.\nDocumentos da CPI confirmam: Jacob Barata superfaturou aluguel de garagens no Rio. Agência Pública. 2018.\nPorto Maravilha corre o risco de parar novamente em 2018. Agência Pública. 2018.\nLiderada pelos EUA, importação de diesel bate recorde. Agência Pública. 2018.\nOperações do Exército no Rio geraram milhões para empresa da ‘farra do guardanapo’. The Intercept Brasil. 2018.\nAuditor: Sorteio de processos no Supremo é seguro pois guarda rastro de alterações. Agência Pública. 2018.\nSemanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição. Agência Pública. 2018.\nPresidente da Comissão de Transporte da Assembleia do Rio é sócio de diretor da Fetranspor foragido. Agência Pública. 2017.\nAs offshores dos empresários de ônibus presos na Lava Jato. Agência Pública. 2017.\nO fiasco das CPIs dos ônibus no Rio de Janeiro. Agência Pública. 2017.\nImobiliárias podem mascarar sobrelucro de empresários de ônibus. Agência Pública. 2017.\nO BRT não resolveu. Agência Pública. 2017.\nExclusivo: O que revela (e o que esconde) a auditoria oficial dos ônibus no Rio. Agência Pública. 2017.\nA teia dos donos do transporte no Rio. Agência Pública. 2017.\nMuito além dos Barata. Agência Pública. 2017.\nMapeamento inédito mostra que doações legais da Odebrecht beneficiaram 1.087 candidatos desde 2002. The Intercept Brasil. 2017.\nOposição recebeu menos de 2% de doações da Odebrecht para eleições nacionais nos anos 1990. The Intercept Brasil. 2017.\nMesmo após Lava Jato, família Odebrecht manteve doações de campanha em 2016. The Intercept Brasil. 2017.\nAuditoria inédita mostra prefeitura à mercê dos empresários de ônibus no Rio. Agência Pública. 2017.\nAuditoria Cidadã prepara estudo sobre dívida do Rio. Agência Pública. 2016.\nDocumento da Lava Jato sugere cartel na Olimpíada. Agência Pública. 2016.\nEngenharia financeira subvalorizou terrenos públicos no Porto Maravilha. Agência Pública. 2016.\nConcremat: de ‘braço auxiliar’ das remoções à queda da ciclovia. Agência Pública. 2016.\nA outra história do Porto Maravilha. Agência Pública. 2016.\nDesconto bilionário concedido a empresas é fator-chave no rombo do Rio. Agência Pública. 2016.\nAs quatro irmãs. Agência Pública. 2014.\nUm jogo para poucos. Agência Pública. 2014.\nCidades sob o verde. Revista de História da Biblioteca Nacional. 2008.\nO senhor dos mares. Revista de História da Biblioteca Nacional. 2008.\nO verdadeiro futebol-arte. Revista de História da Biblioteca Nacional. 2008\nEntrevista com Ruy Castro. Revista de História da Biblioteca Nacional. 2008\nCasas cobiçadas. Revista de História da Biblioteca Nacional.\nTodos querem sê-lo. Revista de História da Biblioteca Nacional.\n‘Pelô’ expressionista. Revista de História da Biblioteca Nacional.\nPolêmica entre arranha-céus e lampiões. Revista de História da Biblioteca Nacional.\nImóvel velho, móvel novo. Revista de História da Biblioteca Nacional.\nFé no caixa. Revista de História da Biblioteca Nacional.\nRegulamentação à vista. Revista de História da Biblioteca Nacional.\nPolíticas dá cultura. Revista de História da Biblioteca Nacional."
   },
   {
     "objectID": "publications.html#tutorials",
@@ -175,11 +91,32 @@
     "text": "Tutorials\nChecagem de imagens: cronolocalização de fotos, authorship, 2022.\nPseudonimização de dados com editores de planilha, authorship.\nGeocodificando endereços: transforme tabelas em mapas, authorship.\nCaixa de ferramentas para jornalistas de dados ambientais, coauthorship.\nRaspe um Diário Oficial e contribua com o Querido Diário, coauthorship.\nLimpando dados da COVID-19 com R, authorship, 2020.\nVeja como monitorar em tempo real ataques coordenados no Twitter, co-authorship, 2020.\nDeu match! Cruzando tabelas no Google Sheets, authorship.\nEntrevistando dados: uma introdução prática – parte I e parte II, authorship.\nExpressão regular pode melhorar sua vida, authorship.\nTidy data: dados arrumados e 5 problemas comuns, translation, 2019.\nOperadores de busca avançada, translation, 2019.\nMergulhando no jornalismo de dados, translation, 2019."
   },
   {
-    "objectID": "publications.html#journalistic-articles",
-    "href": "publications.html#journalistic-articles",
+    "objectID": "blog.html",
+    "href": "blog.html",
     "title": "Adriano Belisario",
-    "section": "Journalistic articles",
-    "text": "Journalistic articles\nA tropa de choque de Bolsonaro no Congresso. Agência Pública. 2019.\nComo vota Rio das Pedras, reduto da mais antiga milícia carioca. Agência Pública. 2019.\nNão há registro de entrada na Câmara para assessor de Bolsonaro investigado pela Justiça. Agência Pública. 2019.\nDois assessores de Jair Bolsonaro doaram mais de R$ 100 mil para campanhas da família. Agência Pública. 2019.\nEncontramos mais cinco ex-assessoras de Bolsonaro que nem pisaram no Congresso. Agência Pública. 2019.\nOperações do Exército no Rio geraram milhões para empresa da “farra do guardanapo”. The Intercept Brasil. 2018.\nSorteio do Supremo é caixa preta. Agência Pública. 2018.\nDocumentos da CPI confirmam: Jacob Barata superfaturou aluguel de garagens no Rio. Agência Pública. 2018.\nPorto Maravilha corre o risco de parar novamente em 2018. Agência Pública. 2018.\nLiderada pelos EUA, importação de diesel bate recorde. Agência Pública. 2018.\nOperações do Exército no Rio geraram milhões para empresa da ‘farra do guardanapo’. The Intercept Brasil. 2018.\nAuditor: Sorteio de processos no Supremo é seguro pois guarda rastro de alterações. Agência Pública. 2018.\nSemanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição. Agência Pública. 2018.\nPresidente da Comissão de Transporte da Assembleia do Rio é sócio de diretor da Fetranspor foragido. Agência Pública. 2017.\nAs offshores dos empresários de ônibus presos na Lava Jato. Agência Pública. 2017.\nO fiasco das CPIs dos ônibus no Rio de Janeiro. Agência Pública. 2017.\nImobiliárias podem mascarar sobrelucro de empresários de ônibus. Agência Pública. 2017.\nO BRT não resolveu. Agência Pública. 2017.\nExclusivo: O que revela (e o que esconde) a auditoria oficial dos ônibus no Rio. Agência Pública. 2017.\nA teia dos donos do transporte no Rio. Agência Pública. 2017.\nMuito além dos Barata. Agência Pública. 2017.\nMapeamento inédito mostra que doações legais da Odebrecht beneficiaram 1.087 candidatos desde 2002. The Intercept Brasil. 2017.\nOposição recebeu menos de 2% de doações da Odebrecht para eleições nacionais nos anos 1990. The Intercept Brasil. 2017.\nMesmo após Lava Jato, família Odebrecht manteve doações de campanha em 2016. The Intercept Brasil. 2017.\nAuditoria inédita mostra prefeitura à mercê dos empresários de ônibus no Rio. Agência Pública. 2017.\nAuditoria Cidadã prepara estudo sobre dívida do Rio. Agência Pública. 2016.\nDocumento da Lava Jato sugere cartel na Olimpíada. Agência Pública. 2016.\nEngenharia financeira subvalorizou terrenos públicos no Porto Maravilha. Agência Pública. 2016.\nConcremat: de ‘braço auxiliar’ das remoções à queda da ciclovia. Agência Pública. 2016.\nA outra história do Porto Maravilha. Agência Pública. 2016.\nDesconto bilionário concedido a empresas é fator-chave no rombo do Rio. Agência Pública. 2016.\nAs quatro irmãs. Agência Pública. 2014.\nUm jogo para poucos. Agência Pública. 2014.\nCidades sob o verde. Revista de História da Biblioteca Nacional. 2008.\nO senhor dos mares. Revista de História da Biblioteca Nacional. 2008.\nO verdadeiro futebol-arte. Revista de História da Biblioteca Nacional. 2008\nEntrevista com Ruy Castro. Revista de História da Biblioteca Nacional. 2008\nCasas cobiçadas. Revista de História da Biblioteca Nacional.\nTodos querem sê-lo. Revista de História da Biblioteca Nacional.\n‘Pelô’ expressionista. Revista de História da Biblioteca Nacional.\nPolêmica entre arranha-céus e lampiões. Revista de História da Biblioteca Nacional.\nImóvel velho, móvel novo. Revista de História da Biblioteca Nacional.\nFé no caixa. Revista de História da Biblioteca Nacional.\nRegulamentação à vista. Revista de História da Biblioteca Nacional.\nPolíticas dá cultura. Revista de História da Biblioteca Nacional."
+    "section": "",
+    "text": "POSTS\n\n\n\n\n\n\n\n\n\n\n\nCreating a personal website with Quarto\n\n\n\n\n\n\n\nQuarto\n\n\nGithub\n\n\n\n\nNotes of my own process\n\n\n\n\n\n\nDec 30, 2023\n\n\nAdriano Belisario\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Adriano Belisario",
+    "section": "",
+    "text": "Adriano Belisario combines expertise in communication and data to address important human rights concerns. As a long-time open-source advocate, he has combined advanced technological applications with journalistic investigations and social research to address issues like police violence and socio-environmental challenges.\nBelisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he spearheaded the School of Data program at Open Knowledge Brasil and contributed to organizations like Witness, Forensic Architecture UNESCO, and Agência Pública. His publication portfolio includes books, academic articles, and journalistic pieces in Portuguese and English, and he has been invited to speak at several global events, such as Re: Publica and RightsCon.\nBelisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford). While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed Documental.xyz, an award-winning initiative that employs diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations.\n\nAwards and recognitions\nBellingcat’s technical writing fellowship (2024)\nFinalist in the category “Social Action” at the Study UK Alumni Award (2024)\nShortlisted at the Gabo Awards (2021)\nWinner of the Jornalismo-Mosca Award (2021)\nLing Institute’s Visionary Journalist Scholarship (2020)\n\n\nEducation\nMaster of Science in Social Data Science (with distinction). Oxford Internet Institute, University of Oxford. 2022-2023.\nPost-baccalaureate certification (with honors). Lede Program. Columbia University of the City of New York. 2021\nMasters of Arts in Communication and Culture. Federal University of Rio de Janeiro. 2016.\nBachelor in Social Communication (Journalism). Federal University of Rio de Janeiro. 2010.\nPhilosophy (unfinished). State University of Rio de Janeiro. 2005-2008.\n\n\nProfessional experience\nJoint Data Center on Forced Displacement. Data journalist. 2023 - Present.\nMedialab/UFRJ. Associate Researcher. 2017 - 2022\nSchool of Data Brazil. Program Manager. 2018 - 2022\nWITNESS. Consultant. 2018-2019\nUNESCO. Consultant. 2016-2018\nAgência Pública. Editor and reporter. 2014-2018\nInstituto Mais Democracia. Content Manager. 2012-2013.\nGovernment of the State of Rio de Janeiro - Secretary of Culture. Digital Culture Manager. 2010-2012."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Adriano Belisario",
+    "section": "",
+    "text": "I’d love to hear from you!\nYou can find on the following social networks:\n\n\n\n GitHub  LinkedIn  Mastodon\nYou can also drop me an e-mail at contact [at] belisario [dot] website"
+  },
+  {
+    "objectID": "publications/books/copyfight/index.html",
+    "href": "publications/books/copyfight/index.html",
+    "title": "Copyfight",
+    "section": "",
+    "text": "Book and three seminars on free culture, piracy and intellectual property.\nBook: Copyfight - Pirataria e cultura livre\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{2010,\n  author = {},\n  title = {Copyfight},\n  date = {2010-01-16},\n  url = {https://belisards.github.io/publications/books/copyfight},\n  langid = {en}\n}\nFor attribution, please cite this work as:\n“Copyfight.” 2010. January 16, 2010. https://belisards.github.io/publications/books/copyfight."
   },
   {
     "objectID": "events/2021-01-01_european-data-journalism/index.html",
@@ -196,17 +133,38 @@
     "text": "Event details\nEvent: Beyond the hype: An introduction to NLP and language models\nDate: June 22, 2023\nTime: 13:00\nLocation: Zurich, Switzerland"
   },
   {
-    "objectID": "publications.html#published-chapters",
-    "href": "publications.html#published-chapters",
-    "title": "Adriano Belisario",
-    "section": "Published chapters",
-    "text": "Published chapters\nEspectro e vigilância (authorship). In: Tecnopolíticas da vigilância: perspectivas da margem. Editora Boitempo. 2018.\nEspectro e Vigilância (authorship). In: Rádios Comunitárias em Tempos Digitais. AMARC Brasil. 2017.\nTecnoxamanismo - Antropofagia da técnica (authorship). In: Tecnoxamanismo. 2016.\nSubmidialogias (co-authorship). In: Ideias Perigozas: submidialogias. Editora Córrego, 2011.\nAs culturas digitais dos Pontos de Cultura e Lan houses (co-authorship). In: Pontos de Cultura e Lan houses: estruturas para inovação na base da pirâmide social. Editora Fundação Getúlio Vargas. 2011.\nComunicação Comunitária: Contexto e Produção em Núcleos de Estudo do Rio de Janeiro (co-authorship). In: Comunidade e Contra-hegemonia: Rotas de Comunicação Alternativa. Editora Mauad. 2008."
+    "objectID": "projects/copyfight/index.html",
+    "href": "projects/copyfight/index.html",
+    "title": "Copyfight",
+    "section": "",
+    "text": "Book and three seminars on free culture, piracy and intellectual property.\nBook: Copyfight - Pirataria e cultura livre"
   },
   {
-    "objectID": "publications.html#academic-journals",
-    "href": "publications.html#academic-journals",
+    "objectID": "code/fdpatlas/index.html",
+    "href": "code/fdpatlas/index.html",
+    "title": "Forced Displacement Microdata",
+    "section": "",
+    "text": "The Forced Displacement Microdata dashboard lists publicly available datasets that have a representative sample of refugees or internally displaced people (IDP); by country, year, theme, data producer among others. I customized the Shiny dashboard based on the Eviatlas package.\n\nDashboard: https://rstudio.unhcr.org/FDMAtlas/\nCode: https://github.com/belisards/FDPDataAtlas\nPaper: Data Gaps in Microdata in the Context of Forced Displacement by Takaaki Masaki and B. Madson."
+  },
+  {
+    "objectID": "code/gunviolenceptbr/index.html",
+    "href": "code/gunviolenceptbr/index.html",
+    "title": "gun_violence_ptbr",
+    "section": "",
+    "text": "The model is based on BERTimbau and fine-tuned with Twitter data labelled by Instituto Fogo Cruzado. It was developed as part of my research at the Oxford Internet Institute.\nModel: https://huggingface.co/belisards/gun_violence_ptbr\nPre-print: https://arxiv.org/abs/2401.12989\nCode: https://github.com/belisards/gunviolence_ptbr"
+  },
+  {
+    "objectID": "code.html",
+    "href": "code.html",
     "title": "Adriano Belisario",
-    "section": "Academic journals",
-    "text": "Academic journals\nBELISARIO, ADRIANO. A Terra à Vista. DAS QUESTÕES, v. 6, p. 1, 2018.\nZASSO, MARIEL ROSAURO ; POPPI, RICARDO ; KONOPACKI, MARCO ANTONIO ; BELISARIO, ADRIANO ; ASTORQUIZA, LUIS ; BEJARANO, PABLO ; SALLAS, NORMA RUIZ ; YAÑEZ FIGUEROA, JOSÉ ANTONIO. Caixa Mágica: chronicle of a civic innovation project. LIINC EM REVISTA, v. 13, p. 237, 2017.\nLara, Paulo José O. M. ; BELISARIO, Adriano. Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum. Liinc em Revista, v. 12, p. 271-285, 2016.\nBELISARIO, Adriano.; FERREIRA, P. P. Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente: uma trajetória possível. Contemporânea, v. 6, p. 335-367, 2016.\nBELISARIO, Adriano. Tecnoxamanismo: por uma cibernética insurgente. Lugar Comum (UFRJ), v. 43, p. 265, 2015.\nBELISARIO, Adriano. Espectro livre como alternativa tecnopolítica à vigilância. Politics (Impresso), v. 1, p. 15, 2015.\nBENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. Midialivristas, uni-vos!. Lugar Comum (UFRJ), v. 25-26, p. 137-141, 2009."
+    "section": "",
+    "text": "CODE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngun_violence_ptbr\n\n\nText classification model to detect gun violence reports in Brazilian Portuguese.\n\n\n\n\n\n\n\n\n\n\n\n\n\nForced Displacement Microdata\n\n\nShiny dashboard about gaps in microdata on forced displacement.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTemplate for Quarto slides\n\n\nBoilerplate code to create Quarto presentations integrated with Github Actions.\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "code/quarto_slides/index.html",
+    "href": "code/quarto_slides/index.html",
+    "title": "Template for Quarto slides",
+    "section": "",
+    "text": "Boilerplate code for Quarto presentations integrated with GitHub Actions.\nCode: https://github.com/belisards/quarto_presentation"
   }
 ]

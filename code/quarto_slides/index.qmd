@@ -1,0 +1,18 @@
+---
+title: "Template for Quarto slides"
+description: |
+  Boilerplate code to create Quarto presentations integrated with Github Actions.
+date: 2023-12-10
+# author: 
+#   - name: Adriano Belisario
+site-url: https://github.com/belisards/quarto_presentation
+image: "cover.jpeg"
+# image-alt: 
+categories: [Quarto]
+open-graph: false
+draft: false
+---
+
+Boilerplate code for Quarto presentations integrated with GitHub Actions.
+
+Code: [https://github.com/belisards/quarto_presentation](https://github.com/belisards/quarto_presentation)

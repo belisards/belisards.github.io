@@ -1,0 +1,16 @@
+---
+title: "Copyfight"
+description: |
+  Book and conferences on free culture and piracy in Brazil.
+date: 2010-01-16
+# author: 
+#   - name: Adriano Belisario
+site-url: https://huggingface.co/belisards/gun_violence_ptbr
+image: "cover.jpg"
+open-graph: false
+draft: false
+---
+
+Book and three seminars on free culture, piracy and intellectual property.
+
+Book: [Copyfight - Pirataria e cultura livre](copyfight.pdf)

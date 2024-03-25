@@ -1,0 +1,14 @@
+{
+  "hash": "743459a96c566bba186110035e1fa03f",
+  "result": {
+    "markdown": "---\n#title: \"Projects\"\nlisting:\n  contents: code\n  sort: \"date desc\"\n  type: grid\n  categories: false\n  sort-ui: false\n  filter-ui: false\n  image-height: 416px\n  fields: [title, image, description]\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [CODE]{.colorchange}",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

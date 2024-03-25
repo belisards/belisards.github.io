@@ -318,6 +318,15 @@ h1 {
   font-size: $font-size-base * 1.5;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
 h2, .h2 {
     border-bottom: 1px solid $gray-300;
     padding-bottom: .5rem;

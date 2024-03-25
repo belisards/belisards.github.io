@@ -19,9 +19,11 @@ Here are the main texts I've published since 2008. These include data-driven inv
 
 [**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://arxiv.org/abs/2401.02395). arXiv preprint, 2024. Co-authorship with Scott Hale, Ahmed Mostafa and Chico Camargo.
 
-[**Territories of Exception**](https://documental.xyz/intervencao). Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also published in [Portuguese](https://documental.xyz/pt/intervencao) and [Spanish](https://documental.xyz/es/intervencao). 🌐
+[**Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro**](https://documental.xyz/intervencao). Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also published in [Portuguese](https://documental.xyz/pt/intervencao) and [Spanish](https://documental.xyz/es/intervencao). 🌐
 
 [**Expulsions - Forced displacements and archaeological destruction by the mega-mining project Mirador in the Ecuadorian Amazonia**](https://documental.xyz/expulsions). Documental.xyz, 2020. Research and data analysis. Also published in [Portuguese](https://documental.xyz/pt/expulsions) and [Spanish](https://documental.xyz/es/expulsions). 🌐
+
+[**Rio goes live: video activism and human rights in Brazil**](https://lab.witness.org/rio-goes-live/). Witness, 2019. Authorship.
 
 [**Free spectrum and freedom of expression in the 21st century**](https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century). Association for Progressive Communications, 2018. Authorship.
 

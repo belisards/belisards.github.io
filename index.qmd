@@ -8,17 +8,17 @@ page-layout: full
 
 ---
 
-::: {.grid}
 
-::: {.g-col-12}
-[my]{.colorchange .home-header} 
+::: {layout-ncol=2}
+**[Adriano Belisario]{.colorchange}** combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the [Joint Data Center on Forced Displacement](https://www.jointdatacenter.org/) and the [Netlab](https://netlab.eco.ufrj.br/) laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford) and collaborated with organizations like the Open Knowledge Brazil, Witness, Forensic Architecture, UNESCO, UNHCR, and Agência Pública. 
 
-Adriano Belisario combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the [Joint Data Center on Forced Displacement](https://www.jointdatacenter.org/) and the [Netlab](https://netlab.eco.ufrj.br/) laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the University of Oxford and collaborated previously with organizations like the Open Knowledge Brazil, Witness, UNESCO, and Agência Pública. 
+This website showcases my previous work and research on a variety of topics such as data journalism & digital methods & open-source technologies & social data science & human rights & open-source intelligence (OSINT) & investigation of crimes and corruption & data-driven investigations & machine learning & natural language processing & independent media & digital culture & community-based infra-structure & free spectrum & independent media and networks & cultural policies & free culture & more.
 
-[works]{.colorchange .home-header}
-
-[free culture]{.word} | [osint]{.word} | open-source tools | data-driven investigations | journalism | social data science | independent media|open-source intelligence/OSINT | natural language processing |  human rights | digital culture | community-based infra-structure | free spectrum | cultural policies | activism | machine learning
 :::
+
+---
+
+::: {.grid}
 
 ::: {.g-col-12 .g-col-md-4}
 <div class="card h-100" id="card-first-color">
@@ -47,10 +47,11 @@ Adriano Belisario combines expertise in communication, open-source technologies 
 </div>
 :::
 
-::: {.g-col-12}
-This website is still under development, and not all sections have completed information yet.
-
-Built with [Quarto](https://quarto.org/) based on [Ella Kaye's template](https://github.com/EllaKaye/ellakaye.co.uk).
 :::
 
+::: {.footer}
+This website is under development, and not all sections have completed information yet. 
+
+Built with [Quarto](https://quarto.org/) inspired by [Ella Kaye's template](https://github.com/EllaKaye/ellakaye.co.uk).
 :::
+

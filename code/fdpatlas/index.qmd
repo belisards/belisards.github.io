@@ -1,0 +1,25 @@
+---
+title: "Forced Displacement Microdata"
+description: |
+  Shiny dashboard about gaps in microdata on forced displacement.
+date: 2023-12-10
+# author: 
+#   - name: Adriano Belisario
+site-url: https://huggingface.co/belisards/gun_violence_ptbr
+image: "cover.png"
+# image-alt: 
+categories: [R]
+open-graph: false
+draft: false
+---
+
+The Forced Displacement Microdata dashboard lists publicly available datasets that have a representative sample of refugees or internally displaced people (IDP); by country, year, theme, data producer among others. I customized the Shiny dashboard based on the [Eviatlas](https://github.com/ESHackathon/eviatlas) package.
+
+{{< video https://www.jointdatacenter.org/wp-content/uploads/2023/12/Forced-Displacement-Microdata_under100mb.mp4 >}} 
+
+Dashboard: [https://rstudio.unhcr.org/FDMAtlas/](https://huggingface.co/belisards/gun_violence_ptbr)
+
+Code: [https://github.com/belisards/FDPDataAtlas](https://github.com/belisards/FDPDataAtlas)
+
+Paper: 
+[Data Gaps in Microdata in the Context of Forced Displacement](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099556112062334277/idu0161b812905efa046ca09d4909a91003ae709) by Takaaki Masaki and B. Madson.
