@@ -12,7 +12,7 @@ page-layout: full
 ::: {layout-ncol=2}
 **[Adriano Belisario]{.colorchange}** combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the [Joint Data Center on Forced Displacement](https://www.jointdatacenter.org/) and the [Netlab](https://netlab.eco.ufrj.br/) laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford) and collaborated with organizations like the Open Knowledge Brazil, Witness, Forensic Architecture, UNESCO, UNHCR, and Agência Pública. 
 
-This website showcases my previous work and research on a variety of topics such as data journalism & digital methods & open-source technologies & social data science & human rights & open-source intelligence (OSINT) & investigation of crimes and corruption & data-driven investigations & machine learning & natural language processing & independent media & digital culture & community-based infra-structure & free spectrum & independent media and networks & cultural policies & free culture & more.
+This website showcases my previous work and research on a variety of topics such as data journalism & digital methods & open-source technologies & social data science & human rights & open-source intelligence (OSINT) & investigation of crimes and corruption & digital security & data-driven investigations & machine learning & natural language processing & independent media & digital culture & community-based infra-structure & free spectrum & independent media and networks & cultural policies & free culture & more.
 
 :::
 

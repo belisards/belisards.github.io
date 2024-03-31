@@ -1,7 +1,9 @@
 ---
 #title: "Publications"
 #page-layout: full
-lightbox: true
+filters:
+   - lightbox
+lightbox: auto
 knitr:
   opts_chunk: 
     collapse: true
@@ -13,7 +15,6 @@ toc: true
 # [PUBLICATIONS]{.third-color}
 
 Here are the main texts I've published since 2008. These include data-driven investigations and articles published in English, along with books, academic articles, journalistic investigations, and tutorials in Portuguese.
-
 
 # Works in English
 
@@ -33,36 +34,34 @@ Here are the main texts I've published since 2008. These include data-driven inv
 
 # Portuguese
 
-## Books
+## Books and published writing
+
 ::: {layout-ncol=2}
 
-![**Economias subvervisas**](images/economias_subversivas.png){fig-alt="Economias subversivas"}
-Book organization, Editora Imotirõ, 2017.
+![<b>Espectro e vigilância</b>, 2018. In: <a href="https://www.boitempoeditorial.com.br/produto/tecnopoliticas-da-vigilancia-152343" target="_blank">Tecnopolíticas da vigilância: perspectivas da margem</a>. Editora Boitempo. Chapter authorship. ](images/covers/tecnopolitica.jpg){group="my-gallery" height=300 class="mx-3"}
 
-![Tecnomagia](images/tecnomagia.png){fig-alt="Tecnomagia"}
-Book organization, Editora Imotirõ, 2017.
+![<b>Economias subvervisas</b>, 2017. Book organization. Editora Imotirô. ](images/covers/economias_subversivas.png){group="my-gallery" height=300} 
 
-![Copyfight](images/copyfight.png){fig-alt="Copyfight - pirataria e cultura livre"}
-Book organization and chapter authorship, Editora Azougue, 2012.
+![<b>Espectro e Vigilância</b>, 2017. In: Rádios Comunitárias em Tempos Digitais. AMARC Brasil. Chapter authorship.](images/covers/radioscomunitaria.png){group="my-gallery"}
 
-![Ponha-se na Rua - Fatos e Curiosidades do Rio de Janeiro de Dom João VI](images/ponhasenarua.jpg){group="books" fig-alt="Ponha-se na Rua - Fatos e Curiosidades do Rio de Janeiro de Dom João VI"}
-Chapters authorship, Editora Luminatti, 2008.
+![<b>Tecnoxamanismo - Antropofagia da técnica</b>. In: <a href="https://tecnoxamanismo.files.wordpress.com/2018/05/tcnxmnm-22_layout-2.pdf">Tecnoxamanismo</a>. Goethe Institut and Invisíveis Produções. Chapter authorship.](images/covers/tcnxmnsm.png){group="my-gallery"}
+
+![<b><a href="https://imotiro.org/livros/tecnomagia-2/">Tecnomagia</b></a>, 2016. Editora Imotirõ. Book organization.](images/covers/tecnomagia.png){group="my-gallery"}
+
+![<b>Copyfight</b>, 2012. Editora Azougue. Book organization and chapter authorship. ](images/covers/copyfight.png){} 
+
+![<b>**As culturas digitais dos Pontos de Cultura e Lan houses**</b>, 2011. In: <a href="https://editora.fgv.br/produto/pontos-de-cultura-e-lan-houses-estruturas-para-inovacao-na-base-da-piramide-social-2452" target="_blank">Pontos de Cultura e Lan houses: estruturas para inovação na base da pirâmide social</a>. Editora Fundação Getúlio Vargas. Chapter co-authorship.](images/covers/fgv.png){group="my-gallery"}
+
+![<a>Submidialogias</a>, 2011. In: <a href="https://archive.org/details/IdeiasPerigosas-Subidiaogias">Ideias perigozas</a>, 2011. Editora Córrego. Chapter co-authorship.](images/covers/ideias_perigozas.png){group=my-gallery} 
+
+![Comunicação Comunitária: Contexto e Produção em Núcleos de Estudo do Rio de Janeiro, 2008. In: <a href="https://mauad.com.br/comunidade-e-contra-hegemonia-rotas-de-comunicacao-alternativa" target="_blank">Comunidade e Contra-hegemonia: Rotas de Comunicação Alternativa</a>. Editora Mauad. Chapter co-authorship.](images/covers/lecc.jpg){group="my-gallery"}
+
+![<b>Ponha-se na Rua - Fatos e Curiosidades do Rio de Janeiro de Dom João VI</b>, 2008. Editora Luminatti. Chapters authorship. ](images/covers/ponhasenarua.jpg){group=my-gallery} 
+
+
 
 :::
 
-## Published chapters
-
-**Espectro e vigilância** (authorship). In: Tecnopolíticas da vigilância: perspectivas da margem. Editora Boitempo. 2018.
-
-**Espectro e Vigilância** (authorship). In: Rádios Comunitárias em Tempos Digitais. AMARC Brasil. 2017.
-
-**Tecnoxamanismo - Antropofagia da técnica** (authorship). In: [Tecnoxamanismo](https://tecnoxamanismo.files.wordpress.com/2018/05/tcnxmnm-22_layout-2.pdf). 2016.
-
-**Submidialogias** (co-authorship). In: Ideias Perigozas: submidialogias. Editora Córrego, 2011.
-
-[**As culturas digitais dos Pontos de Cultura e Lan houses**](https://editora.fgv.br/produto/pontos-de-cultura-e-lan-houses-estruturas-para-inovacao-na-base-da-piramide-social-2452) (co-authorship). In: Pontos de Cultura e Lan houses: estruturas para inovação na base da pirâmide social. Editora Fundação Getúlio Vargas. 2011.
-
-**Comunicação Comunitária: Contexto e Produção em Núcleos de Estudo do Rio de Janeiro** (co-authorship). In: [Comunidade e Contra-hegemonia: Rotas de Comunicação Alternativa](https://mauad.com.br/comunidade-e-contra-hegemonia-rotas-de-comunicacao-alternativa). Editora Mauad. 2008.
 
 ## Academic journals
 
@@ -116,7 +115,7 @@ BENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. **M
 
 [Imobiliárias podem mascarar sobrelucro de empresários de ônibus](https://apublica.org/2017/08/imobiliarias-podem-mascarar-sobrelucro-de-empresarios-de-onibus/). Agência Pública. 2017.
 
-[O BRT não resolveu](O BRT não resolveu). Agência Pública. 2017.
+[O BRT não resolveu](O%20BRT%20não%20resolveu). Agência Pública. 2017.
 
 [Exclusivo: O que revela (e o que esconde) a auditoria oficial dos ônibus no Rio](https://apublica.org/2017/08/exclusivo-o-que-revela-e-o-que-esconde-a-auditoria-oficial-dos-onibus-no-rio/). Agência Pública. 2017.
 
@@ -172,6 +171,10 @@ Regulamentação à vista. Revista de História da Biblioteca Nacional.
 
 Políticas dá cultura. Revista de História da Biblioteca Nacional.
 
+## Cartilha
+
+[Cartilha de segurança digital e atuação no campo](https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/), co-authorship, 2020. Agência Pública.
+
 ## Tutorials
 
 [Checagem de imagens: cronolocalização de fotos](https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/), authorship, 2022.
@@ -199,4 +202,3 @@ Entrevistando dados: uma introdução prática -- [parte I](https://escoladedado
 [Operadores de busca avançada](https://escoladedados.org/tutoriais/operadores-de-busca-avancada/), translation, 2019.
 
 [Mergulhando no jornalismo de dados](https://escoladedados.org/tutoriais/mergulhando-no-jornalismo-de-dados/), translation, 2019.
-
