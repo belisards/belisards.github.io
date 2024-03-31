@@ -50,9 +50,9 @@ website:
     image-width: 500
     image-height: 500
     # locale: pt-BR
-  # google-analytics:
-  #   tracking-id: "G-7G8FLLRS4M"
-  #   anonymize-ip: true
+  google-analytics:
+    tracking-id: "G-NE9CBZWC4K"
+    anonymize-ip: true
 
 format:
   html:
