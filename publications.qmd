@@ -21,7 +21,7 @@ Here are the main texts I've published since 2008. These include data-driven inv
 
 # Works in English
 
-[**Tutorial on survey data based on the report "Venezuelan Migrants and Refugees in Chile, Colombia, Ecuador, and Peru: A Development Opportunity"**]. To be published. 2024. Authorship.
+[**Tutorial on survey data based on the report "Venezuelan Migrants and Refugees in Chile, Colombia, Ecuador, and Peru: A Development Opportunity"**](). To be published. 2024. Authorship.
 
 ⭐ [**Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports**](https://arxiv.org/abs/2401.12989). arXiv preprint, 2024. Co-authorship with Scott Hale and Luc Rocher.
 
@@ -112,7 +112,7 @@ BENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. **M
 
 [Auditor: Sorteio de processos no Supremo é seguro pois guarda rastro de alterações](https://apublica.org/2018/09/auditor-sorteio-de-processos-no-supremo-e-seguro-pois-guarda-rastro-de-alteracoes/). Agência Pública. 2018.
 
-[Semanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição](https://apublica.org/2018/09/semanalmente-juizes-do-supremo-decidem-sozinhos-sobre-aplicacao-da-constituicao/). Agência Pública. 2018.
+⭐[Semanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição](https://apublica.org/2018/09/semanalmente-juizes-do-supremo-decidem-sozinhos-sobre-aplicacao-da-constituicao/). Agência Pública. 2018.
 
 [Presidente da Comissão de Transporte da Assembleia do Rio é sócio de diretor da Fetranspor foragido](https://apublica.org/2017/07/presidente-da-comissao-de-transporte-da-assembleia-do-rio-e-socio-de-diretor-da-fetranspor-foragido/). Agência Pública. 2017.
 
@@ -180,7 +180,7 @@ Políticas dá cultura. Revista de História da Biblioteca Nacional.
 
 ## Other writings
 
-[Cartilha de segurança digital e atuação no campo](https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/). 2020. Co-authorship. Agência Pública.
+⭐ [Cartilha de segurança digital e atuação no campo](https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/). 2020. Co-authorship. Agência Pública.
 
 [Espaço, território e inovação tecnológica nos CEUs](http://inciti.org/2015/05/19/espaco-territorio-e-inovacao-tecnologica-nos-ceus/). 2015. Co-authorship.
 

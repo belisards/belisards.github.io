@@ -9,7 +9,7 @@ execute:
 toc: true
 ---
 
-**Adriano Belisario** combines expertise in communication and data to address important human rights concerns. Belisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he spearheaded the School of Data program at Open Knowledge Brasil and contributed to organizations like Witness, [Forensic Architecture](https://forensic-architecture.org/about/team/member/adriano-belisario) UNESCO, and [Agência Pública](https://apublica.org/autor/adriano-belisario/). His publication portfolio includes [books, academic articles, and journalistic pieces in Portuguese and English](publications.html), and he has been invited to speak at several [global events](events.html).
+**Adriano Belisario** combines expertise in communication and data to address important human rights concerns. Belisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he contributed to organizations like Open Knowledge Brazil, Witness, Medialab/UFRJ, [Forensic Architecture](https://forensic-architecture.org/about/team/member/adriano-belisario) UNESCO, [Agência Pública](https://apublica.org/autor/adriano-belisario/) and [The Intercept Brasil](https://www.intercept.com.br/equipe/adriano-belisario/). His publication portfolio includes [books, academic articles, and journalistic pieces in Portuguese and English](publications.html), and he has been invited to speak at several [global events](events.html).
 
 Belisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford). While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed [Documental.xyz](https://documental.xyz), an initiative that combines diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations.
 
@@ -70,4 +70,3 @@ Ling Institute's Visionary Journalist Scholarship (2020)
 2020, São Paulo. Survey design and analysis. International Political Science Association/USP Summer School.
 
 2017, Rio de Janeiro. Reporting Land Rights. Thomsom Reuters Foundation
-

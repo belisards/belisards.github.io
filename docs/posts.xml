@@ -20,16 +20,19 @@
 
 
 
-<!--------------- post content ----------------->
-<section id="personal-websites-made-with-quarto" class="level1">
-<h1>Personal websites made with Quarto</h1>
+<p>This post collects some references and notes I’ve used to create my personal website using Quarto. It presents a simple step-by-step guide to deploy a Quarto website using Github Actions.</p>
+<ol type="1">
+<li>Create a repository named <username>.github.io</username></li>
+</ol>
+<section id="cool-personal-websites-made-with-quarto" class="level1">
+<h1>Cool personal websites made with Quarto</h1>
 <p>https://beamilz.com/talks/</p>
 <p>https://ellakaye.co.uk/</p>
 <p>https://rfsaldanha.github.io/</p>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
-<p>https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/</p>
+<p><a href="https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/">https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/</a></p>
 
 
 <!-- -->
@@ -47,8 +50,7 @@
 Adriano Belisario. 2023. <span>“Creating a Personal Website with
 Quarto.”</span> December 30, 2023. <a href="https://belisards.github.io/posts/2024-02-29_tutorial">https://belisards.github.io/posts/2024-02-29_tutorial</a>.
 </div></div></section></div> ]]></description>
-  <category>Quarto</category>
-  <category>Github</category>
+  <category>Tutorial</category>
   <guid>https://belisards.github.io/posts/2024-02-29_tutorial/index.html</guid>
   <pubDate>Sat, 30 Dec 2023 03:00:00 GMT</pubDate>
 </item>
