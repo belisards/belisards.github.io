@@ -20,8 +20,10 @@
   {
     "listing": "/code.html",
     "items": [
+      "/code/fdpatlas/index.html",
       "/code/gunviolenceptbr/index.html",
-      "/code/fdpatlas/index.html"
+      "/code/ff_challenge/index.html",
+      "/code/bus_network/index.html"
     ]
   }
 ]

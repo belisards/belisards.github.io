@@ -18,4 +18,8 @@ execute:
   echo: false
 ---
 
-# [CODE]{.colorchange}
+# CODE
+
+[![Star with Startrack](https://img.shields.io/badge/startrack-star-yellow)](https://startrack.vercel.app/star/jacobhq/startrack)
+
+<!-- [![](https://github-readme-stats.vercel.app/api?username=belisards&show_icons=true&theme:transparent)](https://github.com/belisards) -->

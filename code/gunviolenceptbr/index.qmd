@@ -1,8 +1,8 @@
 ---
-title: "gun_violence_ptbr"
+title: "Classification model of gun violence reports"
 description: |
   Text classification model to detect gun violence reports in Brazilian Portuguese.
-date: 2024-01-16
+date: 2023-09-16
 # author: 
 #   - name: Adriano Belisario
 site-url: https://huggingface.co/belisards/gun_violence_ptbr

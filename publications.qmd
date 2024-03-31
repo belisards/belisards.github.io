@@ -16,13 +16,18 @@ toc: true
 
 Here are the main texts I've published since 2008. These include data-driven investigations and articles published in English, along with books, academic articles, journalistic investigations, and tutorials in Portuguese.
 
+⭐  highlights
+🌐  multi-language
+
 # Works in English
 
-[**Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports**](https://arxiv.org/abs/2401.12989). arXiv preprint, 2024. Co-authorship with Scott Hale and Luc Rocher.
+[**Tutorial on survey data based on the report "Venezuelan Migrants and Refugees in Chile, Colombia, Ecuador, and Peru: A Development Opportunity"**]. To be published. 2024. Authorship.
 
-[**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://arxiv.org/abs/2401.02395). arXiv preprint, 2024. Co-authorship with Scott Hale, Ahmed Mostafa and Chico Camargo.
+⭐ [**Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports**](https://arxiv.org/abs/2401.12989). arXiv preprint, 2024. Co-authorship with Scott Hale and Luc Rocher.
 
-[**Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro**](https://documental.xyz/intervencao). Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also published in [Portuguese](https://documental.xyz/pt/intervencao) and [Spanish](https://documental.xyz/es/intervencao). 🌐
+⭐ [**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://arxiv.org/abs/2401.02395). arXiv preprint, 2024. Co-authorship with Scott Hale, Ahmed Mostafa and Chico Camargo.
+
+⭐ [**Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro**](https://documental.xyz/intervencao). Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also published in [Portuguese](https://documental.xyz/pt/intervencao) and [Spanish](https://documental.xyz/es/intervencao). 🌐
 
 [**Expulsions - Forced displacements and archaeological destruction by the mega-mining project Mirador in the Ecuadorian Amazonia**](https://documental.xyz/expulsions). Documental.xyz, 2020. Research and data analysis. Also published in [Portuguese](https://documental.xyz/pt/expulsions) and [Spanish](https://documental.xyz/es/expulsions). 🌐
 
@@ -69,7 +74,7 @@ BELISARIO, ADRIANO. [**A Terra à Vista**](https://periodicos.unb.br/index.php/d
 
 ZASSO, MARIEL ROSAURO ; POPPI, RICARDO ; KONOPACKI, MARCO ANTONIO ; BELISARIO, ADRIANO ; ASTORQUIZA, LUIS ; BEJARANO, PABLO ; SALLAS, NORMA RUIZ ; YAÑEZ FIGUEROA, JOSÉ ANTONIO. [**Caixa Mágica: chronicle of a civic innovation project**](https://revista.ibict.br/liinc/article/view/3747/3222). LIINC EM REVISTA, v. 13, p. 237, 2017.
 
-LARA, Paulo José O. M. ; BELISARIO, Adriano. [**Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum**.](https://revista.ibict.br/liinc/article/view/3722) Liinc em Revista, v. 12, p. 271-285, 2016.
+⭐ LARA, Paulo José O. M. ; BELISARIO, Adriano. [**Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum**.](https://revista.ibict.br/liinc/article/view/3722) Liinc em Revista, v. 12, p. 271-285, 2016.
 
 BELISARIO, Adriano.; FERREIRA, P. P. [**Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente: uma trajetória possível**](https://www.contemporanea.ufscar.br/index.php/contemporanea/article/view/434). Contemporânea, v. 6, p. 335-367, 2016.
 
@@ -85,7 +90,7 @@ BENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. **M
 
 [A tropa de choque de Bolsonaro no Congresso](https://apublica.org/2019/01/a-tropa-de-choque-de-bolsonaro-no-congresso/). Agência Pública. 2019.
 
-[Como vota Rio das Pedras, reduto da mais antiga milícia carioca](https://apublica.org/2019/02/como-vota-rio-das-pedras-reduto-da-mais-antiga-milicia-carioca/). Agência Pública. 2019.
+⭐ [Como vota Rio das Pedras, reduto da mais antiga milícia carioca](https://apublica.org/2019/02/como-vota-rio-das-pedras-reduto-da-mais-antiga-milicia-carioca/). Agência Pública. 2019.
 
 [Não há registro de entrada na Câmara para assessor de Bolsonaro investigado pela Justiça](https://apublica.org/2019/05/nao-ha-registro-de-entrada-na-camara-para-assessor-de-bolsonaro-investigado-pela-justica/). Agência Pública. 2019.
 
@@ -121,7 +126,7 @@ BENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. **M
 
 [Exclusivo: O que revela (e o que esconde) a auditoria oficial dos ônibus no Rio](https://apublica.org/2017/08/exclusivo-o-que-revela-e-o-que-esconde-a-auditoria-oficial-dos-onibus-no-rio/). Agência Pública. 2017.
 
-[A teia dos donos do transporte no Rio](https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/). Agência Pública. 2017.
+⭐ [A teia dos donos do transporte no Rio](https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/). Agência Pública. 2017.
 
 [Muito além dos Barata](https://apublica.org/2017/08/muito-alem-dos-barata/). Agência Pública. 2017.
 
@@ -147,7 +152,7 @@ BENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. **M
 
 [As quatro irmãs](https://apublica.org/2014/06/as-quatro-irmas/). Agência Pública. 2014.
 
-[Um jogo para poucos](https://apublica.org/2014/06/um-jogo-para-poucos/). Agência Pública. 2014.
+⭐ [Um jogo para poucos](https://apublica.org/2014/06/um-jogo-para-poucos/). Agência Pública. 2014.
 
 Cidades sob o verde. Revista de História da Biblioteca Nacional. 2008.
 
@@ -181,11 +186,11 @@ Políticas dá cultura. Revista de História da Biblioteca Nacional.
 
 [Territórios e práticas libertárias em redes sociais – Geopolítica do (des)conhecimento](https://baobavoador.noblogs.org/post/2015/11/02/territorios-e-praticas-libertarias-em-redes-sociais-geopolitica-do-desconhecimento/), 2012. Co-authorship.
 
-[**Por uma ideia de cinema radical**](https://belisario.website/posts/cinema-radical/por_uma_ideia_de_cinema_radical.html). 2007. Co-authorship. 
+[Por uma ideia de cinema radical](https://belisario.website/posts/cinema-radical/por_uma_ideia_de_cinema_radical.html). 2007. Co-authorship. 
 
 ## Technical tutorials
 
-[Checagem de imagens: cronolocalização de fotos](https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/), authorship, 2022.
+⭐ [Checagem de imagens: cronolocalização de fotos](https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/), authorship, 2022.
 
 [Pseudonimização de dados com editores de planilha](https://escoladedados.org/tutoriais/pseudonimizacao-de-dados-com-editores-de-planilha/), authorship.
 
