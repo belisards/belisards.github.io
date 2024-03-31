@@ -22,9 +22,9 @@ toc: true
 toc-depth: 3
 toc-title: Contents
 
-code-fold: show
-code-summary: "Toggle the code"
-code-tools: true
+# code-fold: show
+# code-summary: "Toggle the code"
+# code-tools: true
 
 execute:
   echo: true

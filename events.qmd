@@ -45,6 +45,8 @@ Berlin, Germany, 2024. Disinfo Demasked/DW Akademy. [**AI uses for fact-checking
 
 Online, 2021. RightsCon. [**Anatomy of a visual investigation**](https://visualinvestigations.netlify.app/).
 
+Rio de Janeiro, Brazil, 2019. Hackfest/Ministério Público do Estado do Rio de Janeiro. [**Dados abertos e transformação social**](https://www.mprj.mp.br/documents/20184/540394/palestras_hackfest.pdf).
+
 São Paulo, Brazil, 2019. Campus Party. **Jornalismo de dados no Brasil**.
 
 Viçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. **Jornalismo de dados no Brasil**.
@@ -52,6 +54,8 @@ Viçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. **J
 Berlin, Germany, 2017. Re:Publica. **Coolab - Community networks in Brazil**.
 
 Buenos Aires, Argentina, 2015. LAVITS. **III Simpósio Internacional da Rede Latinoamericana de Vigilância, Tecnologia e Sociedade**. Paper presentation.
+
+Rio de Janeiro, Brazil, 2015. Ministério da Cultura. **[Diálogos em rede](https://rubi.casaruibarbosa.gov.br/bitstream/handle/20.500.11997/8797/Participa%C3%A7%C3%A3o%20social%20%C3%A9%20estimulada%20durante%20Di%C3%A1logos%20em%20Rede%20no%20Rio%20de%20Janeiro%20%E2%80%93%20Di%C3%A1logos%20em%20Rede.pdf?sequence=1&isAllowed=y)**.
 
 Duque de Caxias, Brazil, 2015. **Território Baixada.Web, Ficção, Relato e Amor: cartografia e resistências**.
 

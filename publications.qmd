@@ -154,6 +154,8 @@ BENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. **M
 
 ⭐ [Um jogo para poucos](https://apublica.org/2014/06/um-jogo-para-poucos/). Agência Pública. 2014.
 
+[Renascimento africano](https://www.gov.br/palmares/pt-br/assuntos/noticias/renascimento-africano). Revista de História da Biblioteca Nacional. 2009.
+
 Cidades sob o verde. Revista de História da Biblioteca Nacional. 2008.
 
 O senhor dos mares. Revista de História da Biblioteca Nacional. 2008.
@@ -186,11 +188,13 @@ Políticas dá cultura. Revista de História da Biblioteca Nacional.
 
 [Territórios e práticas libertárias em redes sociais – Geopolítica do (des)conhecimento](https://baobavoador.noblogs.org/post/2015/11/02/territorios-e-praticas-libertarias-em-redes-sociais-geopolitica-do-desconhecimento/), 2012. Co-authorship.
 
-[Por uma ideia de cinema radical](https://belisario.website/posts/cinema-radical/por_uma_ideia_de_cinema_radical.html). 2007. Co-authorship. 
+[Por uma ideia de cinema radical](https://belisario.website/publications/por_uma_ideia_de_cinema_radical.html). 2007. Co-authorship. 
 
 ## Technical tutorials
 
 ⭐ [Checagem de imagens: cronolocalização de fotos](https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/), authorship, 2022.
+
+[Como pedir e receber ajuda na internet](https://escoladedados.org/tutoriais/como-pedir-e-receber-ajuda-na-internet/)
 
 [Pseudonimização de dados com editores de planilha](https://escoladedados.org/tutoriais/pseudonimizacao-de-dados-com-editores-de-planilha/), authorship.
 
