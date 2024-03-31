@@ -12,7 +12,7 @@ page-layout: full
 ::: {layout-ncol=2}
 **[Adriano Belisario]{.colorchange}** combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the [Joint Data Center on Forced Displacement](https://www.jointdatacenter.org/) and the [Netlab](https://netlab.eco.ufrj.br/) laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford) and collaborated with organizations like Open Knowledge Brazil, Witness, Forensic Architecture, UNESCO, UNHCR, and Agência Pública. 
 
-This website showcases my previous work and research on a variety of topics such as data journalism & digital methods & open-source technologies & social data science & human rights & open-source intelligence (OSINT) & investigation of crimes and corruption & digital security & fact-checking & machine learning & independent media & digital culture & community-based infra-structure & free spectrum & cultural policies & free culture & more.
+This website showcases my previous work and research on a variety of topics such as data journalism & digital methods & open-source technologies & social data science & human rights & open-source intelligence (OSINT) & investigation of crimes and corruption & digital security & machine learning & digital culture & community-based infra-structures & free culture & more.
 
 :::
 
@@ -23,8 +23,8 @@ This website showcases my previous work and research on a variety of topics such
 ::: {.g-col-12 .g-col-md-4}
 <div class="card h-100" id="card-first-color">
 <div class="card-body d-flex flex-column">
-<p class="card-text">About me, my interests and experience.</p>
-<div style="margin-top: auto;"><a href="about.qmd" class="card-link heading-font">BIO</a></div>
+<p class="card-text">Some of my data projects and code repositories.</p>
+<div style="margin-top: auto;"><a href="code.qmd" class="card-link heading-font">CODE</a></div>
 </div>
 </div>
 ::: 
