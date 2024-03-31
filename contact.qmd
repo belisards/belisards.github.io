@@ -9,7 +9,7 @@ execute:
 
 # [I'd love to hear from you!]{.primary}
 
-You can find on the following social networks:
+You can find me on the following social networks:
 
 ```{r}
 #| echo: false
