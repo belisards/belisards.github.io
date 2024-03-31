@@ -74,6 +74,18 @@ $code-color: $second-color;
 $card-bg: $body-bg;
 $card-border-color: $gray-300;
 
+
+body {
+
+background: 
+      radial-gradient(farthest-side at -33.33% 50%,#0000 52%,#f4f4fb 54% 57%,#0000 59%) 0 calc(128px/2),
+      radial-gradient(farthest-side at 50% 133.33%,#0000 52%,#f4f4fb 54% 57%,#0000 59%) calc(128px/2) 0,
+      radial-gradient(farthest-side at 133.33% 50%,#0000 52%,#f4f4fb 54% 57%,#0000 59%),
+      radial-gradient(farthest-side at 50% -33.33%,#0000 52%,#f4f4fb 54% 57%,#0000 59%),
+      #f7f8f8;
+background-size: calc(128px/4.667) 128px,128px calc(128px/4.667);
+
+}
 #fn1 > p > code {
   font-size: 0.8rem;
 }
@@ -370,20 +382,27 @@ iframe.slide-deck {
 
 // for cards on home page
 #card-first-color {
-  background-color: $body-bg;
-  border: 4px solid $primary;
-  border-radius: 5px; 
+background-image: repeating-linear-gradient(45deg, transparent, transparent 31px, #f0f0f0 31px, #f0f0f0 62px);
+background-color: #f7f8f8;
+
+}
+
+#card-first-color:hover {
+background-image: repeating-linear-gradient(45deg, transparent, transparent 31px, #f7f8f8 31px, #f7f8f8 62px);
+background-color: #f0f0f0;
 }
 
 #card-second-color {
-  background-color: $body-bg;
-  border: 4px solid $second-color;
+background-color: #fbfbfd;
+opacity: 1;
+background: linear-gradient(135deg, #e9ecf955 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(225deg, #e9ecf9 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(315deg, #e9ecf955 25%, transparent 25%) 0px 0/ 22px 22px, linear-gradient(45deg, #e9ecf9 25%, #fbfbfd 25%) 0px 0/ 22px 22px;  border: 4px solid $second-color;
   border-radius: 5px; 
 }
 
 #card-third-color {
-  background-color: $body-bg;
-  border: 4px solid $third-color;
+background-color: #fbfbfd;
+opacity: 1;
+background: linear-gradient(135deg, #e9ecf955 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(225deg, #e9ecf9 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(315deg, #e9ecf955 25%, transparent 25%) 0px 0/ 22px 22px, linear-gradient(45deg, #e9ecf9 25%, #fbfbfd 25%) 0px 0/ 22px 22px;  border: 4px solid $third-color;
   border-radius: 5px; 
 }
 

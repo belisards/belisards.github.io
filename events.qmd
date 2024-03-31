@@ -13,7 +13,7 @@ toc: true
 
 # [EVENTS]{.third-color}
 
-Since 2010, I have organized events in Brazil and actively participated in multiple international events. This is a non-exhaustive list of activities I have developed, including conferences, lectures, workshops and courses.
+This is a non-exhaustive list of activities and events I have developed, including conferences, lectures, workshops and courses.
 
 # Organization
 
@@ -33,6 +33,8 @@ São Paulo, 2018. [**Coda.Br - Conferência de Jornalismo de Dados e Métodos Di
 
 Rio de Janeiro, 2014. **Copyfight**. 3 ed.
 
+Rio de Janeiro, 2012. **Communication Laboratory at the Peoples Summit Rio+20**. 1 ed.
+
 Rio de Janeiro, 2011. **Copyfight**. 2 ed.
 
 Rio de Janeiro, 2010. **Copyfight**. 1 ed.
@@ -51,15 +53,15 @@ Berlin, Germany, 2017. Re:Publica. **Coolab - Community networks in Brazil**.
 
 Buenos Aires, Argentina, 2015. LAVITS. **III Simpósio Internacional da Rede Latinoamericana de Vigilância, Tecnologia e Sociedade**. Paper presentation.
 
-Rio de Janeiro, Brazil, 2007. Undergraduate research seminar. **Do cineclubismo enquanto prática de comunicação comunitária**.
-
 Duque de Caxias, Brazil, 2015. **Território Baixada.Web, Ficção, Relato e Amor: cartografia e resistências**.
 
 Berlin, Germany, 2014. Transmediale. **Micropolitics of the Post-Digital: From street protests to transitional spaces in Brazil**.
 
+Geneva, Switzerland, 2013. Open Knowledge Conference, **Data driven campaigning**.
+
 Recife, Brazil, 2012. X. **Banditismo por uma questão de classe: música e hacktivismo na cultura contemporânea. 2012**.
 
-Geneva, Switzerland, 2013. Open Knowledge Conference, **Data driven campaigning**.
+Rio de Janeiro, Brazil, 2007. Undergraduate research seminar. **Do cineclubismo enquanto prática de comunicação comunitária**.
 
 # Labs
 

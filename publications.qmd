@@ -63,19 +63,21 @@ Here are the main texts I've published since 2008. These include data-driven inv
 :::
 
 
-## Academic journals
+## Academic papers
 
 BELISARIO, ADRIANO. [**A Terra à Vista**](https://periodicos.unb.br/index.php/dasquestoes/article/view/18647/17367). DAS QUESTÕES, v. 6, p. 1, 2018.
 
 ZASSO, MARIEL ROSAURO ; POPPI, RICARDO ; KONOPACKI, MARCO ANTONIO ; BELISARIO, ADRIANO ; ASTORQUIZA, LUIS ; BEJARANO, PABLO ; SALLAS, NORMA RUIZ ; YAÑEZ FIGUEROA, JOSÉ ANTONIO. [**Caixa Mágica: chronicle of a civic innovation project**](https://revista.ibict.br/liinc/article/view/3747/3222). LIINC EM REVISTA, v. 13, p. 237, 2017.
 
-Lara, Paulo José O. M. ; BELISARIO, Adriano. [**Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum**.](https://revista.ibict.br/liinc/article/view/3722) Liinc em Revista, v. 12, p. 271-285, 2016.
+LARA, Paulo José O. M. ; BELISARIO, Adriano. [**Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum**.](https://revista.ibict.br/liinc/article/view/3722) Liinc em Revista, v. 12, p. 271-285, 2016.
 
 BELISARIO, Adriano.; FERREIRA, P. P. [**Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente: uma trajetória possível**](https://www.contemporanea.ufscar.br/index.php/contemporanea/article/view/434). Contemporânea, v. 6, p. 335-367, 2016.
 
 BELISARIO, Adriano. [**Tecnoxamanismo: por uma cibernética insurgente**](https://revistas.ufrj.br/index.php/lc/article/view/50155). Lugar Comum (UFRJ), v. 43, p. 265, 2015.
 
 BELISARIO, Adriano. [**Espectro livre como alternativa tecnopolítica à vigilância**](https://politics.org.br/edicoes/espectro-livre-como-alternativa-tecnopol%C3%ADtica-%C3%A0-vigil%C3%A2ncia). Politics (Impresso), v. 1, p. 15, 2015.
+
+BELISARIO, Adriano; LOPES, Juliana. [**Políticas públicas de cultura digital: dos Pontos de Cultura à reinvenção do Estado**](http://www.viii.enecult.ufba.br/modulos/consulta&relatorio/rel_download.asp?nome=41478.pdf)
 
 BENTES, Ivana ; CASTRO, O. ; BARRETO, G. ; UCHOAS, L. ; BELISÁRIO, Adriano. **Midialivristas, uni-vos!**. Lugar Comum (UFRJ), v. 25-26, p. 137-141, 2009.
 
@@ -171,11 +173,17 @@ Regulamentação à vista. Revista de História da Biblioteca Nacional.
 
 Políticas dá cultura. Revista de História da Biblioteca Nacional.
 
-## Cartilha
+## Other writings
 
-[Cartilha de segurança digital e atuação no campo](https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/), co-authorship, 2020. Agência Pública.
+[Cartilha de segurança digital e atuação no campo](https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/), co-authorship, 2020. Co-authorship. Agência Pública.
 
-## Tutorials
+[Espaço, território e inovação tecnológica nos CEUs](http://inciti.org/2015/05/19/espaco-territorio-e-inovacao-tecnologica-nos-ceus/). 2015. Co-authorship.
+
+[Territórios e práticas libertárias em redes sociais – Geopolítica do (des)conhecimento](https://baobavoador.noblogs.org/post/2015/11/02/territorios-e-praticas-libertarias-em-redes-sociais-geopolitica-do-desconhecimento/), 2012. Co-authorship.
+
+[**Por uma ideia de cinema radical**](https://belisario.website/posts/cinema-radical/por_uma_ideia_de_cinema_radical.html). 2007. Co-authorship. 
+
+## Technical tutorials
 
 [Checagem de imagens: cronolocalização de fotos](https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/), authorship, 2022.
 

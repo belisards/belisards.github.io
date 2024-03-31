@@ -6,12 +6,14 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/cinema-radical/por_uma_ideia_de_cinema_radical.html",
       "/posts/2024-02-29_tutorial/index.html"
     ]
   },
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/cinema-radical/por_uma_ideia_de_cinema_radical.html",
       "/posts/2024-02-29_tutorial/index.html"
     ]
   },
@@ -19,8 +21,7 @@
     "listing": "/code.html",
     "items": [
       "/code/gunviolenceptbr/index.html",
-      "/code/fdpatlas/index.html",
-      "/code/quarto_slides/index.html"
+      "/code/fdpatlas/index.html"
     ]
   }
 ]
