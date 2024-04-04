@@ -21,7 +21,7 @@ Here are the main texts I've published since 2008. These include data-driven inv
 
 # Works in English
 
-[**Tutorial on survey data based on the report "Venezuelan Migrants and Refugees in Chile, Colombia, Ecuador, and Peru: A Development Opportunity"**](). To be published. 2024. Authorship.
+[**Tutorial on survey data based on the report "Venezuelan Migrants and Refugees in Chile, Colombia, Ecuador, and Peru: A Development Opportunity"**](https://belisario.website/tutorial-ven-migration/). Joint Data Center on Forced Displacement. 2024. Authorship.
 
 ⭐ [**Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports**](https://arxiv.org/abs/2401.12989). arXiv preprint, 2024. Co-authorship with Scott Hale and Luc Rocher.
 
