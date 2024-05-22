@@ -77,6 +77,8 @@ Mexico city, Mexico, 2016. **Openlabs - Caixa Mágica: dispositivo para particip
 
 # Workshops
 
+Online, 2024. The Rory Peck Trust. **[Segurança digital para jornalistas](https://bit.ly/sdigital-rorypeck)**.
+
 São Paulo, Brazil, 2023. Coda.Br. [**Entendendo e usando Transformers, a tecnologia por trás do ChatGPT**](https://escoladedados.org/coda/coda2023/entendendo-e-usando-transformers-a-tecnologia-por-tras-do-chatgpt/)**.**
 
 Geneva, Switzerland, 2023. European Data and Computational Journalism Conference. [**Beyond the hype: an introduction to NLP and language models**](https://github.com/belisards/intro_nlp_ddj)**.**
