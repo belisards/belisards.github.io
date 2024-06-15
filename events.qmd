@@ -39,11 +39,17 @@ Rio de Janeiro, 2011. **Copyfight**. 2 ed.
 
 Rio de Janeiro, 2010. **Copyfight**. 1 ed.
 
-# Talks
+# Talks and lectures
+
+Berlin, Germany, 2024. Global Innovation Gathering Weekend. **Way beyond ChatGPT: leveraging open source language models**.
+
+Berlin, Germany, 2024. re:publica 2024. [**From Laughs to Courts: Multifaceted Uses of AI in the Global South**](https://re-publica.com/de/session/laughs-courts-multifaceted-uses-ai-global-south).
 
 Berlin, Germany, 2024. Disinfo Demasked/DW Akademy. [**AI uses for fact-checking in Brazil**](https://belisards.github.io/slides-bert-fact-checking/).
 
 Online, 2021. RightsCon. [**Anatomy of a visual investigation**](https://visualinvestigations.netlify.app/).
+
+Salvador, Brazil, 2019. Simpósio LAVITS 2019. [**Expulsão/Exceção: arquitetura forense, conflito e direitos humanos**](https://medialabufrj.net/blog/2019/06/dobras-35-medialab-ufrj-no-simposio-lavits-2019/).
 
 Rio de Janeiro, Brazil, 2019. Hackfest/Ministério Público do Estado do Rio de Janeiro. [**Dados abertos e transformação social**](https://www.mprj.mp.br/documents/20184/540394/palestras_hackfest.pdf).
 
