@@ -1,21 +1,19 @@
 [
   {
-    "listing": "/projects.html",
-    "items": []
-  },
-  {
     "listing": "/posts.html",
     "items": [
-      "/posts/2024-02-29_tutorial/index.html",
-      "/posts/cinema-radical/por_uma_ideia_de_cinema_radical.html"
+      "/posts/2024-02-29_tutorial/index.html"
     ]
   },
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/2024-02-29_tutorial/index.html",
-      "/posts/cinema-radical/por_uma_ideia_de_cinema_radical.html"
+      "/posts/2024-02-29_tutorial/index.html"
     ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": []
   },
   {
     "listing": "/code.html",
