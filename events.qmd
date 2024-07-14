@@ -101,12 +101,3 @@ Rio de Janeiro, Brazil, 2012. GNUGRAF. **Copyfight : Muito além do download gr�
 
 Dakar, Senegal, 2011. World Social Forum. **Mandala: uma proposta de agregação de conteúdo para a mídia independente**.
 
-# Courses
-
-As head of the School of Data Brazil, I created, coordinated and taught several online and in-person trainings between 2019 and 2022, such as [Dados 360](https://escoladedados.org/dados-360-comunicacao-baseada-em-dados/), [Jornalismo de dados ambientais: no rastro do desmatamento da Amazônia](https://escoladedados.org/courses/jornalismo-de-dados-ambientais/), [Investigações digitais: OSINT para jornalistas e ativistas](https://escoladedados.org/courses/investigacoes-digitais/). The list below refers to my experience with post-graduate programs and universities.
-
-Brasília, Brazil, 2019. **Brasiliense Institute of Public Law.**. Courses taught as professor in the data journalism MBA program: “Low code” and “Invisible data: open source intelligence and fact-checking”. 2021 – 2022. 
-
-Brasília, Brazil, 2019. **Higher Education Institute of Brasilia**. Professor of data journalism in the digital journalism post-graduate program. 2019.
-
-Online, 2019. **University of Texas**. Teacher assitant at the Knight Center for Journalism in the Americas for the Data Journalism and Visualization with Free Tools course.
