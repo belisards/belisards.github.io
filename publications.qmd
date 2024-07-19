@@ -21,17 +21,17 @@ Here are the main texts I've published since 2008. These include data-driven inv
 
 # Works in English
 
-⭐ [**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://academic.oup.com/ijpor/article/36/3/edae032/7709027). International Journal of Public Opinion Research, 2024. Co-authorship.
+⭐ [**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://academic.oup.com/ijpor/article/36/3/edae032/7709027). International Journal of Public Opinion Research, 2024. Co-authorship with Scott Hale and Luc Rocher.
 
-[**Tutorial on survey data based on the report "Venezuelan Migrants and Refugees in Chile, Colombia, Ecuador, and Peru: A Development Opportunity"**](https://belisario.website/tutorial-ven-migration/). Joint Data Center on Forced Displacement. 2024. Authorship.
+[**Guide on survey data analysis with R for the report "Venezuelan Migrants and Refugees in Chile, Colombia, Ecuador, and Peru: A Development Opportunity"**](https://belisario.website/tutorial-ven-migration/). Joint Data Center on Forced Displacement. 2024. Authorship.
 
 ⭐ [**Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports**](https://arxiv.org/abs/2401.12989). arXiv preprint, 2024. Co-authorship with Scott Hale and Luc Rocher.
 
 ⭐ [**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://arxiv.org/abs/2401.02395). arXiv preprint, 2024. Co-authorship with Scott Hale, Ahmed Mostafa and Chico Camargo.
 
-⭐ [**Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro**](https://documental.xyz/intervencao). Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also published in [Portuguese](https://documental.xyz/pt/intervencao) and [Spanish](https://documental.xyz/es/intervencao). 🌐
+⭐ 🌐 [**Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro**](https://documental.xyz/intervencao). Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also published in [Portuguese](https://documental.xyz/pt/intervencao) and [Spanish](https://documental.xyz/es/intervencao). 
 
-[**Expulsions - Forced displacements and archaeological destruction by the mega-mining project Mirador in the Ecuadorian Amazonia**](https://documental.xyz/expulsions). Documental.xyz, 2020. Research and data analysis. Also published in [Portuguese](https://documental.xyz/pt/expulsions) and [Spanish](https://documental.xyz/es/expulsions). 🌐
+🌐 [**Expulsions - Forced displacements and archaeological destruction by the mega-mining project Mirador in the Ecuadorian Amazonia**](https://documental.xyz/expulsions). Documental.xyz, 2020. Research and data analysis. Also published in [Portuguese](https://documental.xyz/pt/expulsions) and [Spanish](https://documental.xyz/es/expulsions). 
 
 [**Rio goes live: video activism and human rights in Brazil**](https://lab.witness.org/rio-goes-live/). Witness, 2019. Authorship.
 
