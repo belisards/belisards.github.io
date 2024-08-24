@@ -1,0 +1,19 @@
+---
+title: "Smart Image Sorter"
+description: |
+date: 2024-08-15
+# author: 
+#   - name: Adriano Belisario
+
+image: "feat_image.jpg"
+# image-alt: 
+categories: [python]
+open-graph: false
+draft: false
+---
+
+Tutorial and [user-friendly tool](https://colab.research.google.com/github/bellingcat/smart-image-sorter/blob/main/interface.ipynb) to faciliate the use of zero-shot image classification models. Developed as part of the Bellingcat Tech Fellowship program.
+
+Tutorial: [https://www.bellingcat.com/resources/2024/08/22/shadow-geolocate-geolocation-locate-image-tool-open-source-bellingcat-measure/](https://www.bellingcat.com/resources/2024/08/22/shadow-geolocate-geolocation-locate-image-tool-open-source-bellingcat-measure/)
+
+Github repository: [https://github.com/bellingcat/smart-image-sorter](https://github.com/bellingcat/smart-image-sorter)

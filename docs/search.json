@@ -137,7 +137,7 @@
     "href": "code.html",
     "title": "Adriano Belisario",
     "section": "",
-    "text": "CODE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nForced Displacement Microdata\n\n\nShiny dashboard about gaps in microdata on forced displacement.\n\n\n\n\n\n\n\n\n\n\n\n\n\nClassification model of gun violence reports\n\n\nText classification model to detect gun violence reports in Brazilian Portuguese.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFragilie Families\n\n\nStatistical models and analysis for the Fragile Families and Child Wellbeing Study.\n\n\n\n\n\n\n\n\n\n\n\n\n\nCorporate network visualization\n\n\nData visualization of the bus owners’ network in Rio de Janeiro..\n\n\n\n\n\n\n\nNo matching items"
+    "text": "CODE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSmart Image Sorter\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nForced Displacement Microdata\n\n\nShiny dashboard about gaps in microdata on forced displacement.\n\n\n\n\n\n\n\n\n\n\n\n\n\nClassification model of gun violence reports\n\n\nText classification model to detect gun violence reports in Brazilian Portuguese.\n\n\n\n\n\n\n\n\n\n\n\n\n\nCorporate network visualization\n\n\nData visualization of the bus owners’ network in Rio de Janeiro..\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -166,5 +166,12 @@
     "title": "Fragilie Families",
     "section": "",
     "text": "My analysis for the Fragile Families and Child Wellbeing Study compared gradient boosting algorithms to model six key metrics: GPA, grit, material hardship, layoff, eviction, and job training. Using interpretable methods, the study delves into eviction cases.\nCode: https://github.com/belisards/ff_applied_ml/)"
+  },
+  {
+    "objectID": "code/smart_image_sorter/index.html",
+    "href": "code/smart_image_sorter/index.html",
+    "title": "Smart Image Sorter",
+    "section": "",
+    "text": "Tutorial and user-friendly tool to faciliate the use of zero-shot image classification models. Developed as part of the Bellingcat Tech Fellowship program.\nTutorial: https://www.bellingcat.com/resources/2024/08/22/shadow-geolocate-geolocation-locate-image-tool-open-source-bellingcat-measure/\nGithub repository: https://github.com/bellingcat/smart-image-sorter"
   }
 ]

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-08-15">
 
-<title>Adriano Belisario – code</title>
+<title>Adriano Belisario - Smart Image Sorter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +24,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/favicon/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,35 +60,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NE9CBZWC4K"></script>
 
 <script type="text/javascript">
@@ -101,17 +71,18 @@ gtag('config', 'G-NE9CBZWC4K', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="assets/ek-styles.css">
+<link rel="stylesheet" href="../../assets/ek-styles.css">
+<meta property="og:title" content="Adriano Belisario - Smart Image Sorter">
+<meta property="og:description" content="The personal website of Adriano Belisario">
+<meta property="og:image" content="https://belisards.github.io/code/smart_image_sorter/feat_image.jpg">
+<meta property="og:site-name" content="Adriano Belisario">
 <meta name="twitter:title" content="Adriano Belisario">
 <meta name="twitter:description" content="Data, journalism and open-source">
-<meta name="twitter:image" content="https://belisards.github.io/code/fdpatlas/cover.png">
+<meta name="twitter:image" content="https://belisards.github.io/code/smart_image_sorter/feat_image.jpg">
 <meta name="twitter:creator" content="@belisards">
 <meta name="twitter:site" content="@belisards">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="1624">
-<meta name="twitter:image-width" content="2880">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -121,7 +92,7 @@ gtag('config', 'G-NE9CBZWC4K', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ADRIANO BELISARIO</span>
     </a>
   </div>
@@ -131,23 +102,23 @@ gtag('config', 'G-NE9CBZWC4K', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="../../about.html">
  <span class="menu-text">bio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html">
+    <a class="nav-link" href="../../publications.html">
  <span class="menu-text">publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./code.html" aria-current="page">
+    <a class="nav-link" href="../../code.html">
  <span class="menu-text">code</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./events.html">
+    <a class="nav-link" href="../../events.html">
  <span class="menu-text">events</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html">
+    <a class="nav-link" href="../../contact.html">
  <span class="menu-text">contact</span></a>
   </li>  
   <li class="nav-item compact">
@@ -167,98 +138,50 @@ gtag('config', 'G-NE9CBZWC4K', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Smart Image Sorter</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">python</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 15, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<section id="code" class="level1">
-<h1>CODE</h1>
-<!-- [![](https://github-readme-stats.vercel.app/api?username=belisards&show_icons=true&theme:transparent)](https://github.com/belisards) -->
+
+<p>Tutorial and <a href="https://colab.research.google.com/github/bellingcat/smart-image-sorter/blob/main/interface.ipynb">user-friendly tool</a> to faciliate the use of zero-shot image classification models. Developed as part of the Bellingcat Tech Fellowship program.</p>
+<p>Tutorial: <a href="https://www.bellingcat.com/resources/2024/08/22/shadow-geolocate-geolocation-locate-image-tool-open-source-bellingcat-measure/">https://www.bellingcat.com/resources/2024/08/22/shadow-geolocate-geolocation-locate-image-tool-open-source-bellingcat-measure/</a></p>
+<p>Github repository: <a href="https://github.com/bellingcat/smart-image-sorter">https://github.com/bellingcat/smart-image-sorter</a></p>
 
 
 
-</section>
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="python" data-listing-date-sort="1723690800000" data-listing-file-modified-sort="1724460090393" data-listing-reading-time-sort="0.125">
-<a href="./code/smart_image_sorter/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./code/smart_image_sorter/feat_image.jpg" class="thumbnail-image card-img" style="height: 416px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Smart Image Sorter
-</h5>
-<div class="card-text listing-description">
-Tutorial and user-friendly tool to faciliate the use of zero-shot image classification models. Developed as part of the Bellingcat Tech Fellowship program.
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="R" data-listing-date-sort="1702177200000" data-listing-file-modified-sort="1724458423003" data-listing-reading-time-sort="0.305">
-<a href="./code/fdpatlas/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./code/fdpatlas/cover.png" class="thumbnail-image card-img" style="height: 416px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Forced Displacement Microdata
-</h5>
-<div class="card-text listing-description">
-<p>Shiny dashboard about gaps in microdata on forced displacement.</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="python" data-listing-date-sort="1694833200000" data-listing-file-modified-sort="1724458423003" data-listing-reading-time-sort="0.16">
-<a href="./code/gunviolenceptbr/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./code/gunviolenceptbr/cover.png" class="thumbnail-image card-img" style="height: 416px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Classification model of gun violence reports
-</h5>
-<div class="card-text listing-description">
-<p>Text classification model to detect gun violence reports in Brazilian Portuguese.</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Web" data-listing-date-sort="1496286000000" data-listing-file-modified-sort="1724458422992" data-listing-reading-time-sort="0.05">
-<a href="./code/bus_network/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./code/bus_network/cover.png" class="thumbnail-image card-img" style="height: 416px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Corporate network visualization
-</h5>
-<div class="card-text listing-description">
-<p>Data visualization of the bus owners’ network in Rio de Janeiro..</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -410,5 +333,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
