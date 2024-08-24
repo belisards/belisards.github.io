@@ -159,5 +159,12 @@
     "title": "Copyfight",
     "section": "",
     "text": "Book and three seminars on free culture, piracy and intellectual property.\nBook: Copyfight - Pirataria e cultura livre\n\n\n\nReusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{2010,\n  author = {},\n  title = {Copyfight},\n  date = {2010-01-16},\n  url = {https://belisards.github.io/publications/files/copyfight},\n  langid = {en}\n}\nFor attribution, please cite this work as:\n“Copyfight.” 2010. January 16, 2010. https://belisards.github.io/publications/files/copyfight."
+  },
+  {
+    "objectID": "code/smart_image_sortes/index.html",
+    "href": "code/smart_image_sortes/index.html",
+    "title": "Fragilie Families",
+    "section": "",
+    "text": "My analysis for the Fragile Families and Child Wellbeing Study compared gradient boosting algorithms to model six key metrics: GPA, grit, material hardship, layoff, eviction, and job training. Using interpretable methods, the study delves into eviction cases.\nCode: https://github.com/belisards/ff_applied_ml/)"
   }
 ]
