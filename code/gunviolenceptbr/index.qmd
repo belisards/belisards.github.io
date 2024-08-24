@@ -1,0 +1,22 @@
+---
+title: "Classification model of gun violence reports"
+description: |
+  Text classification model to detect gun violence reports in Brazilian Portuguese.
+date: 2023-09-16
+# author: 
+#   - name: Adriano Belisario
+site-url: https://huggingface.co/belisards/gun_violence_ptbr
+image: "cover.png"
+# image-alt: 
+categories: [python]
+open-graph: false
+draft: false
+---
+
+The model is based on BERTimbau and fine-tuned with Twitter data labelled by Instituto Fogo Cruzado. It was developed as part of my research at the Oxford Internet Institute.
+
+Model: [https://huggingface.co/belisards/gun_violence_ptbr](https://huggingface.co/belisards/gun_violence_ptbr)
+
+Pre-print: [https://arxiv.org/abs/2401.12989](https://arxiv.org/abs/2401.12989)
+
+Code: [https://github.com/belisards/gunviolence_ptbr](https://github.com/belisards/gunviolence_ptbr)

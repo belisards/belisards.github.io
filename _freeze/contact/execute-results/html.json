@@ -1,0 +1,16 @@
+{
+  "hash": "fad4449983e85bf0428c2fb3015f8ff8",
+  "result": {
+    "markdown": "---\ninclude-in-header: \"_includes/fontawesome-2up.html\"\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [I'd love to hear from you!]{.primary}\n\nYou can find me on the following social networks:\n\n\n::: {.cell}\n\n:::\n\n\n`<a href=\"https://github.com/belisards\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub</a>`{=html}\n`<a href=\"https://linkedin.com/adriano-belisario-76758632\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-linkedin\"></i> LinkedIn</a>`{=html}\n`<a href=\"https://fosstodon.org/@belisards\" class=\"icon-link\" target=\"_blank\" rel=\"me noopener\"><i class=\"fab fa-mastodon\"></i> Mastodon</a>`{=html}\n\nYou can also drop me an e-mail at contact [at] belisario [dot] website",
+    "supporting": [
+      "contact_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

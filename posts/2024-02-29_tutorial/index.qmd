@@ -1,0 +1,34 @@
+---
+title: "Creating a personal website with Quarto"
+description: |
+  Notes of my own process
+date: 2023-12-30
+author: 
+  - name: Adriano Belisario
+categories: [Tutorial]
+open-graph: false
+draft: false
+---
+
+This post collects some references and notes I've used to create my personal website using Quarto. It presents a simple step-by-step guide to deploy a Quarto website using Github Actions.
+
+1. Create a repository named <username>.github.io 
+
+
+
+# Cool personal websites made with Quarto
+
+https://beamilz.com/talks/
+
+https://ellakaye.co.uk/
+
+https://rfsaldanha.github.io/
+
+# References
+
+[https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/](https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/)
+
+
+
+
+

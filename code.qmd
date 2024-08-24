@@ -1,0 +1,23 @@
+---
+#title: "Projects"
+listing:
+  contents: code
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  image-height: 416px
+  fields: [title, image, description]
+page-layout: full
+title-block-banner: false
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# CODE
+
+<!-- [![](https://github-readme-stats.vercel.app/api?username=belisards&show_icons=true&theme:transparent)](https://github.com/belisards) -->

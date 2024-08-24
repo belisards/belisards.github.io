@@ -1,0 +1,36 @@
+---
+include-in-header: "_includes/fontawesome-2up.html"
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [I'd love to hear from you!]{.primary}
+
+You can find me on the following social networks:
+
+```{r}
+#| echo: false
+library(distilltools)
+```
+
+`r icon_link(
+  icon = "github",
+  text = "GitHub",
+  url = "https://github.com/belisards"
+)`
+`r icon_link(
+  icon = "linkedin",
+  text = "LinkedIn",
+  url = "https://linkedin.com/adriano-belisario-76758632"
+)`
+`r icon_link(
+  icon = "mastodon",
+  text = "Mastodon",
+  url = "https://fosstodon.org/@belisards",
+  rel = "me noopener"
+)`
+
+You can also drop me an e-mail at contact [at] belisario [dot] website

@@ -1,0 +1,16 @@
+{
+  "hash": "ea6829b160d28f962a929b95ce63a010",
+  "result": {
+    "markdown": "---\n#title: \"Projects\"\nlisting:\n  contents: code\n  sort: \"date desc\"\n  type: grid\n  categories: false\n  sort-ui: false\n  filter-ui: false\n  image-height: 416px\n  fields: [title, image, description]\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# CODE\n\n<!-- [![](https://github-readme-stats.vercel.app/api?username=belisards&show_icons=true&theme:transparent)](https://github.com/belisards) -->",
+    "supporting": [
+      "code_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

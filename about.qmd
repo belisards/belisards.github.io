@@ -1,0 +1,84 @@
+---
+#title: "About"
+#page-layout: full
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+toc: true
+---
+
+**Adriano Belisario** combines expertise in communication and data to address important human rights concerns. Belisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he contributed to organizations like Open Knowledge Brazil, Witness, Medialab/UFRJ, [Forensic Architecture](https://forensic-architecture.org/about/team/member/adriano-belisario) UNESCO, [Agência Pública](https://apublica.org/autor/adriano-belisario/) and [The Intercept Brasil](https://www.intercept.com.br/equipe/adriano-belisario/). His publication portfolio includes [books, academic articles, and journalistic pieces in Portuguese and English](publications.html), and he has been invited to speak at several [global events](events.html).
+
+Belisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford). While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed [Documental.xyz](https://documental.xyz), an initiative that combines diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations.
+
+# Awards and recognitions
+
+Bellingcat's technical writing fellowship (2024)
+
+Finalist in the category "Social Action" at the Study UK Alumni Award (2024)
+
+Shortlisted at the Gabo Awards (2021)
+
+Winner of the Jornalismo-Mosca Award (2021)
+
+Ling Institute's Visionary Journalist Scholarship (2020)
+
+# Education
+
+**Master of Science in Social Data Science** (with distinction). Oxford Internet Institute, University of Oxford. 2022-2023.
+
+**Post-baccalaureate certification** (with honors). Lede Program. Columbia University of the City of New York. 2021
+
+**Masters of Arts in Communication and Culture**. Federal University of Rio de Janeiro. 2016.
+
+**Bachelor in Social Communication (Journalism)**. Federal University of Rio de Janeiro. 2010.
+
+**Philosophy** (unfinished). State University of Rio de Janeiro. 2005-2008.
+
+## Courses
+
+2021, online. Mathematics for machine learning specialization. Imperial College London.
+
+2020, São Paulo. Survey design and analysis. International Political Science Association/USP Summer School.
+
+2017, Rio de Janeiro. Reporting Land Rights. Thomsom Reuters Foundation
+
+# Professional experience
+
+**Joint Data Center on Forced Displacement**. Data journalist. 2023 - Present.
+
+**Medialab/UFRJ**. Associate Researcher. 2017 - 2022
+
+**School of Data Brazil**. Program Manager. 2018 - 2022
+
+**WITNESS**. Consultant. 2018-2019
+
+**UNESCO**. Consultant. 2016-2018
+
+**Cinema Nosso**. Program manager. 2015-2017.
+
+**Agência Pública**. Editor and reporter. 2014-2018
+
+**Instituto Mais Democracia**. Content Manager. 2012-2013.
+
+**Government of the State of Rio de Janeiro - Secretary of Culture**. Digital Culture Manager. 2010-2012.
+
+**Federal University of Rio de Janeiro (Pontão da ECO)**. Program manager. 2009-2012.
+
+**Revista de História da Biblioteca Nacional**. Reporter and editor. 2008-2010.
+
+**Curta-o-curta**. Editor and content producer. 2006-2007.
+
+# Teaching experience
+
+As head of the School of Data Brazil, I created, coordinated and taught several online and in-person trainings between 2019 and 2022, such as [Dados 360](https://escoladedados.org/dados-360-comunicacao-baseada-em-dados/), [Jornalismo de dados ambientais: no rastro do desmatamento da Amazônia](https://escoladedados.org/courses/jornalismo-de-dados-ambientais/), [Investigações digitais: OSINT para jornalistas e ativistas](https://escoladedados.org/courses/investigacoes-digitais/). The list below refers to my experience with post-graduate programs and universities.
+
+Brasília, Brazil, 2019. **Brasiliense Institute of Public Law.**. Courses taught as lecturer in the data journalism MBA program: “Low code” and “Invisible data: open source intelligence and fact-checking”. 2021 – 2022. 
+
+Brasília, Brazil, 2019. **Higher Education Institute of Brasilia**. Lecturer of data journalism in the digital journalism post-graduate program. 2019.
+
+Online, 2019. **University of Texas**. Teacher assitant at the Knight Center for Journalism in the Americas for the Data Journalism and Visualization with Free Tools course.
+
+

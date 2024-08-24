@@ -1,0 +1,51 @@
+.navbar-title:hover > .icon-line {
+  animation-duration: 600ms;
+  animation-name: line-expand;
+}
+
+@keyframes line-expand {
+  from {
+    width: 0%;
+  }
+  
+  to {
+    width: 100%;
+  }
+}
+
+#title-block-header.quarto-title-block.default .quarto-title .title {
+  margin-bottom: 1rem;
+}
+
+#title-block-header.quarto-title-block.default .description > p:last-of-type, #title-block-header.quarto-title-block.default .abstract > p:last-of-type {
+  margin-bottom: 1rem;
+}
+
+#quarto-margin-sidebar .quarto-listing-category {
+  font-size: 0.8rem;
+}
+
+div.listing-description {
+  font-size: 0.875rem;
+}
+
+div.quarto-post .body .listing-subtitle {
+  font-size: 1.2rem;
+}
+
+.quarto-grid-item .card-title {
+    margin-bottom: .5em;
+}
+
+code span.cf {
+  font-weight: normal;
+}
+
+.top-callout {
+  margin-top: 0;
+}
+
+.profile-pic {
+  border-radius: 5px;
+}
+

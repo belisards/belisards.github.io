@@ -1,0 +1,21 @@
+---
+#title: "posts"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: 
+    categories: [Quarto]
+page-layout: full
+title-block-banner: false
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [POSTS]{.second-color}

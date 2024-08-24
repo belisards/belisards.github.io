@@ -1,0 +1,464 @@
+/*-- scss:defaults --*/
+
+// use litera as the base
+// https://github.com/thomaspark/bootswatch/tree/v5/dist/litera
+$theme: "journal" !default;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+
+// fonts
+$font-family-sans-serif: Bebas, sans-serif !default;
+$font-family-monospace:  Source Code Pro, monospace;
+$headings-font-family: Dosis,sans-serif !default;
+
+// warmer grays (hue 240)
+$white:    #f7f8f8 !default;
+$gray: #e6e5da;
+$gray-100: #F8F8FA !default;
+$gray-200: #E9E9EF !default;
+$gray-300: #DCDCE6 !default;
+$gray-400: #CECEDA !default;
+$gray-500: #ADADBD !default;
+$gray-600: #868696 !default;
+$gray-700: #494957 !default;
+$gray-800: #343440 !default;
+$gray-900: #212129 !default;
+$black:    #000 !default;
+
+//  my colors (comment out above)
+$pink: #b55c5c;
+$blue: #444275;
+$green: #948e70;
+$cyan: #3B74BF;
+$red: #b55c5c;
+$indigo: #073B4C;
+$purple: #6576E0;
+$orange: #543f38;
+$yellow: #FFD166;
+$darker-green: #008542;
+
+$primary:       $blue !default;
+$secondary:     $cyan !default;
+$success:       $green !default;
+$info:          #FBF9F1 !default;
+$warning:       $orange !default;
+$danger:        $red !default;
+$light:         #f7f8f8 !default;
+$dark:          #543f38 !default;
+
+$second-color:  $orange;
+$third-color:   $pink;
+
+// font sizes;
+$font-size-base:   1rem; //!default; // Assumes the browser default, typically `16px`
+$h1-font-size:     $font-size-base * 2.5 !default;
+$h2-font-size:     $font-size-base * 2 !default;
+$h3-font-size:     $font-size-base * 1.75 !default;
+$h4-font-size:     $font-size-base * 1.5 !default;
+$h5-font-size:     $font-size-base * 1.25 !default;
+$h6-font-size:     $font-size-base !default;
+
+// colour tweaks to theme
+$body-bg: $light;
+$body-color: $dark;
+$navbar-bg: $body-bg;
+$navbar-fg: $body-color;
+$code-bg: $light;
+$code-color: $second-color;
+$card-bg: $body-bg;
+$card-border-color: $gray-300;
+
+
+body {
+
+background: 
+      radial-gradient(farthest-side at -33.33% 50%,#0000 52%,#f4f4fb 54% 57%,#0000 59%) 0 calc(128px/2),
+      radial-gradient(farthest-side at 50% 133.33%,#0000 52%,#f4f4fb 54% 57%,#0000 59%) calc(128px/2) 0,
+      radial-gradient(farthest-side at 133.33% 50%,#0000 52%,#f4f4fb 54% 57%,#0000 59%),
+      radial-gradient(farthest-side at 50% -33.33%,#0000 52%,#f4f4fb 54% 57%,#0000 59%),
+      #f7f8f8;
+background-size: calc(128px/4.667) 128px,128px calc(128px/4.667);
+
+}
+#fn1 > p > code {
+  font-size: 0.8rem;
+}
+
+#fn2 > p > code {
+  font-size: 0.8rem;
+}
+
+#fn3 > p > code {
+  font-size: 0.8rem;
+}
+
+#fn4 > p > code {
+  font-size: 0.8rem;
+}
+
+#fn5 > p > code {
+  font-size: 0.8rem;
+}
+
+#fn6 > p > code {
+  font-size: 0.8rem;
+}
+
+code {
+  font-feature-settings: 'dlig' 0, 'liga' 0, 'calt' 1, 'zero' 1, 'ss02' 0;
+}
+
+code span.co {
+  font-family: "MonoLisa-RegularItalic", "Fira Mono", monospace;
+}
+
+h1 code {
+  font-size: $h1-font-size;
+}
+
+h2 code {
+  font-size: $h2-font-size;
+}
+
+h3 code {
+  font-size: $h3-font-size;
+}
+
+h4 code {
+  font-size: $h4-font-size;
+}
+
+h5 code {
+  font-size: $h5-font-size;
+}
+
+h6 code {
+  font-size: $h6-font-size;
+}
+
+// callouts
+$callout-color-note: $blue;
+$callout-color-tip: $darker-green;
+$callout-color-caution: $purple;
+$callout-color-warning: $orange;
+$callout-color-important: $red;
+
+/*-- scss:rules --*/
+
+// color classes
+.primary {
+  color: $primary;
+}
+
+.second-color {
+  color: $second-color;
+}
+
+.third-color {
+  color: $third-color;
+}
+
+// code
+pre.sourceCode {
+  border-radius: 0;
+  border-left-color: $gray-300;
+}
+
+// light vs dark modes
+.light-mode {
+  display: block; 
+}
+.dark-mode {
+  display: none;
+}
+
+// links
+a {
+  color: $body-color;
+  text-decoration-thickness: 1px;
+  //text-underline-offset: .1rem;
+  //text-underline-position: under;
+}
+
+a:hover {
+  color: $primary;
+  text-decoration-color: $primary;
+}
+
+.toc-actions a {
+  text-decoration: none !important;  
+  border-bottom: 0;
+}
+
+.toc-actions a:hover {
+  color: $primary;
+}
+
+div.tippy-content a:hover {
+  text-decoration-color: $primary;
+}
+
+// navbar
+.navbar-title {
+  font-size: $font-size-base * 1.75;
+}
+
+// the line in the navbar logo
+// animation defined in ek-styles.css
+.icon-line {
+  display: block;
+  background: $primary;
+  width: 100%;
+  height: 6px;
+  margin: auto;
+  display: table;
+  margin-top: -6px;
+  margin-bottom: -6px;
+}
+
+/* keep text the body colour when active
+this was a change in Quarto 1.2 - now defaults to a darker shade of $primary
+would be fine, except that I want to target the different list items to keep 
+the color that matches the card
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active {
+    color: $body-color;
+}
+*/
+
+// hover on navbar
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+  color: $primary;
+}
+.navbar-expand-lg .navbar-nav .nav-link.active {
+  color: $primary;
+}
+
+// then override colors so they match cards
+#navbarCollapse > ul > li:nth-child(2) > a:hover,
+#navbarCollapse > ul > li:nth-child(4) > a:hover {
+  color: $second-color;
+}
+
+#navbarCollapse > ul > li:nth-child(2) > a.nav-link.active,
+#navbarCollapse > ul > li:nth-child(4) > a.nav-link.active {
+  color: $second-color;
+}
+
+#navbarCollapse > ul > li:nth-child(3) > a:hover,
+#navbarCollapse > ul > li:nth-child(5) > a:hover {
+  color: $third-color;
+}
+
+#navbarCollapse > ul > li:nth-child(3) > a.nav-link.active,
+#navbarCollapse > ul > li:nth-child(5) > a.nav-link.active {
+  color: $third-color;
+}
+
+// stop the name in my icon from changing colour on hover
+.navbar-title:hover {
+  color: $body-color;
+}
+
+// animated underline on hover, when navbar shows as row
+@media screen and (min-width: 992px) {
+  a.nav-link {
+    position: relative;
+  }
+  
+  .navbar .navbar-nav .nav-item {
+    position: relative;
+  }
+  
+  .navbar .navbar-nav .nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: $primary;
+    width: 0%;
+    content: "";
+    height: 4px;
+    transition: all 0.3s;
+  }
+  
+  .navbar .navbar-nav .nav-item:nth-child(2)::after, 
+  .navbar .navbar-nav .nav-item:nth-child(4)::after {
+    background-color: $second-color;
+  }
+  
+  .navbar .navbar-nav .nav-item:nth-child(3)::after, 
+  .navbar .navbar-nav .nav-item:nth-child(5)::after {
+    background-color: $third-color;
+  }
+  
+  .navbar .navbar-nav .nav-item:hover::after {
+    width: 90%;
+  }
+}
+
+// header styles (more in ek-styles.css)
+#quarto-header {
+  text-transform: uppercase;
+  font-family: $headings-font-family;
+}
+
+/*
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+}
+*/
+/*
+h1 {
+  text-transform: uppercase;
+}
+*/
+
+.heading-font {
+  font-family: $headings-font-family;
+}
+
+.home-header {
+  font-family: $headings-font-family;
+  font-size: $font-size-base * 1.5;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+}
+
+h2, .h2 {
+    border-bottom: 1px solid $gray-300;
+    padding-bottom: .5rem;
+}
+
+// iframes for slides embedded in talks pages
+iframe.slide-deck {
+  border: 3px solid $gray-700;
+  width: 100%;
+}
+
+.ar4x3 {
+  aspect-ratio: 4 / 3;  
+}
+
+.ar3x2 {
+  aspect-ratio: 3 / 2;  
+}
+
+// icon-links
+.icon-link, div.quarto-about-jolla .about-link {
+    background-color: transparent;
+    color: $primary;
+    //border: 2px solid !important;
+    border: 2px solid;
+    border-color: $primary;
+    padding: 5px .4rem 5px .4rem !important;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    border-radius: 5px; 
+    display: inline-block;
+    text-decoration: none;
+}
+
+.icon-link:hover, div.quarto-about-jolla .about-link:hover{
+    background-color: $primary;
+    color: $body-bg;
+    border-color: $primary;
+    text-decoration: none;
+}
+
+// for cards on home page
+#card-first-color {
+background-image: repeating-linear-gradient(45deg, transparent, transparent 31px, #f0f0f0 31px, #f0f0f0 62px);
+background-color: #f7f8f8;
+
+}
+
+#card-first-color:hover {
+background-image: repeating-linear-gradient(45deg, transparent, transparent 31px, #f7f8f8 31px, #f7f8f8 62px);
+background-color: #f0f0f0;
+}
+
+#card-second-color {
+background-color: #fbfbfd;
+opacity: 1;
+background: linear-gradient(135deg, #e9ecf955 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(225deg, #e9ecf9 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(315deg, #e9ecf955 25%, transparent 25%) 0px 0/ 22px 22px, linear-gradient(45deg, #e9ecf9 25%, #fbfbfd 25%) 0px 0/ 22px 22px;  border: 4px solid $second-color;
+  border-radius: 5px; 
+}
+
+#card-third-color {
+background-color: #fbfbfd;
+opacity: 1;
+background: linear-gradient(135deg, #e9ecf955 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(225deg, #e9ecf9 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(315deg, #e9ecf955 25%, transparent 25%) 0px 0/ 22px 22px, linear-gradient(45deg, #e9ecf9 25%, #fbfbfd 25%) 0px 0/ 22px 22px;  border: 4px solid $third-color;
+  border-radius: 5px; 
+}
+
+.card-link {
+    background-color: $primary;
+    color: $body-bg;
+    border: 4px solid $primary;
+    border-color: $primary;
+    padding: 5px .5rem 5px .5rem !important;
+    margin: 0;
+    border-radius: 5px; 
+    display: inline-block;
+    text-decoration: none;  
+    font-size: $h5-font-size;
+}
+
+.card-link:hover {
+  background-color: $body-bg;
+  color: $primary;
+}
+
+.second-color-link{
+    background-color: $second-color;
+    border-color: $second-color;
+    color: $body-bg;
+}
+
+.second-color-link:hover {
+  color: $second-color;
+  border-color: $second-color;
+}
+
+.third-color-link{
+    background-color: $third-color;
+    border-color: $third-color;
+    color: $body-bg;
+}
+
+.third-color-link:hover {
+  color: $third-color;
+  border-color: $third-color;
+}
+
+
+.colorchange {
+  color: $primary;
+  animation: animateText 4s infinite alternate;
+}
+
+@keyframes animateText {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}

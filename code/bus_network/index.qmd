@@ -1,0 +1,22 @@
+---
+title: "Corporate network visualization"
+description: |
+  Data visualization of the bus owners' network in Rio de Janeiro..
+date: 2017-06-01
+# author: 
+#   - name: Adriano Belisario
+# site-url: https://huggingface.co/belisards/gun_violence_ptbr
+image: "cover.png"
+# image-alt: 
+categories: [Web]
+open-graph: false
+draft: false
+---
+
+Interactive data visualization made with Gephi.
+
+Data visualization: [https://apublica.org/riobus/html/](https://apublica.org/riobus/html/)
+
+Text: [https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/](https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/)
+
+Code: [https://github.com/belisards/mapa-onibus-rj](https://github.com/belisards/mapa-onibus-rj)

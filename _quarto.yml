@@ -1,0 +1,69 @@
+project:
+  type: website
+  output-dir: docs
+
+execute:
+  freeze: auto
+  
+body-footer: | 
+  This page brought to you by <https://example.com>
+
+website:
+  title: "Adriano Belisario"
+  site-url: https://belisards.github.io
+  description: Personal website.
+  repo-url: https://github.com/belisards/belisards.github.io
+  # image: images/logo.png
+  navbar:
+    title: "ADRIANO BELISARIO"
+    right:
+      - text: bio
+        href: about.qmd
+      # - text: blog
+      #   href: posts.qmd
+      - text: publications
+        href: publications.qmd
+      - text: code
+        href: code.qmd
+      - text: events
+        href: events.qmd
+      - text: contact
+        href: contact.qmd
+      - icon: github
+        href: https://github.com/belisards
+      - icon: twitter
+        href: https://twitter.com/belisards
+  favicon: images/favicon/favicon.ico
+  twitter-card: 
+    title: Adriano Belisario
+    description: Data, journalism and open-source 
+    image-width: 500
+    image-height: 500
+    card-style: summary # alternative summary_large_image
+    creator: "@belisards"
+    site: "@belisards"
+  open-graph: 
+    description: The personal website of Adriano Belisario
+    # image: images/logo.png
+    # image-alt: |
+    #   Text description
+    image-width: 500
+    image-height: 500
+    # locale: pt-BR
+  google-analytics:
+    tracking-id: "G-NE9CBZWC4K"
+    anonymize-ip: true
+
+format:
+  html:
+    theme: 
+      light: assets/ek-theme-light.scss
+    css: assets/ek-styles.css
+    code-block-border-left: true
+    highlight-style: 
+      light: assets/ek-light.theme
+    smooth-scroll: true
+    link-external-newwindow: true
+    
+editor: source
+

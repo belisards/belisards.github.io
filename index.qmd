@@ -1,0 +1,57 @@
+---
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+page-layout: full
+
+---
+
+
+::: {layout-ncol=2}
+**[Adriano Belisario]{.colorchange}** combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the [Joint Data Center on Forced Displacement](https://www.jointdatacenter.org/) and the [Netlab](https://netlab.eco.ufrj.br/) laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford) and collaborated with organizations like Open Knowledge Brazil, Medialab/UFRJ, Witness, Forensic Architecture, UNESCO, UNHCR, and Agência Pública. 
+
+My website showcases my work and research on a variety of topics such as data journalism & digital methods & open-source technologies & social data science & human rights & open-source intelligence (OSINT) & investigation of crimes and corruption & digital security & machine learning & digital culture & community-based infra-structures & free culture & more.
+
+:::
+
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-first-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Some of my data projects and code repositories.</p>
+<div style="margin-top: auto;"><a href="code.qmd" class="card-link heading-font">CODE</a></div>
+</div>
+</div>
+::: 
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-first-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Academic and journalistic articles, data investigations and other publications in English and Portuguese.</p>
+<div style="margin-top: auto;"><a href="publications.qmd" class="card-link first-color-link heading-font">TEXT</a></div>
+</div>
+</div>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-first-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Events I've organized and collaborated on.</p>
+<div style="margin-top: auto;"><a href="events.qmd" class="card-link first-color-link heading-font">EVENTS</a></div>
+</div>
+</div>
+:::
+
+:::
+
+::: {.footer}
+This website is under development, and not all sections have completed information yet. 
+
+Built with [Quarto](https://quarto.org/) inspired by [Ella Kaye's template](https://github.com/EllaKaye/ellakaye.co.uk).
+:::
+
