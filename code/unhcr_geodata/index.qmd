@@ -1,0 +1,19 @@
+---
+title: "UNHCR Geodata Extractor"
+description: |
+  BERT-based model specialized in Brazillian Portuguese law bills.
+date: 2024-01-16
+# author: 
+#   - name: Adriano Belisario
+# site-url: https://huggingface.co/belisards/gun_violence_ptbr
+image: "cover.png"
+categories: [python, streamlit]
+open-graph: false
+draft: false
+---
+
+Explore the camp boundaries and points available in the UNHCR’s geodata repository. Developed for the World Bank-UNHCR Joint Data Center on Forced Displacement.
+
+App: [https://unhcrdata.streamlit.app/](https://unhcrdata.streamlit.app/)
+
+Code: [https://github.com/belisards/unhcr_geodata](https://www.jointdatacenter.org/openbuildings/)
