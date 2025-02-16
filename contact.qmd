@@ -16,11 +16,4 @@ You can find me on the following social networks:
 [![Bluesky](https://img.shields.io/badge/Bluesky-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://bsky.app/profile/did:plc:c7wkk6l33tzzvkok2reyvr5f)  
 [![Mastodon](https://img.shields.io/badge/Mastodon-%236464FF.svg?style=flat&logo=mastodon&logoColor=white)](https://fosstodon.org/@belisards)
 
-
-# ```{r}
-# #| echo: false
-# library(distilltools)
-# ```
-
-
 You can also drop me an e-mail at contact [at] belisario [dot] website

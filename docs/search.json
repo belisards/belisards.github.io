@@ -4,7 +4,7 @@
     "href": "contact.html",
     "title": "Adriano Belisario",
     "section": "",
-    "text": "I’d love to hear from you!\nYou can find me on the following social networks:\n\n\n\n\n\n\n{r} # #| echo: false # library(distilltools) #\nYou can also drop me an e-mail at contact [at] belisario [dot] website"
+    "text": "I’d love to hear from you!\nYou can find me on the following social networks:\n\n\n\n\nYou can also drop me an e-mail at contact [at] belisario [dot] website"
   },
   {
     "objectID": "code.html",
