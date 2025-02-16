@@ -9,28 +9,18 @@ execute:
 
 # [I'd love to hear from you!]{.primary}
 
-You can find me on the following social networks:
+You can find me on the following social networks: 
 
-```{r}
-#| echo: false
-library(distilltools)
-```
+[![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://github.com/belisards)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/adriano-belisario-76758632)  
+[![Bluesky](https://img.shields.io/badge/Bluesky-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://bsky.app/profile/did:plc:c7wkk6l33tzzvkok2reyvr5f)  
+[![Mastodon](https://img.shields.io/badge/Mastodon-%236464FF.svg?style=flat&logo=mastodon&logoColor=white)](https://fosstodon.org/@belisards)
 
-`r icon_link(
-  icon = "github",
-  text = "GitHub",
-  url = "https://github.com/belisards"
-)`
-`r icon_link(
-  icon = "linkedin",
-  text = "LinkedIn",
-  url = "https://linkedin.com/adriano-belisario-76758632"
-)`
-`r icon_link(
-  icon = "mastodon",
-  text = "Mastodon",
-  url = "https://fosstodon.org/@belisards",
-  rel = "me noopener"
-)`
+
+# ```{r}
+# #| echo: false
+# library(distilltools)
+# ```
+
 
 You can also drop me an e-mail at contact [at] belisario [dot] website

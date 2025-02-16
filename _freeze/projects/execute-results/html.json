@@ -2,7 +2,9 @@
   "hash": "87bb6d60209b3dc27699771855c0f89b",
   "result": {
     "markdown": "---\n#title: \"Projects\"\nlisting:\n  contents: projects\n  sort: \"date desc\"\n  type: grid\n  categories: false\n  sort-ui: false\n  filter-ui: false\n  image-height: 416px\n  date-format: yyyy\n  fields: [title, image, description]\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [PROJECTS]{.colorchange}",
-    "supporting": [],
+    "supporting": [
+      "projects_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

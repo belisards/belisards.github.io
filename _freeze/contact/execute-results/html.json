@@ -1,10 +1,8 @@
 {
-  "hash": "fad4449983e85bf0428c2fb3015f8ff8",
+  "hash": "7e5c00dec75b17f4b8b93cf7de9198f5",
   "result": {
-    "markdown": "---\ninclude-in-header: \"_includes/fontawesome-2up.html\"\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [I'd love to hear from you!]{.primary}\n\nYou can find me on the following social networks:\n\n\n::: {.cell}\n\n:::\n\n\n`<a href=\"https://github.com/belisards\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub</a>`{=html}\n`<a href=\"https://linkedin.com/adriano-belisario-76758632\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-linkedin\"></i> LinkedIn</a>`{=html}\n`<a href=\"https://fosstodon.org/@belisards\" class=\"icon-link\" target=\"_blank\" rel=\"me noopener\"><i class=\"fab fa-mastodon\"></i> Mastodon</a>`{=html}\n\nYou can also drop me an e-mail at contact [at] belisario [dot] website",
-    "supporting": [
-      "contact_files"
-    ],
+    "markdown": "---\ninclude-in-header: \"_includes/fontawesome-2up.html\"\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [I'd love to hear from you!]{.primary}\n\nYou can find me on the following social networks: \n\n[![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://github.com/belisards)  \n[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/adriano-belisario-76758632)  \n[![Bluesky](https://img.shields.io/badge/Bluesky-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://bsky.app/profile/did:plc:c7wkk6l33tzzvkok2reyvr5f)  \n[![Mastodon](https://img.shields.io/badge/Mastodon-%236464FF.svg?style=flat&logo=mastodon&logoColor=white)](https://fosstodon.org/@belisards)\n\n\n# ```{r}\n# #| echo: false\n# library(distilltools)\n# ```\n\n\nYou can also drop me an e-mail at contact [at] belisario [dot] website",
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
