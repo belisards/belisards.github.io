@@ -50,8 +50,6 @@ My website showcases my work and research on a variety of topics such as data jo
 :::
 
 ::: {.footer}
-This website is under development, and not all sections have completed information yet. 
-
 Built with [Quarto](https://quarto.org/) inspired by [Ella Kaye's template](https://github.com/EllaKaye/ellakaye.co.uk).
 :::
 
