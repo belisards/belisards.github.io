@@ -21,7 +21,7 @@ Here are the main texts I've published since 2008. These include data-driven inv
 
 # Works in English
 
-[**Easy AI: A Simplified Approach to Classifying Images with Off-the-Shelf AI Models**](https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/). Bellingcat. 2024. 
+🌐 [**Easy AI: A Simplified Approach to Classifying Images with Off-the-Shelf AI Models**](https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/). Bellingcat. 2024. Also published in [Portuguese](https://escoladedados.org/tutoriais/easy-ai-classificacao-imagens-tutorial/).
 
 ⭐ [**Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai**](https://academic.oup.com/ijpor/article/36/3/edae032/7709027). International Journal of Public Opinion Research. 2024. Co-authorship with Scott Hale and Luc Rocher.
 
