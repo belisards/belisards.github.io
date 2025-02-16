@@ -8,7 +8,7 @@ date: 2023-01-16
 # site-url: https://huggingface.co/belisards/gun_violence_ptbr
 image: "cover.png"
 # image-alt: 
-categories: [python]
+categories: [python, machine learning]
 open-graph: false
 draft: false
 ---
@@ -17,4 +17,4 @@ My analysis for the Fragile Families and Child Wellbeing Study compared gradient
 
 Code: [https://github.com/belisards/ff_applied_ml/](https://github.com/belisards/ff_applied_ml/))
 
-[Paper](publications/files/fragile_families.pdf)
+[Paper](https://github.com/belisards/belisards.github.io/blob/main/publications/files/fragile_families.pdf)

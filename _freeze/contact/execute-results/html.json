@@ -1,8 +1,10 @@
 {
-  "hash": "4dc0e73ce45db036025a47a033b2d77a",
+  "hash": "ae4ae11ad0c42037046a3c991f4e51af",
   "result": {
-    "markdown": "---\ninclude-in-header: \"_includes/fontawesome-2up.html\"\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [I'd love to hear from you!]{.primary}\n\nYou can find me on the following social networks: \n\n[![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://github.com/belisards)  \n[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/adriano-belisario-76758632)  \n[![Bluesky](https://img.shields.io/badge/Bluesky-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://bsky.app/profile/did:plc:c7wkk6l33tzzvkok2reyvr5f)  \n[![Mastodon](https://img.shields.io/badge/Mastodon-%236464FF.svg?style=flat&logo=mastodon&logoColor=white)](https://fosstodon.org/@belisards)\n\nYou can also drop me an e-mail at contact [at] belisario [dot] website",
-    "supporting": [],
+    "markdown": "---\ninclude-in-header: \"_includes/fontawesome-2up.html\"\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n# [I'd love to hear from you!]{.primary}\n\nYou can find me on the following social networks: \n\n[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/adriano-belisario-76758632) | [![Bluesky](https://img.shields.io/badge/Bluesky-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://bsky.app/profile/did:plc:c7wkk6l33tzzvkok2reyvr5f)  | [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://github.com/belisards)  | [![Mastodon](https://img.shields.io/badge/Mastodon-%236464FF.svg?style=flat&logo=mastodon&logoColor=white)](https://fosstodon.org/@belisards)\n\nYou can also drop me an e-mail at contact [at] belisario [dot] website",
+    "supporting": [
+      "contact_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

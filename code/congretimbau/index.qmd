@@ -2,12 +2,12 @@
 title: "Congretimbau"
 description: |
   BERT-based model specialized in Brazillian Portuguese law bills.
-date: 2023-01-16
+date: 2024-09-27
 # author: 
 #   - name: Adriano Belisario
 # site-url: https://huggingface.co/belisards/gun_violence_ptbr
 image: "cover.png"
-categories: [python]
+categories: [python, nlp, machine learning]
 open-graph: false
 draft: false
 ---

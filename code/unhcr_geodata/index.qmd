@@ -7,7 +7,7 @@ date: 2024-01-16
 #   - name: Adriano Belisario
 # site-url: https://huggingface.co/belisards/gun_violence_ptbr
 image: "cover.png"
-categories: [python, streamlit]
+categories: [python, streamlit,geodata, dashboard]
 open-graph: false
 draft: false
 ---

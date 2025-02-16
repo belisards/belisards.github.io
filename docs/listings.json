@@ -1,13 +1,29 @@
 [
   {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2024-02-29_tutorial/index.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/2024-02-29_tutorial/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": []
+  },
+  {
     "listing": "/code.html",
     "items": [
+      "/code/congretimbau/index.html",
       "/code/smart_image_sorter/index.html",
       "/code/unhcr_geodata/index.html",
       "/code/fdpatlas/index.html",
       "/code/gunviolenceptbr/index.html",
       "/code/ff_challenge/index.html",
-      "/code/congretimbau/index.html",
       "/code/bus_network/index.html"
     ]
   }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Adriano Belisario</title>
+<link>https://belisards.github.io/blog.html</link>
+<atom:link href="https://belisards.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website.</description>
+<generator>quarto-1.2.269</generator>
+<lastBuildDate>Sat, 30 Dec 2023 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Creating a personal website with Quarto</title>
+  <dc:creator>Adriano Belisario</dc:creator>
+  <link>https://belisards.github.io/posts/2024-02-29_tutorial/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This post collects some references and notes I’ve used to create my personal website using Quarto. It presents a simple step-by-step guide to deploy a Quarto website using Github Actions.</p>
+<ol type="1">
+<li>Create a repository named <username>.github.io</username></li>
+</ol>
+<section id="cool-personal-websites-made-with-quarto" class="level1">
+<h1>Cool personal websites made with Quarto</h1>
+<p>https://beamilz.com/talks/</p>
+<p>https://ellakaye.co.uk/</p>
+<p>https://rfsaldanha.github.io/</p>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<p><a href="https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/">https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/</a></p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belisario2023,
+  author = {Adriano Belisario},
+  title = {Creating a Personal Website with {Quarto}},
+  date = {2023-12-30},
+  url = {https://belisards.github.io/posts/2024-02-29_tutorial},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-belisario2023" class="csl-entry quarto-appendix-citeas">
+Adriano Belisario. 2023. <span>“Creating a Personal Website with
+Quarto.”</span> December 30, 2023. <a href="https://belisards.github.io/posts/2024-02-29_tutorial">https://belisards.github.io/posts/2024-02-29_tutorial</a>.
+</div></div></section></div> ]]></description>
+  <category>Tutorial</category>
+  <guid>https://belisards.github.io/posts/2024-02-29_tutorial/index.html</guid>
+  <pubDate>Sat, 30 Dec 2023 03:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
