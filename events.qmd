@@ -83,6 +83,8 @@ Mexico city, Mexico, 2016. **Openlabs - Caixa Mágica: dispositivo para particip
 
 # Workshops
 
+São Paulo, Brazil, 2025. ABRAJI - Brazilian Conference on Investigative Journalism. **[Classificação de textos e imagens com IA de código-aberto](https://belisario.website/classificacao_ia/)**
+
 Brasília, 2024. América Aberta/Coda.Br. **[Texto, áudio e imagens: usando modelos de IA gratuitos e de código-aberto com dados não-estruturados](https://bit.ly/ia-coda-24/)**.
 
 Online, 2024. The Rory Peck Trust. **[Segurança digital para jornalistas](https://bit.ly/sdigital-rorypeck)**.

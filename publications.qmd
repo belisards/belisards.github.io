@@ -186,42 +186,48 @@ Regulamentação à vista. Revista de História da Biblioteca Nacional.
 
 Políticas dá cultura. Revista de História da Biblioteca Nacional.
 
-## Other writings
+## Essays and other writings
 
-⭐ [Cartilha de segurança digital e atuação no campo](https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/). 2020. Co-authorship. Agência Pública.
+⭐ [Cartilha de segurança digital e atuação no campo](https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/), 2020. Agência Pública.
 
-[Espaço, território e inovação tecnológica nos CEUs](http://inciti.org/2015/05/19/espaco-territorio-e-inovacao-tecnologica-nos-ceus/). 2015. Co-authorship.
+[Espaço, território e inovação tecnológica nos CEUs](http://inciti.org/2015/05/19/espaco-territorio-e-inovacao-tecnologica-nos-ceus/), 2015.
 
-[Territórios e práticas libertárias em redes sociais – Geopolítica do (des)conhecimento](https://baobavoador.noblogs.org/post/2015/11/02/territorios-e-praticas-libertarias-em-redes-sociais-geopolitica-do-desconhecimento/), 2012. Co-authorship.
+[Territórios e práticas libertárias em redes sociais – Geopolítica do (des)conhecimento](https://baobavoador.noblogs.org/post/2015/11/02/territorios-e-praticas-libertarias-em-redes-sociais-geopolitica-do-desconhecimento/), 2012.
 
-[Por uma ideia de cinema radical](https://belisario.website/publications/por_uma_ideia_de_cinema_radical.html). 2007. Co-authorship. 
+[Por uma ideia de cinema radical](https://belisario.website/publications/por_uma_ideia_de_cinema_radical.html), 2007. 
 
 ## Technical tutorials
 
-⭐ [Checagem de imagens: cronolocalização de fotos](https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/), authorship, 2022.
+⭐ [Checagem de imagens: cronolocalização de fotos](https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/), 2022.
 
-[Como pedir e receber ajuda na internet](https://escoladedados.org/tutoriais/como-pedir-e-receber-ajuda-na-internet/), coauthorship, 2021.
+[Como pedir e receber ajuda na internet](https://escoladedados.org/tutoriais/como-pedir-e-receber-ajuda-na-internet/) 2021.
 
-[Pseudonimização de dados com editores de planilha](https://escoladedados.org/tutoriais/pseudonimizacao-de-dados-com-editores-de-planilha/), authorship.
+[Pseudonimização de dados com editores de planilha](https://escoladedados.org/tutoriais/pseudonimizacao-de-dados-com-editores-de-planilha/), 2021.
 
-[Geocodificando endereços: transforme tabelas em mapas](https://escoladedados.org/tutoriais/geocodificando-enderecos-transforme-tabelas-em-mapas/), authorship.
+[Geocodificando endereços: transforme tabelas em mapas](https://escoladedados.org/tutoriais/geocodificando-enderecos-transforme-tabelas-em-mapas/).
 
-[Caixa de ferramentas para jornalistas de dados ambientais](https://escoladedados.org/tutoriais/caixa-de-ferramentas-para-jornalistas-de-dados-ambientais/), coauthorship.
+[Caixa de ferramentas para jornalistas de dados ambientais](https://escoladedados.org/tutoriais/caixa-de-ferramentas-para-jornalistas-de-dados-ambientais/)
 
-[Raspe um Diário Oficial e contribua com o Querido Diário](https://escoladedados.org/tutoriais/raspe-um-diario-oficial-e-contribua-com-o-querido-diario/), coauthorship.
+[Raspe um Diário Oficial e contribua com o Querido Diário](https://escoladedados.org/tutoriais/raspe-um-diario-oficial-e-contribua-com-o-querido-diario/)
 
-[Limpando dados da COVID-19 com R](https://escoladedados.org/tutoriais/limpando-dados-da-covid-19-com-r/), authorship, 2020.
+[Limpando dados da COVID-19 com R](https://escoladedados.org/tutoriais/limpando-dados-da-covid-19-com-r/), 2020.
 
-[Veja como monitorar em tempo real ataques coordenados no Twitter](https://escoladedados.org/tutoriais/veja-como-monitorar-em-tempo-real-ataques-coordenados-no-twitter/), co-authorship, 2020.
+[Veja como monitorar em tempo real ataques coordenados no Twitter](https://escoladedados.org/tutoriais/veja-como-monitorar-em-tempo-real-ataques-coordenados-no-twitter/), 2020.
 
-[Deu match! Cruzando tabelas no Google Sheets](https://escoladedados.org/tutoriais/deu-match-cruzando-tabelas-no-google-sheets/), authorship.
+[Deu match! Cruzando tabelas no Google Sheets](https://escoladedados.org/tutoriais/deu-match-cruzando-tabelas-no-google-sheets/).
 
-Entrevistando dados: uma introdução prática -- [parte I](https://escoladedados.org/tutoriais/entrevistando-dados-uma-introducao-pratica/) e [parte II](https://escoladedados.org/tutoriais/entrevistando-dados-uma-introducao-pratica-parte-ii/), authorship.
+Entrevistando dados: uma introdução prática -- [parte I](https://escoladedados.org/tutoriais/entrevistando-dados-uma-introducao-pratica/) e [parte II](https://escoladedados.org/tutoriais/entrevistando-dados-uma-introducao-pratica-parte-ii/).
 
-[Expressão regular pode melhorar sua vida](https://escoladedados.org/tutoriais/expressao-regular-pode-melhorar-sua-vida/), authorship.
+[Expressão regular pode melhorar sua vida](https://escoladedados.org/tutoriais/expressao-regular-pode-melhorar-sua-vida/), 2019.
 
-[Tidy data: dados arrumados e 5 problemas comuns](https://escoladedados.org/tutoriais/tidy-data-dados-arrumados-e-5-problemas-comuns/), translation, 2019.
+## Translation
 
-[Operadores de busca avançada](https://escoladedados.org/tutoriais/operadores-de-busca-avancada/), translation, 2019.
+[Tidy data: dados arrumados e 5 problemas comuns](https://escoladedados.org/tutoriais/tidy-data-dados-arrumados-e-5-problemas-comuns/), 2019.
 
-[Mergulhando no jornalismo de dados](https://escoladedados.org/tutoriais/mergulhando-no-jornalismo-de-dados/), translation, 2019.
+[Operadores de busca avançada](https://escoladedados.org/tutoriais/operadores-de-busca-avancada/), 2019.
+
+[Mergulhando no jornalismo de dados](https://escoladedados.org/tutoriais/mergulhando-no-jornalismo-de-dados/), 2019.
+
+## Text review
+
+[Atingidos pelas redes sociais - Os impactos da indústria da desinformação nos consumidores brasileiros](https://netlab.eco.ufrj.br/post/atingidos-pelas-redes-sociais-os-impactos-da-ind%C3%BAstria-da-desinforma%C3%A7%C3%A3o-nos-consumidores-brasileiro), 2025.
