@@ -9,13 +9,14 @@
 <link>https://belisards.github.io/blog.html</link>
 <atom:link href="https://belisards.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Personal website.</description>
-<generator>quarto-1.2.269</generator>
-<lastBuildDate>Sat, 30 Dec 2023 03:00:00 GMT</lastBuildDate>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Sat, 30 Dec 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Creating a personal website with Quarto</title>
   <dc:creator>Adriano Belisario</dc:creator>
-  <link>https://belisards.github.io/posts/2024-02-29_tutorial/index.html</link>
+  <link>https://belisards.github.io/posts/2024-02-29_tutorial/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -37,20 +38,20 @@
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belisario2023,
-  author = {Adriano Belisario},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belisario2023,
+  author = {Belisario, Adriano},
   title = {Creating a Personal Website with {Quarto}},
   date = {2023-12-30},
-  url = {https://belisards.github.io/posts/2024-02-29_tutorial},
+  url = {https://belisards.github.io/posts/2024-02-29_tutorial/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-belisario2023" class="csl-entry quarto-appendix-citeas">
-Adriano Belisario. 2023. <span>“Creating a Personal Website with
-Quarto.”</span> December 30, 2023. <a href="https://belisards.github.io/posts/2024-02-29_tutorial">https://belisards.github.io/posts/2024-02-29_tutorial</a>.
+Belisario, Adriano. 2023. <span>“Creating a Personal Website with
+Quarto.”</span> December 30, 2023. <a href="https://belisards.github.io/posts/2024-02-29_tutorial/">https://belisards.github.io/posts/2024-02-29_tutorial/</a>.
 </div></div></section></div> ]]></description>
   <category>Tutorial</category>
-  <guid>https://belisards.github.io/posts/2024-02-29_tutorial/index.html</guid>
-  <pubDate>Sat, 30 Dec 2023 03:00:00 GMT</pubDate>
+  <guid>https://belisards.github.io/posts/2024-02-29_tutorial/</guid>
+  <pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

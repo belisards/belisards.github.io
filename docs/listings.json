@@ -1,5 +1,9 @@
 [
   {
+    "listing": "/projects.html",
+    "items": []
+  },
+  {
     "listing": "/posts.html",
     "items": [
       "/posts/2024-02-29_tutorial/index.html"
@@ -10,10 +14,6 @@
     "items": [
       "/posts/2024-02-29_tutorial/index.html"
     ]
-  },
-  {
-    "listing": "/projects.html",
-    "items": []
   },
   {
     "listing": "/code.html",
