@@ -16,13 +16,13 @@
     ]
   },
   {
-    "listing": "/posts.html",
+    "listing": "/blog.html",
     "items": [
       "/posts/2024-02-29_tutorial/index.html"
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/posts.html",
     "items": [
       "/posts/2024-02-29_tutorial/index.html"
     ]

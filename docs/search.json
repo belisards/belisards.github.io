@@ -7,62 +7,6 @@
     "text": "PROJECTS\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "code/fdpatlas/index.html",
-    "href": "code/fdpatlas/index.html",
-    "title": "Forced Displacement Microdata",
-    "section": "",
-    "text": "The Forced Displacement Microdata dashboard lists publicly available datasets that have a representative sample of refugees or internally displaced people (IDP); by country, year, theme, data producer among others. I customized the Shiny dashboard based on the Eviatlas package.\n\nDashboard: https://rstudio.unhcr.org/FDMAtlas/\nCode: https://github.com/belisards/FDPDataAtlas\nPaper: Data Gaps in Microdata in the Context of Forced Displacement by Takaaki Masaki and B. Madson."
-  },
-  {
-    "objectID": "code/unhcr_geodata/index.html",
-    "href": "code/unhcr_geodata/index.html",
-    "title": "UNHCR Geodata Extractor",
-    "section": "",
-    "text": "Explore the camp boundaries and points available in the UNHCR’s geodata repository. Developed for the World Bank-UNHCR Joint Data Center on Forced Displacement.\nApp: https://unhcrdata.streamlit.app/\nCode: https://github.com/belisards/unhcr_geodata"
-  },
-  {
-    "objectID": "code/bus_network/index.html",
-    "href": "code/bus_network/index.html",
-    "title": "Corporate network visualization",
-    "section": "",
-    "text": "Interactive data visualization made with Gephi.\nData visualization: https://apublica.org/riobus/html/\nText: https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/\nCode: https://github.com/belisards/mapa-onibus-rj"
-  },
-  {
-    "objectID": "code/gunviolenceptbr/index.html",
-    "href": "code/gunviolenceptbr/index.html",
-    "title": "Classification model of gun violence reports",
-    "section": "",
-    "text": "The model is based on BERTimbau and fine-tuned with Twitter data labelled by Instituto Fogo Cruzado. It was developed as part of my research at the Oxford Internet Institute.\nModel: https://huggingface.co/belisards/gun_violence_ptbr\nPre-print: https://arxiv.org/abs/2401.12989\nCode: https://github.com/belisards/gunviolence_ptbr"
-  },
-  {
-    "objectID": "events.html",
-    "href": "events.html",
-    "title": "EVENTS",
-    "section": "",
-    "text": "EVENTS\nThis is a non-exhaustive list of activities and events I have developed, including conferences, lectures, workshops and courses.\n\n\nOrganization\nI organized several editions of the Brazilian Conference on Data Journalism and Digital Methods (Coda.Br) from 2018 to 2022, including the first regional meeting in the Amazon region. Previously, I collaborated with Witness to organize the first national meeting on deepfakes and developed a series of events about free culture and piracy (Copyfight).\nBelém, Brazil, 2022. Coda Amazônia. 1 ed.\nOnline, 2021. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 6 ed.\nOnline, 2020. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 5 ed.\nSão Paulo, 2019. Deepfakes - prepare-se agora. 1 ed.\nSão Paulo, 2019. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 4 ed.\nSão Paulo, 2018. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 3 ed.\nRio de Janeiro, 2014. Copyfight. 3 ed.\nRio de Janeiro, 2012. Communication Laboratory at the Peoples Summit Rio+20. 1 ed.\nRio de Janeiro, 2011. Copyfight. 2 ed.\nRio de Janeiro, 2010. Copyfight. 1 ed.\n\n\nTalks and lectures\nBerlin, Germany, 2024. Global Innovation Gathering Weekend. Way beyond ChatGPT: leveraging open source language models.\nBerlin, Germany, 2024. re:publica 2024. From Laughs to Courts: Multifaceted Uses of AI in the Global South.\nBerlin, Germany, 2024. Disinfo Demasked/DW Akademy. AI uses for fact-checking in Brazil.\nOnline, 2021. RightsCon. Anatomy of a visual investigation.\nSalvador, Brazil, 2019. Simpósio LAVITS 2019. Expulsão/Exceção: arquitetura forense, conflito e direitos humanos.\nRio de Janeiro, Brazil, 2019. Hackfest/Ministério Público do Estado do Rio de Janeiro. Dados abertos e transformação social.\nSão Paulo, Brazil, 2019. Campus Party. Jornalismo de dados no Brasil.\nViçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. Jornalismo de dados no Brasil.\nBerlin, Germany, 2017. Re:Publica. Coolab - Community networks in Brazil.\nBuenos Aires, Argentina, 2015. LAVITS. III Simpósio Internacional da Rede Latinoamericana de Vigilância, Tecnologia e Sociedade. Paper presentation.\nRio de Janeiro, Brazil, 2015. Ministério da Cultura. Diálogos em rede.\nDuque de Caxias, Brazil, 2015. Território Baixada.Web, Ficção, Relato e Amor: cartografia e resistências.\nBerlin, Germany, 2014. Transmediale. Micropolitics of the Post-Digital: From street protests to transitional spaces in Brazil.\nGeneva, Switzerland, 2013. Open Knowledge Conference, Data driven campaigning.\nRecife, Brazil, 2012. III Semana Chico Science. Banditismo por uma questão de classe: música e hacktivismo na cultura contemporânea.\nRio de Janeiro, Brazil, 2007. Undergraduate research seminar. Do cineclubismo enquanto prática de comunicação comunitária.\n\n\nLabs\nMadrid, Spain, 2017. Visualizar17 - Medialab Prado. Agrega.la.\nCartagena, Colombia, 2016. Laboratório Iberoamericano de Inovação Cidadã. Agrega.la.\nMexico city, Mexico, 2016. Openlabs - Caixa Mágica: dispositivo para participação social.\n\n\nWorkshops\nSão Paulo, Brazil, 2025. ABRAJI - Brazilian Conference on Investigative Journalism. Classificação de textos e imagens com IA de código-aberto\nBrasília, Brazil, 2024. América Aberta/Coda.Br. Texto, áudio e imagens: usando modelos de IA gratuitos e de código-aberto com dados não-estruturados**.\nOnline, 2024. The Rory Peck Trust. Segurança digital para jornalistas.\nSão Paulo, Brazil, 2023. Coda.Br. Entendendo e usando Transformers, a tecnologia por trás do ChatGPT.\nGeneva, Switzerland, 2023. European Data and Computational Journalism Conference. Beyond the hype: an introduction to NLP and language models.\nSão Paulo, Brazil, 2019. Curso do Centro de Pesquisa e Formação do SESC-SP. Espectro livre e redes comunitárias.\nBelém, Brazil, 2018. Seminário Amazônia Interconectada. Narrativas e dados.\nRio de Janeiro, Brazil, 2016. Encontro Nacional de Artes Cênicas do SESC. Redes e Culturas Colaborativas.\nQuito, Ecuador, 2013. I Congreso Internacional de Cultura Viva y Comunitaria. Taller de software libre.\nRio de Janeiro, Brazil, 2012. GNUGRAF. Copyfight : Muito além do download grátis.\nDakar, Senegal, 2011. World Social Forum. Mandala: uma proposta de agregação de conteúdo para a mídia independente."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Awards and recognitions",
-    "section": "",
-    "text": "Adriano Belisario combines expertise in communication and data to address important human rights concerns. Belisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he contributed to organizations like Open Knowledge Brazil, Witness, Medialab/UFRJ, Forensic Architecture UNESCO, Agência Pública and The Intercept Brasil. His publication portfolio includes books, academic articles, and journalistic pieces in Portuguese and English, and he has been invited to speak at several global events.\nBelisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford). While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed Documental.xyz, an initiative that combines diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations."
-  },
-  {
-    "objectID": "about.html#courses",
-    "href": "about.html#courses",
-    "title": "Awards and recognitions",
-    "section": "Courses",
-    "text": "Courses\n2021, online. Mathematics for machine learning specialization. Imperial College London.\n2020, São Paulo. Survey design and analysis. International Political Science Association/USP Summer School.\n2017, Rio de Janeiro. Reporting Land Rights. Thomsom Reuters Foundation"
-  },
-  {
-    "objectID": "code.html",
-    "href": "code.html",
-    "title": "CODE",
-    "section": "",
-    "text": "CODE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCongretimbau\n\n\nBERT-based model specialized in Brazillian Portuguese law bills.\n\n\n\n\n\n\n\n\n\n\n\n\nSmart Image Sorter\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUNHCR Geodata Extractor\n\n\nBERT-based model specialized in Brazillian Portuguese law bills.\n\n\n\n\n\n\n\n\n\n\n\n\nForced Displacement Microdata\n\n\nShiny dashboard about gaps in microdata on forced displacement.\n\n\n\n\n\n\n\n\n\n\n\n\nClassification model of gun violence reports\n\n\nText classification model to detect gun violence reports in Brazilian Portuguese.\n\n\n\n\n\n\n\n\n\n\n\n\nFragilie Families\n\n\nStatistical models and analysis for the Fragile Families and Child Wellbeing Study.\n\n\n\n\n\n\n\n\n\n\n\n\nCorporate network visualization\n\n\nData visualization of the bus owners’ network in Rio de Janeiro..\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "publications/por_uma_ideia_de_cinema_radical.html",
     "href": "publications/por_uma_ideia_de_cinema_radical.html",
     "title": "Por uma ideia de cinema radical",
@@ -75,6 +19,34 @@
     "title": "Por uma ideia de cinema radical",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nDowning atenta para a compreensão norte-americana de vídeo que, diferentemente, do formato televisivo, serve à propósitos alternativos e circula em ambientes diferentes dos espaços massivos, como salas de aula, instalações de arte, reuniões (2001, p. 260).↩︎\nO “bios midiático”, segundo Muniz Sodré (2002, p. 11-22), é esfera de relações mediada pelas representações midiáticas e pela moral mercadológica, portanto, é a vida midiatizada, calcada numa realidade fetichizada por meio de imagens, um simulacro do real descomplexificado.↩︎\nAgência Nacional de Cinema. Órgão oficial criado em 2001 com o objetivo de regulamentar, regular e fiscalizar a indústria cinematográfica e videofonográfica nacional. A atual diretoria da ANCINE é composta por: Manoel Rangel, Nilson Rodrigues e Leopoldo Nunes.↩︎\nPalavras de Heraldo Bezerra, o HB, um dos responsáveis pelo Cineclube Mate com Angu em entrevista realizada para esta pesquisa.↩︎\nIniciativas desenvolvidas pela sociedade civil que firmaram convênio com o Ministério da Cultura (MinC) por meio de seleção por editais públicos, tornam-se Ponto de Cultura e ficam responsáveis por articular e impulsionar as ações que já existem** nas comunidades. Fonte: http://www.cultura.gov.br/programas_e_acoes/programa_cultura_viva/pontos_de_cultura/↩︎\nTexto de apresentação da comunidade virtual do cineclube no site www.orkut.com. Ver link: http://www.orkut.com.br/Main#Community.aspx?cmm=690336↩︎\nHakim Bey, pseudônimo de Peter Lamborn Wilson, (Nova Iorque, 1945) é um escritor, ensaísta e poeta que se intitula como um anarquista ontológico. Seu livro T.A.Z.: Zona Autônoma Temporária, escrito em 1985, foi amplamente reconhecido no mundo todo. Nele, a partir de estudos históricos sobre as utopias piratas, descreve táticas de criação de espaços temporários que passam despercebidos pelas formas tradicionais de controle.↩︎\n“O projeto Cine Guandu, realizado pela Secretaria Municipal de Educação e Cultura de Japeri e o cineclube Mate com Angu – representado por Pablo Cunha -, oferece a jovens do município a apropriação de ferramentas necessárias à construção de um novo modelo de produção audiovisual: a partir de novas mídias como aparelho celular e câmera fotográfica. Trata-se de um conjunto de ações desenvolvidas para estimular o protagonismo juvenil e utilizar o audiovisual como potencializador de debates, buscando estimular a consciência crítica e transformação social.” Fonte: Ficha de Filiação do Cine Guandu ao Conselho Nacional de Cineclubes. Link: http://cnc.utopia.com.br/tiki/tiki-index.php?page=FICHA+DE+FILIA%C3%87%C3%83O+CC+GUANDU↩︎\nA ABAETÉ Estudos Socioambientais é uma empresa formada por antropólogos, fotógrafos e cineastas com experiência em pesquisa socioambiental em várias regiões do país. Privilegia a pesquisa antropológica e a produção de videodocumentários como recursos para a elaboração de estudos e projetos sociais.↩︎\nFala de Heraldo Bezerra em entrevista realizada para esta pesquisa.↩︎\nO evento – realizado numa parceria entre o Sesc e os cineclubes Cine Guandu e Mate com Angu - une exibição de curtas-metragens, apresentações musicais, debates informais e abre espaço para expressões espontâneas da platéia.↩︎\nEndereços do Anti-Cinema na web: http://www.youtube.com/marciozn2003 e http://coletivoanticinema.blogspot.com/↩︎\nFala de Marcio Hermínio dos Santos em entrevista realizada para esta pesquisa.↩︎"
+  },
+  {
+    "objectID": "code/fdpatlas/index.html",
+    "href": "code/fdpatlas/index.html",
+    "title": "Forced Displacement Microdata",
+    "section": "",
+    "text": "The Forced Displacement Microdata dashboard lists publicly available datasets that have a representative sample of refugees or internally displaced people (IDP); by country, year, theme, data producer among others. I customized the Shiny dashboard based on the Eviatlas package.\n\nDashboard: https://rstudio.unhcr.org/FDMAtlas/\nCode: https://github.com/belisards/FDPDataAtlas\nPaper: Data Gaps in Microdata in the Context of Forced Displacement by Takaaki Masaki and B. Madson."
+  },
+  {
+    "objectID": "code/smart_image_sorter/index.html",
+    "href": "code/smart_image_sorter/index.html",
+    "title": "Smart Image Sorter",
+    "section": "",
+    "text": "Tutorial and user-friendly tool to faciliate the use of zero-shot image classification models. Developed as part of the Bellingcat Tech Fellowship program.\nTutorial: https://www.bellingcat.com/resources/2024/08/22/shadow-geolocate-geolocation-locate-image-tool-open-source-bellingcat-measure/\nGithub repository: https://github.com/bellingcat/smart-image-sorter"
+  },
+  {
+    "objectID": "code/ff_challenge/index.html",
+    "href": "code/ff_challenge/index.html",
+    "title": "Fragilie Families",
+    "section": "",
+    "text": "My analysis for the Fragile Families and Child Wellbeing Study compared gradient boosting algorithms to model six key metrics: GPA, grit, material hardship, layoff, eviction, and job training. Using interpretable methods, the study delves into eviction cases.\nCode: https://github.com/belisards/ff_applied_ml/)\nPaper"
+  },
+  {
+    "objectID": "code/congretimbau/index.html",
+    "href": "code/congretimbau/index.html",
+    "title": "Congretimbau",
+    "section": "",
+    "text": "This model is a continuously trained version of BERTimbau on a dataset with bills of Brazilian law proposals.\nModel: https://huggingface.co/belisards/congretimbau\nTraining data: belisards/ementas_camarabr_1934_2024 and belisards/ementas_senado_1946_2024\nFeatured image generated by DALL-E."
   },
   {
     "objectID": "publications.html",
@@ -133,25 +105,11 @@
     "text": "Text review\nAtingidos pelas redes sociais - Os impactos da indústria da desinformação nos consumidores brasileiros, 2025."
   },
   {
-    "objectID": "publications/files/copyfight/index.html",
-    "href": "publications/files/copyfight/index.html",
-    "title": "Copyfight",
+    "objectID": "todo.html",
+    "href": "todo.html",
+    "title": "blog",
     "section": "",
-    "text": "Book and three seminars on free culture, piracy and intellectual property.\nBook: Copyfight - Pirataria e cultura livre\n\n\n\nReuseCC BY-SA 4.0CitationBibTeX citation:@online{2010,\n  author = {},\n  title = {Copyfight},\n  date = {2010-01-16},\n  url = {https://belisards.github.io/publications/files/copyfight/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\n“Copyfight.” 2010. January 16, 2010. https://belisards.github.io/publications/files/copyfight/."
-  },
-  {
-    "objectID": "posts/2024-02-29_tutorial/index.html",
-    "href": "posts/2024-02-29_tutorial/index.html",
-    "title": "Creating a personal website with Quarto",
-    "section": "",
-    "text": "This post collects some references and notes I’ve used to create my personal website using Quarto. It presents a simple step-by-step guide to deploy a Quarto website using Github Actions.\n\nCreate a repository named .github.io\n\n\nCool personal websites made with Quarto\nhttps://beamilz.com/talks/\nhttps://ellakaye.co.uk/\nhttps://rfsaldanha.github.io/\n\n\nReferences\nhttps://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/\n\n\n\n\nReuseCC BY-SA 4.0CitationBibTeX citation:@online{belisario2023,\n  author = {Belisario, Adriano},\n  title = {Creating a Personal Website with {Quarto}},\n  date = {2023-12-30},\n  url = {https://belisards.github.io/posts/2024-02-29_tutorial/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBelisario, Adriano. 2023. “Creating a Personal Website with\nQuarto.” December 30, 2023. https://belisards.github.io/posts/2024-02-29_tutorial/."
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "POSTS",
-    "section": "",
-    "text": "POSTS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreating a personal website with Quarto\n\n\n\nTutorial\n\n\n\nNotes of my own process\n\n\n\n\n\nDec 30, 2023\n\n\nAdriano Belisario\n\n\n\n\n\nNo matching items"
+    "text": "blog\nhttp://web.archive.org/web/20130126142404/http://pontaodaeco.org/cultura-viva-comunitaria-lapaz-2013"
   },
   {
     "objectID": "contact.html",
@@ -161,32 +119,18 @@
     "text": "I’d love to hear from you!\nYou can find me on the following social networks:\n |  |  | \nYou can also drop me an e-mail at contact [at] belisario [dot] website"
   },
   {
-    "objectID": "todo.html",
-    "href": "todo.html",
-    "title": "blog",
+    "objectID": "code.html",
+    "href": "code.html",
+    "title": "CODE",
     "section": "",
-    "text": "blog\nhttp://web.archive.org/web/20130126142404/http://pontaodaeco.org/cultura-viva-comunitaria-lapaz-2013"
+    "text": "CODE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCongretimbau\n\n\nBERT-based model specialized in Brazillian Portuguese law bills.\n\n\n\n\n\n\n\n\n\n\n\n\nSmart Image Sorter\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUNHCR Geodata Extractor\n\n\nBERT-based model specialized in Brazillian Portuguese law bills.\n\n\n\n\n\n\n\n\n\n\n\n\nForced Displacement Microdata\n\n\nShiny dashboard about gaps in microdata on forced displacement.\n\n\n\n\n\n\n\n\n\n\n\n\nClassification model of gun violence reports\n\n\nText classification model to detect gun violence reports in Brazilian Portuguese.\n\n\n\n\n\n\n\n\n\n\n\n\nFragilie Families\n\n\nStatistical models and analysis for the Fragile Families and Child Wellbeing Study.\n\n\n\n\n\n\n\n\n\n\n\n\nCorporate network visualization\n\n\nData visualization of the bus owners’ network in Rio de Janeiro..\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "code/smart_image_sorter/index.html",
-    "href": "code/smart_image_sorter/index.html",
-    "title": "Smart Image Sorter",
+    "objectID": "events.html",
+    "href": "events.html",
+    "title": "EVENTS",
     "section": "",
-    "text": "Tutorial and user-friendly tool to faciliate the use of zero-shot image classification models. Developed as part of the Bellingcat Tech Fellowship program.\nTutorial: https://www.bellingcat.com/resources/2024/08/22/shadow-geolocate-geolocation-locate-image-tool-open-source-bellingcat-measure/\nGithub repository: https://github.com/bellingcat/smart-image-sorter"
-  },
-  {
-    "objectID": "code/ff_challenge/index.html",
-    "href": "code/ff_challenge/index.html",
-    "title": "Fragilie Families",
-    "section": "",
-    "text": "My analysis for the Fragile Families and Child Wellbeing Study compared gradient boosting algorithms to model six key metrics: GPA, grit, material hardship, layoff, eviction, and job training. Using interpretable methods, the study delves into eviction cases.\nCode: https://github.com/belisards/ff_applied_ml/)\nPaper"
-  },
-  {
-    "objectID": "code/congretimbau/index.html",
-    "href": "code/congretimbau/index.html",
-    "title": "Congretimbau",
-    "section": "",
-    "text": "This model is a continuously trained version of BERTimbau on a dataset with bills of Brazilian law proposals.\nModel: https://huggingface.co/belisards/congretimbau\nTraining data: belisards/ementas_camarabr_1934_2024 and belisards/ementas_senado_1946_2024\nFeatured image generated by DALL-E."
+    "text": "EVENTS\nThis is a non-exhaustive list of activities and events I have developed, including conferences, lectures, workshops and courses.\n\n\nOrganization\nI organized several editions of the Brazilian Conference on Data Journalism and Digital Methods (Coda.Br) from 2018 to 2022, including the first regional meeting in the Amazon region. Previously, I collaborated with Witness to organize the first national meeting on deepfakes and developed a series of events about free culture and piracy (Copyfight).\nBelém, Brazil, 2022. Coda Amazônia. 1 ed.\nOnline, 2021. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 6 ed.\nOnline, 2020. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 5 ed.\nSão Paulo, 2019. Deepfakes - prepare-se agora. 1 ed.\nSão Paulo, 2019. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 4 ed.\nSão Paulo, 2018. Coda.Br - Conferência de Jornalismo de Dados e Métodos Digitais. 3 ed.\nRio de Janeiro, 2014. Copyfight. 3 ed.\nRio de Janeiro, 2012. Communication Laboratory at the Peoples Summit Rio+20. 1 ed.\nRio de Janeiro, 2011. Copyfight. 2 ed.\nRio de Janeiro, 2010. Copyfight. 1 ed.\n\n\nTalks and lectures\nBerlin, Germany, 2024. Global Innovation Gathering Weekend. Way beyond ChatGPT: leveraging open source language models.\nBerlin, Germany, 2024. re:publica 2024. From Laughs to Courts: Multifaceted Uses of AI in the Global South.\nBerlin, Germany, 2024. Disinfo Demasked/DW Akademy. AI uses for fact-checking in Brazil.\nOnline, 2021. RightsCon. Anatomy of a visual investigation.\nSalvador, Brazil, 2019. Simpósio LAVITS 2019. Expulsão/Exceção: arquitetura forense, conflito e direitos humanos.\nRio de Janeiro, Brazil, 2019. Hackfest/Ministério Público do Estado do Rio de Janeiro. Dados abertos e transformação social.\nSão Paulo, Brazil, 2019. Campus Party. Jornalismo de dados no Brasil.\nViçosa, Brazil, 2019. Semana Acadêmica da Universidade Federal de Viçosa. Jornalismo de dados no Brasil.\nBerlin, Germany, 2017. Re:Publica. Coolab - Community networks in Brazil.\nBuenos Aires, Argentina, 2015. LAVITS. III Simpósio Internacional da Rede Latinoamericana de Vigilância, Tecnologia e Sociedade. Paper presentation.\nRio de Janeiro, Brazil, 2015. Ministério da Cultura. Diálogos em rede.\nDuque de Caxias, Brazil, 2015. Território Baixada.Web, Ficção, Relato e Amor: cartografia e resistências.\nBerlin, Germany, 2014. Transmediale. Micropolitics of the Post-Digital: From street protests to transitional spaces in Brazil.\nGeneva, Switzerland, 2013. Open Knowledge Conference, Data driven campaigning.\nRecife, Brazil, 2012. III Semana Chico Science. Banditismo por uma questão de classe: música e hacktivismo na cultura contemporânea.\nRio de Janeiro, Brazil, 2007. Undergraduate research seminar. Do cineclubismo enquanto prática de comunicação comunitária.\n\n\nLabs\nMadrid, Spain, 2017. Visualizar17 - Medialab Prado. Agrega.la.\nCartagena, Colombia, 2016. Laboratório Iberoamericano de Inovação Cidadã. Agrega.la.\nMexico city, Mexico, 2016. Openlabs - Caixa Mágica: dispositivo para participação social.\n\n\nWorkshops\nSão Paulo, Brazil, 2025. ABRAJI - Brazilian Conference on Investigative Journalism. Classificação de textos e imagens com IA de código-aberto\nBrasília, Brazil, 2024. América Aberta/Coda.Br. Texto, áudio e imagens: usando modelos de IA gratuitos e de código-aberto com dados não-estruturados**.\nOnline, 2024. The Rory Peck Trust. Segurança digital para jornalistas.\nSão Paulo, Brazil, 2023. Coda.Br. Entendendo e usando Transformers, a tecnologia por trás do ChatGPT.\nGeneva, Switzerland, 2023. European Data and Computational Journalism Conference. Beyond the hype: an introduction to NLP and language models.\nSão Paulo, Brazil, 2019. Curso do Centro de Pesquisa e Formação do SESC-SP. Espectro livre e redes comunitárias.\nBelém, Brazil, 2018. Seminário Amazônia Interconectada. Narrativas e dados.\nRio de Janeiro, Brazil, 2016. Encontro Nacional de Artes Cênicas do SESC. Redes e Culturas Colaborativas.\nQuito, Ecuador, 2013. I Congreso Internacional de Cultura Viva y Comunitaria. Taller de software libre.\nRio de Janeiro, Brazil, 2012. GNUGRAF. Copyfight : Muito além do download grátis.\nDakar, Senegal, 2011. World Social Forum. Mandala: uma proposta de agregação de conteúdo para a mídia independente."
   },
   {
     "objectID": "index.html",
@@ -196,10 +140,66 @@
     "text": "Adriano Belisario combines expertise in communication, open-source technologies and data to address important social concerns. He currently collaborates with the Joint Data Center on Forced Displacement and the Netlab laboratory from the Federal University of Rio de Janeiro. Belisario holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford) and collaborated with organizations like Open Knowledge Brazil, UNHCR, Bellingcat, Witness, Forensic Architecture, and Agência Pública.\n\n\nMy website showcases my work and research on a variety of topics such as data journalism & digital methods & open-source technologies & social data science & human rights & open-source intelligence (OSINT) & investigation of crimes and corruption & digital security & machine learning & digital culture & community-based infra-structures & free culture & more.\n\n\n\n\n\n\n\n\n\nSome of my data projects and code repositories.\n\n\nCODE\n\n\n\n\n\n\n\n\nAcademic and journalistic articles, data investigations and other publications in English and Portuguese.\n\n\nTEXT\n\n\n\n\n\n\n\n\nEvents I’ve organized and collaborated on.\n\n\nEVENTS\n\n\n\n\n\n\nBuilt with Quarto inspired by Ella Kaye’s template."
   },
   {
+    "objectID": "posts/2024-02-29_tutorial/index.html",
+    "href": "posts/2024-02-29_tutorial/index.html",
+    "title": "Creating a personal website with Quarto",
+    "section": "",
+    "text": "This post collects some references and notes I’ve used to create my personal website using Quarto. It presents a simple step-by-step guide to deploy a Quarto website using Github Actions.\n\nCreate a repository named .github.io\n\n\nCool personal websites made with Quarto\nhttps://beamilz.com/talks/\nhttps://ellakaye.co.uk/\nhttps://rfsaldanha.github.io/\n\n\nReferences\nhttps://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/\n\n\n\n\nReuseCC BY-SA 4.0CitationBibTeX citation:@online{belisario2023,\n  author = {Belisario, Adriano},\n  title = {Creating a Personal Website with {Quarto}},\n  date = {2023-12-30},\n  url = {https://belisards.github.io/posts/2024-02-29_tutorial/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBelisario, Adriano. 2023. “Creating a Personal Website with\nQuarto.” December 30, 2023. https://belisards.github.io/posts/2024-02-29_tutorial/."
+  },
+  {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "POSTS",
     "section": "",
     "text": "POSTS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreating a personal website with Quarto\n\n\n\nTutorial\n\n\n\nNotes of my own process\n\n\n\n\n\nDec 30, 2023\n\n\nAdriano Belisario\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Awards and recognitions",
+    "section": "",
+    "text": "Adriano Belisario combines expertise in communication and data to address important human rights concerns. Belisario is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR. Before this role, he contributed to organizations like Open Knowledge Brazil, Witness, Medialab/UFRJ, Forensic Architecture UNESCO, Agência Pública and The Intercept Brasil. His publication portfolio includes books, academic articles, and journalistic pieces in Portuguese and English, and he has been invited to speak at several global events.\nBelisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the Oxford Internet Institute (University of Oxford). While there, he collaborated with Instituto Fogo Cruzado to develop a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ and Agência Autônoma, Belisario co-developed Documental.xyz, an initiative that combines diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture, with storytelling to equip grassroots communities with compelling evidence related to human rights violations."
+  },
+  {
+    "objectID": "about.html#courses",
+    "href": "about.html#courses",
+    "title": "Awards and recognitions",
+    "section": "Courses",
+    "text": "Courses\n2021, online. Mathematics for machine learning specialization. Imperial College London.\n2020, São Paulo. Survey design and analysis. International Political Science Association/USP Summer School.\n2017, Rio de Janeiro. Reporting Land Rights. Thomsom Reuters Foundation"
+  },
+  {
+    "objectID": "code/bus_network/index.html",
+    "href": "code/bus_network/index.html",
+    "title": "Corporate network visualization",
+    "section": "",
+    "text": "Interactive data visualization made with Gephi.\nData visualization: https://apublica.org/riobus/html/\nText: https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/\nCode: https://github.com/belisards/mapa-onibus-rj"
+  },
+  {
+    "objectID": "code/unhcr_geodata/index.html",
+    "href": "code/unhcr_geodata/index.html",
+    "title": "UNHCR Geodata Extractor",
+    "section": "",
+    "text": "Explore the camp boundaries and points available in the UNHCR’s geodata repository. Developed for the World Bank-UNHCR Joint Data Center on Forced Displacement.\nApp: https://unhcrdata.streamlit.app/\nCode: https://github.com/belisards/unhcr_geodata"
+  },
+  {
+    "objectID": "code/gunviolenceptbr/index.html",
+    "href": "code/gunviolenceptbr/index.html",
+    "title": "Classification model of gun violence reports",
+    "section": "",
+    "text": "The model is based on BERTimbau and fine-tuned with Twitter data labelled by Instituto Fogo Cruzado. It was developed as part of my research at the Oxford Internet Institute.\nModel: https://huggingface.co/belisards/gun_violence_ptbr\nPre-print: https://arxiv.org/abs/2401.12989\nCode: https://github.com/belisards/gunviolence_ptbr"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "POSTS",
+    "section": "",
+    "text": "POSTS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreating a personal website with Quarto\n\n\n\nTutorial\n\n\n\nNotes of my own process\n\n\n\n\n\nDec 30, 2023\n\n\nAdriano Belisario\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "publications/files/copyfight/index.html",
+    "href": "publications/files/copyfight/index.html",
+    "title": "Copyfight",
+    "section": "",
+    "text": "Book and three seminars on free culture, piracy and intellectual property.\nBook: Copyfight - Pirataria e cultura livre\n\n\n\nReuseCC BY-SA 4.0CitationBibTeX citation:@online{2010,\n  author = {},\n  title = {Copyfight},\n  date = {2010-01-16},\n  url = {https://belisards.github.io/publications/files/copyfight/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\n“Copyfight.” 2010. January 16, 2010. https://belisards.github.io/publications/files/copyfight/."
   }
 ]

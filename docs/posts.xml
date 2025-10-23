@@ -9,7 +9,7 @@
 <link>https://belisards.github.io/posts.html</link>
 <atom:link href="https://belisards.github.io/posts.xml" rel="self" type="application/rss+xml"/>
 <description>Personal website.</description>
-<generator>quarto-1.7.33</generator>
+<generator>quarto-1.8.25</generator>
 <lastBuildDate>Sat, 30 Dec 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Creating a personal website with Quarto</title>
