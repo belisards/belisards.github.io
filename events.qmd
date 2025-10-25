@@ -41,6 +41,10 @@ Rio de Janeiro, 2010. **Copyfight**. 1 ed.
 
 # Talks and lectures
 
+Bergen, Norway, 2025. The 28th ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW). [**Into the Crossfire: Evaluating the Use of a Language Model to Crowdsource Gun Violence Reports**](https://belisario.website/crossfire_paper)
+
+Rio de Janeiro, Brazil, 2025. Association of Internet Researchers Conference. **Cross-platform gendertrolling: a case study on a prominent harassment case in Brazil**.
+
 Berlin, Germany, 2024. Global Innovation Gathering Weekend. **Way beyond ChatGPT: leveraging open source language models**.
 
 Berlin, Germany, 2024. re:publica 2024. [**From Laughs to Courts: Multifaceted Uses of AI in the Global South**](https://re-publica.com/de/session/laughs-courts-multifaceted-uses-ai-global-south).
