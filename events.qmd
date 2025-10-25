@@ -65,7 +65,7 @@ Berlin, Germany, 2017. Re:Publica. **Coolab - Community networks in Brazil**.
 
 Buenos Aires, Argentina, 2015. LAVITS. **III Simpósio Internacional da Rede Latinoamericana de Vigilância, Tecnologia e Sociedade**. Paper presentation.
 
-Rio de Janeiro, Brazil, 2015. Ministério da Cultura. **[Diálogos em rede](https://rubi.casaruibarbosa.gov.br/bitstream/handle/20.500.11997/8797/Participa%C3%A7%C3%A3o%20social%20%C3%A9%20estimulada%20durante%20Di%C3%A1logos%20em%20Rede%20no%20Rio%20de%20Janeiro%20%E2%80%93%20Di%C3%A1logos%20em%20Rede.pdf?sequence=1&isAllowed=y)**.
+Rio de Janeiro, Brazil, 2015. Ministério da Cultura. [**Diálogos em rede**](https://rubi.casaruibarbosa.gov.br/bitstream/handle/20.500.11997/8797/Participa%C3%A7%C3%A3o%20social%20%C3%A9%20estimulada%20durante%20Di%C3%A1logos%20em%20Rede%20no%20Rio%20de%20Janeiro%20%E2%80%93%20Di%C3%A1logos%20em%20Rede.pdf?sequence=1&isAllowed=y)**.
 
 Duque de Caxias, Brazil, 2015. **Território Baixada.Web, Ficção, Relato e Amor: cartografia e resistências**.
 
@@ -89,7 +89,7 @@ Mexico city, Mexico, 2016. **Openlabs - Caixa Mágica: dispositivo para particip
 
 São Paulo, Brazil, 2025. ABRAJI - Brazilian Conference on Investigative Journalism. [**Classificação de textos e imagens com IA de código-aberto**](https://belisario.website/classificacao_ia/)
 
-Brasília, Brazil, 2024. América Aberta/Coda.Br. [**Texto, áudio e imagens: usando modelos de IA gratuitos e de código-aberto com dados não-estruturados**](https://bit.ly/ia-coda-24/)**.
+Brasília, Brazil, 2024. América Aberta/Coda.Br. [**Texto, áudio e imagens: usando modelos de IA gratuitos e de código-aberto com dados não-estruturados**](https://bit.ly/ia-coda-24/).
 
 Online, 2024. The Rory Peck Trust. [**Segurança digital para jornalistas**](https://bit.ly/sdigital-rorypeck).
 
