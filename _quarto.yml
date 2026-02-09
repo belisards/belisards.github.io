@@ -5,9 +5,6 @@ project:
 execute:
   freeze: auto
   
-body-footer: | 
-  This page brought to you by <https://example.com>
-
 website:
   title: "Adriano Belisario"
   site-url: https://belisards.github.io
@@ -15,24 +12,21 @@ website:
   repo-url: https://github.com/belisards/belisards.github.io
   # image: images/logo.png
   navbar:
-    title: "ADRIANO BELISARIO"
+    title: "Adriano Belisario"
     right:
-      - text: bio
+      - text: Bio
         href: about.qmd
-      # - text: blog
-      #   href: posts.qmd
-      - text: publications
+      - text: Publications
         href: publications.qmd
-      - text: code
+      - text: Code
         href: code.qmd
-      - text: events
+      - text: Events
         href: events.qmd
-      - text: contact
+      - text: Contact
         href: contact.qmd
       - icon: github
         href: https://github.com/belisards
-      - icon: twitter
-        href: https://twitter.com/belisards
+        aria-label: GitHub
   favicon: images/favicon/favicon.ico
   twitter-card: 
     title: Adriano Belisario

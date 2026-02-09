@@ -7,7 +7,7 @@ listing:
   categories: false
   sort-ui: false
   filter-ui: false
-  image-height: 416px
+  image-height: 250px
   fields: [title, image, description]
 page-layout: full
 title-block-banner: false
@@ -18,6 +18,6 @@ execute:
   echo: false
 ---
 
-# CODE
+# Code Projects
 
 <!-- [![](https://github-readme-stats.vercel.app/api?username=belisards&show_icons=true&theme:transparent)](https://github.com/belisards) -->

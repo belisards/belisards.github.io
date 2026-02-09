@@ -4,109 +4,77 @@
 // https://github.com/thomaspark/bootswatch/tree/v5/dist/litera
 $theme: "journal" !default;
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas:ital,wght@0,300..700;1,300..700&display=swap');
+// --- Fonts ---
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !default;
+$font-family-monospace: 'JetBrains Mono', 'Fira Mono', monospace;
+$headings-font-family: 'Source Serif 4', Georgia, serif !default;
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+// --- Neutral tones ---
+$white:    #ffffff !default;
+$gray-100: #fafbfc !default;
+$gray-200: #f0f1f3 !default;
+$gray-300: #e5e7eb !default;
+$gray-400: #d1d5db !default;
+$gray-500: #9ca3af !default;
+$gray-600: #6b7280 !default;
+$gray-700: #555770 !default;
+$gray-800: #374151 !default;
+$gray-900: #1a1a2e !default;
+$black:    #111111 !default;
 
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+// --- Accent color (single) ---
+$accent:        #2d5a7b;
+$accent-hover:  #1e3f56;
+$accent-light:  #e8f0f5;
 
+// --- Bootstrap mappings ---
+$primary:       $accent !default;
+$secondary:     $gray-600 !default;
+$success:       #3a8a5c !default;
+$info:          $accent-light !default;
+$warning:       #c17817 !default;
+$danger:        #b44a4a !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
 
-// fonts
-$font-family-sans-serif: Bebas, sans-serif !default;
-$font-family-monospace:  Source Code Pro, monospace;
-$headings-font-family: Dosis,sans-serif !default;
+// Keep these for backward compat with any remaining references
+$second-color:  $accent;
+$third-color:   $accent;
 
-// warmer grays (hue 240)
-$white:    #f7f8f8 !default;
-$gray: #e6e5da;
-$gray-100: #F8F8FA !default;
-$gray-200: #E9E9EF !default;
-$gray-300: #DCDCE6 !default;
-$gray-400: #CECEDA !default;
-$gray-500: #ADADBD !default;
-$gray-600: #868696 !default;
-$gray-700: #494957 !default;
-$gray-800: #343440 !default;
-$gray-900: #212129 !default;
-$black:    #000 !default;
-
-//  my colors (comment out above)
-$pink: #b55c5c;
-$blue: #444275;
-$green: #948e70;
-$cyan: #3B74BF;
-$red: #b55c5c;
-$indigo: #073B4C;
-$purple: #6576E0;
-$orange: #543f38;
-$yellow: #FFD166;
-$darker-green: #008542;
-
-$primary:       $blue !default;
-$secondary:     $cyan !default;
-$success:       $green !default;
-$info:          #FBF9F1 !default;
-$warning:       $orange !default;
-$danger:        $red !default;
-$light:         #f7f8f8 !default;
-$dark:          #543f38 !default;
-
-$second-color:  $orange;
-$third-color:   $pink;
-
-// font sizes;
-$font-size-base:   1rem; //!default; // Assumes the browser default, typically `16px`
-$h1-font-size:     $font-size-base * 2.5 !default;
-$h2-font-size:     $font-size-base * 2 !default;
-$h3-font-size:     $font-size-base * 1.75 !default;
-$h4-font-size:     $font-size-base * 1.5 !default;
-$h5-font-size:     $font-size-base * 1.25 !default;
+// --- Font sizes ---
+$font-size-base:   1.0625rem; // 17px
+$h1-font-size:     $font-size-base * 2.25 !default;
+$h2-font-size:     $font-size-base * 1.75 !default;
+$h3-font-size:     $font-size-base * 1.4 !default;
+$h4-font-size:     $font-size-base * 1.2 !default;
+$h5-font-size:     $font-size-base * 1.05 !default;
 $h6-font-size:     $font-size-base !default;
 
-// colour tweaks to theme
-$body-bg: $light;
-$body-color: $dark;
-$navbar-bg: $body-bg;
-$navbar-fg: $body-color;
-$code-bg: $light;
-$code-color: $second-color;
-$card-bg: $body-bg;
+$line-height-base: 1.7;
+$headings-line-height: 1.3;
+$headings-font-weight: 600;
+
+// --- Component colors ---
+$body-bg: $gray-100;
+$body-color: $gray-900;
+$navbar-bg: $white;
+$navbar-fg: $gray-900;
+$code-bg: $gray-200;
+$code-color: $accent;
+$card-bg: $white;
 $card-border-color: $gray-300;
 
-
+// --- Clean body (no pattern) ---
 body {
-
-background: 
-      radial-gradient(farthest-side at -33.33% 50%,#0000 52%,#f4f4fb 54% 57%,#0000 59%) 0 calc(128px/2),
-      radial-gradient(farthest-side at 50% 133.33%,#0000 52%,#f4f4fb 54% 57%,#0000 59%) calc(128px/2) 0,
-      radial-gradient(farthest-side at 133.33% 50%,#0000 52%,#f4f4fb 54% 57%,#0000 59%),
-      radial-gradient(farthest-side at 50% -33.33%,#0000 52%,#f4f4fb 54% 57%,#0000 59%),
-      #f7f8f8;
-background-size: calc(128px/4.667) 128px,128px calc(128px/4.667);
-
-}
-#fn1 > p > code {
-  font-size: 0.8rem;
+  background-color: $body-bg;
 }
 
-#fn2 > p > code {
-  font-size: 0.8rem;
-}
-
-#fn3 > p > code {
-  font-size: 0.8rem;
-}
-
-#fn4 > p > code {
-  font-size: 0.8rem;
-}
-
-#fn5 > p > code {
-  font-size: 0.8rem;
-}
-
-#fn6 > p > code {
+// footnote code sizing
+[id^="fn"] > p > code {
   font-size: 0.8rem;
 }
 
@@ -115,221 +83,172 @@ code {
 }
 
 code span.co {
-  font-family: "MonoLisa-RegularItalic", "Fira Mono", monospace;
+  font-family: $font-family-monospace;
 }
 
-h1 code {
-  font-size: $h1-font-size;
-}
-
-h2 code {
-  font-size: $h2-font-size;
-}
-
-h3 code {
-  font-size: $h3-font-size;
-}
-
-h4 code {
-  font-size: $h4-font-size;
-}
-
-h5 code {
-  font-size: $h5-font-size;
-}
-
-h6 code {
-  font-size: $h6-font-size;
-}
+h1 code { font-size: $h1-font-size; }
+h2 code { font-size: $h2-font-size; }
+h3 code { font-size: $h3-font-size; }
+h4 code { font-size: $h4-font-size; }
+h5 code { font-size: $h5-font-size; }
+h6 code { font-size: $h6-font-size; }
 
 // callouts
-$callout-color-note: $blue;
-$callout-color-tip: $darker-green;
-$callout-color-caution: $purple;
-$callout-color-warning: $orange;
-$callout-color-important: $red;
+$callout-color-note: $accent;
+$callout-color-tip: #3a8a5c;
+$callout-color-caution: #6576E0;
+$callout-color-warning: #c17817;
+$callout-color-important: #b44a4a;
 
 /*-- scss:rules --*/
 
-// color classes
+// --- Color utility classes ---
 .primary {
   color: $primary;
 }
 
 .second-color {
-  color: $second-color;
+  color: $accent;
 }
 
 .third-color {
-  color: $third-color;
+  color: $accent;
 }
 
-// code
+// --- Code blocks ---
 pre.sourceCode {
-  border-radius: 0;
+  border-radius: 4px;
   border-left-color: $gray-300;
 }
 
 // light vs dark modes
 .light-mode {
-  display: block; 
+  display: block;
 }
 .dark-mode {
   display: none;
 }
 
-// links
+// --- Links ---
 a {
-  color: $body-color;
-  text-decoration-thickness: 1px;
-  //text-underline-offset: .1rem;
-  //text-underline-position: under;
+  color: $accent;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: $primary;
-  text-decoration-color: $primary;
+  color: $accent-hover;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+// Content paragraph links get subtle underline always
+.content p a,
+.quarto-title-block a {
+  text-decoration: underline;
+  text-decoration-color: rgba($accent, 0.3);
+  text-underline-offset: 3px;
+}
+
+.content p a:hover,
+.quarto-title-block a:hover {
+  text-decoration-color: $accent;
 }
 
 .toc-actions a {
-  text-decoration: none !important;  
+  text-decoration: none !important;
   border-bottom: 0;
 }
 
 .toc-actions a:hover {
-  color: $primary;
+  color: $accent;
 }
 
 div.tippy-content a:hover {
-  text-decoration-color: $primary;
+  text-decoration-color: $accent;
 }
 
-// navbar
+// --- Navbar ---
 .navbar-title {
-  font-size: $font-size-base * 1.75;
+  font-size: $font-size-base * 1.25;
+  font-weight: 600;
+  font-family: $font-family-sans-serif;
+  letter-spacing: -0.01em;
 }
 
-// the line in the navbar logo
-// animation defined in ek-styles.css
+// Hide the icon-line
 .icon-line {
-  display: block;
-  background: $primary;
-  width: 100%;
-  height: 6px;
-  margin: auto;
-  display: table;
-  margin-top: -6px;
-  margin-bottom: -6px;
+  display: none;
 }
 
-/* keep text the body colour when active
-this was a change in Quarto 1.2 - now defaults to a darker shade of $primary
-would be fine, except that I want to target the different list items to keep 
-the color that matches the card
-
-.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active {
-    color: $body-color;
+#quarto-header {
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+  border-bottom: 1px solid $gray-300;
 }
-*/
 
-// hover on navbar
+.navbar-expand-lg .navbar-nav .nav-link {
+  color: $gray-700;
+  transition: color 0.2s ease;
+  font-size: 0.9375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .navbar-expand-lg .navbar-nav .nav-link:hover {
-  color: $primary;
+  color: $accent;
 }
+
 .navbar-expand-lg .navbar-nav .nav-link.active {
-  color: $primary;
+  color: $gray-900;
+  font-weight: 600;
 }
 
-// then override colors so they match cards
-#navbarCollapse > ul > li:nth-child(2) > a:hover,
-#navbarCollapse > ul > li:nth-child(4) > a:hover {
-  color: $second-color;
-}
-
-#navbarCollapse > ul > li:nth-child(2) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(4) > a.nav-link.active {
-  color: $second-color;
-}
-
-#navbarCollapse > ul > li:nth-child(3) > a:hover,
-#navbarCollapse > ul > li:nth-child(5) > a:hover {
-  color: $third-color;
-}
-
-#navbarCollapse > ul > li:nth-child(3) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(5) > a.nav-link.active {
-  color: $third-color;
-}
-
-// stop the name in my icon from changing colour on hover
 .navbar-title:hover {
   color: $body-color;
 }
 
-// animated underline on hover, when navbar shows as row
+// Subtle underline on hover
 @media screen and (min-width: 992px) {
-  a.nav-link {
-    position: relative;
-  }
-  
   .navbar .navbar-nav .nav-item {
     position: relative;
   }
-  
+
   .navbar .navbar-nav .nav-item::after {
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: $primary;
-    width: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $accent;
+    width: 0;
     content: "";
-    height: 4px;
-    transition: all 0.3s;
+    height: 2px;
+    transition: width 0.25s ease;
   }
-  
-  .navbar .navbar-nav .nav-item:nth-child(2)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(4)::after {
-    background-color: $second-color;
-  }
-  
-  .navbar .navbar-nav .nav-item:nth-child(3)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(5)::after {
-    background-color: $third-color;
-  }
-  
+
   .navbar .navbar-nav .nav-item:hover::after {
-    width: 90%;
+    width: 60%;
   }
 }
 
-// header styles (more in ek-styles.css)
-#quarto-header {
-  text-transform: uppercase;
-  font-family: $headings-font-family;
-}
-
-/*
-h1, h2, h3, h4, h5 {
-  text-transform: uppercase;
-}
-*/
-/*
-h1 {
-  text-transform: uppercase;
-}
-*/
-
+// --- Headings ---
 .heading-font {
   font-family: $headings-font-family;
 }
 
-.home-header {
-  font-family: $headings-font-family;
-  font-size: $font-size-base * 1.5;
+h1 {
+  margin-bottom: 1.5rem;
 }
 
+h2, .h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+// --- Footer ---
 .footer {
   left: 0;
   bottom: 0;
@@ -338,127 +257,204 @@ h1 {
   padding: 50px 0;
 }
 
-h2, .h2 {
-    border-bottom: 1px solid $gray-300;
-    padding-bottom: .5rem;
+.site-footer {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid $gray-200;
+  font-size: 0.875rem;
+  color: $gray-500;
 }
 
-// iframes for slides embedded in talks pages
+// --- Iframes ---
 iframe.slide-deck {
   border: 3px solid $gray-700;
   width: 100%;
 }
 
 .ar4x3 {
-  aspect-ratio: 4 / 3;  
+  aspect-ratio: 4 / 3;
 }
 
 .ar3x2 {
-  aspect-ratio: 3 / 2;  
+  aspect-ratio: 3 / 2;
 }
 
-// icon-links
+// --- Icon links ---
 .icon-link, div.quarto-about-jolla .about-link {
-    background-color: transparent;
-    color: $primary;
-    //border: 2px solid !important;
-    border: 2px solid;
-    border-color: $primary;
-    padding: 5px .4rem 5px .4rem !important;
-    margin-top: 4px;
-    margin-right: 8px;
-    margin-bottom: 4px;
-    border-radius: 5px; 
-    display: inline-block;
-    text-decoration: none;
+  background-color: transparent;
+  color: $accent;
+  border: 2px solid;
+  border-color: $accent;
+  padding: 5px .4rem 5px .4rem !important;
+  margin-top: 4px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.icon-link:hover, div.quarto-about-jolla .about-link:hover{
-    background-color: $primary;
-    color: $body-bg;
-    border-color: $primary;
-    text-decoration: none;
+.icon-link:hover, div.quarto-about-jolla .about-link:hover {
+  background-color: $accent;
+  color: $white;
+  border-color: $accent;
+  text-decoration: none;
 }
 
-// for cards on home page
-#card-first-color {
-background-image: repeating-linear-gradient(45deg, transparent, transparent 31px, #f0f0f0 31px, #f0f0f0 62px);
-background-color: #f7f8f8;
+// --- Minimal cards (homepage) ---
+.minimal-card {
+  border: 1px solid $gray-300;
+  border-radius: 8px;
+  background: $white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 0.5rem;
 
-}
-
-#card-first-color:hover {
-background-image: repeating-linear-gradient(45deg, transparent, transparent 31px, #f7f8f8 31px, #f7f8f8 62px);
-background-color: #f0f0f0;
-}
-
-#card-second-color {
-background-color: #fbfbfd;
-opacity: 1;
-background: linear-gradient(135deg, #e9ecf955 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(225deg, #e9ecf9 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(315deg, #e9ecf955 25%, transparent 25%) 0px 0/ 22px 22px, linear-gradient(45deg, #e9ecf9 25%, #fbfbfd 25%) 0px 0/ 22px 22px;  border: 4px solid $second-color;
-  border-radius: 5px; 
-}
-
-#card-third-color {
-background-color: #fbfbfd;
-opacity: 1;
-background: linear-gradient(135deg, #e9ecf955 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(225deg, #e9ecf9 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(315deg, #e9ecf955 25%, transparent 25%) 0px 0/ 22px 22px, linear-gradient(45deg, #e9ecf9 25%, #fbfbfd 25%) 0px 0/ 22px 22px;  border: 4px solid $third-color;
-  border-radius: 5px; 
-}
-
-.card-link {
-    background-color: $primary;
-    color: $body-bg;
-    border: 4px solid $primary;
-    border-color: $primary;
-    padding: 5px .5rem 5px .5rem !important;
-    margin: 0;
-    border-radius: 5px; 
-    display: inline-block;
-    text-decoration: none;  
-    font-size: $h5-font-size;
-}
-
-.card-link:hover {
-  background-color: $body-bg;
-  color: $primary;
-}
-
-.second-color-link{
-    background-color: $second-color;
-    border-color: $second-color;
-    color: $body-bg;
-}
-
-.second-color-link:hover {
-  color: $second-color;
-  border-color: $second-color;
-}
-
-.third-color-link{
-    background-color: $third-color;
-    border-color: $third-color;
-    color: $body-bg;
-}
-
-.third-color-link:hover {
-  color: $third-color;
-  border-color: $third-color;
-}
-
-
-.colorchange {
-  color: $primary;
-  animation: animateText 4s infinite alternate;
-}
-
-@keyframes animateText {
-  from {
-    transform: scale(1);
-    opacity: 1;
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   }
-  to {
-    transform: scale(1.5);
-    opacity: 0.5;
+
+  h3 {
+    font-family: $headings-font-family;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: $gray-900;
+  }
+
+  p {
+    color: $gray-700;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
+
+.card-action {
+  display: inline-block;
+  margin-top: auto;
+  color: $accent;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $accent-hover;
+  }
+}
+
+.section-cards {
+  margin-top: 3rem;
+  gap: 1.5rem;
+}
+
+// --- Hero section (homepage) ---
+.hero-section {
+  max-width: 720px;
+  margin: 4rem auto 2rem;
+  padding: 0 1.5rem;
+  text-align: left;
+
+  h1 {
+    font-family: $headings-font-family;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $gray-900;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  color: $gray-600;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.hero-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-link {
+  color: $accent;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-bottom-color: $accent;
+    text-decoration: none;
+  }
+}
+
+// --- Listing grid cards (code page) ---
+.quarto-grid-item {
+  border: 1px solid $gray-300 !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: $white;
+
+  &:hover {
+    border-color: $accent !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .card-title {
+    font-family: $headings-font-family;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: $gray-900;
+  }
+
+  .card-text {
+    color: $gray-700;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .listing-image {
+    border-bottom: 1px solid $gray-200;
+  }
+}
+
+// --- Responsive ---
+@media screen and (max-width: 768px) {
+  .hero-section {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .hero-links {
+    gap: 0.75rem;
+  }
+
+  .section-cards {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .minimal-card {
+    padding: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .quarto-grid-item {
+    margin-bottom: 1rem;
   }
 }

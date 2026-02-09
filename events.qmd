@@ -11,7 +11,7 @@ execute:
 toc: true
 ---
 
-# [EVENTS]{.third-color}
+# Events
 
 This is a non-exhaustive list of activities and events I have developed, including conferences, lectures, workshops and courses.
 

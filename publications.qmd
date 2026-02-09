@@ -12,7 +12,7 @@ execute:
 toc: true
 ---
 
-# [PUBLICATIONS]{.third-color}
+# Publications
 
 Here are the main texts I've published since 2008. These include data-driven investigations and articles published in English, along with books, academic articles, journalistic investigations, and tutorials in Portuguese.
 

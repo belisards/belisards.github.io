@@ -1,42 +1,32 @@
-.navbar-title:hover > .icon-line {
-  animation-duration: 600ms;
-  animation-name: line-expand;
-}
-
-@keyframes line-expand {
-  from {
-    width: 0%;
-  }
-  
-  to {
-    width: 100%;
-  }
-}
-
+/* Title block spacing */
 #title-block-header.quarto-title-block.default .quarto-title .title {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-#title-block-header.quarto-title-block.default .description > p:last-of-type, #title-block-header.quarto-title-block.default .abstract > p:last-of-type {
-  margin-bottom: 1rem;
+#title-block-header.quarto-title-block.default .description > p:last-of-type,
+#title-block-header.quarto-title-block.default .abstract > p:last-of-type {
+  margin-bottom: 1.5rem;
 }
 
+/* Listing tweaks */
 #quarto-margin-sidebar .quarto-listing-category {
   font-size: 0.8rem;
 }
 
 div.listing-description {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 div.quarto-post .body .listing-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .quarto-grid-item .card-title {
-    margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
+/* Code formatting */
 code span.cf {
   font-weight: normal;
 }
@@ -45,7 +35,17 @@ code span.cf {
   margin-top: 0;
 }
 
+/* Profile picture */
 .profile-pic {
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
+/* Smooth page-level fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+main.content {
+  animation: fadeIn 0.4s ease-out;
+}
