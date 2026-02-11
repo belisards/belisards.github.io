@@ -9,38 +9,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <canvas id="network-canvas" aria-hidden="true"></canvas>
     <div class="hero__grain" aria-hidden="true"></div>
 
-    <!-- Vertical accent line -->
-    <div class="hero__accent-line" aria-hidden="true"></div>
-
     <div class="hero__content">
-      <p class="hero__signal-tag mono" id="hero-signal-tag">
-        <span class="hero__signal-dot"></span>
-        signal.acquired
-      </p>
+      <!-- Catchy sentence — appears first, centered -->
+      <p class="hero__catchphrase mono" id="hero-catchphrase">Finding signal in the noise</p>
 
+      <!-- Waveform SVG — noisy → clean morph -->
+      <svg class="hero__waveform" id="hero-waveform" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true">
+        <!-- Noisy waveform — visible, will morph -->
+        <path id="wave-noise" d="M0,60 C20,25 40,95 60,40 C80,85 100,15 120,70 C140,30 160,90 180,45 C200,80 220,20 240,65 C260,35 280,85 300,50 C320,75 340,25 360,55 C380,85 400,15 420,60 C440,95 460,30 480,70 C500,20 520,80 540,45 C560,90 580,35 600,55 C620,75 640,25 660,65 C680,40 700,80 720,50 C740,30 760,70 780,45 L800,60"
+          fill="none" stroke="url(#waveGradient)" stroke-width="2" stroke-linecap="round" />
+        <!-- Clean signal line — morph target (hidden) -->
+        <path id="wave-signal" d="M0,60 L800,60" fill="none" stroke="none" />
+        <defs>
+          <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgba(13, 148, 136, 0.6)" />
+            <stop offset="50%" stop-color="rgba(37, 99, 235, 0.8)" />
+            <stop offset="100%" stop-color="rgba(13, 148, 136, 0.6)" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Name — massive reveal after catchphrase -->
       <h1 class="hero__name" id="hero-name" aria-label="Adriano Belisario">
-        <span class="hero__line hero__line--first" id="line-1">Adriano</span>
-        <span class="hero__line hero__line--last" id="line-2">Belisario</span>
+        <span class="hero__line" id="line-1">Adriano</span>
+        <span class="hero__line" id="line-2">Belisario</span>
       </h1>
-
-      <p class="hero__tagline" id="hero-tagline">
-        Finding signal in the noise.<br />
-        Data journalist &amp; researcher.
-      </p>
-
-      <div class="hero__disciplines" id="hero-disciplines">
-        <span class="hero__disc-tag">Data Science</span>
-        <span class="hero__disc-tag">Open Source</span>
-        <span class="hero__disc-tag">Investigations</span>
-      </div>
     </div>
 
-    <div class="hero__bottom" id="hero-bottom">
-      <span class="hero__location mono">Oxford &middot; Rio de Janeiro</span>
-      <div class="hero__scroll-cta">
-        <p class="hero__scroll-label mono" id="scroll-label">Scroll</p>
-        <div class="hero__scroll-line" id="scroll-line"><span></span></div>
-      </div>
+    <!-- Scroll indicator — minimal -->
+    <div class="hero__scroll" id="hero-scroll">
+      <div class="hero__scroll-line"><span></span></div>
     </div>
   </section>
 
@@ -118,7 +116,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   /* ============================
-     HERO — Signal Acquired
+     HERO — Cinematic Impact
      ============================ */
   .hero {
     position: relative;
@@ -126,8 +124,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     height: 100vh;
     height: 100dvh;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     margin-left: calc(-50vw + 50%);
     background: #0a0a0c;
@@ -141,7 +139,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     z-index: 0;
   }
 
-  /* Film grain overlay */
   .hero__grain {
     position: absolute;
     inset: 0;
@@ -153,171 +150,98 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     mix-blend-mode: overlay;
   }
 
-  /* Vertical accent line */
-  .hero__accent-line {
-    position: absolute;
-    left: 2rem;
-    top: 15%;
-    bottom: 15%;
-    width: 2px;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      var(--signal-primary) 30%,
-      var(--signal-teal) 70%,
-      transparent
-    );
-    z-index: 2;
-    opacity: 0;
-  }
-
-  /* Content container */
   .hero__content {
     position: relative;
     z-index: 2;
-    padding: 0 4rem 8rem 5rem;
-    max-width: 1200px;
+    text-align: center;
+    padding: 0 2rem;
   }
 
-  /* Signal tag */
-  .hero__signal-tag {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
+  /* Catchphrase — appears first, monospace, glowing */
+  .hero__catchphrase {
+    font-size: clamp(0.85rem, 2vw, 1.2rem);
+    letter-spacing: 0.12em;
     color: var(--signal-teal);
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
     opacity: 0;
+    text-shadow: 0 0 30px rgba(13, 148, 136, 0.3);
   }
 
-  .hero__signal-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--signal-teal);
-    animation: dotPulse 2s ease-in-out infinite;
+  /* Blinking cursor for typing effect */
+  .hero__catchphrase::after {
+    content: '|';
+    animation: cursorBlink 0.8s step-end infinite;
+    color: var(--signal-teal);
+    margin-left: 2px;
+    font-weight: 300;
   }
 
-  @keyframes dotPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.6); }
-    50% { box-shadow: 0 0 0 6px rgba(13, 148, 136, 0); }
+  .hero__catchphrase.typing-done::after {
+    display: none;
   }
 
-  /* Name — massive, left-aligned */
+  @keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* Waveform SVG — spans full width between catchphrase and name */
+  .hero__waveform {
+    width: min(90vw, 800px);
+    height: 80px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    overflow: visible;
+  }
+
+  /* Name — viewport-filling, centered, gradient */
   .hero__name {
-    font-size: clamp(5rem, 16vw, 14rem);
+    font-size: clamp(5rem, 18vw, 16rem);
     font-weight: 700;
-    letter-spacing: -0.07em;
-    line-height: 0.82;
-    margin: 0 0 2rem;
+    letter-spacing: -0.06em;
+    line-height: 0.85;
+    margin: 0;
     background: linear-gradient(
-      135deg,
+      160deg,
       #ffffff 0%,
-      #f8f7f4 25%,
-      var(--signal-primary) 70%,
+      #e8e8e8 30%,
+      var(--signal-primary) 65%,
       var(--signal-teal) 100%
     );
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: scale(0.9);
   }
 
   .hero__line {
     display: block;
-    opacity: 0;
     will-change: transform, opacity;
   }
 
-  .hero__line--last {
-    padding-left: clamp(1rem, 4vw, 5rem);
-  }
-
-  /* Tagline */
-  .hero__tagline {
-    font-family: var(--font-display);
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-    font-weight: 400;
-    line-height: 1.6;
-    color: rgba(248, 247, 244, 0.55);
-    max-width: 500px;
-    margin-bottom: 2rem;
-    opacity: 0;
-    letter-spacing: -0.01em;
-  }
-
-  /* Discipline tags */
-  .hero__disciplines {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    opacity: 0;
-  }
-
-  .hero__disc-tag {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(248, 247, 244, 0.35);
-    border: 1px solid rgba(248, 247, 244, 0.1);
-    padding: 0.35rem 0.8rem;
-    border-radius: 100px;
-    transition: border-color 0.4s ease, color 0.4s ease;
-  }
-
-  .hero__disc-tag:hover {
-    border-color: var(--signal-primary);
-    color: rgba(248, 247, 244, 0.6);
-  }
-
-  /* Hero bottom — split layout */
-  .hero__bottom {
+  /* Scroll indicator — dead center bottom */
+  .hero__scroll {
     position: absolute;
     bottom: 2.5rem;
-    left: 5rem;
-    right: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 2;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
     opacity: 0;
-  }
-
-  .hero__location {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(248, 247, 244, 0.2);
-  }
-
-  .hero__scroll-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .hero__scroll-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(248, 247, 244, 0.3);
   }
 
   .hero__scroll-line span {
     display: block;
     width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, rgba(37, 99, 235, 0.6), transparent);
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(13, 148, 136, 0.5), transparent);
     animation: linePulse 2.5s ease-in-out infinite;
   }
 
   @keyframes linePulse {
-    0%, 100% { transform: scaleY(0.4); opacity: 0.3; transform-origin: top; }
-    50% { transform: scaleY(1); opacity: 1; transform-origin: top; }
+    0%, 100% { transform: scaleY(0.3); opacity: 0.2; transform-origin: top; }
+    50% { transform: scaleY(1); opacity: 0.8; transform-origin: top; }
   }
 
   /* ============================
@@ -501,35 +425,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      RESPONSIVE
      ============================ */
   @media screen and (max-width: 768px) {
-    .hero__content {
-      padding: 0 1.5rem 7rem 1.5rem;
-    }
-
-    .hero__accent-line {
-      left: 1rem;
-      top: 20%;
-      bottom: 20%;
-    }
-
     .hero__name {
-      font-size: clamp(3.5rem, 18vw, 7rem);
+      font-size: clamp(3.5rem, 20vw, 7rem);
     }
 
-    .hero__line--last {
-      padding-left: clamp(0.5rem, 3vw, 2rem);
+    .hero__catchphrase {
+      font-size: clamp(0.75rem, 3.5vw, 1rem);
+      margin-bottom: 1.5rem;
     }
 
-    .hero__tagline {
-      font-size: clamp(1rem, 4vw, 1.3rem);
-    }
-
-    .hero__bottom {
-      left: 1.5rem;
-      right: 1.5rem;
-    }
-
-    .hero__location {
-      display: none;
+    .hero__waveform {
+      height: 50px;
+      margin-bottom: 1.5rem;
     }
 
     .statement {
@@ -565,8 +472,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   import { CustomEase } from "gsap/CustomEase";
+  import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+  import { Physics2DPlugin } from "gsap/Physics2DPlugin";
 
-  gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+  gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase, MorphSVGPlugin, Physics2DPlugin);
 
   CustomEase.create("smooth", "M0,0 C0.22,0.61 0.36,1 0.59,1 0.68,1 0.82,0.98 1,1");
 
@@ -675,9 +584,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // Draw dot — proximity glow near name position
-      const centerX = canvas.width * 0.35;
-      const centerY = canvas.height * 0.65;
+      // Draw dot — proximity glow near center
+      const centerX = canvas.width * 0.5;
+      const centerY = canvas.height * 0.5;
       const distToCenter = Math.hypot(a.x - centerX, a.y - centerY);
       const maxDist = Math.hypot(canvas.width, canvas.height) * 0.4;
       const proximity = Math.max(0, 1 - distToCenter / maxDist);
@@ -728,59 +637,185 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   // ========================================
-  // HERO ANIMATIONS — Cinematic "Signal Acquired"
+  // HERO ANIMATIONS — Signal in the Noise
   // ========================================
   if (!reducedMotion) {
-    const heroTl = gsap.timeline({ delay: 0.3 });
+    const catchEl = document.getElementById("hero-catchphrase") as HTMLElement;
+    const waveformSvg = document.getElementById("hero-waveform") as SVGElement;
+    const noisePath = document.getElementById("wave-noise") as SVGPathElement;
+    const phrase = "Finding signal in the noise";
 
-    // Phase 1: Accent line draws in
-    heroTl.fromTo(".hero__accent-line",
-      { opacity: 0, scaleY: 0 },
-      { opacity: 0.6, scaleY: 1, duration: 1.2, ease: "power3.inOut",
-        transformOrigin: "top center" }
-    );
+    // Start empty — typing effect
+    catchEl.textContent = "";
+    gsap.set(catchEl, { opacity: 1 });
 
-    // Phase 2: Signal tag
-    heroTl.to("#hero-signal-tag", {
-      opacity: 1, duration: 0.8, ease: "power2.out"
-    }, "-=0.6");
+    // ------------------------------------------
+    // Physics2D: Scatter control points to create
+    // autonomous micro-oscillations on the noisy waveform.
+    // We animate small proxy objects and rebuild the path each frame.
+    // ------------------------------------------
+    const NUM_POINTS = 28; // number of control points across waveform
+    const wavePoints: { x: number; y: number; baseY: number }[] = [];
+    for (let i = 0; i < NUM_POINTS; i++) {
+      const x = (i / (NUM_POINTS - 1)) * 800;
+      const baseY = 60;
+      // Initial noisy offset — organic, seeded variation
+      const noiseY = baseY + (Math.sin(i * 1.7) * 25 + Math.cos(i * 2.3) * 15);
+      wavePoints.push({ x, y: noiseY, baseY });
+    }
 
-    // Phase 3: Name — SplitText per-character, cinematic stagger
-    const l1 = SplitText.create("#line-1", { type: "chars" });
-    const l2 = SplitText.create("#line-2", { type: "chars" });
+    // Build SVG path from control points (smooth cubic bezier through points)
+    function buildPath(pts: typeof wavePoints): string {
+      if (pts.length < 2) return "";
+      let d = `M${pts[0].x},${pts[0].y}`;
+      for (let i = 1; i < pts.length; i++) {
+        const prev = pts[i - 1];
+        const curr = pts[i];
+        const cpx = (prev.x + curr.x) / 2;
+        d += ` C${cpx},${prev.y} ${cpx},${curr.y} ${curr.x},${curr.y}`;
+      }
+      return d;
+    }
 
-    heroTl.to("#line-1", { opacity: 1, duration: 0.01 }, "-=0.3");
-    heroTl.from(l1.chars, {
-      y: 80, rotationX: -90, opacity: 0,
-      duration: 1.0, ease: "smooth", stagger: 0.04,
-      transformOrigin: "bottom center",
+    // Apply Physics2D to each control point — gives them velocity/gravity
+    // creating autonomous, organic vertical oscillation
+    let physics2dTweens: gsap.core.Tween[] = [];
+    function startPhysicsOscillation() {
+      wavePoints.forEach((pt, i) => {
+        const tween = gsap.to(pt, {
+          duration: 2 + Math.random() * 2,
+          physics2D: {
+            velocity: Math.random() * 30 + 10,
+            angle: Math.random() > 0.5 ? 90 : 270, // up or down
+            gravity: 0,
+          },
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: i * 0.05,
+          onUpdate: () => {
+            // Constrain vertical movement — elastic return to noise position
+            const targetY = pt.baseY + (Math.sin(i * 1.7) * 25 + Math.cos(i * 2.3) * 15);
+            pt.y += (targetY - pt.y) * 0.02;
+          },
+        });
+        physics2dTweens.push(tween);
+      });
+    }
+
+    // RAF loop to continuously update the SVG path during physics phase
+    let isAnimatingWave = true;
+    function updateWavePath() {
+      if (!isAnimatingWave) return;
+      noisePath.setAttribute("d", buildPath(wavePoints));
+      requestAnimationFrame(updateWavePath);
+    }
+
+    // ------------------------------------------
+    // Main hero timeline
+    // ------------------------------------------
+    const heroTl = gsap.timeline({ delay: 0.4 });
+
+    // Phase 0: Waveform appears — fades in with noisy state
+    heroTl.to(waveformSvg, {
+      opacity: 1, duration: 0.8, ease: "power2.out",
+    });
+
+    // Start physics oscillation when waveform appears
+    heroTl.add(() => {
+      startPhysicsOscillation();
+      updateWavePath();
     }, "<");
 
-    heroTl.to("#line-2", { opacity: 1, duration: 0.01 }, "-=0.5");
-    heroTl.from(l2.chars, {
-      y: 80, rotationX: -90, opacity: 0,
-      duration: 1.0, ease: "smooth", stagger: 0.04,
-      transformOrigin: "bottom center",
+    // Phase 1: Type the catchphrase while waveform jitters
+    let charIndex = 0;
+    heroTl.to({}, {
+      duration: phrase.length * 0.06,
+      ease: "none",
+      onUpdate: function() {
+        const progress = this.progress();
+        const newIndex = Math.floor(progress * phrase.length);
+        if (newIndex > charIndex) {
+          charIndex = newIndex;
+          catchEl.textContent = phrase.slice(0, charIndex);
+        }
+      },
+      onComplete: () => {
+        catchEl.textContent = phrase;
+      }
+    }, "+=0.3");
+
+    // Phase 2: Brief pause
+    heroTl.to({}, { duration: 0.5 });
+    heroTl.add(() => catchEl.classList.add("typing-done"));
+
+    // Phase 3: THE MORPH — noise resolves to clean signal
+    // Kill physics oscillations and smoothly morph
+    heroTl.add(() => {
+      physics2dTweens.forEach(t => t.kill());
+      physics2dTweens = [];
+    });
+
+    // Animate all points toward center line (y=60) for smooth convergence
+    heroTl.to(wavePoints, {
+      y: 60,
+      duration: 1.6,
+      ease: "power3.inOut",
+      stagger: {
+        each: 0.03,
+        from: "center",
+      },
+      onUpdate: () => {
+        noisePath.setAttribute("d", buildPath(wavePoints));
+      },
+      onComplete: () => {
+        // Final clean line
+        isAnimatingWave = false;
+        noisePath.setAttribute("d", "M0,60 L800,60");
+      },
+    });
+
+    // Phase 3b: Simultaneously — name reveals
+    heroTl.to("#hero-name", {
+      opacity: 1, scale: 1, duration: 1.4,
+      ease: "power4.out",
+    }, "<+0.2");
+
+    // Phase 3c: Gradient shimmer on name
+    heroTl.fromTo("#hero-name", {
+      backgroundPosition: "100% 100%",
+    }, {
+      backgroundPosition: "0% 0%",
+      duration: 2.0,
+      ease: "power2.inOut",
     }, "<");
 
-    // Phase 4: Tagline fades up
-    heroTl.fromTo("#hero-tagline",
-      { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.0, ease: "power2.out" },
-      "-=0.4"
-    );
+    // Phase 3d: Waveform fades to subtle decorative line
+    heroTl.to(waveformSvg, {
+      opacity: 0.3,
+      duration: 1.2,
+      ease: "power2.out",
+    }, "<+0.5");
 
-    // Phase 5: Discipline tags stagger in
-    heroTl.fromTo(".hero__disc-tag",
-      { y: 15, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.6, ease: "power2.out", stagger: 0.1 },
-      "-=0.5"
-    );
+    // Phase 3e: Catchphrase fades to subtle
+    heroTl.to(catchEl, {
+      color: "rgba(248, 247, 244, 0.25)",
+      textShadow: "none",
+      duration: 1.0,
+      ease: "power2.out",
+    }, "<");
 
-    // Phase 6: Bottom bar
-    heroTl.to("#hero-bottom", {
-      opacity: 1, duration: 1, ease: "power2.out"
-    }, "-=0.3");
+    // Phase 4: Stroke width thins out for the resolved line
+    heroTl.to(noisePath, {
+      attr: { "stroke-width": 1 },
+      duration: 0.8,
+      ease: "power2.out",
+    }, "<");
+
+    // Phase 5: Scroll indicator
+    heroTl.to("#hero-scroll", {
+      opacity: 1, duration: 1.2, ease: "power2.out"
+    }, "-=0.5");
 
     // Parallax on scroll
     ScrollTrigger.create({
@@ -790,9 +825,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       scrub: true,
       onUpdate: (self) => {
         const p = self.progress;
-        gsap.set(".hero__content", { y: p * 200, opacity: 1 - p * 2.5 });
-        gsap.set("#hero-bottom", { opacity: Math.max(0, 1 - p * 5) });
-        gsap.set(".hero__accent-line", { opacity: 0.6 * (1 - p * 2) });
+        gsap.set(".hero__content", { y: p * 150, opacity: 1 - p * 2 });
+        gsap.set("#hero-scroll", { opacity: Math.max(0, 1 - p * 5) });
       },
     });
 
@@ -807,10 +841,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
     }
   } else {
-    gsap.set("#line-1, #line-2, #hero-signal-tag, #hero-tagline, .hero__disciplines, #hero-bottom", { opacity: 1 });
-    gsap.set(".hero__accent-line", { opacity: 0.6 });
+    // Reduced motion — show everything immediately
+    const catchEl = document.getElementById("hero-catchphrase") as HTMLElement;
+    catchEl.classList.add("typing-done");
+    gsap.set("#hero-catchphrase, #hero-name, #hero-scroll", { opacity: 1 });
+    gsap.set("#hero-name", { scale: 1 });
+    gsap.set("#hero-waveform", { opacity: 0.3 });
+    // Set waveform to clean line immediately
+    const noisePath = document.getElementById("wave-noise");
+    if (noisePath) noisePath.setAttribute("d", "M0,60 L800,60");
 
-    // Still reveal nav on scroll for reduced motion
     const navBar = document.querySelector('.nav-bar');
     if (navBar) {
       ScrollTrigger.create({
