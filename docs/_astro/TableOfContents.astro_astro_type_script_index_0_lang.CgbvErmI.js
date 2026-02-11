@@ -1,0 +1,1 @@
+const o=document.querySelectorAll("[data-toc-link]");if(o.length>0){let c=function(){let t=n[0];for(const e of i)e.getBoundingClientRect().top<=120&&(t=e.id);o.forEach(e=>{e.classList.toggle("active",e.dataset.tocLink===t)})};const n=Array.from(o).map(t=>t.dataset.tocLink),i=n.map(t=>document.getElementById(t)).filter(Boolean);window.addEventListener("scroll",c,{passive:!0}),c()}

@@ -1,36 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 import { loadYaml } from '../lib/data';
 
 const pubs = loadYaml('publications.yml');
 const englishSection = pubs.sections[0];
 const ptSection = pubs.sections[1];
+
+const tocItems = [
+  { label: 'English', id: 'english' },
+  { label: 'Portuguese', id: 'portuguese' },
+];
 ---
 
 <BaseLayout title="Publications" description="Academic papers, journalistic investigations, books, and tutorials.">
   <div class="page-wrapper">
-    <div class="content-wrapper">
+    <div class="page-with-toc">
+      <TableOfContents items={tocItems} />
+      <div class="content-wrapper">
 
-      <div class="page-header">
-        <h1 id="page-title">Publications</h1>
-        <p class="secondary">Texts published since 2008 — data investigations, academic papers, books, and tutorials in English and Portuguese.</p>
-        <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          <span class="data-badge data-badge--violet">Academic</span>
-          <span class="data-badge">Journalism</span>
-          <span class="data-badge data-badge--teal">Tutorial</span>
+        <div class="page-header">
+          <h1 id="page-title">Publications</h1>
+          <p class="secondary">Texts published since 2008 — data investigations, academic papers, books, and tutorials in English and Portuguese.</p>
+          <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="data-badge data-badge--violet">Academic</span>
+            <span class="data-badge">Journalism</span>
+            <span class="data-badge data-badge--teal">Tutorial</span>
+          </div>
         </div>
-      </div>
 
-      <h2 class="reveal">{englishSection.title}</h2>
+        <h2 class="reveal" id="english">{englishSection.title}</h2>
 
-      {englishSection.entries.map((entry: any) => (
-        <div class={`pub-entry pub-entry--${entry.type} reveal`}>
-          <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title"><a href={entry.url}>{entry.title}</a></span></div>
-          <div class="pub-entry__meta" set:html={entry.meta} />
-        </div>
-      ))}
+        {englishSection.entries.map((entry: any) => (
+          <div class={`pub-entry pub-entry--${entry.type} reveal`}>
+            <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title"><a href={entry.url}>{entry.title}</a></span></div>
+            <div class="pub-entry__meta" set:html={entry.meta} />
+          </div>
+        ))}
 
-      <h2 class="reveal">{ptSection.title}</h2>
+        <h2 class="reveal" id="portuguese">{ptSection.title}</h2>
 
       {ptSection.subsections.map((sub: any) => (
         <>
@@ -57,8 +65,9 @@ const ptSection = pubs.sections[1];
             </div>
           ))}
         </>
-      ))}
+        ))}
 
+      </div>
     </div>
   </div>
 
@@ -68,6 +77,20 @@ const ptSection = pubs.sections[1];
 </BaseLayout>
 
 <style>
+  .page-with-toc {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .page-with-toc {
+      display: block;
+    }
+  }
+
   .page-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;

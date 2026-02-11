@@ -1,49 +1,74 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 import { loadYaml } from '../lib/data';
 
 const events = loadYaml('events.yml');
+
+const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+const tocItems = events.sections.map((s: any) => ({
+  label: s.title,
+  id: slugify(s.title),
+}));
 ---
 
 <BaseLayout title="Events" description="Conferences, lectures, workshops, and courses.">
   <div class="page-wrapper">
-    <div class="content-wrapper">
+    <div class="page-with-toc">
+      <TableOfContents items={tocItems} />
+      <div class="content-wrapper">
 
-      <div class="page-header">
-        <h1 id="page-title">Events</h1>
-        <p class="secondary">Conferences, lectures, workshops, and courses across four continents.</p>
-      </div>
+        <div class="page-header">
+          <h1 id="page-title">Events</h1>
+          <p class="secondary">Conferences, lectures, workshops, and courses across four continents.</p>
+        </div>
 
-      {events.sections.map((section: any, sIdx: number) => (
-        <>
-          <div class={`section-label${section.style ? ` section-label--${section.style}` : ''} reveal`}>{section.title}</div>
+        {events.sections.map((section: any, sIdx: number) => (
+          <>
+            <div class={`section-label${section.style ? ` section-label--${section.style}` : ''} reveal`} id={slugify(section.title)}>{section.title}</div>
 
-          {sIdx === 0 && <p class="reveal" set:html={events.intro} />}
+            {sIdx === 0 && <p class="reveal" set:html={events.intro} />}
 
-          <div class="timeline">
-            {section.entries.map((entry: any) => (
-              <div class="timeline-entry reveal">
-                <div class="timeline-date"><span class={`data-badge${entry.badge_style ? ` data-badge--${entry.badge_style}` : ''}`}>{entry.year}</span></div>
-                <div class="timeline-content">
-                  {entry.location && <div class="timeline-location">// {entry.location}</div>}
-                  {entry.items.map((item: any, iIdx: number) => (
-                    <>
-                      {item.location && <div class={`timeline-location${iIdx > 0 ? '' : ''}`} style={iIdx > 0 ? 'margin-top:0.75rem' : undefined}>// {item.location}</div>}
-                      <div style={!item.location && iIdx > 0 ? 'margin-top:0.5rem' : undefined} set:html={item.text} />
-                    </>
-                  ))}
+            <div class="timeline">
+              {section.entries.map((entry: any) => (
+                <div class="timeline-entry reveal">
+                  <div class="timeline-date"><span class={`data-badge${entry.badge_style ? ` data-badge--${entry.badge_style}` : ''}`}>{entry.year}</span></div>
+                  <div class="timeline-content">
+                    {entry.location && <div class="timeline-location">// {entry.location}</div>}
+                    {entry.items.map((item: any, iIdx: number) => (
+                      <>
+                        {item.location && <div class={`timeline-location${iIdx > 0 ? '' : ''}`} style={iIdx > 0 ? 'margin-top:0.75rem' : undefined}>// {item.location}</div>}
+                        <div style={!item.location && iIdx > 0 ? 'margin-top:0.5rem' : undefined} set:html={item.text} />
+                      </>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </>
-      ))}
+              ))}
+            </div>
+          </>
+        ))}
 
+      </div>
     </div>
   </div>
 </BaseLayout>
 
 <style>
+  .page-with-toc {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .page-with-toc {
+      display: block;
+    }
+  }
+
   .page-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;

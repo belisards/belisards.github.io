@@ -1,0 +1,97 @@
+---
+interface TocItem {
+  label: string;
+  id: string;
+}
+
+interface Props {
+  items: TocItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="toc" aria-label="Table of contents">
+  <ul class="toc__list">
+    {items.map((item) => (
+      <li class="toc__item">
+        <a href={`#${item.id}`} class="toc__link" data-toc-link={item.id}>{item.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .toc {
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+    align-self: start;
+    max-height: calc(100vh - var(--nav-height) - 4rem);
+    overflow-y: auto;
+    padding-right: 1.5rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .toc__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .toc__link {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-tertiary);
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    transition: color 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .toc__link:hover {
+    color: var(--ink);
+    background: rgba(37, 99, 235, 0.04);
+  }
+
+  .toc__link.active {
+    color: var(--signal-primary);
+    background: rgba(37, 99, 235, 0.06);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .toc {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Highlight active TOC link based on scroll position
+  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]');
+  if (tocLinks.length > 0) {
+    const ids = Array.from(tocLinks).map(l => l.dataset.tocLink!);
+    const sections = ids.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+
+    function updateActive() {
+      let activeId = ids[0];
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 120) {
+          activeId = section.id;
+        }
+      }
+      tocLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.tocLink === activeId);
+      });
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+  }
+</script>
