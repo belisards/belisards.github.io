@@ -12,9 +12,10 @@ import '../styles/responsive.css';
 interface Props {
   title?: string;
   description?: string;
+  hideNavInitially?: boolean;
 }
 
-const { title = 'Adriano Belisario', description = 'Data, journalism and open-source' } = Astro.props;
+const { title = 'Adriano Belisario', description = 'Data, journalism and open-source', hideNavInitially = false } = Astro.props;
 const pageTitle = title === 'Adriano Belisario' ? title : `${title} — Adriano Belisario`;
 ---
 
@@ -55,7 +56,7 @@ const pageTitle = title === 'Adriano Belisario' ? title : `${title} — Adriano 
     gtag('config', 'G-NE9CBZWC4K', { anonymize_ip: true });
   </script>
 </head>
-<body>
+<body data-hide-nav={hideNavInitially ? "true" : undefined}>
   <Nav />
   <main class="page-enter">
     <slot />

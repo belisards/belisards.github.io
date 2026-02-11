@@ -2,24 +2,45 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture.">
+<BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture." hideNavInitially={true}>
 
   <!-- ========== HERO ========== -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <canvas id="network-canvas" aria-hidden="true"></canvas>
     <div class="hero__grain" aria-hidden="true"></div>
 
+    <!-- Vertical accent line -->
+    <div class="hero__accent-line" aria-hidden="true"></div>
+
     <div class="hero__content">
-      <p class="hero__eyebrow" id="hero-eyebrow">Data &middot; Journalism &middot; Open&thinsp;Source</p>
+      <p class="hero__signal-tag mono" id="hero-signal-tag">
+        <span class="hero__signal-dot"></span>
+        signal.acquired
+      </p>
+
       <h1 class="hero__name" id="hero-name" aria-label="Adriano Belisario">
-        <span class="hero__line" id="line-1">Adriano</span>
-        <span class="hero__line" id="line-2">Belisario</span>
+        <span class="hero__line hero__line--first" id="line-1">Adriano</span>
+        <span class="hero__line hero__line--last" id="line-2">Belisario</span>
       </h1>
+
+      <p class="hero__tagline" id="hero-tagline">
+        Finding signal in the noise.<br />
+        Data journalist &amp; researcher.
+      </p>
+
+      <div class="hero__disciplines" id="hero-disciplines">
+        <span class="hero__disc-tag">Data Science</span>
+        <span class="hero__disc-tag">Open Source</span>
+        <span class="hero__disc-tag">Investigations</span>
+      </div>
     </div>
 
-    <div class="hero__bottom">
-      <p class="hero__scroll-label mono" id="scroll-label">Scroll</p>
-      <div class="hero__scroll-line" id="scroll-line"><span></span></div>
+    <div class="hero__bottom" id="hero-bottom">
+      <span class="hero__location mono">Oxford &middot; Rio de Janeiro</span>
+      <div class="hero__scroll-cta">
+        <p class="hero__scroll-label mono" id="scroll-label">Scroll</p>
+        <div class="hero__scroll-line" id="scroll-line"><span></span></div>
+      </div>
     </div>
   </section>
 
@@ -97,7 +118,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   /* ============================
-     HERO
+     HERO — Signal Acquired
      ============================ */
   .hero {
     position: relative;
@@ -105,8 +126,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     height: 100vh;
     height: 100dvh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-start;
     overflow: hidden;
     margin-left: calc(-50vw + 50%);
     background: #0a0a0c;
@@ -132,34 +153,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     mix-blend-mode: overlay;
   }
 
-  .hero__content {
-    position: relative;
+  /* Vertical accent line */
+  .hero__accent-line {
+    position: absolute;
+    left: 2rem;
+    top: 15%;
+    bottom: 15%;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--signal-primary) 30%,
+      var(--signal-teal) 70%,
+      transparent
+    );
     z-index: 2;
-    text-align: center;
-    padding: 0 2rem;
-  }
-
-  .hero__eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(248, 247, 244, 0.35);
-    margin-bottom: 2rem;
     opacity: 0;
   }
 
+  /* Content container */
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 0 4rem 8rem 5rem;
+    max-width: 1200px;
+  }
+
+  /* Signal tag */
+  .hero__signal-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--signal-teal);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+  }
+
+  .hero__signal-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--signal-teal);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.6); }
+    50% { box-shadow: 0 0 0 6px rgba(13, 148, 136, 0); }
+  }
+
+  /* Name — massive, left-aligned */
   .hero__name {
-    font-size: clamp(4rem, 14vw, 12rem);
+    font-size: clamp(5rem, 16vw, 14rem);
     font-weight: 700;
-    letter-spacing: -0.06em;
-    line-height: 0.85;
-    margin: 0;
+    letter-spacing: -0.07em;
+    line-height: 0.82;
+    margin: 0 0 2rem;
     background: linear-gradient(
       135deg,
-      #f8f7f4 0%,
-      #f8f7f4 40%,
-      var(--signal-primary) 100%
+      #ffffff 0%,
+      #f8f7f4 25%,
+      var(--signal-primary) 70%,
+      var(--signal-teal) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -172,18 +231,73 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     will-change: transform, opacity;
   }
 
-  /* Hero bottom */
+  .hero__line--last {
+    padding-left: clamp(1rem, 4vw, 5rem);
+  }
+
+  /* Tagline */
+  .hero__tagline {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(248, 247, 244, 0.55);
+    max-width: 500px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    letter-spacing: -0.01em;
+  }
+
+  /* Discipline tags */
+  .hero__disciplines {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    opacity: 0;
+  }
+
+  .hero__disc-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(248, 247, 244, 0.35);
+    border: 1px solid rgba(248, 247, 244, 0.1);
+    padding: 0.35rem 0.8rem;
+    border-radius: 100px;
+    transition: border-color 0.4s ease, color 0.4s ease;
+  }
+
+  .hero__disc-tag:hover {
+    border-color: var(--signal-primary);
+    color: rgba(248, 247, 244, 0.6);
+  }
+
+  /* Hero bottom — split layout */
   .hero__bottom {
     position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 2.5rem;
+    left: 5rem;
+    right: 4rem;
     z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    opacity: 0;
+  }
+
+  .hero__location {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248, 247, 244, 0.2);
+  }
+
+  .hero__scroll-cta {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    opacity: 0;
   }
 
   .hero__scroll-label {
@@ -387,8 +501,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      RESPONSIVE
      ============================ */
   @media screen and (max-width: 768px) {
+    .hero__content {
+      padding: 0 1.5rem 7rem 1.5rem;
+    }
+
+    .hero__accent-line {
+      left: 1rem;
+      top: 20%;
+      bottom: 20%;
+    }
+
     .hero__name {
-      font-size: clamp(3rem, 16vw, 6rem);
+      font-size: clamp(3.5rem, 18vw, 7rem);
+    }
+
+    .hero__line--last {
+      padding-left: clamp(0.5rem, 3vw, 2rem);
+    }
+
+    .hero__tagline {
+      font-size: clamp(1rem, 4vw, 1.3rem);
+    }
+
+    .hero__bottom {
+      left: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .hero__location {
+      display: none;
     }
 
     .statement {
@@ -534,10 +675,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // Draw dot
+      // Draw dot — proximity glow near name position
+      const centerX = canvas.width * 0.35;
+      const centerY = canvas.height * 0.65;
+      const distToCenter = Math.hypot(a.x - centerX, a.y - centerY);
+      const maxDist = Math.hypot(canvas.width, canvas.height) * 0.4;
+      const proximity = Math.max(0, 1 - distToCenter / maxDist);
+      const boostedAlpha = a.alpha + proximity * 0.15;
+      const boostedR = a.r + proximity * 0.5;
+
       ctx.beginPath();
-      ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(37, 99, 235, ${a.alpha})`;
+      ctx.arc(a.x, a.y, boostedR, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(37, 99, 235, ${boostedAlpha})`;
       ctx.fill();
     }
 
@@ -579,32 +728,59 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   // ========================================
-  // HERO ANIMATIONS
+  // HERO ANIMATIONS — Cinematic "Signal Acquired"
   // ========================================
   if (!reducedMotion) {
-    const hero = gsap.timeline({ delay: 0.5 });
+    const heroTl = gsap.timeline({ delay: 0.3 });
 
-    // Eyebrow
-    hero.to("#hero-eyebrow", { opacity: 1, duration: 1.2, ease: "power2.out" });
+    // Phase 1: Accent line draws in
+    heroTl.fromTo(".hero__accent-line",
+      { opacity: 0, scaleY: 0 },
+      { opacity: 0.6, scaleY: 1, duration: 1.2, ease: "power3.inOut",
+        transformOrigin: "top center" }
+    );
 
-    // Name — SplitText per-character
+    // Phase 2: Signal tag
+    heroTl.to("#hero-signal-tag", {
+      opacity: 1, duration: 0.8, ease: "power2.out"
+    }, "-=0.6");
+
+    // Phase 3: Name — SplitText per-character, cinematic stagger
     const l1 = SplitText.create("#line-1", { type: "chars" });
     const l2 = SplitText.create("#line-2", { type: "chars" });
 
-    hero.to("#line-1", { opacity: 1, duration: 0.01 }, "-=0.8");
-    hero.from(l1.chars, {
-      y: 60, rotationX: -60, opacity: 0,
-      duration: 0.9, ease: "smooth", stagger: 0.035,
+    heroTl.to("#line-1", { opacity: 1, duration: 0.01 }, "-=0.3");
+    heroTl.from(l1.chars, {
+      y: 80, rotationX: -90, opacity: 0,
+      duration: 1.0, ease: "smooth", stagger: 0.04,
+      transformOrigin: "bottom center",
     }, "<");
 
-    hero.to("#line-2", { opacity: 1, duration: 0.01 }, "-=0.5");
-    hero.from(l2.chars, {
-      y: 60, rotationX: -60, opacity: 0,
-      duration: 0.9, ease: "smooth", stagger: 0.035,
+    heroTl.to("#line-2", { opacity: 1, duration: 0.01 }, "-=0.5");
+    heroTl.from(l2.chars, {
+      y: 80, rotationX: -90, opacity: 0,
+      duration: 1.0, ease: "smooth", stagger: 0.04,
+      transformOrigin: "bottom center",
     }, "<");
 
-    // Scroll indicator
-    hero.to(".hero__bottom", { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.3");
+    // Phase 4: Tagline fades up
+    heroTl.fromTo("#hero-tagline",
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.0, ease: "power2.out" },
+      "-=0.4"
+    );
+
+    // Phase 5: Discipline tags stagger in
+    heroTl.fromTo(".hero__disc-tag",
+      { y: 15, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: "power2.out", stagger: 0.1 },
+      "-=0.5"
+    );
+
+    // Phase 6: Bottom bar
+    heroTl.to("#hero-bottom", {
+      opacity: 1, duration: 1, ease: "power2.out"
+    }, "-=0.3");
 
     // Parallax on scroll
     ScrollTrigger.create({
@@ -614,12 +790,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       scrub: true,
       onUpdate: (self) => {
         const p = self.progress;
-        gsap.set(".hero__content", { y: p * 150, opacity: 1 - p * 2 });
-        gsap.set(".hero__bottom", { opacity: Math.max(0, 1 - p * 5) });
+        gsap.set(".hero__content", { y: p * 200, opacity: 1 - p * 2.5 });
+        gsap.set("#hero-bottom", { opacity: Math.max(0, 1 - p * 5) });
+        gsap.set(".hero__accent-line", { opacity: 0.6 * (1 - p * 2) });
       },
     });
+
+    // Nav reveal after hero
+    const navBar = document.querySelector('.nav-bar');
+    if (navBar) {
+      ScrollTrigger.create({
+        trigger: '.hero',
+        start: 'bottom 80px',
+        onEnter: () => navBar.classList.add('nav--visible'),
+        onLeaveBack: () => navBar.classList.remove('nav--visible'),
+      });
+    }
   } else {
-    gsap.set("#line-1, #line-2, #hero-eyebrow, .hero__bottom", { opacity: 1 });
+    gsap.set("#line-1, #line-2, #hero-signal-tag, #hero-tagline, .hero__disciplines, #hero-bottom", { opacity: 1 });
+    gsap.set(".hero__accent-line", { opacity: 0.6 });
+
+    // Still reveal nav on scroll for reduced motion
+    const navBar = document.querySelector('.nav-bar');
+    if (navBar) {
+      ScrollTrigger.create({
+        trigger: '.hero',
+        start: 'bottom 80px',
+        onEnter: () => navBar.classList.add('nav--visible'),
+        onLeaveBack: () => navBar.classList.remove('nav--visible'),
+      });
+    }
   }
 
   // ========================================
