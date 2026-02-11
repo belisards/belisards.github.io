@@ -42,18 +42,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- ========== LOGO STRIP ========== -->
-  <section class="logo-strip">
-    <p class="logo-strip__label mono">Collaborated with</p>
-    <div class="logo-strip__inner">
-      <img src="/images/logos/oxford.svg" alt="Oxford" class="logo-strip__img" />
-      <img src="/images/logos/unhcr.svg" alt="UNHCR" class="logo-strip__img" />
-      <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
-      <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
-      <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
-    </div>
-  </section>
-
   <!-- ========== STATEMENT ========== -->
   <section class="statement">
     <div class="statement__inner">
@@ -122,6 +110,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="panel__arrow">&rarr;</span>
       <div class="panel__accent panel__accent--blue"></div>
     </a>
+  </section>
+
+  <!-- ========== LOGO STRIP ========== -->
+  <section class="logo-strip">
+    <p class="logo-strip__label mono">Collaborated with</p>
+    <div class="logo-strip__inner">
+      <img src="/images/logos/oxford.svg" alt="Oxford" class="logo-strip__img" />
+      <img src="/images/logos/unhcr.svg" alt="UNHCR" class="logo-strip__img" />
+      <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
+      <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
+      <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
+    </div>
   </section>
 
 </BaseLayout>
@@ -257,14 +257,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   /* ============================
-     LOGO STRIP — full-width below hero
+     LOGO STRIP — above footer
      ============================ */
   .logo-strip {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    background: #0a0a0c;
-    padding: 3.5rem 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: #f0eeeb;
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border);
     text-align: center;
   }
 
@@ -272,7 +272,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(248, 247, 244, 0.35);
+    color: var(--ink-tertiary);
     margin: 0 0 2rem;
   }
 
@@ -288,14 +288,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .logo-strip__img {
     height: 22px;
-    opacity: 0.35;
-    filter: grayscale(1) brightness(2);
+    opacity: 0.4;
+    filter: grayscale(1);
     transition: opacity 0.4s ease, filter 0.4s ease;
   }
 
   .logo-strip__img:hover {
-    opacity: 0.7;
-    filter: grayscale(0) brightness(1);
+    opacity: 0.8;
+    filter: grayscale(0);
   }
 
   /* ============================
@@ -307,6 +307,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     align-items: center;
     justify-content: center;
     min-height: 60vh;
+    background: #ffffff;
   }
 
   .statement__inner {
@@ -332,6 +333,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      ============================ */
   .affiliations {
     padding: 0 2rem 8rem;
+    background: #ffffff;
   }
 
   .affiliations__inner {
@@ -376,6 +378,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     border-top: 1px solid var(--border);
+    background: #ffffff;
   }
 
   .panel {
