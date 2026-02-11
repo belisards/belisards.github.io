@@ -48,7 +48,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ========== NAVIGATION PANELS ========== -->
   <section class="panels">
     <a href="/code/" class="panel" data-color="teal">
-      <canvas class="panel__canvas" aria-hidden="true"></canvas>
+      <div class="panel__bg" aria-hidden="true"></div>
       <span class="panel__index mono">01</span>
       <div class="panel__body">
         <h2 class="panel__title">Code</h2>
@@ -57,7 +57,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="panel__arrow">&rarr;</span>
     </a>
     <a href="/publications/" class="panel" data-color="violet">
-      <canvas class="panel__canvas" aria-hidden="true"></canvas>
+      <div class="panel__bg" aria-hidden="true"></div>
       <span class="panel__index mono">02</span>
       <div class="panel__body">
         <h2 class="panel__title">Publications</h2>
@@ -66,7 +66,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="panel__arrow">&rarr;</span>
     </a>
     <a href="/events/" class="panel" data-color="warm">
-      <canvas class="panel__canvas" aria-hidden="true"></canvas>
+      <div class="panel__bg" aria-hidden="true"></div>
       <span class="panel__index mono">03</span>
       <div class="panel__body">
         <h2 class="panel__title">Events</h2>
@@ -75,7 +75,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="panel__arrow">&rarr;</span>
     </a>
     <a href="/about/" class="panel" data-color="blue">
-      <canvas class="panel__canvas" aria-hidden="true"></canvas>
+      <div class="panel__bg" aria-hidden="true"></div>
       <span class="panel__index mono">04</span>
       <div class="panel__body">
         <h2 class="panel__title">About</h2>
@@ -322,13 +322,89 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     transition: all 0.4s ease;
   }
 
-  .panel__canvas {
+  /* Organic color background — always breathing */
+  .panel__bg {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
     z-index: 0;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .panel[data-color="teal"] .panel__bg {
+    background: radial-gradient(
+      ellipse 120% 200% at 0% 50%,
+      rgba(13, 148, 136, 0.12) 0%,
+      rgba(13, 148, 136, 0.04) 50%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    animation: bgBreatheTeal 6s ease-in-out infinite alternate;
+  }
+
+  .panel[data-color="violet"] .panel__bg {
+    background: radial-gradient(
+      ellipse 120% 200% at 100% 50%,
+      rgba(124, 58, 237, 0.12) 0%,
+      rgba(124, 58, 237, 0.04) 50%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    animation: bgBreatheViolet 7s ease-in-out infinite alternate;
+  }
+
+  .panel[data-color="warm"] .panel__bg {
+    background: radial-gradient(
+      ellipse 120% 200% at 0% 50%,
+      rgba(232, 93, 4, 0.12) 0%,
+      rgba(232, 93, 4, 0.04) 50%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    animation: bgBreatheWarm 5s ease-in-out infinite alternate;
+  }
+
+  .panel[data-color="blue"] .panel__bg {
+    background: radial-gradient(
+      ellipse 120% 200% at 100% 50%,
+      rgba(37, 99, 235, 0.12) 0%,
+      rgba(37, 99, 235, 0.04) 50%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    animation: bgBreatheBlue 8s ease-in-out infinite alternate;
+  }
+
+  /* Breathing animations — organic, different rhythms per panel */
+  @keyframes bgBreatheTeal {
+    0%   { opacity: 0.4; background-position: 0% 50%; }
+    50%  { opacity: 0.8; }
+    100% { opacity: 1; background-position: 100% 50%; }
+  }
+
+  @keyframes bgBreatheViolet {
+    0%   { opacity: 0.3; background-position: 100% 0%; }
+    50%  { opacity: 0.7; }
+    100% { opacity: 1; background-position: 0% 100%; }
+  }
+
+  @keyframes bgBreatheWarm {
+    0%   { opacity: 0.35; background-position: 0% 100%; }
+    50%  { opacity: 0.75; }
+    100% { opacity: 1; background-position: 100% 0%; }
+  }
+
+  @keyframes bgBreatheBlue {
+    0%   { opacity: 0.3; background-position: 50% 0%; }
+    50%  { opacity: 0.7; }
+    100% { opacity: 1; background-position: 50% 100%; }
+  }
+
+  /* Hover locks at full intensity */
+  .panel:hover .panel__bg {
+    opacity: 1 !important;
+    animation-play-state: paused;
   }
 
   .panel__index, .panel__body, .panel__arrow {
@@ -522,7 +598,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   let flowParticles: FlowParticle[] = [];
   let flowTime = 0;
-  const mouse = { x: -9999, y: -9999, active: false };
+  const pointer = { x: -9999, y: -9999, active: false, strength: 1 };
 
   function resizeHero() {
     if (!heroCanvas) return;
@@ -579,13 +655,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       let vx = Math.cos(angle) * p.speed;
       let vy = Math.sin(angle) * p.speed;
 
-      // Mouse gravity — bonus interaction, not required
-      if (mouse.active) {
-        const dx = mouse.x - p.x;
-        const dy = mouse.y - p.y;
+      // Pointer gravity — works with mouse AND touch
+      if (pointer.active) {
+        const dx = pointer.x - p.x;
+        const dy = pointer.y - p.y;
         const d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 280 && d > 0) {
-          const pull = ((280 - d) / 280) * 0.5;
+        const radius = 350;
+        if (d < radius && d > 0) {
+          const pull = ((radius - d) / radius) * 0.7 * pointer.strength;
           vx += (dx / d) * pull;
           vy += (dy / d) * pull;
         }
@@ -626,28 +703,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     requestAnimationFrame(tickHero);
   }
 
+  // Spawn burst of particles near a point (touch/click feedback)
+  function spawnBurst(bx: number, by: number, count: number = 12) {
+    for (let i = 0; i < count; i++) {
+      const angle = (i / count) * Math.PI * 2;
+      const speed = 1.5 + Math.random() * 2;
+      const p = spawnParticle();
+      p.x = bx + Math.cos(angle) * 10;
+      p.y = by + Math.sin(angle) * 10;
+      p.prevX = bx;
+      p.prevY = by;
+      p.speed = speed;
+      p.life = 0;
+      p.maxLife = 40 + Math.random() * 30;
+      p.size = 1 + Math.random() * 2;
+      flowParticles.push(p);
+    }
+  }
+
   if (heroCanvas && heroCtx && !reducedMotion) {
     resizeHero();
     tickHero();
     window.addEventListener("resize", resizeHero);
 
-    heroCanvas.parentElement?.addEventListener("mousemove", (e) => {
+    const heroEl = heroCanvas.parentElement;
+
+    // Mouse interaction
+    heroEl?.addEventListener("mousemove", (e) => {
       const rect = heroCanvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-      mouse.active = true;
+      pointer.x = e.clientX - rect.left;
+      pointer.y = e.clientY - rect.top;
+      pointer.active = true;
+      pointer.strength = 1;
     });
-    heroCanvas.parentElement?.addEventListener("mouseleave", () => {
-      mouse.active = false; mouse.x = -9999; mouse.y = -9999;
+    heroEl?.addEventListener("mouseleave", () => {
+      pointer.active = false; pointer.x = -9999; pointer.y = -9999;
     });
-    heroCanvas.parentElement?.addEventListener("touchmove", (e) => {
+
+    // Touch interaction — immediate, responsive
+    heroEl?.addEventListener("touchstart", (e) => {
       const rect = heroCanvas.getBoundingClientRect();
       const t = e.touches[0];
-      mouse.x = t.clientX - rect.left;
-      mouse.y = t.clientY - rect.top;
-      mouse.active = true;
+      pointer.x = t.clientX - rect.left;
+      pointer.y = t.clientY - rect.top;
+      pointer.active = true;
+      pointer.strength = 1.5; // touch gets stronger pull
+      spawnBurst(pointer.x, pointer.y, 16);
     }, { passive: true });
-    heroCanvas.parentElement?.addEventListener("touchend", () => { mouse.active = false; });
+
+    heroEl?.addEventListener("touchmove", (e) => {
+      const rect = heroCanvas.getBoundingClientRect();
+      const t = e.touches[0];
+      pointer.x = t.clientX - rect.left;
+      pointer.y = t.clientY - rect.top;
+      pointer.active = true;
+    }, { passive: true });
+
+    heroEl?.addEventListener("touchend", () => {
+      pointer.active = false;
+      pointer.x = -9999;
+      pointer.y = -9999;
+    });
   } else if (heroCanvas && heroCtx) {
     // Reduced motion — static scatter
     resizeHero();
@@ -772,145 +888,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
       },
     });
-  }
-
-  // ========================================
-  // PANEL CANVASES — Generative data streams
-  //
-  // Each panel has its own canvas with colored
-  // data particles flowing left-to-right in
-  // sine-wave patterns. Always animated autonomously.
-  // Hover intensifies the flow — bold visual signal.
-  // ========================================
-  const panelColorMap: Record<string, { r: number; g: number; b: number }> = {
-    teal:   { r: 13, g: 148, b: 136 },
-    violet: { r: 124, g: 58, b: 237 },
-    warm:   { r: 232, g: 93, b: 4 },
-    blue:   { r: 37, g: 99, b: 235 },
-  };
-
-  interface DataStream {
-    x: number; y: number;
-    baseY: number;
-    size: number;
-    alpha: number;
-    speed: number;
-    phase: number;
-    amp: number;
-  }
-
-  const panelAnimations: Array<{
-    canvas: HTMLCanvasElement;
-    ctx: CanvasRenderingContext2D;
-    color: { r: number; g: number; b: number };
-    streams: DataStream[];
-    time: number;
-    visible: boolean;
-    hovered: boolean;
-  }> = [];
-
-  document.querySelectorAll<HTMLElement>(".panel").forEach((panel) => {
-    const canvas = panel.querySelector(".panel__canvas") as HTMLCanvasElement;
-    const ctx = canvas?.getContext("2d");
-    const colorKey = panel.dataset.color || "blue";
-    const color = panelColorMap[colorKey] || panelColorMap.blue;
-
-    if (!canvas || !ctx || reducedMotion) return;
-
-    const anim = {
-      canvas,
-      ctx,
-      color,
-      streams: [] as DataStream[],
-      time: Math.random() * 100,
-      visible: false,
-      hovered: false,
-    };
-
-    function resizePanel() {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      initStreams();
-    }
-
-    function initStreams() {
-      anim.streams = [];
-      const count = Math.max(12, Math.floor(canvas.width / 30));
-      for (let i = 0; i < count; i++) {
-        anim.streams.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          baseY: Math.random() * canvas.height,
-          size: 1 + Math.random() * 2.5,
-          alpha: 0.04 + Math.random() * 0.06,
-          speed: 0.4 + Math.random() * 1.2,
-          phase: Math.random() * Math.PI * 2,
-          amp: 4 + Math.random() * 12,
-        });
-      }
-    }
-
-    resizePanel();
-
-    panel.addEventListener("mouseenter", () => { anim.hovered = true; });
-    panel.addEventListener("mouseleave", () => { anim.hovered = false; });
-
-    const observer = new IntersectionObserver((entries) => {
-      anim.visible = entries[0].isIntersecting;
-    }, { threshold: 0.1 });
-    observer.observe(panel);
-
-    panelAnimations.push(anim);
-    window.addEventListener("resize", resizePanel);
-  });
-
-  // Single RAF for all panel canvases
-  function tickPanels() {
-    for (const anim of panelAnimations) {
-      if (!anim.visible) continue;
-      const { ctx, canvas, color, streams } = anim;
-      const w = canvas.width, h = canvas.height;
-      anim.time += 0.01;
-
-      ctx.clearRect(0, 0, w, h);
-
-      // Hover triples intensity
-      const intensityMul = anim.hovered ? 3 : 1;
-
-      for (const s of streams) {
-        s.x += s.speed;
-        const waveY = s.baseY + Math.sin(s.x * 0.012 + s.phase + anim.time) * s.amp;
-
-        if (s.x > w + 15) {
-          s.x = -15;
-          s.baseY = Math.random() * h;
-          s.phase = Math.random() * Math.PI * 2;
-        }
-
-        const a = s.alpha * intensityMul;
-
-        // Dot
-        ctx.beginPath();
-        ctx.arc(s.x, waveY, s.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${a})`;
-        ctx.fill();
-
-        // Trailing line
-        const trailLen = s.speed * 10;
-        ctx.beginPath();
-        ctx.moveTo(s.x, waveY);
-        ctx.lineTo(s.x - trailLen, waveY);
-        ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${a * 0.4})`;
-        ctx.lineWidth = s.size * 0.5;
-        ctx.lineCap = "round";
-        ctx.stroke();
-      }
-    }
-    requestAnimationFrame(tickPanels);
-  }
-
-  if (!reducedMotion && panelAnimations.length > 0) {
-    tickPanels();
   }
 
   // ========================================
