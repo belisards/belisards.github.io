@@ -44,6 +44,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- ========== LOGO STRIP ========== -->
   <section class="logo-strip">
+    <p class="logo-strip__label mono">Collaborated with</p>
     <div class="logo-strip__inner">
       <img src="/images/logos/oxford.svg" alt="Oxford" class="logo-strip__img" />
       <img src="/images/logos/unhcr.svg" alt="UNHCR" class="logo-strip__img" />
@@ -256,21 +257,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   /* ============================
-     LOGO STRIP — below hero
+     LOGO STRIP — full-width below hero
      ============================ */
   .logo-strip {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     background: #0a0a0c;
-    padding: 3rem 2rem;
+    padding: 3.5rem 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+  }
+
+  .logo-strip__label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248, 247, 244, 0.35);
+    margin: 0 0 2rem;
   }
 
   .logo-strip__inner {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 3.5rem;
     flex-wrap: wrap;
   }
 
@@ -482,11 +494,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .logo-strip {
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .logo-strip__label {
+      margin-bottom: 1.5rem;
     }
 
     .logo-strip__inner {
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .logo-strip__img {
