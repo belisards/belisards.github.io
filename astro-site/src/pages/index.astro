@@ -213,8 +213,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     background: linear-gradient(
       160deg,
       #ffffff 0%,
-      #e8e8e8 30%,
-      var(--signal-primary) 65%,
+      #f0f0f0 25%,
+      #d0d8ff 50%,
+      var(--signal-primary) 80%,
       var(--signal-teal) 100%
     );
     background-size: 200% 200%;
@@ -223,6 +224,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     -webkit-text-fill-color: transparent;
     opacity: 0;
     transform: scale(0.9);
+    filter: drop-shadow(0 0 60px rgba(37, 99, 235, 0.25));
   }
 
   .hero__line {
@@ -365,11 +367,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-bottom: 1px solid var(--border);
     position: relative;
     overflow: hidden;
-    transition: background 0.4s ease;
+    transition: background-color 0.5s ease;
+    background-color: transparent;
   }
 
   .panel:hover {
-    background: transparent;
+    animation: panelBgPulse 2s ease-in-out infinite alternate;
+  }
+
+  .panel[data-color="teal"]:hover {
+    --panel-bg-from: rgba(13, 148, 136, 0.06);
+    --panel-bg-to: rgba(13, 148, 136, 0.12);
+  }
+  .panel[data-color="violet"]:hover {
+    --panel-bg-from: rgba(124, 58, 237, 0.06);
+    --panel-bg-to: rgba(124, 58, 237, 0.12);
+  }
+  .panel[data-color="warm"]:hover {
+    --panel-bg-from: rgba(232, 93, 4, 0.06);
+    --panel-bg-to: rgba(232, 93, 4, 0.12);
+  }
+  .panel[data-color="blue"]:hover {
+    --panel-bg-from: rgba(37, 99, 235, 0.06);
+    --panel-bg-to: rgba(37, 99, 235, 0.12);
+  }
+
+  @keyframes panelBgPulse {
+    0%   { background-color: var(--panel-bg-from, transparent); }
+    100% { background-color: var(--panel-bg-to, transparent); }
   }
 
   /* Animated radial glow that follows cursor */
