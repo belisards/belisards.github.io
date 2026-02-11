@@ -1,17 +1,38 @@
+.DS_Store
+
+# Quarto (legacy)
+/.quarto/
+/_site/
+/_freeze/
+/_extensions/
+_quarto.yml
+quarto.yml
+*.qmd
+!code/*/index.qmd
+site_libs/
+events_files/
+posts/
+publications/_metadata.yml
+
+# R
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
-.DS_Store
 *.lock
-/.quarto/
-/_site/
-/fonts/
 renv/
-
-assets/giscus-light.css
-assets/giscus-light-custom.css
+*.Rproj
+.Rprofile
+R/
 
 # Astro
 astro-site/node_modules/
 astro-site/dist/
+astro-site/.astro/
+
+# Tools
+.playwright-mcp/
+
+# Misc
+todo.html
+todo.md
