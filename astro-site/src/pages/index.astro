@@ -42,6 +42,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- ========== LOGO STRIP ========== -->
+  <section class="logo-strip">
+    <div class="logo-strip__inner">
+      <img src="/images/logos/oxford.svg" alt="Oxford" class="logo-strip__img" />
+      <img src="/images/logos/unhcr.svg" alt="UNHCR" class="logo-strip__img" />
+      <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
+      <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
+      <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
+    </div>
+  </section>
+
   <!-- ========== STATEMENT ========== -->
   <section class="statement">
     <div class="statement__inner">
@@ -245,6 +256,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   /* ============================
+     LOGO STRIP — below hero
+     ============================ */
+  .logo-strip {
+    background: #0a0a0c;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .logo-strip__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .logo-strip__img {
+    height: 22px;
+    opacity: 0.35;
+    filter: grayscale(1) brightness(2);
+    transition: opacity 0.4s ease, filter 0.4s ease;
+  }
+
+  .logo-strip__img:hover {
+    opacity: 0.7;
+    filter: grayscale(0) brightness(1);
+  }
+
+  /* ============================
      STATEMENT — big text scroll reveal
      ============================ */
   .statement {
@@ -437,6 +479,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .hero__waveform {
       height: 50px;
       margin-bottom: 1.5rem;
+    }
+
+    .logo-strip {
+      padding: 2rem 1.5rem;
+    }
+
+    .logo-strip__inner {
+      gap: 1.5rem;
+    }
+
+    .logo-strip__img {
+      height: 18px;
     }
 
     .statement {
