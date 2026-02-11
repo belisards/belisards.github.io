@@ -1,30 +1,5 @@
 .DS_Store
 
-# Quarto (legacy)
-/.quarto/
-/_site/
-/_freeze/
-/_extensions/
-_quarto.yml
-quarto.yml
-*.qmd
-!code/*/index.qmd
-site_libs/
-events_files/
-posts/
-publications/_metadata.yml
-
-# R
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-*.lock
-renv/
-*.Rproj
-.Rprofile
-R/
-
 # Astro
 astro-site/node_modules/
 astro-site/dist/
@@ -36,3 +11,4 @@ astro-site/.astro/
 # Misc
 todo.html
 todo.md
+*.lock

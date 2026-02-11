@@ -4,97 +4,100 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture.">
 
-  <!-- ========== FULL-SCREEN HERO ========== -->
+  <!-- ========== HERO ========== -->
   <section class="hero">
     <canvas id="network-canvas" aria-hidden="true"></canvas>
+    <div class="hero__grain" aria-hidden="true"></div>
 
     <div class="hero__content">
+      <p class="hero__eyebrow" id="hero-eyebrow">Data &middot; Journalism &middot; Open&thinsp;Source</p>
       <h1 class="hero__name" id="hero-name" aria-label="Adriano Belisario">
         <span class="hero__line" id="line-1">Adriano</span>
         <span class="hero__line" id="line-2">Belisario</span>
       </h1>
-      <p class="hero__tagline" id="hero-tagline">
-        Data, journalism &amp; open&#8209;source
-      </p>
     </div>
 
-    <div class="hero__scroll-hint" id="scroll-hint" aria-hidden="true">
-      <span></span>
+    <div class="hero__bottom">
+      <p class="hero__scroll-label mono" id="scroll-label">Scroll</p>
+      <div class="hero__scroll-line" id="scroll-line"><span></span></div>
     </div>
   </section>
 
-  <!-- ========== BIO SECTION ========== -->
-  <section class="bio-section">
-    <div class="bio-section__inner">
-      <p class="bio-section__text reveal">
-        Combining expertise in communication, open-source technologies, and data
-        to address important social concerns.
+  <!-- ========== STATEMENT ========== -->
+  <section class="statement">
+    <div class="statement__inner">
+      <p class="statement__text" id="statement-1">
+        Combining expertise in communication, open&#8209;source technologies,
+        and data to address important social concerns.
       </p>
-      <p class="bio-section__text reveal">
+    </div>
+  </section>
+
+  <!-- ========== AFFILIATIONS ========== -->
+  <section class="affiliations">
+    <div class="affiliations__inner">
+      <p class="affiliations__text reveal">
         Currently collaborating with the
         <a href="https://www.jointdatacenter.org/">Joint Data Center on Forced Displacement</a>
-        and the <a href="https://netlab.eco.ufrj.br/">Netlab</a> laboratory from the Federal University of Rio de Janeiro.
+        and <a href="https://netlab.eco.ufrj.br/">Netlab/UFRJ</a>.
+        MSc in Social Data Science,
+        <strong>Oxford Internet Institute</strong>.
       </p>
-      <div class="bio-section__badges reveal">
-        <span class="data-badge data-badge--violet">Oxford Internet Institute</span>
-        <span class="data-badge data-badge--warm">Bellingcat</span>
-        <span class="data-badge">Forensic Architecture</span>
-        <span class="data-badge data-badge--teal">UNHCR</span>
-        <span class="data-badge data-badge--warm">Agência Pública</span>
+      <div class="affiliations__logos reveal">
+        <span class="affiliation-tag">Bellingcat</span>
+        <span class="affiliation-tag">Forensic Architecture</span>
+        <span class="affiliation-tag">UNHCR</span>
+        <span class="affiliation-tag">Agência Pública</span>
+        <span class="affiliation-tag">Oxford</span>
       </div>
     </div>
   </section>
 
   <!-- ========== NAVIGATION PANELS ========== -->
   <section class="panels">
-
-    <a href="/code/" class="panel panel--teal" data-color="var(--signal-teal)">
-      <div class="panel__bg"></div>
-      <div class="panel__content">
-        <span class="panel__number mono">01</span>
+    <a href="/code/" class="panel">
+      <span class="panel__index mono">01</span>
+      <div class="panel__body">
         <h2 class="panel__title">Code</h2>
-        <p class="panel__desc">Data projects &amp; code repositories.<br>NLP, geodata, network analysis.</p>
-        <span class="panel__cta mono">Explore &rarr;</span>
+        <p class="panel__desc">Data projects & code — NLP, geodata, network analysis, machine learning.</p>
       </div>
+      <span class="panel__arrow">&rarr;</span>
+      <div class="panel__accent panel__accent--teal"></div>
     </a>
-
-    <a href="/publications/" class="panel panel--violet" data-color="var(--signal-violet)">
-      <div class="panel__bg"></div>
-      <div class="panel__content">
-        <span class="panel__number mono">02</span>
+    <a href="/publications/" class="panel">
+      <span class="panel__index mono">02</span>
+      <div class="panel__body">
         <h2 class="panel__title">Publications</h2>
-        <p class="panel__desc">Academic papers, investigations,<br>books &amp; tutorials.</p>
-        <span class="panel__cta mono">Explore &rarr;</span>
+        <p class="panel__desc">Academic papers, investigations, books & tutorials in English & Portuguese.</p>
       </div>
+      <span class="panel__arrow">&rarr;</span>
+      <div class="panel__accent panel__accent--violet"></div>
     </a>
-
-    <a href="/events/" class="panel panel--warm" data-color="var(--signal-warm)">
-      <div class="panel__bg"></div>
-      <div class="panel__content">
-        <span class="panel__number mono">03</span>
+    <a href="/events/" class="panel">
+      <span class="panel__index mono">03</span>
+      <div class="panel__body">
         <h2 class="panel__title">Events</h2>
-        <p class="panel__desc">Conferences, lectures, workshops<br>across four continents.</p>
-        <span class="panel__cta mono">Explore &rarr;</span>
+        <p class="panel__desc">Conferences, lectures, workshops & courses across four continents.</p>
       </div>
+      <span class="panel__arrow">&rarr;</span>
+      <div class="panel__accent panel__accent--warm"></div>
     </a>
-
-    <a href="/about/" class="panel panel--blue" data-color="var(--signal-primary)">
-      <div class="panel__bg"></div>
-      <div class="panel__content">
-        <span class="panel__number mono">04</span>
+    <a href="/about/" class="panel">
+      <span class="panel__index mono">04</span>
+      <div class="panel__body">
         <h2 class="panel__title">About</h2>
-        <p class="panel__desc">CV, education, experience<br>&amp; collaborations.</p>
-        <span class="panel__cta mono">Explore &rarr;</span>
+        <p class="panel__desc">CV, education, professional experience & collaborations.</p>
       </div>
+      <span class="panel__arrow">&rarr;</span>
+      <div class="panel__accent panel__accent--blue"></div>
     </a>
-
   </section>
 
 </BaseLayout>
 
 <style>
   /* ============================
-     HERO — Full viewport
+     HERO
      ============================ */
   .hero {
     position: relative;
@@ -106,7 +109,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     justify-content: center;
     overflow: hidden;
     margin-left: calc(-50vw + 50%);
-    background: var(--ink);
+    background: #0a0a0c;
   }
 
   #network-canvas {
@@ -117,212 +120,301 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     z-index: 0;
   }
 
+  /* Film grain overlay */
+  .hero__grain {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+  }
+
   .hero__content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     padding: 0 2rem;
   }
 
+  .hero__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(248, 247, 244, 0.35);
+    margin-bottom: 2rem;
+    opacity: 0;
+  }
+
   .hero__name {
-    font-size: clamp(3.5rem, 12vw, 10rem);
+    font-size: clamp(4rem, 14vw, 12rem);
     font-weight: 700;
     letter-spacing: -0.06em;
-    line-height: 0.9;
-    color: var(--canvas);
+    line-height: 0.85;
     margin: 0;
+    background: linear-gradient(
+      135deg,
+      #f8f7f4 0%,
+      #f8f7f4 40%,
+      var(--signal-primary) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .hero__line {
     display: block;
-    overflow: hidden;
     opacity: 0;
+    will-change: transform, opacity;
   }
 
-  .hero__tagline {
-    font-family: var(--font-mono);
-    font-size: clamp(0.75rem, 1.5vw, 1rem);
-    color: var(--signal-primary);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-top: 1.5rem;
-    opacity: 0;
-  }
-
-  /* Scroll hint */
-  .hero__scroll-hint {
+  /* Hero bottom */
+  .hero__bottom {
     position: absolute;
-    bottom: 2.5rem;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
     opacity: 0;
   }
 
-  .hero__scroll-hint span {
-    display: block;
-    width: 1px;
-    height: 48px;
-    background: linear-gradient(to bottom, var(--signal-primary), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
+  .hero__scroll-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(248, 247, 244, 0.3);
   }
 
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
-    50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  .hero__scroll-line span {
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(37, 99, 235, 0.6), transparent);
+    animation: linePulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes linePulse {
+    0%, 100% { transform: scaleY(0.4); opacity: 0.3; transform-origin: top; }
+    50% { transform: scaleY(1); opacity: 1; transform-origin: top; }
   }
 
   /* ============================
-     BIO SECTION
+     STATEMENT — big text scroll reveal
      ============================ */
-  .bio-section {
-    padding: 6rem 2rem;
-    max-width: 800px;
+  .statement {
+    padding: 10rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+  }
+
+  .statement__inner {
+    max-width: 900px;
+  }
+
+  .statement__text {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  /* Chars start invisible, GSAP reveals them */
+  :global(.statement__text .char-dim) {
+    color: var(--ink-tertiary);
+    transition: color 0.3s ease;
+  }
+
+  /* ============================
+     AFFILIATIONS
+     ============================ */
+  .affiliations {
+    padding: 0 2rem 8rem;
+  }
+
+  .affiliations__inner {
+    max-width: 700px;
     margin: 0 auto;
   }
 
-  .bio-section__inner {
-    max-width: 680px;
-  }
-
-  .bio-section__text {
-    font-size: 1.2rem;
+  .affiliations__text {
+    font-size: 1.1rem;
     line-height: 2;
-    margin-bottom: 1.5rem;
+    color: var(--ink-secondary);
+    margin-bottom: 2rem;
   }
 
-  .bio-section__badges {
+  .affiliations__logos {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 1rem;
+  }
+
+  .affiliation-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .affiliation-tag:hover {
+    color: var(--signal-primary);
+    border-color: var(--signal-primary);
   }
 
   /* ============================
-     NAVIGATION PANELS — Full bleed
+     PANELS — horizontal list
      ============================ */
   .panels {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    min-height: 100vh;
+    border-top: 1px solid var(--border);
   }
 
   .panel {
-    position: relative;
     display: flex;
-    align-items: flex-end;
-    padding: 3rem;
-    min-height: 50vh;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 3rem;
     text-decoration: none;
-    color: var(--canvas);
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  .panel__bg {
-    position: absolute;
-    inset: 0;
-    background: var(--ink);
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 0;
-  }
-
-  .panel:hover .panel__bg {
-    transform: scale(1.05);
-  }
-
-  .panel__content {
+    color: var(--ink);
+    border-bottom: 1px solid var(--border);
     position: relative;
-    z-index: 1;
-    opacity: 0;
-    transform: translateY(40px);
+    overflow: hidden;
+    transition: background 0.4s ease;
   }
 
-  .panel__number {
+  .panel:hover {
+    background: rgba(37, 99, 235, 0.03);
+  }
+
+  .panel__index {
     font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    color: rgba(248, 247, 244, 0.4);
-    display: block;
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-tertiary);
+    flex-shrink: 0;
+    width: 2rem;
+  }
+
+  .panel__body {
+    flex: 1;
   }
 
   .panel__title {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 700;
-    letter-spacing: -0.04em;
-    color: var(--canvas);
-    margin: 0 0 0.75rem;
-    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.25rem;
+    line-height: 1.1;
+    color: var(--ink);
+    transition: color 0.3s ease;
+  }
+
+  .panel:hover .panel__title {
+    color: var(--signal-primary);
   }
 
   .panel__desc {
     font-size: 0.85rem;
-    line-height: 1.7;
-    color: rgba(248, 247, 244, 0.6);
-    margin-bottom: 1.5rem;
+    color: var(--ink-secondary);
+    line-height: 1.6;
+    margin: 0;
   }
 
-  .panel__cta {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--canvas);
-    border-bottom: 1px solid rgba(248, 247, 244, 0.3);
-    padding-bottom: 0.25rem;
-    transition: border-color 0.3s ease;
+  .panel__arrow {
+    font-size: 1.5rem;
+    color: var(--ink-tertiary);
+    flex-shrink: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
   }
 
-  .panel:hover .panel__cta {
-    border-color: var(--canvas);
+  .panel:hover .panel__arrow {
+    transform: translateX(6px);
+    color: var(--signal-primary);
   }
 
-  /* Panel accent colors — thin top border glow */
-  .panel--teal .panel__bg { border-top: 3px solid var(--signal-teal); }
-  .panel--violet .panel__bg { border-top: 3px solid var(--signal-violet); }
-  .panel--warm .panel__bg { border-top: 3px solid var(--signal-warm); }
-  .panel--blue .panel__bg { border-top: 3px solid var(--signal-primary); }
+  /* Accent bar on left */
+  .panel__accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    transform: scaleY(0);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
 
-  /* On hover, the accent color lights up the background */
-  .panel--teal:hover .panel__bg { background: color-mix(in srgb, var(--ink) 92%, var(--signal-teal)); }
-  .panel--violet:hover .panel__bg { background: color-mix(in srgb, var(--ink) 92%, var(--signal-violet)); }
-  .panel--warm:hover .panel__bg { background: color-mix(in srgb, var(--ink) 92%, var(--signal-warm)); }
-  .panel--blue:hover .panel__bg { background: color-mix(in srgb, var(--ink) 92%, var(--signal-primary)); }
+  .panel:hover .panel__accent {
+    transform: scaleY(1);
+  }
+
+  .panel__accent--teal { background: var(--signal-teal); }
+  .panel__accent--violet { background: var(--signal-violet); }
+  .panel__accent--warm { background: var(--signal-warm); }
+  .panel__accent--blue { background: var(--signal-primary); }
+
+  /* Custom hover tints per panel */
+  .panel:has(.panel__accent--teal):hover { background: rgba(13, 148, 136, 0.04); }
+  .panel:has(.panel__accent--teal):hover .panel__title { color: var(--signal-teal); }
+  .panel:has(.panel__accent--teal):hover .panel__arrow { color: var(--signal-teal); }
+
+  .panel:has(.panel__accent--violet):hover { background: rgba(124, 58, 237, 0.04); }
+  .panel:has(.panel__accent--violet):hover .panel__title { color: var(--signal-violet); }
+  .panel:has(.panel__accent--violet):hover .panel__arrow { color: var(--signal-violet); }
+
+  .panel:has(.panel__accent--warm):hover { background: rgba(232, 93, 4, 0.04); }
+  .panel:has(.panel__accent--warm):hover .panel__title { color: var(--signal-warm); }
+  .panel:has(.panel__accent--warm):hover .panel__arrow { color: var(--signal-warm); }
+
+  .panel:has(.panel__accent--blue):hover { background: rgba(37, 99, 235, 0.04); }
 
   /* ============================
      RESPONSIVE
      ============================ */
   @media screen and (max-width: 768px) {
     .hero__name {
-      font-size: clamp(2.5rem, 14vw, 5rem);
+      font-size: clamp(3rem, 16vw, 6rem);
     }
 
-    .panels {
-      grid-template-columns: 1fr;
+    .statement {
+      padding: 6rem 1.5rem;
+      min-height: auto;
+    }
+
+    .statement__text {
+      font-size: clamp(1.3rem, 5vw, 2rem);
+    }
+
+    .affiliations {
+      padding: 0 1.5rem 5rem;
     }
 
     .panel {
-      min-height: 40vh;
-    }
-
-    .bio-section {
-      padding: 4rem 1.5rem;
-    }
-
-    .bio-section__text {
-      font-size: 1.05rem;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .panel {
-      padding: 2rem;
-      min-height: 35vh;
+      padding: 2rem 1.5rem;
+      gap: 1rem;
     }
 
     .panel__title {
-      font-size: 2rem;
+      font-size: 1.4rem;
+    }
+
+    .panel__desc {
+      display: none;
     }
   }
 </style>
@@ -335,150 +427,126 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 
-  CustomEase.create("heroReveal", "M0,0 C0.11,0.49 0.17,0.98 0.37,1 0.55,1.02 0.68,1 1,1");
+  CustomEase.create("smooth", "M0,0 C0.22,0.61 0.36,1 0.59,1 0.68,1 0.82,0.98 1,1");
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ========================================
-  // INTERACTIVE PARTICLE NETWORK
+  // PARTICLE NETWORK — refined, premium feel
   // ========================================
   const canvas = document.getElementById("network-canvas") as HTMLCanvasElement;
   const ctx = canvas?.getContext("2d");
 
   interface Node {
-    x: number;
-    y: number;
-    baseX: number;
-    baseY: number;
-    vx: number;
-    vy: number;
-    radius: number;
-    color: string;
+    x: number; y: number;
+    baseX: number; baseY: number;
+    vx: number; vy: number;
+    r: number; alpha: number;
   }
 
   const mouse = { x: -9999, y: -9999, active: false };
   let nodes: Node[] = [];
-  const COLORS = [
-    "rgba(37, 99, 235,",   // blue
-    "rgba(13, 148, 136,",  // teal
-    "rgba(124, 58, 237,",  // violet
-    "rgba(232, 93, 4,",    // warm
-    "rgba(248, 247, 244,", // white
-  ];
-  const CONNECTION_DIST = 180;
-  const MOUSE_RADIUS = 200;
-  const MOUSE_FORCE = 0.08;
+  const LINK_DIST = 160;
+  const MOUSE_R = 220;
 
   function resize() {
     if (!canvas) return;
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-    initNodes();
+    createNodes();
   }
 
-  function initNodes() {
+  function createNodes() {
     if (!canvas) return;
     nodes = [];
-    const area = canvas.width * canvas.height;
-    const count = Math.min(120, Math.max(40, Math.floor(area / 12000)));
-    for (let i = 0; i < count; i++) {
+    const density = Math.min(140, Math.max(50, Math.floor(canvas.width * canvas.height / 10000)));
+    for (let i = 0; i < density; i++) {
       const x = Math.random() * canvas.width;
       const y = Math.random() * canvas.height;
       nodes.push({
-        x, y,
-        baseX: x,
-        baseY: y,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        radius: Math.random() * 2.5 + 1,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        x, y, baseX: x, baseY: y,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.8 + 0.5,
+        alpha: Math.random() * 0.4 + 0.1,
       });
     }
   }
 
-  function animate() {
+  function tick() {
     if (!ctx || !canvas) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Update + draw
     for (let i = 0; i < nodes.length; i++) {
       const a = nodes[i];
 
-      // Mouse interaction — push nodes away
+      // Mouse repulsion
       if (mouse.active) {
         const dx = a.x - mouse.x;
         const dy = a.y - mouse.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < MOUSE_RADIUS && dist > 0) {
-          const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS * MOUSE_FORCE;
-          a.vx += (dx / dist) * force * 8;
-          a.vy += (dy / dist) * force * 8;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < MOUSE_R && d > 0) {
+          const f = ((MOUSE_R - d) / MOUSE_R) * 0.6;
+          a.vx += (dx / d) * f;
+          a.vy += (dy / d) * f;
         }
       }
 
-      // Drift + slight gravity back to base
-      a.vx += (a.baseX - a.x) * 0.0005;
-      a.vy += (a.baseY - a.y) * 0.0005;
-
-      // Friction
-      a.vx *= 0.98;
-      a.vy *= 0.98;
-
+      // Return to base
+      a.vx += (a.baseX - a.x) * 0.0004;
+      a.vy += (a.baseY - a.y) * 0.0004;
+      a.vx *= 0.97;
+      a.vy *= 0.97;
       a.x += a.vx;
       a.y += a.vy;
 
-      // Bounce off edges
+      // Edges
       if (a.x < 0) { a.x = 0; a.vx *= -0.5; }
       if (a.x > canvas.width) { a.x = canvas.width; a.vx *= -0.5; }
       if (a.y < 0) { a.y = 0; a.vy *= -0.5; }
       if (a.y > canvas.height) { a.y = canvas.height; a.vy *= -0.5; }
 
-      // Draw connections
+      // Node-to-node lines
       for (let j = i + 1; j < nodes.length; j++) {
         const b = nodes[j];
-        const ddx = a.x - b.x;
-        const ddy = a.y - b.y;
-        const d = Math.sqrt(ddx * ddx + ddy * ddy);
-        if (d < CONNECTION_DIST) {
-          const alpha = (1 - d / CONNECTION_DIST) * 0.15;
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < LINK_DIST) {
+          const opacity = (1 - d / LINK_DIST) * 0.1;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(37, 99, 235, ${alpha})`;
-          ctx.lineWidth = 0.6;
+          ctx.strokeStyle = `rgba(37, 99, 235, ${opacity})`;
+          ctx.lineWidth = 0.5;
           ctx.stroke();
         }
       }
 
-      // Draw mouse connections to nearby nodes
+      // Mouse attraction lines
       if (mouse.active) {
-        const mdx = a.x - mouse.x;
-        const mdy = a.y - mouse.y;
-        const md = Math.sqrt(mdx * mdx + mdy * mdy);
-        if (md < MOUSE_RADIUS) {
-          const alpha = (1 - md / MOUSE_RADIUS) * 0.3;
+        const md = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+        if (md < MOUSE_R) {
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(248, 247, 244, ${alpha})`;
-          ctx.lineWidth = 0.4;
+          ctx.strokeStyle = `rgba(248, 247, 244, ${(1 - md / MOUSE_R) * 0.2})`;
+          ctx.lineWidth = 0.3;
           ctx.stroke();
         }
       }
 
-      // Draw node
+      // Draw dot
       ctx.beginPath();
-      ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
-      ctx.fillStyle = a.color + "0.6)";
+      ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(37, 99, 235, ${a.alpha})`;
       ctx.fill();
     }
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(tick);
   }
 
-  if (canvas && ctx && !prefersReducedMotion) {
+  if (canvas && ctx && !reducedMotion) {
     resize();
-    animate();
+    tick();
     window.addEventListener("resize", resize);
 
     canvas.parentElement?.addEventListener("mousemove", (e) => {
@@ -487,14 +555,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       mouse.y = e.clientY - rect.top;
       mouse.active = true;
     });
-
     canvas.parentElement?.addEventListener("mouseleave", () => {
-      mouse.active = false;
-      mouse.x = -9999;
-      mouse.y = -9999;
+      mouse.active = false; mouse.x = -9999; mouse.y = -9999;
     });
-
-    // Touch support
     canvas.parentElement?.addEventListener("touchmove", (e) => {
       const rect = canvas.getBoundingClientRect();
       const t = e.touches[0];
@@ -502,114 +565,108 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       mouse.y = t.clientY - rect.top;
       mouse.active = true;
     }, { passive: true });
-
-    canvas.parentElement?.addEventListener("touchend", () => {
-      mouse.active = false;
-    });
-  } else if (canvas && ctx && prefersReducedMotion) {
-    // Static snapshot
+    canvas.parentElement?.addEventListener("touchend", () => { mouse.active = false; });
+  } else if (canvas && ctx) {
+    // Static snapshot for reduced motion
     resize();
     for (let i = 0; i < nodes.length; i++) {
       const a = nodes[i];
       ctx.beginPath();
-      ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
-      ctx.fillStyle = a.color + "0.4)";
+      ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(37, 99, 235, ${a.alpha * 0.5})`;
       ctx.fill();
-      for (let j = i + 1; j < nodes.length; j++) {
-        const b = nodes[j];
-        const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < CONNECTION_DIST) {
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(37, 99, 235, ${(1 - d / CONNECTION_DIST) * 0.1})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
     }
   }
 
   // ========================================
-  // HERO TEXT ANIMATION
+  // HERO ANIMATIONS
   // ========================================
-  if (!prefersReducedMotion) {
-    const master = gsap.timeline({ delay: 0.3 });
+  if (!reducedMotion) {
+    const hero = gsap.timeline({ delay: 0.5 });
 
-    // Name — SplitText per-character with 3D transforms
-    const line1Split = SplitText.create("#line-1", { type: "chars" });
-    const line2Split = SplitText.create("#line-2", { type: "chars" });
+    // Eyebrow
+    hero.to("#hero-eyebrow", { opacity: 1, duration: 1.2, ease: "power2.out" });
 
-    master.to("#line-1", { opacity: 1, duration: 0.01 });
-    master.from(line1Split.chars, {
-      y: 80,
-      rotationX: -80,
-      opacity: 0,
-      duration: 0.8,
-      ease: "heroReveal",
-      stagger: 0.04,
-    });
+    // Name — SplitText per-character
+    const l1 = SplitText.create("#line-1", { type: "chars" });
+    const l2 = SplitText.create("#line-2", { type: "chars" });
 
-    master.to("#line-2", { opacity: 1, duration: 0.01 }, "-=0.4");
-    master.from(line2Split.chars, {
-      y: 80,
-      rotationX: -80,
-      opacity: 0,
-      duration: 0.8,
-      ease: "heroReveal",
-      stagger: 0.04,
-    }, "-=0.4");
+    hero.to("#line-1", { opacity: 1, duration: 0.01 }, "-=0.8");
+    hero.from(l1.chars, {
+      y: 60, rotationX: -60, opacity: 0,
+      duration: 0.9, ease: "smooth", stagger: 0.035,
+    }, "<");
 
-    // Tagline fade
-    master.to("#hero-tagline", {
-      opacity: 1,
-      duration: 1,
-      ease: "power2.out",
-    }, "-=0.3");
+    hero.to("#line-2", { opacity: 1, duration: 0.01 }, "-=0.5");
+    hero.from(l2.chars, {
+      y: 60, rotationX: -60, opacity: 0,
+      duration: 0.9, ease: "smooth", stagger: 0.035,
+    }, "<");
 
-    // Scroll hint
-    master.to("#scroll-hint", {
-      opacity: 1,
-      duration: 0.8,
-      ease: "power2.out",
-    }, "-=0.5");
+    // Scroll indicator
+    hero.to(".hero__bottom", { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.3");
 
-    // Parallax hero on scroll
+    // Parallax on scroll
     ScrollTrigger.create({
       trigger: ".hero",
       start: "top top",
       end: "bottom top",
-      scrub: 0.5,
+      scrub: true,
       onUpdate: (self) => {
         const p = self.progress;
-        gsap.set(".hero__content", { y: p * 120, opacity: 1 - p * 1.5 });
-        gsap.set("#scroll-hint", { opacity: Math.max(0, 1 - p * 4) });
+        gsap.set(".hero__content", { y: p * 150, opacity: 1 - p * 2 });
+        gsap.set(".hero__bottom", { opacity: Math.max(0, 1 - p * 5) });
       },
     });
   } else {
-    // Show everything immediately for reduced motion
-    gsap.set("#line-1, #line-2, #hero-tagline, #scroll-hint", { opacity: 1 });
+    gsap.set("#line-1, #line-2, #hero-eyebrow, .hero__bottom", { opacity: 1 });
   }
 
   // ========================================
-  // PANEL SCROLL REVEALS
+  // STATEMENT — per-word scroll color reveal
   // ========================================
-  document.querySelectorAll(".panel__content").forEach((content) => {
-    if (prefersReducedMotion) {
-      gsap.set(content, { opacity: 1, y: 0 });
-      return;
-    }
+  const stEl = document.getElementById("statement-1");
+  if (stEl && !reducedMotion) {
+    const split = SplitText.create(stEl, { type: "words" });
 
-    gsap.to(content, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: content.closest(".panel"),
-        start: "top 75%",
-        once: true,
+    // Start all words dim
+    split.words.forEach((w: HTMLElement) => w.classList.add("char-dim"));
+
+    ScrollTrigger.create({
+      trigger: ".statement",
+      start: "top 70%",
+      end: "bottom 40%",
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        split.words.forEach((w: HTMLElement, i: number) => {
+          const wordProgress = i / split.words.length;
+          if (progress > wordProgress) {
+            w.style.color = "var(--ink)";
+          } else {
+            w.style.color = "";
+          }
+        });
       },
     });
-  });
+  }
+
+  // ========================================
+  // PANEL REVEALS
+  // ========================================
+  if (!reducedMotion) {
+    gsap.utils.toArray<HTMLElement>(".panel").forEach((panel, i) => {
+      gsap.from(panel, {
+        y: 30, opacity: 0,
+        duration: 0.6,
+        delay: i * 0.08,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: panel,
+          start: "top 90%",
+          once: true,
+        },
+      });
+    });
+  }
 </script>
