@@ -62,19 +62,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         MSc in Social Data Science,
         <strong>Oxford Internet Institute</strong>.
       </p>
-      <div class="affiliations__logos reveal">
-        <span class="affiliation-tag">Bellingcat</span>
-        <span class="affiliation-tag">Forensic Architecture</span>
-        <span class="affiliation-tag">UNHCR</span>
-        <span class="affiliation-tag">Agência Pública</span>
-        <span class="affiliation-tag">Oxford</span>
-      </div>
     </div>
   </section>
 
   <!-- ========== NAVIGATION PANELS ========== -->
   <section class="panels">
-    <a href="/code/" class="panel">
+    <a href="/code/" class="panel" data-color="teal">
+      <div class="panel__glow" aria-hidden="true"></div>
       <span class="panel__index mono">01</span>
       <div class="panel__body">
         <h2 class="panel__title">Code</h2>
@@ -83,7 +77,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="panel__arrow">&rarr;</span>
       <div class="panel__accent panel__accent--teal"></div>
     </a>
-    <a href="/publications/" class="panel">
+    <a href="/publications/" class="panel" data-color="violet">
+      <div class="panel__glow" aria-hidden="true"></div>
       <span class="panel__index mono">02</span>
       <div class="panel__body">
         <h2 class="panel__title">Publications</h2>
@@ -92,7 +87,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="panel__arrow">&rarr;</span>
       <div class="panel__accent panel__accent--violet"></div>
     </a>
-    <a href="/events/" class="panel">
+    <a href="/events/" class="panel" data-color="warm">
+      <div class="panel__glow" aria-hidden="true"></div>
       <span class="panel__index mono">03</span>
       <div class="panel__body">
         <h2 class="panel__title">Events</h2>
@@ -101,7 +97,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="panel__arrow">&rarr;</span>
       <div class="panel__accent panel__accent--warm"></div>
     </a>
-    <a href="/about/" class="panel">
+    <a href="/about/" class="panel" data-color="blue">
+      <div class="panel__glow" aria-hidden="true"></div>
       <span class="panel__index mono">04</span>
       <div class="panel__body">
         <h2 class="panel__title">About</h2>
@@ -348,29 +345,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 2rem;
   }
 
-  .affiliations__logos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .affiliation-tag {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-tertiary);
-    border: 1px solid var(--border);
-    padding: 0.4rem 0.9rem;
-    border-radius: 100px;
-    transition: color 0.3s ease, border-color 0.3s ease;
-  }
-
-  .affiliation-tag:hover {
-    color: var(--signal-primary);
-    border-color: var(--signal-primary);
-  }
-
   /* ============================
      PANELS — horizontal list
      ============================ */
@@ -395,7 +369,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .panel:hover {
-    background: rgba(37, 99, 235, 0.03);
+    background: transparent;
+  }
+
+  /* Animated radial glow that follows cursor */
+  .panel__glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .panel:hover .panel__glow {
+    opacity: 1;
+  }
+
+  .panel[data-color="teal"] .panel__glow {
+    background: radial-gradient(600px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(13, 148, 136, 0.08), transparent 40%);
+  }
+
+  .panel[data-color="violet"] .panel__glow {
+    background: radial-gradient(600px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(124, 58, 237, 0.08), transparent 40%);
+  }
+
+  .panel[data-color="warm"] .panel__glow {
+    background: radial-gradient(600px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(232, 93, 4, 0.08), transparent 40%);
+  }
+
+  .panel[data-color="blue"] .panel__glow {
+    background: radial-gradient(600px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(37, 99, 235, 0.08), transparent 40%);
+  }
+
+  .panel__index, .panel__body, .panel__arrow {
+    position: relative;
+    z-index: 1;
   }
 
   .panel__index {
@@ -463,20 +472,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .panel__accent--warm { background: var(--signal-warm); }
   .panel__accent--blue { background: var(--signal-primary); }
 
-  /* Custom hover tints per panel */
-  .panel:has(.panel__accent--teal):hover { background: rgba(13, 148, 136, 0.04); }
-  .panel:has(.panel__accent--teal):hover .panel__title { color: var(--signal-teal); }
-  .panel:has(.panel__accent--teal):hover .panel__arrow { color: var(--signal-teal); }
+  /* Per-color hover tints for title/arrow */
+  .panel[data-color="teal"]:hover .panel__title { color: var(--signal-teal); }
+  .panel[data-color="teal"]:hover .panel__arrow { color: var(--signal-teal); }
 
-  .panel:has(.panel__accent--violet):hover { background: rgba(124, 58, 237, 0.04); }
-  .panel:has(.panel__accent--violet):hover .panel__title { color: var(--signal-violet); }
-  .panel:has(.panel__accent--violet):hover .panel__arrow { color: var(--signal-violet); }
+  .panel[data-color="violet"]:hover .panel__title { color: var(--signal-violet); }
+  .panel[data-color="violet"]:hover .panel__arrow { color: var(--signal-violet); }
 
-  .panel:has(.panel__accent--warm):hover { background: rgba(232, 93, 4, 0.04); }
-  .panel:has(.panel__accent--warm):hover .panel__title { color: var(--signal-warm); }
-  .panel:has(.panel__accent--warm):hover .panel__arrow { color: var(--signal-warm); }
+  .panel[data-color="warm"]:hover .panel__title { color: var(--signal-warm); }
+  .panel[data-color="warm"]:hover .panel__arrow { color: var(--signal-warm); }
 
-  .panel:has(.panel__accent--blue):hover { background: rgba(37, 99, 235, 0.04); }
+  .panel[data-color="blue"]:hover .panel__title { color: var(--signal-primary); }
+  .panel[data-color="blue"]:hover .panel__arrow { color: var(--signal-primary); }
 
   /* ============================
      RESPONSIVE
@@ -982,4 +989,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
     });
   }
+
+  // ========================================
+  // PANEL GLOW — mouse-following radial gradient
+  // ========================================
+  document.querySelectorAll<HTMLElement>(".panel").forEach((panel) => {
+    panel.addEventListener("mousemove", (e) => {
+      const rect = panel.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      panel.style.setProperty("--glow-x", `${x}px`);
+      panel.style.setProperty("--glow-y", `${y}px`);
+    });
+  });
 </script>
