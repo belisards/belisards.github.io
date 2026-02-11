@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="File Not Found" description="404 — this page does not exist.">
+  <div class="page-wrapper">
+    <div class="content-wrapper four-oh-four">
+
+      <div class="stamp stamp--large">Case Closed</div>
+
+      <h1>File Not Found</h1>
+
+      <p class="faded">
+        The document you requested has been <span class="redacted revealed">redacted</span>,
+        relocated, or never existed in this dossier.
+      </p>
+
+      <p>
+        <a href="/">Return to the cover page →</a>
+      </p>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .four-oh-four {
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .four-oh-four h1 {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .four-oh-four p {
+    font-size: 1rem;
+  }
+</style>

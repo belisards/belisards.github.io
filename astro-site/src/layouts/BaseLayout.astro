@@ -1,0 +1,82 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '../styles/nav.css';
+import '../styles/animations.css';
+import '../styles/cards.css';
+import '../styles/publications.css';
+import '../styles/responsive.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Adriano Belisario', description = 'Data, journalism and open-source' } = Astro.props;
+const pageTitle = title === 'Adriano Belisario' ? title : `${title} — Adriano Belisario`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url.href} />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:creator" content="@belisards" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NE9CBZWC4K"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NE9CBZWC4K', { anonymize_ip: true });
+  </script>
+</head>
+<body>
+  <Nav />
+  <main class="page-enter">
+    <slot />
+  </main>
+  <Footer />
+
+  <!-- Scroll reveal observer -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

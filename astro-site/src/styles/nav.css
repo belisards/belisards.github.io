@@ -1,0 +1,170 @@
+/* ============================================
+   Navigation — Folder Tabs
+   ============================================ */
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--paper);
+  background-image:
+    radial-gradient(circle, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-bottom: 2px solid var(--border);
+  padding-top: 0.5rem;
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.nav-brand {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.5rem 1rem 0.6rem;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.nav-brand:hover {
+  color: var(--red-stamp);
+  text-decoration: none;
+}
+
+/* --- Folder Tabs --- */
+.nav-tabs {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: flex-end;
+}
+
+.nav-tab {
+  margin: 0;
+}
+
+.nav-tab a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--ink-light);
+  padding: 0.4rem 0.9rem 0.5rem;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  top: 2px;
+  transition: all 0.15s ease;
+}
+
+.nav-tab a:hover {
+  color: var(--ink);
+  background: var(--paper-white);
+}
+
+.nav-tab.active a {
+  color: var(--ink);
+  background: var(--paper-white);
+  font-weight: 700;
+  border-bottom-color: var(--paper-white);
+  z-index: 1;
+}
+
+/* --- External link tab (GitHub) --- */
+.nav-tab--external a {
+  color: var(--ink-faded);
+  font-size: 0.7rem;
+}
+
+.nav-tab--external a:hover {
+  color: var(--ink);
+}
+
+/* --- Mobile hamburger --- */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- Mobile file drawer --- */
+@media screen and (max-width: 768px) {
+  .nav-hamburger {
+    display: block;
+  }
+
+  .nav-tabs {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--paper-white);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--red-stamp);
+    box-shadow: var(--shadow-lg);
+    padding: 0.5rem 0;
+    gap: 0;
+  }
+
+  .nav-tabs.open {
+    display: flex;
+  }
+
+  .nav-tab a {
+    border: none;
+    border-radius: 0;
+    top: 0;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-tab a:hover {
+    background: var(--highlight);
+  }
+
+  .nav-tab.active a {
+    border-bottom: none;
+    background: var(--highlight);
+  }
+}

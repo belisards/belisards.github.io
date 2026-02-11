@@ -1,0 +1,1 @@
+const o=document.getElementById("book-gallery"),t=document.getElementById("lightbox"),e=document.getElementById("lightbox-img");o?.addEventListener("click",l=>{const c=l.target.closest(".book-item");if(!c)return;const i=c.getAttribute("data-full");i&&e&&t&&(e.src=i,t.classList.add("active"))});t?.addEventListener("click",()=>{t.classList.remove("active"),e&&(e.src="")});

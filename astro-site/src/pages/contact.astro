@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with Adriano Belisario.">
+  <div class="page-wrapper">
+    <div class="content-wrapper">
+
+      <div class="dossier-header">
+        <span class="uppercase faded">Communication Channel</span>
+        <h1>Reach the Subject</h1>
+      </div>
+
+      <div class="contact-memo reveal">
+        <div class="memo-header">
+          <span class="uppercase faded">Memo</span>
+          <span class="stamp">Open</span>
+        </div>
+
+        <div class="contact-links">
+          <a href="https://linkedin.com/in/adriano-belisario-76758632" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon">in</span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/belisards" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon">gh</span>
+            <span>GitHub</span>
+          </a>
+          <a href="https://bsky.app/profile/did:plc:c7wkk6l33tzzvkok2reyvr5f" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon">bs</span>
+            <span>Bluesky</span>
+          </a>
+          <a href="https://fosstodon.org/@belisards" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon">md</span>
+            <span>Mastodon</span>
+          </a>
+        </div>
+
+        <hr />
+
+        <p class="contact-email">
+          Or drop a line at <strong>contact [at] belisario [dot] website</strong>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .dossier-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .dossier-header h1 {
+    margin-top: 0.5rem;
+  }
+
+  .contact-memo {
+    background: var(--paper-white);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    max-width: 500px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .memo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .contact-item:hover {
+    border-color: var(--red-stamp);
+    background: rgba(194, 54, 22, 0.03);
+    text-decoration: none;
+  }
+
+  .contact-icon {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--paper-white);
+    background: var(--charcoal);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .contact-item span:last-child {
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+
+  .contact-email {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+  }
+</style>

@@ -11,3 +11,7 @@ renv/
 
 assets/giscus-light.css
 assets/giscus-light-custom.css
+
+# Astro
+astro-site/node_modules/
+astro-site/dist/

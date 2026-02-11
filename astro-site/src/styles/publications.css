@@ -1,0 +1,141 @@
+/* ============================================
+   Publications — Evidence wall
+   ============================================ */
+
+.pub-entry {
+  padding: 0.75rem 0 0.75rem 1rem;
+  border-left: 3px solid transparent;
+  margin-bottom: 0.25rem;
+  transition: background 0.2s ease;
+}
+
+.pub-entry:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Type borders */
+.pub-entry--academic { border-left-color: var(--blue-evidence); }
+.pub-entry--journalism { border-left-color: var(--red-stamp); }
+.pub-entry--tutorial { border-left-color: var(--green-tutorial); }
+.pub-entry--book { border-left-color: var(--charcoal); }
+.pub-entry--essay { border-left-color: var(--ink-faded); }
+
+.pub-entry__title {
+  font-weight: 700;
+}
+
+.pub-entry__title a {
+  color: var(--ink);
+}
+
+.pub-entry__meta {
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  margin-top: 0.25rem;
+}
+
+.pub-entry__featured {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* --- Book gallery (pinboard style) --- */
+.book-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px dashed var(--border);
+}
+
+.book-item {
+  text-align: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.book-item:nth-child(odd) {
+  transform: rotate(-1.5deg);
+}
+
+.book-item:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.book-item:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 2;
+}
+
+.book-item img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.book-item__caption {
+  font-size: 0.7rem;
+  color: var(--ink-faded);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* --- Lightbox overlay --- */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lightbox-overlay.active {
+  display: flex;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+/* --- Publication category stamps --- */
+.pub-category {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-faded);
+  padding: 0.5rem 0;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pub-category .stamp {
+  font-size: 0.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  .book-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,41 @@
+---
+---
+<footer class="site-footer">
+  <div class="page-wrapper">
+    <div class="footer-inner">
+      <span class="footer-label">End of file</span>
+      <span class="footer-sep">—</span>
+      <span class="footer-text">Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a></span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px dashed var(--border);
+    padding: 2rem 0;
+    margin-top: 4rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--ink-faded);
+    font-family: var(--font-mono);
+  }
+
+  .footer-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .footer-text a {
+    color: var(--ink-faded);
+  }
+
+  .footer-text a:hover {
+    color: var(--red-stamp);
+  }
+</style>

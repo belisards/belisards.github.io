@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    title: 'Congretimbau',
+    desc: 'BERT-based model specialized in Brazilian Portuguese law bills.',
+    image: '/images/projects/congretimbau.png',
+    date: '2024',
+    categories: ['Python', 'NLP', 'ML'],
+    links: { model: 'https://huggingface.co/belisards/congretimbau' },
+  },
+  {
+    title: 'Smart Image Sorter',
+    desc: 'User-friendly tool for zero-shot image classification. Developed with Bellingcat.',
+    image: '/images/projects/smart_image_sorter.jpg',
+    date: '2024',
+    categories: ['Python'],
+    links: { tutorial: 'https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/', code: 'https://github.com/bellingcat/smart-image-sorter' },
+  },
+  {
+    title: 'UNHCR Geodata Extractor',
+    desc: 'Explore camp boundaries and points from UNHCR\'s geodata repository.',
+    image: '/images/projects/unhcr_geodata.png',
+    date: '2024',
+    categories: ['Python', 'Streamlit', 'Geodata'],
+    links: { app: 'https://unhcrdata.streamlit.app/', code: 'https://github.com/belisards/unhcr_geodata' },
+  },
+  {
+    title: 'Forced Displacement Microdata',
+    desc: 'Shiny dashboard about gaps in microdata on forced displacement.',
+    image: '/images/projects/fdpatlas.png',
+    date: '2023',
+    categories: ['R', 'Shiny'],
+    links: { dashboard: 'https://rstudio.unhcr.org/FDMAtlas/', code: 'https://github.com/belisards/FDPDataAtlas' },
+  },
+  {
+    title: 'Gun Violence Classification Model',
+    desc: 'BERTimbau fine-tuned to detect gun violence reports in Brazilian Portuguese.',
+    image: '/images/projects/gunviolenceptbr.png',
+    date: '2023',
+    categories: ['Python', 'NLP'],
+    links: { model: 'https://huggingface.co/belisards/gun_violence_ptbr', paper: 'https://arxiv.org/abs/2401.12989', code: 'https://github.com/belisards/gunviolence_ptbr' },
+  },
+  {
+    title: 'Fragile Families',
+    desc: 'Statistical models for the Fragile Families and Child Wellbeing Study using gradient boosting.',
+    image: '/images/projects/ff_challenge.png',
+    date: '2023',
+    categories: ['Python', 'ML'],
+    links: { code: 'https://github.com/belisards/ff_applied_ml/' },
+  },
+  {
+    title: 'Corporate Network Visualization',
+    desc: 'Interactive data visualization of the bus owners\' network in Rio de Janeiro.',
+    image: '/images/projects/bus_network.png',
+    date: '2017',
+    categories: ['Web'],
+    links: { viz: 'https://apublica.org/riobus/html/', article: 'https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/', code: 'https://github.com/belisards/mapa-onibus-rj' },
+  },
+];
+---
+
+<BaseLayout title="Code" description="Data projects and code repositories.">
+  <div class="page-wrapper">
+
+    <div class="dossier-header-wide">
+      <span class="uppercase faded">Lab Evidence</span>
+      <h1>Code Projects</h1>
+      <p class="faded small">Data projects and code repositories — NLP, geodata, network analysis, machine learning.</p>
+    </div>
+
+    <div class="project-grid">
+      {projects.map((project, i) => (
+        <div class="project-card card-lift reveal">
+          <div class="project-card__image-wrap">
+            <img src={project.image} alt={project.title} class="project-card__image" loading="lazy" />
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__number">Case file #{String(i + 1).padStart(3, '0')} — {project.date}</div>
+            <h3 class="project-card__title">{project.title}</h3>
+            <p class="project-card__desc">{project.desc}</p>
+            <div class="project-card__links">
+              {Object.entries(project.links).map(([label, url]) => (
+                <a href={url} target="_blank" rel="noopener" class="project-link">{label} ↗</a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .dossier-header-wide {
+    max-width: var(--content-width);
+    margin: 2rem auto;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .dossier-header-wide h1 {
+    margin-top: 0.5rem;
+  }
+
+  .project-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .project-link {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--red-stamp);
+    text-decoration: none;
+    border: 1px solid var(--red-stamp);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .project-link:hover {
+    background: var(--red-stamp);
+    color: var(--paper-white);
+    text-decoration: none;
+  }
+</style>

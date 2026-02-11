@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture.">
+  <div class="page-wrapper">
+
+    <!-- DOSSIER COVER -->
+    <div class="dossier-page hero-dossier">
+
+      <!-- Classified stamp -->
+      <div class="classified-stamp stamp stamp--large stamp--animated">Classified</div>
+
+      <!-- Name with typewriter -->
+      <div class="hero-name">
+        <h1 class="hero-title" id="typewriter-target"></h1>
+        <span class="typewriter-cursor" id="cursor"></span>
+      </div>
+
+      <!-- Redacted bio lines -->
+      <div class="hero-bio reveal">
+        <p>
+          <span class="redacted redacted--cascade" id="r1">Data journalist & researcher</span> combining expertise in
+          <span class="redacted redacted--cascade" id="r2">communication, open-source technologies,</span> and data
+          to address important social concerns.
+        </p>
+        <p>
+          Currently collaborating with the
+          <a href="https://www.jointdatacenter.org/">Joint Data Center on Forced Displacement</a>
+          and the <a href="https://netlab.eco.ufrj.br/">Netlab</a> laboratory from the Federal University of Rio de Janeiro.
+        </p>
+        <p>
+          MSc in Social Data Science from the
+          <span class="highlight">Oxford Internet Institute</span> (University of Oxford).
+          Collaborated with <span class="highlight">Bellingcat</span>, <span class="highlight">Forensic Architecture</span>,
+          <span class="highlight">UNHCR</span>, and <span class="highlight">Agência Pública</span>.
+        </p>
+      </div>
+
+      <!-- Verified stamp -->
+      <div class="hero-stamp reveal">
+        <span class="stamp stamp--large">Verified — 2025</span>
+      </div>
+
+      <hr />
+
+      <!-- Navigation cards -->
+      <div class="home-cards reveal">
+        <a href="/code/" class="home-card card-lift">
+          <div class="home-card__label">Section 01</div>
+          <div class="home-card__title">Code</div>
+          <div class="home-card__desc">Data projects and code repositories. NLP, geodata, network analysis.</div>
+          <div class="home-card__arrow">Open file →</div>
+        </a>
+
+        <a href="/publications/" class="home-card card-lift">
+          <div class="home-card__label">Section 02</div>
+          <div class="home-card__title">Publications</div>
+          <div class="home-card__desc">Academic papers, investigations, books, and tutorials in English & Portuguese.</div>
+          <div class="home-card__arrow">Open file →</div>
+        </a>
+
+        <a href="/events/" class="home-card card-lift">
+          <div class="home-card__label">Section 03</div>
+          <div class="home-card__title">Events</div>
+          <div class="home-card__desc">Conferences, lectures, workshops, and courses across four continents.</div>
+          <div class="home-card__arrow">Open file →</div>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-dossier {
+    max-width: 760px;
+    margin: 3rem auto;
+    position: relative;
+  }
+
+  .classified-stamp {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+  }
+
+  .hero-name {
+    margin-bottom: 2rem;
+    min-height: 4rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    display: inline;
+  }
+
+  .hero-bio {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 600px;
+  }
+
+  .hero-bio p {
+    margin-bottom: 1rem;
+  }
+
+  .hero-stamp {
+    margin: 2rem 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero-dossier {
+      margin: 1.5rem auto;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .classified-stamp {
+      position: static;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+  }
+</style>
+
+<script>
+  // Typewriter effect
+  const target = document.getElementById('typewriter-target');
+  const cursor = document.getElementById('cursor');
+  const text = 'Adriano\nBelisario';
+  let i = 0;
+
+  function type() {
+    if (!target) return;
+    if (i < text.length) {
+      if (text[i] === '\n') {
+        target.innerHTML += '<br>';
+      } else {
+        target.innerHTML += text[i];
+      }
+      i++;
+      setTimeout(type, 80 + Math.random() * 60);
+    } else {
+      // After typing, reveal redaction bars
+      setTimeout(() => {
+        document.querySelectorAll('.redacted').forEach(el => {
+          el.classList.add('revealed');
+        });
+      }, 400);
+
+      // Remove cursor after a delay
+      setTimeout(() => {
+        cursor?.remove();
+      }, 2000);
+    }
+  }
+
+  // Start typewriter after a brief pause
+  setTimeout(type, 500);
+</script>

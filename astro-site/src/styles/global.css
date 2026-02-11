@@ -1,0 +1,304 @@
+/* ============================================
+   THE DOSSIER — Global Styles
+   A classified file on a data journalist
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap');
+
+/* --- CSS Custom Properties --- */
+:root {
+  --paper: #f5f0e8;
+  --paper-white: #faf8f4;
+  --ink: #1a1a1a;
+  --ink-light: #4a4a4a;
+  --ink-faded: #7a7a7a;
+  --red-stamp: #c23616;
+  --red-dark: #961f0e;
+  --charcoal: #2d3436;
+  --highlight: #ffeaa7;
+  --highlight-strong: #fdcb6e;
+  --blue-evidence: #2d5a7b;
+  --green-tutorial: #3a8a5c;
+  --grid-line: rgba(0, 0, 0, 0.04);
+  --border: rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  --max-width: 1100px;
+  --content-width: 760px;
+  --nav-height: 60px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--ink);
+  background-color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+
+  /* Dot grid background */
+  background-image:
+    radial-gradient(circle, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-top: 3rem; margin-bottom: 1rem; }
+h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+h4 { font-size: 1.125rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* --- Links --- */
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--red-stamp);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--red-stamp);
+  text-decoration-color: var(--red-stamp);
+}
+
+/* --- Page wrapper --- */
+.page-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content-wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+/* --- Redaction bars --- */
+.redacted {
+  position: relative;
+  display: inline;
+}
+
+.redacted::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  right: -2px;
+  bottom: 0;
+  background: var(--ink);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: right;
+}
+
+.redacted.revealed::after {
+  transform: scaleX(0);
+}
+
+/* --- Stamp badge --- */
+.stamp {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--red-stamp);
+  border: 2px solid var(--red-stamp);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  transform: rotate(-2deg);
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.stamp--large {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.75rem;
+  border-width: 3px;
+}
+
+.stamp--blue {
+  color: var(--blue-evidence);
+  border-color: var(--blue-evidence);
+}
+
+.stamp--green {
+  color: var(--green-tutorial);
+  border-color: var(--green-tutorial);
+}
+
+/* --- Yellow highlight --- */
+.highlight {
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    var(--highlight-strong) 55%,
+    var(--highlight-strong) 92%,
+    transparent 92%
+  );
+  padding: 0 3px;
+}
+
+.highlight--strong {
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    var(--highlight-strong) 30%,
+    var(--highlight-strong) 90%,
+    transparent 90%
+  );
+}
+
+/* --- Section divider --- */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-faded);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+/* --- Dossier page frame --- */
+.dossier-page {
+  background: var(--paper-white);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 3rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.dossier-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--red-stamp);
+}
+
+/* --- Paper clip decoration --- */
+.paper-clip {
+  position: relative;
+}
+
+.paper-clip::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  width: 20px;
+  height: 50px;
+  border: 2px solid #999;
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+  z-index: 2;
+}
+
+.paper-clip::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 24px;
+  width: 12px;
+  height: 30px;
+  border: 2px solid #999;
+  border-radius: 0 0 6px 6px;
+  border-top: none;
+  z-index: 2;
+}
+
+/* --- Utility classes --- */
+.mono { font-family: var(--font-mono); }
+.serif { font-family: var(--font-serif); }
+.faded { color: var(--ink-faded); }
+.small { font-size: 0.8rem; }
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+}
+
+/* --- Horizontal rule --- */
+hr {
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 2rem 0;
+}
+
+/* --- Lists --- */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* --- Images --- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--highlight);
+  color: var(--ink);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}

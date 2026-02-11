@@ -1,0 +1,48 @@
+---
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) => {
+  if (path === '/' && currentPath === '/') return true;
+  if (path !== '/' && currentPath.startsWith(path)) return true;
+  return false;
+};
+
+const navItems = [
+  { label: 'Bio', href: '/about/' },
+  { label: 'Publications', href: '/publications/' },
+  { label: 'Code', href: '/code/' },
+  { label: 'Events', href: '/events/' },
+  { label: 'Contact', href: '/contact/' },
+];
+---
+
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Adriano Belisario</a>
+
+    <button class="nav-hamburger" aria-label="Toggle menu" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-tabs" id="nav-tabs">
+      {navItems.map(item => (
+        <li class={`nav-tab ${isActive(item.href) ? 'active' : ''}`}>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))}
+      <li class="nav-tab nav-tab--external">
+        <a href="https://github.com/belisards" target="_blank" rel="noopener">GitHub ↗</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const tabs = document.getElementById('nav-tabs');
+  toggle?.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    tabs?.classList.toggle('open');
+  });
+</script>
