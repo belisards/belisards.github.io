@@ -9,6 +9,10 @@ date: 2017-06-01
 image: "cover.png"
 # image-alt: 
 categories: [Web]
+links:
+  viz: https://apublica.org/riobus/html/
+  article: https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/
+  code: https://github.com/belisards/mapa-onibus-rj
 open-graph: false
 draft: false
 ---

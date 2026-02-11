@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { loadYaml } from '../lib/data';
+
+const about = loadYaml('about.yml');
 ---
 
 <BaseLayout title="Bio" description="Adriano Belisario — data journalist, researcher, educator.">
@@ -11,104 +14,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="secondary">Data journalist, researcher, educator</p>
       </div>
 
-      <div class="reveal">
-        <p>
-          <strong>Adriano Belisario</strong> combines expertise in communication and data to address important human rights concerns.
-          He is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR.
-          Before this role, he contributed to organizations like Open Knowledge Brazil, Witness, Medialab/UFRJ,
-          <a href="https://forensic-architecture.org/about/team/member/adriano-belisario">Forensic Architecture</a>,
-          UNESCO, <a href="https://apublica.org/autor/adriano-belisario/">Agência Pública</a> and
-          <a href="https://www.intercept.com.br/equipe/adriano-belisario/">The Intercept Brasil</a>.
-          His publication portfolio includes <a href="/publications/">books, academic articles, and journalistic pieces</a>,
-          and he has been invited to speak at several <a href="/events/">global events</a>.
-        </p>
-        <p>
-          Belisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the
-          Oxford Internet Institute (University of Oxford). While there, he collaborated with Instituto Fogo Cruzado to develop
-          a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in
-          Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ
-          and Agência Autônoma, Belisario co-developed <a href="https://documental.xyz">Documental.xyz</a>, an initiative
-          that combines diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture,
-          with storytelling to equip grassroots communities with compelling evidence related to human rights violations.
-        </p>
-      </div>
+      <div class="reveal" set:html={about.bio} />
 
       <div class="section-label section-label--warm reveal">Awards & Recognitions</div>
       <div class="reveal">
         <ul class="cv-list">
-          <li><span class="signal-highlight">Bellingcat's technical writing fellowship</span> <span class="data-badge data-badge--warm">2024</span></li>
-          <li>Finalist — "Social Action" at the Study UK Alumni Award <span class="data-badge data-badge--warm">2024</span></li>
-          <li>Shortlisted at the Gabo Awards <span class="data-badge">2021</span></li>
-          <li>Winner of the Jornalismo-Mosca Award <span class="data-badge">2021</span></li>
-          <li>Ling Institute's Visionary Journalist Scholarship <span class="data-badge">2020</span></li>
+          {about.awards.map((a: any) => (
+            <li>
+              {a.highlight ? <span class="signal-highlight">{a.title}</span> : a.title}
+              {' '}<span class={`data-badge${a.highlight ? ' data-badge--warm' : ''}`}>{a.year}</span>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div class="section-label section-label--violet reveal">Education</div>
       <div class="reveal">
         <ul class="cv-list">
-          <li>
-            <strong>Master of Science in Social Data Science</strong> (with distinction)<br>
-            <span class="faded">Oxford Internet Institute, University of Oxford. 2022–2023.</span>
-          </li>
-          <li>
-            <strong>Post-baccalaureate certification</strong> (with honors)<br>
-            <span class="faded">Lede Program. Columbia University of the City of New York. 2021.</span>
-          </li>
-          <li>
-            <strong>Masters of Arts in Communication and Culture</strong><br>
-            <span class="faded">Federal University of Rio de Janeiro. 2016.</span>
-          </li>
-          <li>
-            <strong>Bachelor in Social Communication (Journalism)</strong><br>
-            <span class="faded">Federal University of Rio de Janeiro. 2010.</span>
-          </li>
-          <li>
-            <strong>Philosophy</strong> (unfinished)<br>
-            <span class="faded">State University of Rio de Janeiro. 2005–2008.</span>
-          </li>
+          {about.education.map((e: any) => (
+            <li>
+              <strong>{e.degree}</strong>{e.note ? ` ${e.note}` : ''}<br />
+              <span class="faded">{e.institution}. {e.year}.</span>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div class="section-label reveal">Courses</div>
       <div class="reveal">
         <ul class="cv-list">
-          <li>2021, online. Mathematics for machine learning specialization. <span class="faded">Imperial College London.</span></li>
-          <li>2020, São Paulo. Survey design and analysis. <span class="faded">IPSA/USP Summer School.</span></li>
-          <li>2017, Rio de Janeiro. Reporting Land Rights. <span class="faded">Thomson Reuters Foundation.</span></li>
+          {about.courses.map((c: any) => (
+            <li>{c.year}, {c.location}. {c.title}. <span class="faded">{c.institution}.</span></li>
+          ))}
         </ul>
       </div>
 
       <div class="section-label reveal">Professional Experience</div>
       <div class="reveal">
         <ul class="cv-list">
-          <li><strong>Joint Data Center on Forced Displacement</strong> — Data journalist <span class="data-badge data-badge--teal">2023–Present</span></li>
-          <li><strong>Medialab/UFRJ</strong> — Associate Researcher <span class="data-badge">2017–2022</span></li>
-          <li><strong>School of Data Brazil</strong> — Program Manager <span class="data-badge">2018–2022</span></li>
-          <li><strong>WITNESS</strong> — Consultant <span class="data-badge">2018–2019</span></li>
-          <li><strong>UNESCO</strong> — Consultant <span class="data-badge">2016–2018</span></li>
-          <li><strong>Cinema Nosso</strong> — Program manager <span class="data-badge">2015–2017</span></li>
-          <li><strong>Agência Pública</strong> — Editor and reporter <span class="data-badge">2014–2018</span></li>
-          <li><strong>Instituto Mais Democracia</strong> — Content Manager <span class="data-badge">2012–2013</span></li>
-          <li><strong>Government of the State of Rio de Janeiro</strong> — Digital Culture Manager <span class="data-badge">2010–2012</span></li>
-          <li><strong>Federal University of Rio de Janeiro (Pontão da ECO)</strong> — Program manager <span class="data-badge">2009–2012</span></li>
-          <li><strong>Revista de História da Biblioteca Nacional</strong> — Reporter and editor <span class="data-badge">2008–2010</span></li>
+          {about.experience.map((e: any) => (
+            <li><strong>{e.org}</strong> — {e.role} <span class={`data-badge${e.style ? ` data-badge--${e.style}` : ''}`}>{e.period}</span></li>
+          ))}
         </ul>
       </div>
 
       <div class="section-label section-label--teal reveal">Teaching Experience</div>
       <div class="reveal">
-        <p>
-          As head of the School of Data Brazil, Adriano created, coordinated, and taught several online and in-person trainings
-          between 2019 and 2022, such as
-          <a href="https://escoladedados.org/dados-360-comunicacao-baseada-em-dados/">Dados 360</a>,
-          <a href="https://escoladedados.org/courses/jornalismo-de-dados-ambientais/">Jornalismo de dados ambientais</a>, and
-          <a href="https://escoladedados.org/courses/investigacoes-digitais/">Investigações digitais</a>.
-        </p>
+        <Fragment set:html={about.teaching.intro} />
         <ul class="cv-list">
-          <li><strong>Brasiliense Institute of Public Law</strong> — Lecturer in data journalism MBA program <span class="data-badge">2021–2022</span></li>
-          <li><strong>Higher Education Institute of Brasilia</strong> — Lecturer of data journalism <span class="data-badge">2019</span></li>
-          <li><strong>University of Texas / Knight Center</strong> — Teaching assistant <span class="data-badge">2019</span></li>
+          {about.teaching.positions.map((t: any) => (
+            <li><strong>{t.org}</strong> — {t.role} <span class="data-badge">{t.period}</span></li>
+          ))}
         </ul>
       </div>
 

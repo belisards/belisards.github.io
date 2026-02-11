@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { loadYaml } from '../lib/data';
+
+const pubs = loadYaml('publications.yml');
+const englishSection = pubs.sections[0];
+const ptSection = pubs.sections[1];
 ---
 
 <BaseLayout title="Publications" description="Academic papers, journalistic investigations, books, and tutorials.">
@@ -16,222 +21,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <h2 class="reveal">Works in English</h2>
+      <h2 class="reveal">{englishSection.title}</h2>
 
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://doi.org/10.1145/3757416">Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports</a></span></div>
-        <div class="pub-entry__meta">Proceedings of the ACM on Human-Computer Interaction, 2025. Co-authorship with Scott Hale and Luc Rocher.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--tutorial reveal">
-        <div><span class="pub-entry__title"><a href="https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/">Easy AI: A Simplified Approach to Classifying Images with Off-the-Shelf AI Models</a></span></div>
-        <div class="pub-entry__meta">Bellingcat, 2024. Also published in <a href="https://escoladedados.org/tutoriais/easy-ai-classificacao-imagens-tutorial/">Portuguese</a>.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://academic.oup.com/ijpor/article/36/3/edae032/7709027">Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai</a></span></div>
-        <div class="pub-entry__meta">International Journal of Public Opinion Research, 2024. Co-authorship with Scott Hale and Luc Rocher.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--tutorial reveal">
-        <div><span class="pub-entry__title"><a href="https://belisario.website/tutorial-ven-migration/">Guide on survey data analysis with R</a></span></div>
-        <div class="pub-entry__meta">World Bank-UNHCR Joint Data Center on Forced Displacement, 2024.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-entry__title"><a href="https://arxiv.org/abs/2401.02395">Analyzing Misinformation Claims During the 2022 Brazilian General Election</a></span></div>
-        <div class="pub-entry__meta">arXiv preprint, 2024. Co-authorship with Scott Hale, Ahmed Mostafa and Chico Camargo.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://documental.xyz/intervencao">Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro</a></span></div>
-        <div class="pub-entry__meta">Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also in <a href="https://documental.xyz/pt/intervencao">Portuguese</a> and <a href="https://documental.xyz/es/intervencao">Spanish</a>.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://documental.xyz/expulsions">Expulsions — Forced displacements and archaeological destruction by the mega-mining project Mirador</a></span></div>
-        <div class="pub-entry__meta">Documental.xyz, 2020. Also in <a href="https://documental.xyz/pt/expulsions">Portuguese</a> and <a href="https://documental.xyz/es/expulsions">Spanish</a>.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--essay reveal">
-        <div><span class="pub-entry__title"><a href="https://lab.witness.org/rio-goes-live/">Rio goes live: video activism and human rights in Brazil</a></span></div>
-        <div class="pub-entry__meta">Witness, 2019.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--essay reveal">
-        <div><span class="pub-entry__title"><a href="https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century">Free spectrum and freedom of expression in the 21st century</a></span></div>
-        <div class="pub-entry__meta">Association for Progressive Communications, 2018.</div>
-      </div>
-
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-entry__title"><a href="https://spheres-journal.org/contribution/activism-in-landscapes-culture-spectrum-and-latin-america/">Activism in landscapes: culture, spectrum and Latin America</a></span></div>
-        <div class="pub-entry__meta">Spheres — Journal for Digital Cultures, 2016. Co-authorship with Paulo Lara and Francisco Caminati.</div>
-      </div>
-
-      <h2 class="reveal">Portuguese & Other Languages</h2>
-
-      <div class="pub-category reveal">
-        <span>Books and published writing</span>
-        <span class="data-badge">10 titles</span>
-      </div>
-
-      <div class="book-gallery reveal" id="book-gallery">
-        <div class="book-item" data-full="/images/covers/tecnopolitica.jpg">
-          <img src="/images/covers/tecnopolitica.jpg" alt="Tecnopolíticas da vigilância" loading="lazy" />
-          <div class="book-item__caption"><strong>Espectro e vigilância</strong>, 2018. Editora Boitempo.</div>
+      {englishSection.entries.map((entry: any) => (
+        <div class={`pub-entry pub-entry--${entry.type} reveal`}>
+          <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title"><a href={entry.url}>{entry.title}</a></span></div>
+          <div class="pub-entry__meta" set:html={entry.meta} />
         </div>
-        <div class="book-item" data-full="/images/covers/economias_subversivas.png">
-          <img src="/images/covers/economias_subversivas.png" alt="Economias subversivas" loading="lazy" />
-          <div class="book-item__caption"><strong>Economias subversivas</strong>, 2017. Editora Imotirô.</div>
-        </div>
-        <div class="book-item" data-full="/images/covers/radioscomunitaria.png">
-          <img src="/images/covers/radioscomunitaria.png" alt="Rádios Comunitárias em Tempos Digitais" loading="lazy" />
-          <div class="book-item__caption"><strong>Espectro e Vigilância</strong>, 2017. AMARC Brasil.</div>
-        </div>
-        <div class="book-item" data-full="/images/covers/tcnxmnsm.png">
-          <img src="/images/covers/tcnxmnsm.png" alt="Tecnoxamanismo" loading="lazy" />
-          <div class="book-item__caption"><strong>Tecnoxamanismo</strong>. Goethe Institut.</div>
-        </div>
-        <div class="book-item" data-full="/images/covers/tecnomagia.png">
-          <img src="/images/covers/tecnomagia.png" alt="Tecnomagia" loading="lazy" />
-          <div class="book-item__caption"><a href="https://imotiro.org/livros/tecnomagia-2/"><strong>Tecnomagia</strong></a>, 2016. Editora Imotirõ.</div>
-        </div>
-        <div class="book-item" data-full="/images/covers/copyfight.png">
-          <img src="/images/covers/copyfight.png" alt="Copyfight" loading="lazy" />
-          <div class="book-item__caption"><strong>Copyfight</strong>, 2012. Editora Azougue.</div>
-        </div>
-        <div class="book-item" data-full="/images/covers/fgv.png">
-          <img src="/images/covers/fgv.png" alt="Pontos de Cultura e Lan houses" loading="lazy" />
-          <div class="book-item__caption"><strong>As culturas digitais dos Pontos de Cultura</strong>, 2011. Editora FGV.</div>
-        </div>
-        <div class="book-item" data-full="/images/covers/ideias_perigozas.png">
-          <img src="/images/covers/ideias_perigozas.png" alt="Ideias perigosas" loading="lazy" />
-          <div class="book-item__caption"><strong>Submidialogias</strong>, 2011. Editora Córrego.</div>
-        </div>
-        <div class="book-item" data-full="/images/covers/lecc.jpg">
-          <img src="/images/covers/lecc.jpg" alt="Comunidade e Contra-hegemonia" loading="lazy" />
-          <div class="book-item__caption">Comunicação Comunitária, 2008. Editora Mauad.</div>
-        </div>
-        <div class="book-item" data-full="/images/covers/ponhasenarua.jpg">
-          <img src="/images/covers/ponhasenarua.jpg" alt="Ponha-se na Rua" loading="lazy" />
-          <div class="book-item__caption"><strong>Ponha-se na Rua</strong>, 2008. Editora Luminatti.</div>
-        </div>
-      </div>
+      ))}
 
-      <div class="pub-category reveal"><span>Academic papers</span></div>
+      <h2 class="reveal">{ptSection.title}</h2>
 
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-entry__title"><a href="https://periodicos.unb.br/index.php/dasquestoes/article/view/18647/17367">A Terra à Vista</a></span></div>
-        <div class="pub-entry__meta">DAS QUESTÕES, v. 6, 2018.</div>
-      </div>
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-entry__title"><a href="https://revista.ibict.br/liinc/article/view/3747/3222">Caixa Mágica: crónica de un proyecto de colaboración ciudadana</a></span></div>
-        <div class="pub-entry__meta">LIINC EM REVISTA, v. 13, 2017. Co-authorship.</div>
-      </div>
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://revista.ibict.br/liinc/article/view/3722">Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum</a></span></div>
-        <div class="pub-entry__meta">Liinc em Revista, v. 12, 2016. Co-authorship with Paulo Lara.</div>
-      </div>
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-entry__title"><a href="https://www.contemporanea.ufscar.br/index.php/contemporanea/article/view/434">Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente</a></span></div>
-        <div class="pub-entry__meta">Contemporânea, v. 6, 2016. Co-authorship with P. P. Ferreira.</div>
-      </div>
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-entry__title"><a href="https://revistas.ufrj.br/index.php/lc/article/view/50155">Tecnoxamanismo: por uma cibernética insurgente</a></span></div>
-        <div class="pub-entry__meta">Lugar Comum (UFRJ), v. 43, 2015.</div>
-      </div>
-      <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="pub-entry__title"><a href="https://politics.org.br/edicoes/espectro-livre-como-alternativa-tecnopol%C3%ADtica-%C3%A0-vigil%C3%A2ncia">Espectro livre como alternativa tecnopolítica à vigilância</a></span></div>
-        <div class="pub-entry__meta">Politics (Impresso), v. 1, 2015.</div>
-      </div>
+      {ptSection.subsections.map((sub: any) => (
+        <>
+          <div class="pub-category reveal">
+            <span>{sub.title}</span>
+            {sub.badge && <span class={`data-badge${sub.badge_style ? ` data-badge--${sub.badge_style}` : ''}`}>{sub.badge}</span>}
+          </div>
 
-      <div class="pub-category reveal"><span>Journalistic investigations</span><span class="data-badge">Journalism</span></div>
+          {sub.books && (
+            <div class="book-gallery reveal" id="book-gallery">
+              {sub.books.map((book: any) => (
+                <div class="book-item" data-full={book.image}>
+                  <img src={book.image} alt={book.alt} loading="lazy" />
+                  <div class="book-item__caption" set:html={book.caption} />
+                </div>
+              ))}
+            </div>
+          )}
 
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://apublica.org/2024/05/chiquinho-brazao-tentou-beneficiar-regiao-ao-lado-de-area-que-seria-recompensa-por-morte-de-marielle/">Brazão tentou beneficiar região ao lado de área que seria recompensa por morte de Marielle</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2024.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://apublica.org/2019/01/a-tropa-de-choque-de-bolsonaro-no-congresso/">A tropa de choque de Bolsonaro no Congresso</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2019.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2019/02/como-vota-rio-das-pedras-reduto-da-mais-antiga-milicia-carioca/">Como vota Rio das Pedras, reduto da mais antiga milícia carioca</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2019.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://apublica.org/2019/05/nao-ha-registro-de-entrada-na-camara-para-assessor-de-bolsonaro-investigado-pela-justica/">Não há registro de entrada na Câmara para assessor de Bolsonaro investigado pela Justiça</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2019.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://apublica.org/2019/03/dois-assessores-de-jair-bolsonaro-doaram-mais-de-r-100-mil-para-campanhas-da-familia/">Dois assessores de Jair Bolsonaro doaram mais de R$ 100 mil para campanhas da família</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2019.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://apublica.org/2019/04/encontramos-mais-cinco-ex-assessoras-de-bolsonaro-que-nem-pisaram-no-congresso/">Encontramos mais cinco ex-assessoras de Bolsonaro que nem pisaram no Congresso</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2019.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://www.intercept.com.br/2018/04/03/exercito-rio-empresa-investigada/">Operações do Exército no Rio geraram milhões para empresa da "farra do guardanapo"</a></span></div>
-        <div class="pub-entry__meta">The Intercept Brasil, 2018.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://apublica.org/2018/01/sorteio-do-supremo-e-caixa-preta/">Sorteio do Supremo é caixa preta</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2018.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2018/09/semanalmente-juizes-do-supremo-decidem-sozinhos-sobre-aplicacao-da-constituicao/">Semanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2018.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/">A teia dos donos do transporte no Rio</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2017.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-entry__title"><a href="https://www.intercept.com.br/2017/09/26/mapeamento-inedito-mostra-que-doacoes-legais-da-odebrecht-beneficiaram-1-087-candidatos-desde-2002/">Mapeamento inédito: doações legais da Odebrecht beneficiaram 1.087 candidatos</a></span></div>
-        <div class="pub-entry__meta">The Intercept Brasil, 2017.</div>
-      </div>
-      <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2014/06/um-jogo-para-poucos/">Um jogo para poucos</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2014.</div>
-      </div>
-
-      <div class="pub-category reveal"><span>Essays and other writings</span></div>
-
-      <div class="pub-entry pub-entry--essay reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/">Cartilha de segurança digital e atuação no campo</a></span></div>
-        <div class="pub-entry__meta">Agência Pública, 2020.</div>
-      </div>
-      <div class="pub-entry pub-entry--essay reveal">
-        <div><span class="pub-entry__title"><a href="https://belisario.website/publications/por_uma_ideia_de_cinema_radical.html">Por uma ideia de cinema radical</a></span></div>
-        <div class="pub-entry__meta">2007.</div>
-      </div>
-
-      <div class="pub-category reveal"><span>Technical tutorials</span><span class="data-badge data-badge--teal">How-to</span></div>
-
-      <div class="pub-entry pub-entry--tutorial reveal">
-        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/">Checagem de imagens: cronolocalização de fotos</a></span></div>
-        <div class="pub-entry__meta">Escola de Dados, 2022.</div>
-      </div>
-      <div class="pub-entry pub-entry--tutorial reveal">
-        <div><span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/como-pedir-e-receber-ajuda-na-internet/">Como pedir e receber ajuda na internet</a></span></div>
-        <div class="pub-entry__meta">Escola de Dados, 2021.</div>
-      </div>
-      <div class="pub-entry pub-entry--tutorial reveal">
-        <div><span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/limpando-dados-da-covid-19-com-r/">Limpando dados da COVID-19 com R</a></span></div>
-        <div class="pub-entry__meta">Escola de Dados, 2020.</div>
-      </div>
-      <div class="pub-entry pub-entry--tutorial reveal">
-        <div><span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/expressao-regular-pode-melhorar-sua-vida/">Expressão regular pode melhorar sua vida</a></span></div>
-        <div class="pub-entry__meta">Escola de Dados, 2019.</div>
-      </div>
-
-      <div class="pub-category reveal"><span>Text review</span></div>
-
-      <div class="pub-entry pub-entry--essay reveal">
-        <div><span class="pub-entry__title"><a href="https://netlab.eco.ufrj.br/post/atingidos-pelas-redes-sociais-os-impactos-da-ind%C3%BAstria-da-desinforma%C3%A7%C3%A3o-nos-consumidores-brasileiro">Atingidos pelas redes sociais</a></span></div>
-        <div class="pub-entry__meta">Netlab/UFRJ, 2025.</div>
-      </div>
+          {sub.entries && sub.entries.map((entry: any) => (
+            <div class={`pub-entry pub-entry--${entry.type} reveal`}>
+              <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title"><a href={entry.url}>{entry.title}</a></span></div>
+              <div class="pub-entry__meta" set:html={entry.meta} />
+            </div>
+          ))}
+        </>
+      ))}
 
     </div>
   </div>

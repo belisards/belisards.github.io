@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { loadYaml } from '../lib/data';
+
+const contact = loadYaml('contact.yml');
 ---
 
 <BaseLayout title="Contact" description="Get in touch with Adriano Belisario.">
@@ -13,28 +16,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="contact-card data-panel reveal">
         <div class="contact-links">
-          <a href="https://linkedin.com/in/adriano-belisario-76758632" target="_blank" rel="noopener" class="contact-item contact-item--blue">
-            <span class="contact-icon contact-icon--blue">in</span>
-            <span class="contact-label">LinkedIn</span>
-          </a>
-          <a href="https://github.com/belisards" target="_blank" rel="noopener" class="contact-item">
-            <span class="contact-icon">gh</span>
-            <span class="contact-label">GitHub</span>
-          </a>
-          <a href="https://bsky.app/profile/did:plc:c7wkk6l33tzzvkok2reyvr5f" target="_blank" rel="noopener" class="contact-item contact-item--blue">
-            <span class="contact-icon contact-icon--sky">bs</span>
-            <span class="contact-label">Bluesky</span>
-          </a>
-          <a href="https://fosstodon.org/@belisards" target="_blank" rel="noopener" class="contact-item contact-item--violet">
-            <span class="contact-icon contact-icon--violet">md</span>
-            <span class="contact-label">Mastodon</span>
-          </a>
+          {contact.links.map((link: any) => (
+            <a href={link.url} target="_blank" rel="noopener" class={`contact-item${link.color === 'violet' ? ' contact-item--violet' : link.color === 'blue' ? ' contact-item--blue' : ''}`}>
+              <span class={`contact-icon${link.color ? ` contact-icon--${link.color}` : ''}`}>{link.icon}</span>
+              <span class="contact-label">{link.label}</span>
+            </a>
+          ))}
         </div>
 
         <hr />
 
         <p class="contact-email">
-          Or drop a line at <strong>contact [at] belisario [dot] website</strong>
+          Or drop a line at <strong>{contact.email}</strong>
         </p>
       </div>
 

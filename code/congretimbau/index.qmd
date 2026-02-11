@@ -8,6 +8,8 @@ date: 2024-09-27
 # site-url: https://huggingface.co/belisards/gun_violence_ptbr
 image: "cover.png"
 categories: [python, nlp, machine learning]
+links:
+  model: https://huggingface.co/belisards/congretimbau
 open-graph: false
 draft: false
 ---

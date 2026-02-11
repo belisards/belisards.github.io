@@ -1,0 +1,18 @@
+links:
+  - label: LinkedIn
+    url: https://linkedin.com/in/adriano-belisario-76758632
+    icon: in
+    color: blue
+  - label: GitHub
+    url: https://github.com/belisards
+    icon: gh
+  - label: Bluesky
+    url: https://bsky.app/profile/did:plc:c7wkk6l33tzzvkok2reyvr5f
+    icon: bs
+    color: sky
+  - label: Mastodon
+    url: https://fosstodon.org/@belisards
+    icon: md
+    color: violet
+
+email: "contact [at] belisario [dot] website"

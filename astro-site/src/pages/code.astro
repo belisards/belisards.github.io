@@ -1,64 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { loadProjects } from '../lib/data';
 
-const projects = [
-  {
-    title: 'Congretimbau',
-    desc: 'BERT-based model specialized in Brazilian Portuguese law bills.',
-    image: '/images/projects/congretimbau.png',
-    date: '2024',
-    categories: ['Python', 'NLP', 'ML'],
-    links: { model: 'https://huggingface.co/belisards/congretimbau' },
-  },
-  {
-    title: 'Smart Image Sorter',
-    desc: 'User-friendly tool for zero-shot image classification. Developed with Bellingcat.',
-    image: '/images/projects/smart_image_sorter.jpg',
-    date: '2024',
-    categories: ['Python'],
-    links: { tutorial: 'https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/', code: 'https://github.com/bellingcat/smart-image-sorter' },
-  },
-  {
-    title: 'UNHCR Geodata Extractor',
-    desc: 'Explore camp boundaries and points from UNHCR\'s geodata repository.',
-    image: '/images/projects/unhcr_geodata.png',
-    date: '2024',
-    categories: ['Python', 'Streamlit', 'Geodata'],
-    links: { app: 'https://unhcrdata.streamlit.app/', code: 'https://github.com/belisards/unhcr_geodata' },
-  },
-  {
-    title: 'Forced Displacement Microdata',
-    desc: 'Shiny dashboard about gaps in microdata on forced displacement.',
-    image: '/images/projects/fdpatlas.png',
-    date: '2023',
-    categories: ['R', 'Shiny'],
-    links: { dashboard: 'https://rstudio.unhcr.org/FDMAtlas/', code: 'https://github.com/belisards/FDPDataAtlas' },
-  },
-  {
-    title: 'Gun Violence Classification Model',
-    desc: 'BERTimbau fine-tuned to detect gun violence reports in Brazilian Portuguese.',
-    image: '/images/projects/gunviolenceptbr.png',
-    date: '2023',
-    categories: ['Python', 'NLP'],
-    links: { model: 'https://huggingface.co/belisards/gun_violence_ptbr', paper: 'https://arxiv.org/abs/2401.12989', code: 'https://github.com/belisards/gunviolence_ptbr' },
-  },
-  {
-    title: 'Fragile Families',
-    desc: 'Statistical models for the Fragile Families and Child Wellbeing Study using gradient boosting.',
-    image: '/images/projects/ff_challenge.png',
-    date: '2023',
-    categories: ['Python', 'ML'],
-    links: { code: 'https://github.com/belisards/ff_applied_ml/' },
-  },
-  {
-    title: 'Corporate Network Visualization',
-    desc: 'Interactive data visualization of the bus owners\' network in Rio de Janeiro.',
-    image: '/images/projects/bus_network.png',
-    date: '2017',
-    categories: ['Web'],
-    links: { viz: 'https://apublica.org/riobus/html/', article: 'https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/', code: 'https://github.com/belisards/mapa-onibus-rj' },
-  },
-];
+const imageMap: Record<string, string> = {
+  'cover.png': 'png',
+  'feat_image.jpg': 'jpg',
+};
+
+const projects = loadProjects().map(p => ({
+  title: p.title,
+  desc: p.description?.trim() || '',
+  image: `/images/projects/${p.slug}.${p.image === 'feat_image.jpg' ? 'jpg' : 'png'}`,
+  date: new Date(p.date).getFullYear().toString(),
+  categories: (p.categories || []).map((c: string) => c.charAt(0).toUpperCase() + c.slice(1)),
+  links: p.links || {},
+}));
 ---
 
 <BaseLayout title="Code" description="Data projects and code repositories.">

@@ -1,0 +1,217 @@
+sections:
+  - title: "Works in English"
+    entries:
+      - title: "Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports"
+        url: "https://doi.org/10.1145/3757416"
+        meta: "Proceedings of the ACM on Human-Computer Interaction, 2025. Co-authorship with Scott Hale and Luc Rocher."
+        type: academic
+        featured: true
+      - title: "Easy AI: A Simplified Approach to Classifying Images with Off-the-Shelf AI Models"
+        url: "https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/"
+        meta: 'Bellingcat, 2024. Also published in <a href="https://escoladedados.org/tutoriais/easy-ai-classificacao-imagens-tutorial/">Portuguese</a>.'
+        type: tutorial
+      - title: "Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai"
+        url: "https://academic.oup.com/ijpor/article/36/3/edae032/7709027"
+        meta: "International Journal of Public Opinion Research, 2024. Co-authorship with Scott Hale and Luc Rocher."
+        type: academic
+        featured: true
+      - title: "Guide on survey data analysis with R"
+        url: "https://belisario.website/tutorial-ven-migration/"
+        meta: "World Bank-UNHCR Joint Data Center on Forced Displacement, 2024."
+        type: tutorial
+      - title: "Analyzing Misinformation Claims During the 2022 Brazilian General Election"
+        url: "https://arxiv.org/abs/2401.02395"
+        meta: "arXiv preprint, 2024. Co-authorship with Scott Hale, Ahmed Mostafa and Chico Camargo."
+        type: academic
+      - title: "Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro"
+        url: "https://documental.xyz/intervencao"
+        meta: 'Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also in <a href="https://documental.xyz/pt/intervencao">Portuguese</a> and <a href="https://documental.xyz/es/intervencao">Spanish</a>.'
+        type: journalism
+        featured: true
+      - title: "Expulsions — Forced displacements and archaeological destruction by the mega-mining project Mirador"
+        url: "https://documental.xyz/expulsions"
+        meta: 'Documental.xyz, 2020. Also in <a href="https://documental.xyz/pt/expulsions">Portuguese</a> and <a href="https://documental.xyz/es/expulsions">Spanish</a>.'
+        type: journalism
+      - title: "Rio goes live: video activism and human rights in Brazil"
+        url: "https://lab.witness.org/rio-goes-live/"
+        meta: "Witness, 2019."
+        type: essay
+      - title: "Free spectrum and freedom of expression in the 21st century"
+        url: "https://www.apc.org/en/news/free-spectrum-and-freedom-expression-21st-century"
+        meta: "Association for Progressive Communications, 2018."
+        type: essay
+      - title: "Activism in landscapes: culture, spectrum and Latin America"
+        url: "https://spheres-journal.org/contribution/activism-in-landscapes-culture-spectrum-and-latin-america/"
+        meta: "Spheres — Journal for Digital Cultures, 2016. Co-authorship with Paulo Lara and Francisco Caminati."
+        type: academic
+
+  - title: "Portuguese & Other Languages"
+    subsections:
+      - title: "Books and published writing"
+        badge: "10 titles"
+        books:
+          - title: "Espectro e vigilância"
+            caption: "<strong>Espectro e vigilância</strong>, 2018. Editora Boitempo."
+            image: "/images/covers/tecnopolitica.jpg"
+            alt: "Tecnopolíticas da vigilância"
+          - title: "Economias subversivas"
+            caption: "<strong>Economias subversivas</strong>, 2017. Editora Imotirô."
+            image: "/images/covers/economias_subversivas.png"
+            alt: "Economias subversivas"
+          - title: "Espectro e Vigilância"
+            caption: "<strong>Espectro e Vigilância</strong>, 2017. AMARC Brasil."
+            image: "/images/covers/radioscomunitaria.png"
+            alt: "Rádios Comunitárias em Tempos Digitais"
+          - title: "Tecnoxamanismo"
+            caption: "<strong>Tecnoxamanismo</strong>. Goethe Institut."
+            image: "/images/covers/tcnxmnsm.png"
+            alt: "Tecnoxamanismo"
+          - title: "Tecnomagia"
+            caption: '<a href="https://imotiro.org/livros/tecnomagia-2/"><strong>Tecnomagia</strong></a>, 2016. Editora Imotirõ.'
+            image: "/images/covers/tecnomagia.png"
+            alt: "Tecnomagia"
+          - title: "Copyfight"
+            caption: "<strong>Copyfight</strong>, 2012. Editora Azougue."
+            image: "/images/covers/copyfight.png"
+            alt: "Copyfight"
+          - title: "As culturas digitais dos Pontos de Cultura"
+            caption: "<strong>As culturas digitais dos Pontos de Cultura</strong>, 2011. Editora FGV."
+            image: "/images/covers/fgv.png"
+            alt: "Pontos de Cultura e Lan houses"
+          - title: "Submidialogias"
+            caption: "<strong>Submidialogias</strong>, 2011. Editora Córrego."
+            image: "/images/covers/ideias_perigozas.png"
+            alt: "Ideias perigosas"
+          - title: "Comunicação Comunitária"
+            caption: "Comunicação Comunitária, 2008. Editora Mauad."
+            image: "/images/covers/lecc.jpg"
+            alt: "Comunidade e Contra-hegemonia"
+          - title: "Ponha-se na Rua"
+            caption: "<strong>Ponha-se na Rua</strong>, 2008. Editora Luminatti."
+            image: "/images/covers/ponhasenarua.jpg"
+            alt: "Ponha-se na Rua"
+
+      - title: "Academic papers"
+        entries:
+          - title: "A Terra à Vista"
+            url: "https://periodicos.unb.br/index.php/dasquestoes/article/view/18647/17367"
+            meta: "DAS QUESTÕES, v. 6, 2018."
+            type: academic
+          - title: "Caixa Mágica: crónica de un proyecto de colaboración ciudadana"
+            url: "https://revista.ibict.br/liinc/article/view/3747/3222"
+            meta: "LIINC EM REVISTA, v. 13, 2017. Co-authorship."
+            type: academic
+          - title: "Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum"
+            url: "https://revista.ibict.br/liinc/article/view/3722"
+            meta: "Liinc em Revista, v. 12, 2016. Co-authorship with Paulo Lara."
+            type: academic
+            featured: true
+          - title: "Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente"
+            url: "https://www.contemporanea.ufscar.br/index.php/contemporanea/article/view/434"
+            meta: "Contemporânea, v. 6, 2016. Co-authorship with P. P. Ferreira."
+            type: academic
+          - title: "Tecnoxamanismo: por uma cibernética insurgente"
+            url: "https://revistas.ufrj.br/index.php/lc/article/view/50155"
+            meta: "Lugar Comum (UFRJ), v. 43, 2015."
+            type: academic
+          - title: "Espectro livre como alternativa tecnopolítica à vigilância"
+            url: "https://politics.org.br/edicoes/espectro-livre-como-alternativa-tecnopol%C3%ADtica-%C3%A0-vigil%C3%A2ncia"
+            meta: "Politics (Impresso), v. 1, 2015."
+            type: academic
+
+      - title: "Journalistic investigations"
+        badge: "Journalism"
+        entries:
+          - title: "Brazão tentou beneficiar região ao lado de área que seria recompensa por morte de Marielle"
+            url: "https://apublica.org/2024/05/chiquinho-brazao-tentou-beneficiar-regiao-ao-lado-de-area-que-seria-recompensa-por-morte-de-marielle/"
+            meta: "Agência Pública, 2024."
+            type: journalism
+          - title: "A tropa de choque de Bolsonaro no Congresso"
+            url: "https://apublica.org/2019/01/a-tropa-de-choque-de-bolsonaro-no-congresso/"
+            meta: "Agência Pública, 2019."
+            type: journalism
+          - title: "Como vota Rio das Pedras, reduto da mais antiga milícia carioca"
+            url: "https://apublica.org/2019/02/como-vota-rio-das-pedras-reduto-da-mais-antiga-milicia-carioca/"
+            meta: "Agência Pública, 2019."
+            type: journalism
+            featured: true
+          - title: "Não há registro de entrada na Câmara para assessor de Bolsonaro investigado pela Justiça"
+            url: "https://apublica.org/2019/05/nao-ha-registro-de-entrada-na-camara-para-assessor-de-bolsonaro-investigado-pela-justica/"
+            meta: "Agência Pública, 2019."
+            type: journalism
+          - title: "Dois assessores de Jair Bolsonaro doaram mais de R$ 100 mil para campanhas da família"
+            url: "https://apublica.org/2019/03/dois-assessores-de-jair-bolsonaro-doaram-mais-de-r-100-mil-para-campanhas-da-familia/"
+            meta: "Agência Pública, 2019."
+            type: journalism
+          - title: "Encontramos mais cinco ex-assessoras de Bolsonaro que nem pisaram no Congresso"
+            url: "https://apublica.org/2019/04/encontramos-mais-cinco-ex-assessoras-de-bolsonaro-que-nem-pisaram-no-congresso/"
+            meta: "Agência Pública, 2019."
+            type: journalism
+          - title: "Operações do Exército no Rio geraram milhões para empresa da \"farra do guardanapo\""
+            url: "https://www.intercept.com.br/2018/04/03/exercito-rio-empresa-investigada/"
+            meta: "The Intercept Brasil, 2018."
+            type: journalism
+          - title: "Sorteio do Supremo é caixa preta"
+            url: "https://apublica.org/2018/01/sorteio-do-supremo-e-caixa-preta/"
+            meta: "Agência Pública, 2018."
+            type: journalism
+          - title: "Semanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição"
+            url: "https://apublica.org/2018/09/semanalmente-juizes-do-supremo-decidem-sozinhos-sobre-aplicacao-da-constituicao/"
+            meta: "Agência Pública, 2018."
+            type: journalism
+            featured: true
+          - title: "A teia dos donos do transporte no Rio"
+            url: "https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/"
+            meta: "Agência Pública, 2017."
+            type: journalism
+            featured: true
+          - title: "Mapeamento inédito: doações legais da Odebrecht beneficiaram 1.087 candidatos"
+            url: "https://www.intercept.com.br/2017/09/26/mapeamento-inedito-mostra-que-doacoes-legais-da-odebrecht-beneficiaram-1-087-candidatos-desde-2002/"
+            meta: "The Intercept Brasil, 2017."
+            type: journalism
+          - title: "Um jogo para poucos"
+            url: "https://apublica.org/2014/06/um-jogo-para-poucos/"
+            meta: "Agência Pública, 2014."
+            type: journalism
+            featured: true
+
+      - title: "Essays and other writings"
+        entries:
+          - title: "Cartilha de segurança digital e atuação no campo"
+            url: "https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/"
+            meta: "Agência Pública, 2020."
+            type: essay
+            featured: true
+          - title: "Por uma ideia de cinema radical"
+            url: "https://belisario.website/publications/por_uma_ideia_de_cinema_radical.html"
+            meta: "2007."
+            type: essay
+
+      - title: "Technical tutorials"
+        badge: "How-to"
+        badge_style: teal
+        entries:
+          - title: "Checagem de imagens: cronolocalização de fotos"
+            url: "https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/"
+            meta: "Escola de Dados, 2022."
+            type: tutorial
+            featured: true
+          - title: "Como pedir e receber ajuda na internet"
+            url: "https://escoladedados.org/tutoriais/como-pedir-e-receber-ajuda-na-internet/"
+            meta: "Escola de Dados, 2021."
+            type: tutorial
+          - title: "Limpando dados da COVID-19 com R"
+            url: "https://escoladedados.org/tutoriais/limpando-dados-da-covid-19-com-r/"
+            meta: "Escola de Dados, 2020."
+            type: tutorial
+          - title: "Expressão regular pode melhorar sua vida"
+            url: "https://escoladedados.org/tutoriais/expressao-regular-pode-melhorar-sua-vida/"
+            meta: "Escola de Dados, 2019."
+            type: tutorial
+
+      - title: "Text review"
+        entries:
+          - title: "Atingidos pelas redes sociais"
+            url: "https://netlab.eco.ufrj.br/post/atingidos-pelas-redes-sociais-os-impactos-da-ind%C3%BAstria-da-desinforma%C3%A7%C3%A3o-nos-consumidores-brasileiro"
+            meta: "Netlab/UFRJ, 2025."
+            type: essay

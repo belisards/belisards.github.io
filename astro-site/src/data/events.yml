@@ -1,0 +1,103 @@
+intro: |
+  Organized several editions of the <a href="https://escoladedados.org/coda/">Brazilian Conference on Data Journalism and Digital Methods (Coda.Br)</a>
+  from 2018 to 2022, including the first regional meeting in the Amazon region. Collaborated with
+  <a href="https://witness.org/">Witness</a> to organize the first national meeting on deepfakes and developed a series of events about free culture and piracy (Copyfight).
+
+sections:
+  - title: "Organization"
+    style: warm
+    entries:
+      - year: "2022"
+        location: "Belém, Brazil"
+        items:
+          - text: '<a href="https://escoladedados.org/coda/coda-amazonia/"><strong>Coda Amazônia</strong></a>. 1st ed.'
+      - year: "2021"
+        location: "Online"
+        items:
+          - text: '<a href="https://escoladedados.org/coda/coda2021/"><strong>Coda.Br</strong></a>. 6th ed.'
+      - year: "2020"
+        location: "Online"
+        items:
+          - text: '<a href="https://escoladedados.org/coda/coda2020/"><strong>Coda.Br</strong></a>. 5th ed.'
+      - year: "2019"
+        location: "São Paulo, Brazil"
+        items:
+          - text: '<a href="https://lab.witness.org/brasil-deepfakes-prepara-se-agora/"><strong>Deepfakes — prepare-se agora</strong></a>. 1st ed.'
+          - text: '<a href="https://escoladedados.org/coda/coda2019/"><strong>Coda.Br</strong></a>. 4th ed.'
+      - year: "2018"
+        location: "São Paulo, Brazil"
+        items:
+          - text: '<a href="https://escoladedados.org/coda/coda2018/"><strong>Coda.Br</strong></a>. 3rd ed.'
+      - year: "2010–14"
+        location: "Rio de Janeiro, Brazil"
+        items:
+          - text: "<strong>Copyfight</strong>. 3 editions (2010, 2011, 2014)."
+
+  - title: "Talks & Lectures"
+    entries:
+      - year: "2025"
+        items:
+          - location: "Bergen, Norway"
+            text: '<a href="https://belisario.website/crossfire_paper"><strong>Into the Crossfire: Evaluating the Use of a Language Model to Crowdsource Gun Violence Reports</strong></a>. ACM CSCW.'
+          - location: "Niterói, Brazil"
+            text: "<strong>Cross-platform gendertrolling</strong>. Association of Internet Researchers Conference."
+        badge_style: teal
+      - year: "2024"
+        items:
+          - location: "Berlin, Germany"
+            text: "<strong>Way beyond ChatGPT: leveraging open source language models</strong>. Global Innovation Gathering."
+          - text: '<a href="https://re-publica.com/de/session/laughs-courts-multifaceted-uses-ai-global-south"><strong>From Laughs to Courts: Multifaceted Uses of AI in the Global South</strong></a>. re:publica 2024.'
+          - text: '<a href="https://belisards.github.io/slides-bert-fact-checking/"><strong>AI uses for fact-checking in Brazil</strong></a>. DW Akademy.'
+        badge_style: teal
+      - year: "2021"
+        location: "Online"
+        items:
+          - text: '<a href="https://visualinvestigations.netlify.app/"><strong>Anatomy of a visual investigation</strong></a>. RightsCon.'
+      - year: "2019"
+        location: "Salvador, Brazil"
+        items:
+          - text: '<a href="https://medialabufrj.net/blog/2019/06/dobras-35-medialab-ufrj-no-simposio-lavits-2019/"><strong>Expulsão/Exceção: arquitetura forense</strong></a>. LAVITS 2019.'
+      - year: "2017"
+        location: "Berlin, Germany"
+        items:
+          - text: "<strong>Coolab — Community networks in Brazil</strong>. re:publica."
+      - year: "2014"
+        location: "Berlin, Germany"
+        items:
+          - text: "<strong>Micropolitics of the Post-Digital</strong>. Transmediale."
+      - year: "2013"
+        location: "Geneva, Switzerland"
+        items:
+          - text: "<strong>Data driven campaigning</strong>. Open Knowledge Conference."
+
+  - title: "Labs"
+    style: violet
+    entries:
+      - year: "2017"
+        location: "Madrid, Spain"
+        items:
+          - text: "<strong>Agrega.la</strong>. Visualizar17 — Medialab Prado."
+      - year: "2016"
+        location: "Cartagena, Colombia & Mexico City, Mexico"
+        items:
+          - text: "<strong>Agrega.la / Caixa Mágica</strong>. LABIC / Openlabs."
+
+  - title: "Workshops"
+    style: teal
+    entries:
+      - year: "2025"
+        location: "São Paulo, Brazil"
+        items:
+          - text: '<a href="https://belisario.website/classificacao_ia/"><strong>Classificação de textos e imagens com IA de código-aberto</strong></a>. ABRAJI.'
+        badge_style: teal
+      - year: "2024"
+        location: "Brasília, Brazil"
+        items:
+          - text: '<a href="https://bit.ly/ia-coda-24/"><strong>Texto, áudio e imagens: usando modelos de IA gratuitos</strong></a>. América Aberta/Coda.Br.'
+        badge_style: teal
+      - year: "2023"
+        items:
+          - location: "São Paulo, Brazil"
+            text: '<a href="https://escoladedados.org/coda/coda2023/entendendo-e-usando-transformers-a-tecnologia-por-tras-do-chatgpt/"><strong>Entendendo e usando Transformers</strong></a>. Coda.Br.'
+          - location: "Geneva, Switzerland"
+            text: '<a href="https://github.com/belisards/intro_nlp_ddj"><strong>Beyond the hype: an introduction to NLP and language models</strong></a>. European Data and Computational Journalism Conference.'

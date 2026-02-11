@@ -1,0 +1,122 @@
+bio: |
+  <p>
+    <strong>Adriano Belisario</strong> combines expertise in communication and data to address important human rights concerns.
+    He is currently part of the Joint Data Center on Forced Displacement, a collaboration between the World Bank and UNHCR.
+    Before this role, he contributed to organizations like Open Knowledge Brazil, Witness, Medialab/UFRJ,
+    <a href="https://forensic-architecture.org/about/team/member/adriano-belisario">Forensic Architecture</a>,
+    UNESCO, <a href="https://apublica.org/autor/adriano-belisario/">Agência Pública</a> and
+    <a href="https://www.intercept.com.br/equipe/adriano-belisario/">The Intercept Brasil</a>.
+    His publication portfolio includes <a href="/publications/">books, academic articles, and journalistic pieces</a>,
+    and he has been invited to speak at several <a href="/events/">global events</a>.
+  </p>
+  <p>
+    Belisario taught data journalism in Brazilian postgraduate courses and holds an MSc in Social Data Science from the
+    Oxford Internet Institute (University of Oxford). While there, he collaborated with Instituto Fogo Cruzado to develop
+    a language model that uses social media data to identify gun violence reports in real time. He also earned an MA in
+    Communication and Culture from the Federal University of Rio de Janeiro (UFRJ). In partnership with Medialab/UFRJ
+    and Agência Autônoma, Belisario co-developed <a href="https://documental.xyz">Documental.xyz</a>, an initiative
+    that combines diverse investigative methods, such as Natural Language Processing, OSINT, and forensic architecture,
+    with storytelling to equip grassroots communities with compelling evidence related to human rights violations.
+  </p>
+
+awards:
+  - title: "Bellingcat's technical writing fellowship"
+    year: 2024
+    highlight: true
+  - title: "Finalist — \"Social Action\" at the Study UK Alumni Award"
+    year: 2024
+    highlight: true
+  - title: "Shortlisted at the Gabo Awards"
+    year: 2021
+  - title: "Winner of the Jornalismo-Mosca Award"
+    year: 2021
+  - title: "Ling Institute's Visionary Journalist Scholarship"
+    year: 2020
+
+education:
+  - degree: "Master of Science in Social Data Science"
+    note: "(with distinction)"
+    institution: "Oxford Internet Institute, University of Oxford"
+    year: "2022–2023"
+  - degree: "Post-baccalaureate certification"
+    note: "(with honors)"
+    institution: "Lede Program. Columbia University of the City of New York"
+    year: "2021"
+  - degree: "Masters of Arts in Communication and Culture"
+    institution: "Federal University of Rio de Janeiro"
+    year: "2016"
+  - degree: "Bachelor in Social Communication (Journalism)"
+    institution: "Federal University of Rio de Janeiro"
+    year: "2010"
+  - degree: "Philosophy"
+    note: "(unfinished)"
+    institution: "State University of Rio de Janeiro"
+    year: "2005–2008"
+
+courses:
+  - year: 2021
+    location: "online"
+    title: "Mathematics for machine learning specialization"
+    institution: "Imperial College London"
+  - year: 2020
+    location: "São Paulo"
+    title: "Survey design and analysis"
+    institution: "IPSA/USP Summer School"
+  - year: 2017
+    location: "Rio de Janeiro"
+    title: "Reporting Land Rights"
+    institution: "Thomson Reuters Foundation"
+
+experience:
+  - org: "Joint Data Center on Forced Displacement"
+    role: "Data journalist"
+    period: "2023–Present"
+    style: teal
+  - org: "Medialab/UFRJ"
+    role: "Associate Researcher"
+    period: "2017–2022"
+  - org: "School of Data Brazil"
+    role: "Program Manager"
+    period: "2018–2022"
+  - org: "WITNESS"
+    role: "Consultant"
+    period: "2018–2019"
+  - org: "UNESCO"
+    role: "Consultant"
+    period: "2016–2018"
+  - org: "Cinema Nosso"
+    role: "Program manager"
+    period: "2015–2017"
+  - org: "Agência Pública"
+    role: "Editor and reporter"
+    period: "2014–2018"
+  - org: "Instituto Mais Democracia"
+    role: "Content Manager"
+    period: "2012–2013"
+  - org: "Government of the State of Rio de Janeiro"
+    role: "Digital Culture Manager"
+    period: "2010–2012"
+  - org: "Federal University of Rio de Janeiro (Pontão da ECO)"
+    role: "Program manager"
+    period: "2009–2012"
+  - org: "Revista de História da Biblioteca Nacional"
+    role: "Reporter and editor"
+    period: "2008–2010"
+
+teaching:
+  intro: |
+    As head of the School of Data Brazil, Adriano created, coordinated, and taught several online and in-person trainings
+    between 2019 and 2022, such as
+    <a href="https://escoladedados.org/dados-360-comunicacao-baseada-em-dados/">Dados 360</a>,
+    <a href="https://escoladedados.org/courses/jornalismo-de-dados-ambientais/">Jornalismo de dados ambientais</a>, and
+    <a href="https://escoladedados.org/courses/investigacoes-digitais/">Investigações digitais</a>.
+  positions:
+    - org: "Brasiliense Institute of Public Law"
+      role: "Lecturer in data journalism MBA program"
+      period: "2021–2022"
+    - org: "Higher Education Institute of Brasilia"
+      role: "Lecturer of data journalism"
+      period: "2019"
+    - org: "University of Texas / Knight Center"
+      role: "Teaching assistant"
+      period: "2019"

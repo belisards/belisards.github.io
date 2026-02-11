@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { loadYaml } from '../lib/data';
+
+const events = loadYaml('events.yml');
 ---
 
 <BaseLayout title="Events" description="Conferences, lectures, workshops, and courses.">
@@ -11,168 +14,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="secondary">Conferences, lectures, workshops, and courses across four continents.</p>
       </div>
 
-      <!-- ORGANIZATION -->
-      <div class="section-label section-label--warm reveal">Organization</div>
+      {events.sections.map((section: any, sIdx: number) => (
+        <>
+          <div class={`section-label${section.style ? ` section-label--${section.style}` : ''} reveal`}>{section.title}</div>
 
-      <p class="reveal">
-        Organized several editions of the <a href="https://escoladedados.org/coda/">Brazilian Conference on Data Journalism and Digital Methods (Coda.Br)</a>
-        from 2018 to 2022, including the first regional meeting in the Amazon region. Collaborated with
-        <a href="https://witness.org/">Witness</a> to organize the first national meeting on deepfakes and developed a series of events about free culture and piracy (Copyfight).
-      </p>
+          {sIdx === 0 && <p class="reveal" set:html={events.intro} />}
 
-      <div class="timeline" id="timeline-org">
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2022</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Belém, Brazil</div>
-            <div><a href="https://escoladedados.org/coda/coda-amazonia/"><strong>Coda Amazônia</strong></a>. 1st ed.</div>
+          <div class="timeline">
+            {section.entries.map((entry: any) => (
+              <div class="timeline-entry reveal">
+                <div class="timeline-date"><span class={`data-badge${entry.badge_style ? ` data-badge--${entry.badge_style}` : ''}`}>{entry.year}</span></div>
+                <div class="timeline-content">
+                  {entry.location && <div class="timeline-location">// {entry.location}</div>}
+                  {entry.items.map((item: any, iIdx: number) => (
+                    <>
+                      {item.location && <div class={`timeline-location${iIdx > 0 ? '' : ''}`} style={iIdx > 0 ? 'margin-top:0.75rem' : undefined}>// {item.location}</div>}
+                      <div style={!item.location && iIdx > 0 ? 'margin-top:0.5rem' : undefined} set:html={item.text} />
+                    </>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2021</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Online</div>
-            <div><a href="https://escoladedados.org/coda/coda2021/"><strong>Coda.Br</strong></a>. 6th ed.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2020</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Online</div>
-            <div><a href="https://escoladedados.org/coda/coda2020/"><strong>Coda.Br</strong></a>. 5th ed.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2019</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// São Paulo, Brazil</div>
-            <div><a href="https://lab.witness.org/brasil-deepfakes-prepara-se-agora/"><strong>Deepfakes — prepare-se agora</strong></a>. 1st ed.</div>
-            <div style="margin-top:0.5rem"><a href="https://escoladedados.org/coda/coda2019/"><strong>Coda.Br</strong></a>. 4th ed.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2018</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// São Paulo, Brazil</div>
-            <div><a href="https://escoladedados.org/coda/coda2018/"><strong>Coda.Br</strong></a>. 3rd ed.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2010–14</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Rio de Janeiro, Brazil</div>
-            <div><strong>Copyfight</strong>. 3 editions (2010, 2011, 2014).</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TALKS -->
-      <div class="section-label reveal">Talks & Lectures</div>
-
-      <div class="timeline" id="timeline-talks">
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge data-badge--teal">2025</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Bergen, Norway</div>
-            <div><a href="https://belisario.website/crossfire_paper"><strong>Into the Crossfire: Evaluating the Use of a Language Model to Crowdsource Gun Violence Reports</strong></a>. ACM CSCW.</div>
-            <div class="timeline-location" style="margin-top:0.75rem">// Niterói, Brazil</div>
-            <div><strong>Cross-platform gendertrolling</strong>. Association of Internet Researchers Conference.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge data-badge--teal">2024</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Berlin, Germany</div>
-            <div><strong>Way beyond ChatGPT: leveraging open source language models</strong>. Global Innovation Gathering.</div>
-            <div style="margin-top:0.5rem"><a href="https://re-publica.com/de/session/laughs-courts-multifaceted-uses-ai-global-south"><strong>From Laughs to Courts: Multifaceted Uses of AI in the Global South</strong></a>. re:publica 2024.</div>
-            <div style="margin-top:0.5rem"><a href="https://belisards.github.io/slides-bert-fact-checking/"><strong>AI uses for fact-checking in Brazil</strong></a>. DW Akademy.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2021</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Online</div>
-            <div><a href="https://visualinvestigations.netlify.app/"><strong>Anatomy of a visual investigation</strong></a>. RightsCon.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2019</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Salvador, Brazil</div>
-            <div><a href="https://medialabufrj.net/blog/2019/06/dobras-35-medialab-ufrj-no-simposio-lavits-2019/"><strong>Expulsão/Exceção: arquitetura forense</strong></a>. LAVITS 2019.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2017</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Berlin, Germany</div>
-            <div><strong>Coolab — Community networks in Brazil</strong>. re:publica.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2014</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Berlin, Germany</div>
-            <div><strong>Micropolitics of the Post-Digital</strong>. Transmediale.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2013</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Geneva, Switzerland</div>
-            <div><strong>Data driven campaigning</strong>. Open Knowledge Conference.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- LABS -->
-      <div class="section-label section-label--violet reveal">Labs</div>
-
-      <div class="timeline">
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2017</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Madrid, Spain</div>
-            <div><strong>Agrega.la</strong>. Visualizar17 — Medialab Prado.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2016</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Cartagena, Colombia & Mexico City, Mexico</div>
-            <div><strong>Agrega.la / Caixa Mágica</strong>. LABIC / Openlabs.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- WORKSHOPS -->
-      <div class="section-label section-label--teal reveal">Workshops</div>
-
-      <div class="timeline">
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge data-badge--teal">2025</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// São Paulo, Brazil</div>
-            <div><a href="https://belisario.website/classificacao_ia/"><strong>Classificação de textos e imagens com IA de código-aberto</strong></a>. ABRAJI.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge data-badge--teal">2024</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// Brasília, Brazil</div>
-            <div><a href="https://bit.ly/ia-coda-24/"><strong>Texto, áudio e imagens: usando modelos de IA gratuitos</strong></a>. América Aberta/Coda.Br.</div>
-          </div>
-        </div>
-        <div class="timeline-entry reveal">
-          <div class="timeline-date"><span class="data-badge">2023</span></div>
-          <div class="timeline-content">
-            <div class="timeline-location">// São Paulo, Brazil</div>
-            <div><a href="https://escoladedados.org/coda/coda2023/entendendo-e-usando-transformers-a-tecnologia-por-tras-do-chatgpt/"><strong>Entendendo e usando Transformers</strong></a>. Coda.Br.</div>
-            <div class="timeline-location" style="margin-top:0.75rem">// Geneva, Switzerland</div>
-            <div><a href="https://github.com/belisards/intro_nlp_ddj"><strong>Beyond the hype: an introduction to NLP and language models</strong></a>. European Data and Computational Journalism Conference.</div>
-          </div>
-        </div>
-      </div>
+        </>
+      ))}
 
     </div>
   </div>

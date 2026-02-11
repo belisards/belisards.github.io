@@ -9,6 +9,9 @@ site-url: https://huggingface.co/belisards/gun_violence_ptbr
 image: "cover.png"
 # image-alt: 
 categories: [R,Shiny,dashboard]
+links:
+  dashboard: https://rstudio.unhcr.org/FDMAtlas/
+  code: https://github.com/belisards/FDPDataAtlas
 open-graph: false
 draft: false
 ---

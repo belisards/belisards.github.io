@@ -9,6 +9,10 @@ site-url: https://huggingface.co/belisards/gun_violence_ptbr
 image: "cover.png"
 # image-alt: 
 categories: [python]
+links:
+  model: https://huggingface.co/belisards/gun_violence_ptbr
+  paper: https://arxiv.org/abs/2401.12989
+  code: https://github.com/belisards/gunviolence_ptbr
 open-graph: false
 draft: false
 ---
