@@ -1,16 +1,17 @@
 /* ============================================
-   Animations — Typewriter, reveals, transitions
+   Animations — Signal theme
+   CSS-only keyframes; GSAP handles scroll/entrance
    ============================================ */
 
-/* --- Typewriter cursor --- */
-.typewriter-cursor {
+/* --- Signal cursor (data feed indicator) --- */
+.signal-cursor {
   display: inline-block;
   width: 2px;
   height: 1.1em;
-  background: var(--red-stamp);
+  background: var(--signal-primary);
   margin-left: 2px;
   vertical-align: text-bottom;
-  animation: blink 0.8s step-end infinite;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
@@ -18,77 +19,157 @@
   50% { opacity: 0; }
 }
 
-/* --- Scroll reveal --- */
+/* --- Reveal base state (GSAP animates these) --- */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(30px);
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* --- Waveform bars --- */
+.waveform {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  vertical-align: middle;
 }
 
-.reveal--delay-1 { transition-delay: 0.1s; }
-.reveal--delay-2 { transition-delay: 0.2s; }
-.reveal--delay-3 { transition-delay: 0.3s; }
-
-/* --- Page slide-in --- */
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.waveform span {
+  display: inline-block;
+  width: 2px;
+  background: var(--signal-primary);
+  border-radius: 1px;
+  animation: wave 1.2s ease-in-out infinite alternate;
 }
 
-.page-enter {
-  animation: slideInFromRight 0.4s ease-out;
+@keyframes wave {
+  0%   { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
 }
 
-/* --- Stamp appear --- */
-@keyframes stampIn {
-  0% {
-    transform: rotate(-2deg) scale(2);
-    opacity: 0;
-  }
-  60% {
-    transform: rotate(-2deg) scale(0.95);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(-2deg) scale(1);
-    opacity: 0.85;
-  }
-}
+.waveform span:nth-child(1) { height: 12px; animation-delay: 0s; }
+.waveform span:nth-child(2) { height: 20px; animation-delay: 0.15s; }
+.waveform span:nth-child(3) { height: 16px; animation-delay: 0.3s; }
+.waveform span:nth-child(4) { height: 24px; animation-delay: 0.45s; }
+.waveform span:nth-child(5) { height: 10px; animation-delay: 0.6s; }
 
-.stamp--animated {
-  animation: stampIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 1.5s;
+/* --- Signal lock (hero name entrance) --- */
+.signal-lock {
+  filter: blur(12px);
   opacity: 0;
 }
 
-/* --- Redaction reveal cascade --- */
-.redacted--cascade:nth-child(1)::after { transition-delay: 0.5s; }
-.redacted--cascade:nth-child(2)::after { transition-delay: 0.8s; }
-.redacted--cascade:nth-child(3)::after { transition-delay: 1.1s; }
-.redacted--cascade:nth-child(4)::after { transition-delay: 1.4s; }
-
-/* --- Card hover lift --- */
-.card-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.signal-lock.resolved {
+  filter: blur(0);
+  opacity: 1;
 }
 
-.card-lift:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+/* Scan line that sweeps across during signal lock */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--signal-primary),
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* --- Link underline grow --- */
+/* --- Data badge pulse --- */
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  50% { box-shadow: 0 0 0 3px var(--glow-blue); }
+}
+
+.data-badge--pulse {
+  animation: badgePulse 2s ease-in-out 1;
+}
+
+/* --- Node connector (for cards) --- */
+.node-connector {
+  position: relative;
+}
+
+.node-connector::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--signal-primary);
+  z-index: 1;
+}
+
+.node-connector::after {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: 27px;
+  width: 2px;
+  height: 12px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.node-connector--teal::before { background: var(--signal-teal); }
+.node-connector--warm::before { background: var(--signal-warm); }
+.node-connector--violet::before { background: var(--signal-violet); }
+
+/* --- Pulsing dot (for recent timeline events) --- */
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
+}
+
+.pulse-dot {
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+/* --- Broken waveform (404 page) --- */
+@keyframes flatline {
+  0% { transform: scaleY(1); }
+  60% { transform: scaleY(1); }
+  80% { transform: scaleY(0.1); }
+  100% { transform: scaleY(0.1); }
+}
+
+.waveform--broken span {
+  animation: flatline 2s ease-in-out forwards;
+}
+
+/* --- Card glow hover --- */
+.card-glow {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-glow:hover {
+  border-color: var(--signal-primary);
+  box-shadow: 0 0 0 1px var(--signal-primary), var(--shadow-md);
+}
+
+.card-glow--teal:hover {
+  border-color: var(--signal-teal);
+  box-shadow: 0 0 0 1px var(--signal-teal), var(--shadow-md);
+}
+
+.card-glow--warm:hover {
+  border-color: var(--signal-warm);
+  box-shadow: 0 0 0 1px var(--signal-warm), var(--shadow-md);
+}
+
+.card-glow--violet:hover {
+  border-color: var(--signal-violet);
+  box-shadow: 0 0 0 1px var(--signal-violet), var(--shadow-md);
+}
+
+/* --- Link underline grow (from center) --- */
 .link-grow {
   text-decoration: none;
   position: relative;
@@ -98,13 +179,34 @@
   content: '';
   position: absolute;
   bottom: -2px;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 1.5px;
-  background: var(--red-stamp);
-  transition: width 0.3s ease;
+  background: var(--signal-primary);
+  transition: width 0.25s ease, left 0.25s ease;
 }
 
 .link-grow:hover::after {
   width: 100%;
+  left: 0;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .waveform span,
+  .data-badge--pulse,
+  .pulse-dot,
+  .waveform--broken span {
+    animation: none;
+  }
+
+  .signal-lock {
+    filter: none;
+    opacity: 1;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

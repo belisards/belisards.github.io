@@ -25,14 +25,14 @@ const navItems = [
       <span></span>
     </button>
 
-    <ul class="nav-tabs" id="nav-tabs">
+    <ul class="nav-links" id="nav-links">
       {navItems.map(item => (
-        <li class={`nav-tab ${isActive(item.href) ? 'active' : ''}`}>
+        <li class={`nav-item ${isActive(item.href) ? 'active' : ''}`}>
           <a href={item.href}>{item.label}</a>
         </li>
       ))}
-      <li class="nav-tab nav-tab--external">
-        <a href="https://github.com/belisards" target="_blank" rel="noopener">GitHub ↗</a>
+      <li class="nav-item nav-item--external">
+        <a href="https://github.com/belisards" target="_blank" rel="noopener">GitHub &#x2197;</a>
       </li>
     </ul>
   </div>
@@ -40,9 +40,9 @@ const navItems = [
 
 <script>
   const toggle = document.getElementById('nav-toggle');
-  const tabs = document.getElementById('nav-tabs');
+  const links = document.getElementById('nav-links');
   toggle?.addEventListener('click', () => {
     toggle.classList.toggle('open');
-    tabs?.classList.toggle('open');
+    links?.classList.toggle('open');
   });
 </script>

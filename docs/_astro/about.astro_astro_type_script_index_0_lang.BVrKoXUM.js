@@ -1,0 +1,1 @@
+import{g as e}from"./index.CB87Sc6I.js";import{S as o}from"./ScrollTrigger.Cv03IO65.js";e.registerPlugin(o);document.querySelectorAll(".cv-list").forEach(r=>{e.from(r.querySelectorAll("li"),{x:-20,opacity:0,duration:.4,ease:"power2.out",stagger:.05,scrollTrigger:{trigger:r,start:"top 85%",once:!0}})});

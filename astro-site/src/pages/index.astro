@@ -5,23 +5,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture.">
   <div class="page-wrapper">
 
-    <!-- DOSSIER COVER -->
-    <div class="dossier-page hero-dossier">
+    <section class="signal-hero">
 
-      <!-- Classified stamp -->
-      <div class="classified-stamp stamp stamp--large stamp--animated">Classified</div>
-
-      <!-- Name with typewriter -->
+      <!-- Hero name with signal-lock animation -->
       <div class="hero-name">
-        <h1 class="hero-title" id="typewriter-target"></h1>
-        <span class="typewriter-cursor" id="cursor"></span>
+        <h1 class="hero-title signal-lock" id="hero-name">Adriano<br>Belisario</h1>
+        <div class="scan-line" id="scan-line"></div>
       </div>
 
-      <!-- Redacted bio lines -->
+      <!-- Subtitle with waveform -->
+      <div class="hero-subtitle" id="hero-subtitle">
+        <div class="waveform" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <span>Data journalist & researcher</span>
+      </div>
+
+      <!-- Bio -->
       <div class="hero-bio reveal">
         <p>
-          <span class="redacted redacted--cascade" id="r1">Data journalist & researcher</span> combining expertise in
-          <span class="redacted redacted--cascade" id="r2">communication, open-source technologies,</span> and data
+          Combining expertise in communication, open-source technologies, and data
           to address important social concerns.
         </p>
         <p>
@@ -31,136 +34,220 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
         <p>
           MSc in Social Data Science from the
-          <span class="highlight">Oxford Internet Institute</span> (University of Oxford).
-          Collaborated with <span class="highlight">Bellingcat</span>, <span class="highlight">Forensic Architecture</span>,
-          <span class="highlight">UNHCR</span>, and <span class="highlight">Agência Pública</span>.
+          <span class="data-badge data-badge--violet">Oxford Internet Institute</span>.
+          Collaborated with
+          <span class="data-badge data-badge--warm">Bellingcat</span>
+          <span class="data-badge">Forensic Architecture</span>
+          <span class="data-badge data-badge--teal">UNHCR</span>
+          and
+          <span class="data-badge data-badge--warm">Agência Pública</span>.
         </p>
-      </div>
-
-      <!-- Verified stamp -->
-      <div class="hero-stamp reveal">
-        <span class="stamp stamp--large">Verified — 2025</span>
       </div>
 
       <hr />
 
       <!-- Navigation cards -->
-      <div class="home-cards reveal">
-        <a href="/code/" class="home-card card-lift">
-          <div class="home-card__label">Section 01</div>
+      <div class="home-cards">
+        <a href="/code/" class="home-card reveal">
+          <div class="home-card__indicator home-card__indicator--teal"></div>
           <div class="home-card__title">Code</div>
           <div class="home-card__desc">Data projects and code repositories. NLP, geodata, network analysis.</div>
-          <div class="home-card__arrow">Open file →</div>
+          <div class="home-card__arrow">Explore <span>&rarr;</span></div>
         </a>
 
-        <a href="/publications/" class="home-card card-lift">
-          <div class="home-card__label">Section 02</div>
+        <a href="/publications/" class="home-card reveal">
+          <div class="home-card__indicator home-card__indicator--violet"></div>
           <div class="home-card__title">Publications</div>
           <div class="home-card__desc">Academic papers, investigations, books, and tutorials in English & Portuguese.</div>
-          <div class="home-card__arrow">Open file →</div>
+          <div class="home-card__arrow">Explore <span>&rarr;</span></div>
         </a>
 
-        <a href="/events/" class="home-card card-lift">
-          <div class="home-card__label">Section 03</div>
+        <a href="/events/" class="home-card reveal">
+          <div class="home-card__indicator home-card__indicator--warm"></div>
           <div class="home-card__title">Events</div>
           <div class="home-card__desc">Conferences, lectures, workshops, and courses across four continents.</div>
-          <div class="home-card__arrow">Open file →</div>
+          <div class="home-card__arrow">Explore <span>&rarr;</span></div>
         </a>
       </div>
 
-    </div>
+    </section>
 
   </div>
 </BaseLayout>
 
 <style>
-  .hero-dossier {
+  .signal-hero {
     max-width: 760px;
-    margin: 3rem auto;
+    margin: 4rem auto 2rem;
     position: relative;
   }
 
-  .classified-stamp {
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-  }
-
   .hero-name {
-    margin-bottom: 2rem;
-    min-height: 4rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
   }
 
   .hero-title {
-    font-size: 3.5rem;
-    letter-spacing: -0.03em;
+    font-size: 4rem;
+    letter-spacing: -0.04em;
     line-height: 1.05;
-    display: inline;
+    font-weight: 700;
+  }
+
+  .hero-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-bottom: 2.5rem;
+    opacity: 0;
   }
 
   .hero-bio {
     font-size: 0.95rem;
-    line-height: 1.8;
-    max-width: 600px;
+    line-height: 1.85;
+    max-width: 620px;
   }
 
   .hero-bio p {
     margin-bottom: 1rem;
   }
 
-  .hero-stamp {
-    margin: 2rem 0;
+  .hero-bio .data-badge {
+    margin: 0.15rem 0.1rem;
+  }
+
+  /* Home cards */
+  .home-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .home-card {
+    background: var(--canvas-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .home-card:hover {
+    border-color: var(--signal-primary);
+    box-shadow: 0 0 0 1px var(--signal-primary), var(--shadow-md);
+  }
+
+  .home-card__indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--signal-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .home-card__indicator--teal { background: var(--signal-teal); }
+  .home-card__indicator--violet { background: var(--signal-violet); }
+  .home-card__indicator--warm { background: var(--signal-warm); }
+
+  .home-card__title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .home-card__desc {
+    font-size: 0.82rem;
+    color: var(--ink-secondary);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .home-card__arrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--signal-primary);
+    margin-top: 0.5rem;
+  }
+
+  .home-card__arrow span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .home-card:hover .home-card__arrow span {
+    transform: translateX(4px);
+  }
+
+  /* Card-specific hover colors */
+  .home-card:has(.home-card__indicator--teal):hover {
+    border-color: var(--signal-teal);
+    box-shadow: 0 0 0 1px var(--signal-teal), var(--shadow-md);
+  }
+
+  .home-card:has(.home-card__indicator--violet):hover {
+    border-color: var(--signal-violet);
+    box-shadow: 0 0 0 1px var(--signal-violet), var(--shadow-md);
+  }
+
+  .home-card:has(.home-card__indicator--warm):hover {
+    border-color: var(--signal-warm);
+    box-shadow: 0 0 0 1px var(--signal-warm), var(--shadow-md);
   }
 
   @media screen and (max-width: 768px) {
-    .hero-dossier {
-      margin: 1.5rem auto;
+    .signal-hero {
+      margin: 2rem auto 1rem;
     }
 
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
     }
 
-    .classified-stamp {
-      position: static;
-      margin-bottom: 1.5rem;
-      display: inline-block;
+    .home-cards {
+      grid-template-columns: 1fr;
     }
   }
 </style>
 
 <script>
-  // Typewriter effect
-  const target = document.getElementById('typewriter-target');
-  const cursor = document.getElementById('cursor');
-  const text = 'Adriano\nBelisario';
-  let i = 0;
+  import gsap from "gsap";
 
-  function type() {
-    if (!target) return;
-    if (i < text.length) {
-      if (text[i] === '\n') {
-        target.innerHTML += '<br>';
-      } else {
-        target.innerHTML += text[i];
-      }
-      i++;
-      setTimeout(type, 80 + Math.random() * 60);
-    } else {
-      // After typing, reveal redaction bars
-      setTimeout(() => {
-        document.querySelectorAll('.redacted').forEach(el => {
-          el.classList.add('revealed');
-        });
-      }, 400);
+  const tl = gsap.timeline({ delay: 0.3 });
 
-      // Remove cursor after a delay
-      setTimeout(() => {
-        cursor?.remove();
-      }, 2000);
-    }
-  }
+  // 1. Name resolves from blur
+  tl.fromTo("#hero-name",
+    { filter: "blur(12px)", opacity: 0.15 },
+    { filter: "blur(0px)", opacity: 1, duration: 1.4, ease: "power2.out" }
+  );
 
-  // Start typewriter after a brief pause
-  setTimeout(type, 500);
+  // 2. Scan line sweeps across
+  tl.fromTo("#scan-line",
+    { left: "0%", opacity: 0.8 },
+    { left: "100%", opacity: 0, duration: 1.0, ease: "power1.inOut" },
+    "<0.2"
+  );
+
+  // 3. Subtitle fades in
+  tl.to("#hero-subtitle",
+    { opacity: 1, duration: 0.6, ease: "power2.out" },
+    "-=0.4"
+  );
+
+  // 4. Home cards stagger in
+  tl.fromTo(".home-card",
+    { y: 24, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.1 },
+    "-=0.2"
+  );
 </script>

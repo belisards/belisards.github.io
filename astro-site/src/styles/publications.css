@@ -1,24 +1,25 @@
 /* ============================================
-   Publications — Evidence wall
+   Publications — Archive
    ============================================ */
 
 .pub-entry {
   padding: 0.75rem 0 0.75rem 1rem;
   border-left: 3px solid transparent;
   margin-bottom: 0.25rem;
+  border-radius: 0 4px 4px 0;
   transition: background 0.2s ease;
 }
 
 .pub-entry:hover {
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(27, 27, 30, 0.02);
 }
 
-/* Type borders */
-.pub-entry--academic { border-left-color: var(--blue-evidence); }
-.pub-entry--journalism { border-left-color: var(--red-stamp); }
-.pub-entry--tutorial { border-left-color: var(--green-tutorial); }
-.pub-entry--book { border-left-color: var(--charcoal); }
-.pub-entry--essay { border-left-color: var(--ink-faded); }
+/* Type borders — new signal palette */
+.pub-entry--academic { border-left-color: var(--signal-violet); }
+.pub-entry--journalism { border-left-color: var(--signal-primary); }
+.pub-entry--tutorial { border-left-color: var(--signal-teal); }
+.pub-entry--book { border-left-color: var(--ink-secondary); }
+.pub-entry--essay { border-left-color: var(--ink-tertiary); }
 
 .pub-entry__title {
   font-weight: 700;
@@ -30,42 +31,51 @@
 
 .pub-entry__meta {
   font-size: 0.8rem;
-  color: var(--ink-faded);
+  color: var(--ink-tertiary);
   margin-top: 0.25rem;
 }
 
-.pub-entry__featured {
-  display: inline-block;
-  margin-right: 0.5rem;
+.pub-entry__meta a {
+  color: var(--ink-secondary);
+  text-decoration-color: var(--border);
 }
 
-/* --- Book gallery (pinboard style) --- */
+.pub-entry__meta a:hover {
+  color: var(--signal-primary);
+  text-decoration-color: var(--signal-primary);
+}
+
+/* Featured indicator (small dot) */
+.pub-featured {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal-warm);
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+/* --- Book gallery (clean grid) --- */
 .book-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px dashed var(--border);
+  background: var(--canvas-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
 .book-item {
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 
-.book-item:nth-child(odd) {
-  transform: rotate(-1.5deg);
-}
-
-.book-item:nth-child(even) {
-  transform: rotate(1deg);
-}
-
 .book-item:hover {
-  transform: rotate(0deg) scale(1.05);
+  transform: translateY(-3px);
   z-index: 2;
 }
 
@@ -73,14 +83,20 @@
   width: 100%;
   max-height: 220px;
   object-fit: contain;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
+  border-radius: 4px;
   background: white;
+  transition: box-shadow 0.2s ease;
+}
+
+.book-item:hover img {
+  box-shadow: var(--shadow-md);
 }
 
 .book-item__caption {
   font-size: 0.7rem;
-  color: var(--ink-faded);
+  color: var(--ink-tertiary);
   margin-top: 0.5rem;
   line-height: 1.4;
 }
@@ -93,7 +109,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.88);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -109,27 +125,23 @@
   max-height: 90vh;
   object-fit: contain;
   box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  border-radius: 4px;
 }
 
-/* --- Publication category stamps --- */
+/* --- Publication category headers --- */
 .pub-category {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--ink-faded);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-tertiary);
   padding: 0.5rem 0;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  border-bottom: 1px dashed var(--border);
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   gap: 0.75rem;
-}
-
-.pub-category .stamp {
-  font-size: 0.6rem;
 }
 
 @media screen and (max-width: 768px) {

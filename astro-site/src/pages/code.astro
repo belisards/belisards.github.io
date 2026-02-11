@@ -64,25 +64,29 @@ const projects = [
 <BaseLayout title="Code" description="Data projects and code repositories.">
   <div class="page-wrapper">
 
-    <div class="dossier-header-wide">
-      <span class="uppercase faded">Lab Evidence</span>
-      <h1>Code Projects</h1>
-      <p class="faded small">Data projects and code repositories — NLP, geodata, network analysis, machine learning.</p>
+    <div class="page-header-wide">
+      <h1>Projects</h1>
+      <p class="secondary">Data projects and code repositories — NLP, geodata, network analysis, machine learning.</p>
     </div>
 
     <div class="project-grid">
-      {projects.map((project, i) => (
-        <div class="project-card card-lift reveal">
+      {projects.map((project) => (
+        <div class="project-card reveal">
           <div class="project-card__image-wrap">
             <img src={project.image} alt={project.title} class="project-card__image" loading="lazy" />
           </div>
           <div class="project-card__body">
-            <div class="project-card__number">Case file #{String(i + 1).padStart(3, '0')} — {project.date}</div>
+            <div class="project-card__meta">
+              <span>{project.date}</span>
+              {project.categories.map(cat => (
+                <span class="category-pill">{cat}</span>
+              ))}
+            </div>
             <h3 class="project-card__title">{project.title}</h3>
             <p class="project-card__desc">{project.desc}</p>
             <div class="project-card__links">
               {Object.entries(project.links).map(([label, url]) => (
-                <a href={url} target="_blank" rel="noopener" class="project-link">{label} ↗</a>
+                <a href={url} target="_blank" rel="noopener" class="project-link">{label} &#x2197;</a>
               ))}
             </div>
           </div>
@@ -94,40 +98,31 @@ const projects = [
 </BaseLayout>
 
 <style>
-  .dossier-header-wide {
+  .page-header-wide {
     max-width: var(--content-width);
     margin: 2rem auto;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--border);
   }
 
-  .dossier-header-wide h1 {
-    margin-top: 0.5rem;
-  }
-
-  .project-card__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-  }
-
-  .project-link {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--red-stamp);
-    text-decoration: none;
-    border: 1px solid var(--red-stamp);
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-
-  .project-link:hover {
-    background: var(--red-stamp);
-    color: var(--paper-white);
-    text-decoration: none;
+  .page-header-wide h1 {
+    margin-bottom: 0.25rem;
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.batch(".project-card", {
+    onEnter: (elements) => {
+      gsap.fromTo(elements,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.1 }
+      );
+    },
+    start: "top 90%",
+    once: true,
+  });
+</script>

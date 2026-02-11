@@ -1,0 +1,1 @@
+import{g as r}from"./index.CB87Sc6I.js";import{S as o}from"./ScrollTrigger.Cv03IO65.js";r.registerPlugin(o);o.batch(".project-card",{onEnter:t=>{r.fromTo(t,{y:40,opacity:0},{y:0,opacity:1,duration:.5,ease:"power2.out",stagger:.1})},start:"top 90%",once:!0});

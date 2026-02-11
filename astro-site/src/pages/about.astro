@@ -6,9 +6,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="page-wrapper">
     <div class="content-wrapper">
 
-      <div class="dossier-header">
-        <span class="uppercase faded">Personnel File</span>
-        <h1>Subject: Adriano Belisario</h1>
+      <div class="page-header">
+        <h1>Adriano Belisario</h1>
+        <p class="secondary">Data journalist, researcher, educator</p>
       </div>
 
       <div class="reveal">
@@ -33,18 +33,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
 
-      <div class="section-label reveal">File Section: Awards & Recognitions</div>
+      <div class="section-label section-label--warm reveal">Awards & Recognitions</div>
       <div class="reveal">
         <ul class="cv-list">
-          <li><span class="highlight">Bellingcat's technical writing fellowship</span> <span class="stamp">2024</span></li>
-          <li>Finalist — "Social Action" at the Study UK Alumni Award <span class="stamp">2024</span></li>
-          <li>Shortlisted at the Gabo Awards <span class="stamp">2021</span></li>
-          <li>Winner of the Jornalismo-Mosca Award <span class="stamp">2021</span></li>
-          <li>Ling Institute's Visionary Journalist Scholarship <span class="stamp">2020</span></li>
+          <li><span class="signal-highlight">Bellingcat's technical writing fellowship</span> <span class="data-badge data-badge--warm">2024</span></li>
+          <li>Finalist — "Social Action" at the Study UK Alumni Award <span class="data-badge data-badge--warm">2024</span></li>
+          <li>Shortlisted at the Gabo Awards <span class="data-badge">2021</span></li>
+          <li>Winner of the Jornalismo-Mosca Award <span class="data-badge">2021</span></li>
+          <li>Ling Institute's Visionary Journalist Scholarship <span class="data-badge">2020</span></li>
         </ul>
       </div>
 
-      <div class="section-label reveal">File Section: Education</div>
+      <div class="section-label section-label--violet reveal">Education</div>
       <div class="reveal">
         <ul class="cv-list">
           <li>
@@ -70,7 +70,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
 
-      <div class="section-label reveal">File Section: Courses</div>
+      <div class="section-label reveal">Courses</div>
       <div class="reveal">
         <ul class="cv-list">
           <li>2021, online. Mathematics for machine learning specialization. <span class="faded">Imperial College London.</span></li>
@@ -79,24 +79,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
 
-      <div class="section-label reveal">File Section: Professional Experience</div>
+      <div class="section-label reveal">Professional Experience</div>
       <div class="reveal">
         <ul class="cv-list">
-          <li><strong>Joint Data Center on Forced Displacement</strong> — Data journalist <span class="stamp">2023–Present</span></li>
-          <li><strong>Medialab/UFRJ</strong> — Associate Researcher <span class="stamp">2017–2022</span></li>
-          <li><strong>School of Data Brazil</strong> — Program Manager <span class="stamp">2018–2022</span></li>
-          <li><strong>WITNESS</strong> — Consultant <span class="stamp">2018–2019</span></li>
-          <li><strong>UNESCO</strong> — Consultant <span class="stamp">2016–2018</span></li>
-          <li><strong>Cinema Nosso</strong> — Program manager <span class="stamp">2015–2017</span></li>
-          <li><strong>Agência Pública</strong> — Editor and reporter <span class="stamp">2014–2018</span></li>
-          <li><strong>Instituto Mais Democracia</strong> — Content Manager <span class="stamp">2012–2013</span></li>
-          <li><strong>Government of the State of Rio de Janeiro</strong> — Digital Culture Manager <span class="stamp">2010–2012</span></li>
-          <li><strong>Federal University of Rio de Janeiro (Pontão da ECO)</strong> — Program manager <span class="stamp">2009–2012</span></li>
-          <li><strong>Revista de História da Biblioteca Nacional</strong> — Reporter and editor <span class="stamp">2008–2010</span></li>
+          <li><strong>Joint Data Center on Forced Displacement</strong> — Data journalist <span class="data-badge data-badge--teal">2023–Present</span></li>
+          <li><strong>Medialab/UFRJ</strong> — Associate Researcher <span class="data-badge">2017–2022</span></li>
+          <li><strong>School of Data Brazil</strong> — Program Manager <span class="data-badge">2018–2022</span></li>
+          <li><strong>WITNESS</strong> — Consultant <span class="data-badge">2018–2019</span></li>
+          <li><strong>UNESCO</strong> — Consultant <span class="data-badge">2016–2018</span></li>
+          <li><strong>Cinema Nosso</strong> — Program manager <span class="data-badge">2015–2017</span></li>
+          <li><strong>Agência Pública</strong> — Editor and reporter <span class="data-badge">2014–2018</span></li>
+          <li><strong>Instituto Mais Democracia</strong> — Content Manager <span class="data-badge">2012–2013</span></li>
+          <li><strong>Government of the State of Rio de Janeiro</strong> — Digital Culture Manager <span class="data-badge">2010–2012</span></li>
+          <li><strong>Federal University of Rio de Janeiro (Pontão da ECO)</strong> — Program manager <span class="data-badge">2009–2012</span></li>
+          <li><strong>Revista de História da Biblioteca Nacional</strong> — Reporter and editor <span class="data-badge">2008–2010</span></li>
         </ul>
       </div>
 
-      <div class="section-label reveal">File Section: Teaching Experience</div>
+      <div class="section-label section-label--teal reveal">Teaching Experience</div>
       <div class="reveal">
         <p>
           As head of the School of Data Brazil, Adriano created, coordinated, and taught several online and in-person trainings
@@ -106,9 +106,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <a href="https://escoladedados.org/courses/investigacoes-digitais/">Investigações digitais</a>.
         </p>
         <ul class="cv-list">
-          <li><strong>Brasiliense Institute of Public Law</strong> — Lecturer in data journalism MBA program <span class="stamp">2021–2022</span></li>
-          <li><strong>Higher Education Institute of Brasilia</strong> — Lecturer of data journalism <span class="stamp">2019</span></li>
-          <li><strong>University of Texas / Knight Center</strong> — Teaching assistant <span class="stamp">2019</span></li>
+          <li><strong>Brasiliense Institute of Public Law</strong> — Lecturer in data journalism MBA program <span class="data-badge">2021–2022</span></li>
+          <li><strong>Higher Education Institute of Brasilia</strong> — Lecturer of data journalism <span class="data-badge">2019</span></li>
+          <li><strong>University of Texas / Knight Center</strong> — Teaching assistant <span class="data-badge">2019</span></li>
         </ul>
       </div>
 
@@ -117,15 +117,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .dossier-header {
+  .page-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--border);
   }
 
-  .dossier-header h1 {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
+  .page-header h1 {
+    margin-bottom: 0.25rem;
   }
 
   .cv-list {
@@ -135,14 +134,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .cv-list li {
     padding: 0.6rem 0;
-    border-bottom: 1px dotted var(--border);
+    border-bottom: 1px solid var(--border);
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.5rem;
   }
 
-  .cv-list .stamp {
+  .cv-list .data-badge {
     margin-left: auto;
     flex-shrink: 0;
   }
@@ -153,8 +152,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       gap: 0.25rem;
     }
 
-    .cv-list .stamp {
+    .cv-list .data-badge {
       margin-left: 0;
     }
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('.cv-list').forEach(list => {
+    gsap.from(list.querySelectorAll('li'), {
+      x: -20,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.out",
+      stagger: 0.05,
+      scrollTrigger: {
+        trigger: list,
+        start: "top 85%",
+        once: true,
+      },
+    });
+  });
+</script>

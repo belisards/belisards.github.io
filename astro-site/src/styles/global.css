@@ -1,36 +1,50 @@
 /* ============================================
-   THE DOSSIER — Global Styles
-   A classified file on a data journalist
+   THE SIGNAL — Global Styles
+   Finding patterns in data, clarity in noise
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* --- CSS Custom Properties --- */
 :root {
-  --paper: #f5f0e8;
-  --paper-white: #faf8f4;
-  --ink: #1a1a1a;
-  --ink-light: #4a4a4a;
-  --ink-faded: #7a7a7a;
-  --red-stamp: #c23616;
-  --red-dark: #961f0e;
-  --charcoal: #2d3436;
-  --highlight: #ffeaa7;
-  --highlight-strong: #fdcb6e;
-  --blue-evidence: #2d5a7b;
-  --green-tutorial: #3a8a5c;
-  --grid-line: rgba(0, 0, 0, 0.04);
-  --border: rgba(0, 0, 0, 0.12);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  /* Base */
+  --canvas: #f8f7f4;
+  --canvas-raised: #ffffff;
+  --ink: #1b1b1e;
+  --ink-secondary: #52525b;
+  --ink-tertiary: #a1a1aa;
 
-  --font-mono: 'Space Mono', 'Courier New', monospace;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  /* Signal Accents (data-viz inspired) */
+  --signal-primary: #2563eb;
+  --signal-warm: #e85d04;
+  --signal-teal: #0d9488;
+  --signal-violet: #7c3aed;
 
+  /* Structural */
+  --grid-line: rgba(27, 27, 30, 0.05);
+  --grid-line-strong: rgba(27, 27, 30, 0.10);
+  --border: rgba(27, 27, 30, 0.10);
+  --border-hover: rgba(27, 27, 30, 0.20);
+
+  /* Glows */
+  --glow-blue: rgba(37, 99, 235, 0.08);
+  --glow-warm: rgba(232, 93, 4, 0.08);
+  --glow-teal: rgba(13, 148, 136, 0.08);
+  --glow-violet: rgba(124, 58, 237, 0.08);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 4px rgba(0,0,0,0.03);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06);
+
+  /* Typography */
+  --font-display: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Layout */
   --max-width: 1100px;
   --content-width: 760px;
-  --nav-height: 60px;
+  --nav-height: 56px;
 }
 
 /* --- Reset --- */
@@ -41,36 +55,38 @@
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 16px;
 }
 
 body {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: 0.9375rem;
   line-height: 1.75;
   color: var(--ink);
-  background-color: var(--paper);
+  background-color: var(--canvas);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-  /* Dot grid background */
+  /* Coordinate grid background */
   background-image:
-    radial-gradient(circle, var(--grid-line) 1px, transparent 1px);
-  background-size: 24px 24px;
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 /* --- Typography --- */
 h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--ink);
 }
 
 h1 { font-size: 3rem; margin-bottom: 1rem; }
-h2 { font-size: 2rem; margin-top: 3rem; margin-bottom: 1rem; }
-h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; }
-h4 { font-size: 1.125rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.75rem; margin-top: 3rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
+h3 { font-size: 1.25rem; font-weight: 500; margin-top: 2rem; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+h4 { font-size: 1.0625rem; font-weight: 500; margin-top: 1.5rem; margin-bottom: 0.5rem; letter-spacing: 0; }
 
 p {
   margin-bottom: 1.25rem;
@@ -84,15 +100,14 @@ strong {
 a {
   color: var(--ink);
   text-decoration: underline;
-  text-decoration-color: var(--red-stamp);
+  text-decoration-color: var(--signal-primary);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 a:hover {
-  color: var(--red-stamp);
-  text-decoration-color: var(--red-stamp);
+  color: var(--signal-primary);
 }
 
 /* --- Page wrapper --- */
@@ -108,164 +123,119 @@ a:hover {
   padding: 2rem 0 4rem;
 }
 
-/* --- Redaction bars --- */
-.redacted {
-  position: relative;
-  display: inline;
-}
-
-.redacted::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -2px;
-  right: -2px;
-  bottom: 0;
-  background: var(--ink);
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform-origin: right;
-}
-
-.redacted.revealed::after {
-  transform: scaleX(0);
-}
-
-/* --- Stamp badge --- */
-.stamp {
-  display: inline-block;
+/* --- Data badge (replaces stamps) --- */
+.data-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--red-stamp);
-  border: 2px solid var(--red-stamp);
-  padding: 0.15rem 0.5rem;
-  border-radius: 3px;
-  transform: rotate(-2deg);
-  opacity: 0.85;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink-secondary);
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.6rem;
+  border-radius: 100px;
   white-space: nowrap;
 }
 
-.stamp--large {
-  font-size: 0.9rem;
-  padding: 0.3rem 0.75rem;
-  border-width: 3px;
+.data-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal-primary);
+  flex-shrink: 0;
 }
 
-.stamp--blue {
-  color: var(--blue-evidence);
-  border-color: var(--blue-evidence);
+.data-badge--warm::before { background: var(--signal-warm); }
+.data-badge--teal::before { background: var(--signal-teal); }
+.data-badge--violet::before { background: var(--signal-violet); }
+.data-badge--blue::before { background: var(--signal-primary); }
+
+/* --- Signal highlight --- */
+.signal-highlight {
+  background: var(--glow-blue);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
 }
 
-.stamp--green {
-  color: var(--green-tutorial);
-  border-color: var(--green-tutorial);
-}
-
-/* --- Yellow highlight --- */
-.highlight {
-  background: linear-gradient(
-    to bottom,
-    transparent 55%,
-    var(--highlight-strong) 55%,
-    var(--highlight-strong) 92%,
-    transparent 92%
-  );
-  padding: 0 3px;
-}
-
-.highlight--strong {
-  background: linear-gradient(
-    to bottom,
-    transparent 30%,
-    var(--highlight-strong) 30%,
-    var(--highlight-strong) 90%,
-    transparent 90%
-  );
-}
-
-/* --- Section divider --- */
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--ink-faded);
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px dashed var(--border);
-}
-
-/* --- Dossier page frame --- */
-.dossier-page {
-  background: var(--paper-white);
+/* --- Data panel (replaces dossier-page) --- */
+.data-panel {
+  background: var(--canvas-raised);
   border: 1px solid var(--border);
-  border-radius: 2px;
-  padding: 3rem;
+  border-radius: 6px;
+  padding: 2.5rem;
   margin: 2rem 0;
   box-shadow: var(--shadow-md);
   position: relative;
 }
 
-.dossier-page::before {
+.data-panel::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--red-stamp);
+  bottom: 0;
+  width: 3px;
+  border-radius: 6px 0 0 6px;
+  background: linear-gradient(180deg, var(--signal-primary), var(--signal-teal));
 }
 
-/* --- Paper clip decoration --- */
-.paper-clip {
-  position: relative;
+.data-panel--warm::before {
+  background: linear-gradient(180deg, var(--signal-warm), var(--signal-primary));
 }
 
-.paper-clip::before {
+.data-panel--violet::before {
+  background: linear-gradient(180deg, var(--signal-violet), var(--signal-primary));
+}
+
+/* --- Section divider --- */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-tertiary);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-label::before {
   content: '';
-  position: absolute;
-  top: -8px;
-  right: 20px;
-  width: 20px;
-  height: 50px;
-  border: 2px solid #999;
-  border-radius: 8px 8px 0 0;
-  border-bottom: none;
-  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--signal-primary);
+  flex-shrink: 0;
 }
 
-.paper-clip::after {
-  content: '';
-  position: absolute;
-  top: 6px;
-  right: 24px;
-  width: 12px;
-  height: 30px;
-  border: 2px solid #999;
-  border-radius: 0 0 6px 6px;
-  border-top: none;
-  z-index: 2;
-}
+.section-label--warm::before { background: var(--signal-warm); }
+.section-label--teal::before { background: var(--signal-teal); }
+.section-label--violet::before { background: var(--signal-violet); }
 
 /* --- Utility classes --- */
 .mono { font-family: var(--font-mono); }
-.serif { font-family: var(--font-serif); }
-.faded { color: var(--ink-faded); }
+.display { font-family: var(--font-display); }
+.faded { color: var(--ink-tertiary); }
+.secondary { color: var(--ink-secondary); }
 .small { font-size: 0.8rem; }
 .uppercase {
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   font-size: 0.75rem;
 }
 
 /* --- Horizontal rule --- */
 hr {
   border: none;
-  border-top: 1px dashed var(--border);
+  border-top: 1px solid var(--border);
   margin: 2rem 0;
 }
 
@@ -287,18 +257,21 @@ img {
 
 /* --- Selection --- */
 ::selection {
-  background: var(--highlight);
+  background: var(--glow-blue);
   color: var(--ink);
 }
 
 /* --- Scrollbar --- */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--paper);
+  background: var(--canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 4px;
+  background: var(--ink-tertiary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-secondary);
 }

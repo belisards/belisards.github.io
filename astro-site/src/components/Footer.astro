@@ -3,8 +3,7 @@
 <footer class="site-footer">
   <div class="page-wrapper">
     <div class="footer-inner">
-      <span class="footer-label">End of file</span>
-      <span class="footer-sep">—</span>
+      <span class="footer-line"></span>
       <span class="footer-text">Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a></span>
     </div>
   </div>
@@ -12,7 +11,7 @@
 
 <style>
   .site-footer {
-    border-top: 1px dashed var(--border);
+    border-top: 1px solid var(--border);
     padding: 2rem 0;
     margin-top: 4rem;
   }
@@ -20,22 +19,25 @@
   .footer-inner {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     font-size: 0.75rem;
-    color: var(--ink-faded);
+    color: var(--ink-tertiary);
     font-family: var(--font-mono);
   }
 
-  .footer-label {
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+  .footer-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
   }
 
   .footer-text a {
-    color: var(--ink-faded);
+    color: var(--ink-tertiary);
+    text-decoration-color: var(--border);
   }
 
   .footer-text a:hover {
-    color: var(--red-stamp);
+    color: var(--signal-primary);
+    text-decoration-color: var(--signal-primary);
   }
 </style>

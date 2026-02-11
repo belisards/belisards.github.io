@@ -6,31 +6,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="page-wrapper">
     <div class="content-wrapper">
 
-      <div class="dossier-header">
-        <span class="uppercase faded">Evidence Archive</span>
+      <div class="page-header">
         <h1>Publications</h1>
-        <p class="faded small">Texts published since 2008 — data investigations, academic papers, books, and tutorials in English and Portuguese.</p>
-        <div style="margin-top: 0.75rem;">
-          <span class="stamp stamp--blue">★ Key evidence</span>
-          <span class="stamp stamp--green" style="margin-left: 0.5rem;">🌐 Multi-language</span>
+        <p class="secondary">Texts published since 2008 — data investigations, academic papers, books, and tutorials in English and Portuguese.</p>
+        <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="data-badge data-badge--violet">Academic</span>
+          <span class="data-badge">Journalism</span>
+          <span class="data-badge data-badge--teal">Tutorial</span>
         </div>
       </div>
 
-      <!-- WORKS IN ENGLISH -->
       <h2 class="reveal">Works in English</h2>
 
       <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://doi.org/10.1145/3757416">Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://doi.org/10.1145/3757416">Into the crossfire: Evaluating the use of a language model to crowdsource gun violence reports</a></span></div>
         <div class="pub-entry__meta">Proceedings of the ACM on Human-Computer Interaction, 2025. Co-authorship with Scott Hale and Luc Rocher.</div>
       </div>
 
       <div class="pub-entry pub-entry--tutorial reveal">
-        <div><span class="stamp stamp--green" style="font-size:0.55rem">🌐</span> <span class="pub-entry__title"><a href="https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/">Easy AI: A Simplified Approach to Classifying Images with Off-the-Shelf AI Models</a></span></div>
+        <div><span class="pub-entry__title"><a href="https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/">Easy AI: A Simplified Approach to Classifying Images with Off-the-Shelf AI Models</a></span></div>
         <div class="pub-entry__meta">Bellingcat, 2024. Also published in <a href="https://escoladedados.org/tutoriais/easy-ai-classificacao-imagens-tutorial/">Portuguese</a>.</div>
       </div>
 
       <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://academic.oup.com/ijpor/article/36/3/edae032/7709027">Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://academic.oup.com/ijpor/article/36/3/edae032/7709027">Analyzing Misinformation Claims During the 2022 Brazilian General Election on WhatsApp, Twitter, and Kwai</a></span></div>
         <div class="pub-entry__meta">International Journal of Public Opinion Research, 2024. Co-authorship with Scott Hale and Luc Rocher.</div>
       </div>
 
@@ -45,12 +44,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="stamp stamp--green" style="font-size:0.55rem">🌐</span> <span class="pub-entry__title"><a href="https://documental.xyz/intervencao">Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://documental.xyz/intervencao">Territories of Exception: Violation of rights and the use of police helicopters in Rio de Janeiro</a></span></div>
         <div class="pub-entry__meta">Documental.xyz, 2021. Coordination, authorship, data analysis and visualization. Also in <a href="https://documental.xyz/pt/intervencao">Portuguese</a> and <a href="https://documental.xyz/es/intervencao">Spanish</a>.</div>
       </div>
 
       <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="stamp stamp--green" style="font-size:0.55rem">🌐</span> <span class="pub-entry__title"><a href="https://documental.xyz/expulsions">Expulsions — Forced displacements and archaeological destruction by the mega-mining project Mirador</a></span></div>
+        <div><span class="pub-entry__title"><a href="https://documental.xyz/expulsions">Expulsions — Forced displacements and archaeological destruction by the mega-mining project Mirador</a></span></div>
         <div class="pub-entry__meta">Documental.xyz, 2020. Also in <a href="https://documental.xyz/pt/expulsions">Portuguese</a> and <a href="https://documental.xyz/es/expulsions">Spanish</a>.</div>
       </div>
 
@@ -69,13 +68,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="pub-entry__meta">Spheres — Journal for Digital Cultures, 2016. Co-authorship with Paulo Lara and Francisco Caminati.</div>
       </div>
 
-      <!-- PORTUGUESE SECTION -->
       <h2 class="reveal">Portuguese & Other Languages</h2>
 
-      <!-- Books -->
       <div class="pub-category reveal">
         <span>Books and published writing</span>
-        <span class="stamp">10 titles</span>
+        <span class="data-badge">10 titles</span>
       </div>
 
       <div class="book-gallery reveal" id="book-gallery">
@@ -121,152 +118,115 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <!-- Academic papers -->
-      <div class="pub-category reveal">
-        <span>Academic papers</span>
-      </div>
+      <div class="pub-category reveal"><span>Academic papers</span></div>
 
       <div class="pub-entry pub-entry--academic reveal">
         <div><span class="pub-entry__title"><a href="https://periodicos.unb.br/index.php/dasquestoes/article/view/18647/17367">A Terra à Vista</a></span></div>
         <div class="pub-entry__meta">DAS QUESTÕES, v. 6, 2018.</div>
       </div>
-
       <div class="pub-entry pub-entry--academic reveal">
         <div><span class="pub-entry__title"><a href="https://revista.ibict.br/liinc/article/view/3747/3222">Caixa Mágica: crónica de un proyecto de colaboración ciudadana</a></span></div>
         <div class="pub-entry__meta">LIINC EM REVISTA, v. 13, 2017. Co-authorship.</div>
       </div>
-
       <div class="pub-entry pub-entry--academic reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://revista.ibict.br/liinc/article/view/3722">Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://revista.ibict.br/liinc/article/view/3722">Communication, surveillance and infrastructure: techno-politics of the electromagnetic spectrum</a></span></div>
         <div class="pub-entry__meta">Liinc em Revista, v. 12, 2016. Co-authorship with Paulo Lara.</div>
       </div>
-
       <div class="pub-entry pub-entry--academic reveal">
         <div><span class="pub-entry__title"><a href="https://www.contemporanea.ufscar.br/index.php/contemporanea/article/view/434">Perspectivas Tecnoxamânicas e tecnomágicas no ativismo digital brasileiro recente</a></span></div>
         <div class="pub-entry__meta">Contemporânea, v. 6, 2016. Co-authorship with P. P. Ferreira.</div>
       </div>
-
       <div class="pub-entry pub-entry--academic reveal">
         <div><span class="pub-entry__title"><a href="https://revistas.ufrj.br/index.php/lc/article/view/50155">Tecnoxamanismo: por uma cibernética insurgente</a></span></div>
         <div class="pub-entry__meta">Lugar Comum (UFRJ), v. 43, 2015.</div>
       </div>
-
       <div class="pub-entry pub-entry--academic reveal">
         <div><span class="pub-entry__title"><a href="https://politics.org.br/edicoes/espectro-livre-como-alternativa-tecnopol%C3%ADtica-%C3%A0-vigil%C3%A2ncia">Espectro livre como alternativa tecnopolítica à vigilância</a></span></div>
         <div class="pub-entry__meta">Politics (Impresso), v. 1, 2015.</div>
       </div>
 
-      <!-- Journalistic articles -->
-      <div class="pub-category reveal">
-        <span>Journalistic investigations</span>
-        <span class="stamp" style="border-color: var(--red-stamp); color: var(--red-stamp);">Journalism</span>
-      </div>
+      <div class="pub-category reveal"><span>Journalistic investigations</span><span class="data-badge">Journalism</span></div>
 
       <div class="pub-entry pub-entry--journalism reveal">
         <div><span class="pub-entry__title"><a href="https://apublica.org/2024/05/chiquinho-brazao-tentou-beneficiar-regiao-ao-lado-de-area-que-seria-recompensa-por-morte-de-marielle/">Brazão tentou beneficiar região ao lado de área que seria recompensa por morte de Marielle</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2024.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
         <div><span class="pub-entry__title"><a href="https://apublica.org/2019/01/a-tropa-de-choque-de-bolsonaro-no-congresso/">A tropa de choque de Bolsonaro no Congresso</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2019.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://apublica.org/2019/02/como-vota-rio-das-pedras-reduto-da-mais-antiga-milicia-carioca/">Como vota Rio das Pedras, reduto da mais antiga milícia carioca</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2019/02/como-vota-rio-das-pedras-reduto-da-mais-antiga-milicia-carioca/">Como vota Rio das Pedras, reduto da mais antiga milícia carioca</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2019.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
         <div><span class="pub-entry__title"><a href="https://apublica.org/2019/05/nao-ha-registro-de-entrada-na-camara-para-assessor-de-bolsonaro-investigado-pela-justica/">Não há registro de entrada na Câmara para assessor de Bolsonaro investigado pela Justiça</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2019.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
         <div><span class="pub-entry__title"><a href="https://apublica.org/2019/03/dois-assessores-de-jair-bolsonaro-doaram-mais-de-r-100-mil-para-campanhas-da-familia/">Dois assessores de Jair Bolsonaro doaram mais de R$ 100 mil para campanhas da família</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2019.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
         <div><span class="pub-entry__title"><a href="https://apublica.org/2019/04/encontramos-mais-cinco-ex-assessoras-de-bolsonaro-que-nem-pisaram-no-congresso/">Encontramos mais cinco ex-assessoras de Bolsonaro que nem pisaram no Congresso</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2019.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
         <div><span class="pub-entry__title"><a href="https://www.intercept.com.br/2018/04/03/exercito-rio-empresa-investigada/">Operações do Exército no Rio geraram milhões para empresa da "farra do guardanapo"</a></span></div>
         <div class="pub-entry__meta">The Intercept Brasil, 2018.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
         <div><span class="pub-entry__title"><a href="https://apublica.org/2018/01/sorteio-do-supremo-e-caixa-preta/">Sorteio do Supremo é caixa preta</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2018.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://apublica.org/2018/09/semanalmente-juizes-do-supremo-decidem-sozinhos-sobre-aplicacao-da-constituicao/">Semanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2018/09/semanalmente-juizes-do-supremo-decidem-sozinhos-sobre-aplicacao-da-constituicao/">Semanalmente, juízes do Supremo decidem sozinhos sobre aplicação da Constituição</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2018.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/">A teia dos donos do transporte no Rio</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2017/08/a-teia-dos-donos-do-transporte-no-rio/">A teia dos donos do transporte no Rio</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2017.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
         <div><span class="pub-entry__title"><a href="https://www.intercept.com.br/2017/09/26/mapeamento-inedito-mostra-que-doacoes-legais-da-odebrecht-beneficiaram-1-087-candidatos-desde-2002/">Mapeamento inédito: doações legais da Odebrecht beneficiaram 1.087 candidatos</a></span></div>
         <div class="pub-entry__meta">The Intercept Brasil, 2017.</div>
       </div>
-
       <div class="pub-entry pub-entry--journalism reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://apublica.org/2014/06/um-jogo-para-poucos/">Um jogo para poucos</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2014/06/um-jogo-para-poucos/">Um jogo para poucos</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2014.</div>
       </div>
 
-      <!-- Essays -->
-      <div class="pub-category reveal">
-        <span>Essays and other writings</span>
-      </div>
+      <div class="pub-category reveal"><span>Essays and other writings</span></div>
 
       <div class="pub-entry pub-entry--essay reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/">Cartilha de segurança digital e atuação no campo</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/">Cartilha de segurança digital e atuação no campo</a></span></div>
         <div class="pub-entry__meta">Agência Pública, 2020.</div>
       </div>
-
       <div class="pub-entry pub-entry--essay reveal">
         <div><span class="pub-entry__title"><a href="https://belisario.website/publications/por_uma_ideia_de_cinema_radical.html">Por uma ideia de cinema radical</a></span></div>
         <div class="pub-entry__meta">2007.</div>
       </div>
 
-      <!-- Tutorials -->
-      <div class="pub-category reveal">
-        <span>Technical tutorials</span>
-        <span class="stamp stamp--green">How-to</span>
-      </div>
+      <div class="pub-category reveal"><span>Technical tutorials</span><span class="data-badge data-badge--teal">How-to</span></div>
 
       <div class="pub-entry pub-entry--tutorial reveal">
-        <div><span class="stamp stamp--blue" style="font-size:0.55rem">★</span> <span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/">Checagem de imagens: cronolocalização de fotos</a></span></div>
+        <div><span class="pub-featured"></span><span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/checagem-de-imagens-cronolocalizacao-de-fotos/">Checagem de imagens: cronolocalização de fotos</a></span></div>
         <div class="pub-entry__meta">Escola de Dados, 2022.</div>
       </div>
-
       <div class="pub-entry pub-entry--tutorial reveal">
         <div><span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/como-pedir-e-receber-ajuda-na-internet/">Como pedir e receber ajuda na internet</a></span></div>
         <div class="pub-entry__meta">Escola de Dados, 2021.</div>
       </div>
-
       <div class="pub-entry pub-entry--tutorial reveal">
         <div><span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/limpando-dados-da-covid-19-com-r/">Limpando dados da COVID-19 com R</a></span></div>
         <div class="pub-entry__meta">Escola de Dados, 2020.</div>
       </div>
-
       <div class="pub-entry pub-entry--tutorial reveal">
         <div><span class="pub-entry__title"><a href="https://escoladedados.org/tutoriais/expressao-regular-pode-melhorar-sua-vida/">Expressão regular pode melhorar sua vida</a></span></div>
         <div class="pub-entry__meta">Escola de Dados, 2019.</div>
       </div>
 
-      <!-- Text review -->
-      <div class="pub-category reveal">
-        <span>Text review</span>
-      </div>
+      <div class="pub-category reveal"><span>Text review</span></div>
 
       <div class="pub-entry pub-entry--essay reveal">
         <div><span class="pub-entry__title"><a href="https://netlab.eco.ufrj.br/post/atingidos-pelas-redes-sociais-os-impactos-da-ind%C3%BAstria-da-desinforma%C3%A7%C3%A3o-nos-consumidores-brasileiro">Atingidos pelas redes sociais</a></span></div>
@@ -276,26 +236,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
 
-  <!-- Lightbox -->
   <div class="lightbox-overlay" id="lightbox">
     <img src="" alt="" id="lightbox-img" />
   </div>
 </BaseLayout>
 
 <style>
-  .dossier-header {
+  .page-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--border);
   }
 
-  .dossier-header h1 {
-    margin-top: 0.5rem;
+  .page-header h1 {
+    margin-bottom: 0.25rem;
   }
 </style>
 
 <script>
-  // Simple lightbox
   const gallery = document.getElementById('book-gallery');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;

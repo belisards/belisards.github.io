@@ -1,5 +1,5 @@
 /* ============================================
-   Responsive breakpoints
+   Responsive breakpoints — The Signal
    ============================================ */
 
 @media screen and (max-width: 768px) {
@@ -9,7 +9,7 @@
 
   body {
     font-size: 0.875rem;
-    background-size: 20px 20px;
+    background-size: 32px 32px;
   }
 
   h1 { font-size: 2.25rem; }
@@ -24,18 +24,9 @@
     padding: 1.5rem 0 3rem;
   }
 
-  .dossier-page {
+  .data-panel {
     padding: 1.5rem;
     margin: 1rem 0;
-  }
-
-  /* Timeline adjustments */
-  .timeline-entry {
-    padding-left: 2rem !important;
-  }
-
-  .timeline-entry::before {
-    left: 0 !important;
   }
 }
 
@@ -43,11 +34,11 @@
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.3rem; }
 
-  .stamp--large {
-    font-size: 0.7rem;
+  .data-badge {
+    font-size: 0.65rem;
   }
 
-  .dossier-page {
+  .data-panel {
     padding: 1rem;
   }
 }

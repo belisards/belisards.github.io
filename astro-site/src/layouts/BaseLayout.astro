@@ -1,6 +1,7 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import 'lenis/dist/lenis.css';
 import '../styles/global.css';
 import '../styles/nav.css';
 import '../styles/animations.css';
@@ -61,22 +62,51 @@ const pageTitle = title === 'Adriano Belisario' ? title : `${title} — Adriano 
   </main>
   <Footer />
 
-  <!-- Scroll reveal observer -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
+  <!-- GSAP + Lenis + ScrollTrigger initialization -->
+  <script>
+    import Lenis from "lenis";
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-      document.querySelectorAll('.reveal').forEach(function(el) {
-        observer.observe(el);
-      });
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.config({ nullTargetWarn: false });
+
+    // Lenis smooth scroll — GSAP ticker drives the RAF loop
+    const lenis = new Lenis({ autoRaf: false });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+
+    // Expose globally for page-level scripts
+    (window as any).gsap = gsap;
+    (window as any).ScrollTrigger = ScrollTrigger;
+    (window as any).lenis = lenis;
+
+    // ScrollTrigger batch reveal for all .reveal elements
+    ScrollTrigger.batch(".reveal", {
+      onEnter: (elements) => {
+        gsap.fromTo(elements,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: "power2.out", stagger: 0.1 }
+        );
+      },
+      start: "top 88%",
+      once: true,
     });
+
+    // Page entrance animation
+    gsap.from(".page-enter", {
+      y: 16,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.out",
+    });
+
+    // Respect reduced motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.globalTimeline.timeScale(20);
+      lenis.destroy();
+    }
   </script>
 </body>
 </html>
