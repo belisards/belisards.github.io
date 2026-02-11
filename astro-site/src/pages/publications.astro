@@ -33,8 +33,8 @@ const tocItems = [
 
         {englishSection.entries.map((entry: any) => (
           <div class={`pub-entry pub-entry--${entry.type} reveal`}>
-            <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title"><a href={entry.url}>{entry.title}</a></span></div>
-            <div class="pub-entry__meta" set:html={entry.meta} />
+            <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title">{entry.url ? <a href={entry.url}>{entry.title}</a> : entry.title}</span></div>
+            {entry.meta && <div class="pub-entry__meta" set:html={entry.meta} />}
           </div>
         ))}
 
@@ -60,8 +60,8 @@ const tocItems = [
 
           {sub.entries && sub.entries.map((entry: any) => (
             <div class={`pub-entry pub-entry--${entry.type} reveal`}>
-              <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title"><a href={entry.url}>{entry.title}</a></span></div>
-              <div class="pub-entry__meta" set:html={entry.meta} />
+              <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title">{entry.url ? <a href={entry.url}>{entry.title}</a> : entry.title}</span></div>
+              {entry.meta && <div class="pub-entry__meta" set:html={entry.meta} />}
             </div>
           ))}
         </>
