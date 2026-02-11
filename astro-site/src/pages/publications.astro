@@ -12,7 +12,7 @@ const ptSection = pubs.sections[1];
     <div class="content-wrapper">
 
       <div class="page-header">
-        <h1>Publications</h1>
+        <h1 id="page-title">Publications</h1>
         <p class="secondary">Texts published since 2008 — data investigations, academic papers, books, and tutorials in English and Portuguese.</p>
         <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
           <span class="data-badge data-badge--violet">Academic</span>
@@ -80,6 +80,25 @@ const ptSection = pubs.sections[1];
 </style>
 
 <script>
+  import gsap from "gsap";
+  import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+  gsap.registerPlugin(ScrambleTextPlugin);
+
+  // ScrambleText heading decode
+  const title = document.getElementById("page-title");
+  if (title && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.from(title, {
+      scrambleText: {
+        text: title.textContent || "",
+        chars: "01!<>-_\\/[]{}=+*^?#",
+        revealDelay: 0.3,
+        speed: 0.4,
+      },
+      duration: 1.2,
+      delay: 0.4,
+    });
+  }
+
   const gallery = document.getElementById('book-gallery');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;

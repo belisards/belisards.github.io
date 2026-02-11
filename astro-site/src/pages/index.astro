@@ -3,463 +3,326 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture.">
-  <div class="page-wrapper">
 
-    <section class="signal-hero">
+  <!-- ========== FULL-SCREEN HERO ========== -->
+  <section class="hero">
+    <canvas id="network-canvas" aria-hidden="true"></canvas>
 
-      <!-- Canvas particle network -->
-      <canvas id="particle-network" class="particle-canvas" aria-hidden="true"></canvas>
+    <div class="hero__content">
+      <h1 class="hero__name" id="hero-name" aria-label="Adriano Belisario">
+        <span class="hero__line" id="line-1">Adriano</span>
+        <span class="hero__line" id="line-2">Belisario</span>
+      </h1>
+      <p class="hero__tagline" id="hero-tagline">
+        Data, journalism &amp; open&#8209;source
+      </p>
+    </div>
 
-      <!-- Decorative SVG data network lines -->
-      <svg class="hero-svg" viewBox="0 0 800 500" fill="none" aria-hidden="true">
-        <!-- Top-left cluster -->
-        <path class="svg-line" d="M 20 40 L 120 80 L 200 30" stroke-width="1"/>
-        <path class="svg-line" d="M 120 80 L 160 160" stroke-width="1"/>
-        <circle class="svg-node" cx="20" cy="40" r="3"/>
-        <circle class="svg-node" cx="120" cy="80" r="4"/>
-        <circle class="svg-node" cx="200" cy="30" r="3"/>
-        <circle class="svg-node" cx="160" cy="160" r="3"/>
+    <div class="hero__scroll-hint" id="scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
 
-        <!-- Right cluster -->
-        <path class="svg-line" d="M 620 60 L 720 120 L 780 80" stroke-width="1"/>
-        <path class="svg-line" d="M 720 120 L 680 200 L 760 240" stroke-width="1"/>
-        <circle class="svg-node" cx="620" cy="60" r="3"/>
-        <circle class="svg-node" cx="720" cy="120" r="4"/>
-        <circle class="svg-node" cx="780" cy="80" r="3"/>
-        <circle class="svg-node" cx="680" cy="200" r="3"/>
-        <circle class="svg-node" cx="760" cy="240" r="3"/>
-
-        <!-- Bottom accent -->
-        <path class="svg-line" d="M 80 420 L 200 380 L 340 440" stroke-width="1"/>
-        <path class="svg-line" d="M 500 400 L 640 360 L 740 420" stroke-width="1"/>
-        <circle class="svg-node" cx="80" cy="420" r="3"/>
-        <circle class="svg-node" cx="200" cy="380" r="3"/>
-        <circle class="svg-node" cx="340" cy="440" r="3"/>
-        <circle class="svg-node" cx="500" cy="400" r="3"/>
-        <circle class="svg-node" cx="640" cy="360" r="3"/>
-        <circle class="svg-node" cx="740" cy="420" r="3"/>
-      </svg>
-
-      <!-- Coordinate labels -->
-      <div class="hero-coords hero-coords--tl" aria-hidden="true">
-        <span class="coord-text">47.3769° N, 8.5417° E</span>
+  <!-- ========== BIO SECTION ========== -->
+  <section class="bio-section">
+    <div class="bio-section__inner">
+      <p class="bio-section__text reveal">
+        Combining expertise in communication, open-source technologies, and data
+        to address important social concerns.
+      </p>
+      <p class="bio-section__text reveal">
+        Currently collaborating with the
+        <a href="https://www.jointdatacenter.org/">Joint Data Center on Forced Displacement</a>
+        and the <a href="https://netlab.eco.ufrj.br/">Netlab</a> laboratory from the Federal University of Rio de Janeiro.
+      </p>
+      <div class="bio-section__badges reveal">
+        <span class="data-badge data-badge--violet">Oxford Internet Institute</span>
+        <span class="data-badge data-badge--warm">Bellingcat</span>
+        <span class="data-badge">Forensic Architecture</span>
+        <span class="data-badge data-badge--teal">UNHCR</span>
+        <span class="data-badge data-badge--warm">Agência Pública</span>
       </div>
-      <div class="hero-coords hero-coords--br" aria-hidden="true">
-        <span class="coord-text">-22.9068° S, 43.1729° W</span>
+    </div>
+  </section>
+
+  <!-- ========== NAVIGATION PANELS ========== -->
+  <section class="panels">
+
+    <a href="/code/" class="panel panel--teal" data-color="var(--signal-teal)">
+      <div class="panel__bg"></div>
+      <div class="panel__content">
+        <span class="panel__number mono">01</span>
+        <h2 class="panel__title">Code</h2>
+        <p class="panel__desc">Data projects &amp; code repositories.<br>NLP, geodata, network analysis.</p>
+        <span class="panel__cta mono">Explore &rarr;</span>
       </div>
+    </a>
 
-      <!-- Main hero content -->
-      <div class="hero-content">
-
-        <!-- Name with scramble decode -->
-        <div class="hero-name-block">
-          <div class="hero-prefix mono" id="hero-prefix">&nbsp;</div>
-          <h1 class="hero-title" id="hero-name">
-            <span class="hero-first" id="hero-first">Adriano</span><br>
-            <span class="hero-last" id="hero-last">Belisario</span>
-          </h1>
-        </div>
-
-        <!-- Subtitle with SplitText char animation -->
-        <div class="hero-subtitle-block" id="hero-subtitle-block">
-          <div class="hero-role" id="hero-role">Data journalist & researcher</div>
-          <div class="hero-waveform" id="hero-waveform" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span>
-          </div>
-        </div>
-
-        <!-- Stat counters -->
-        <div class="hero-stats" id="hero-stats">
-          <div class="hero-stat">
-            <span class="hero-stat__number" id="stat-continents">4</span>
-            <span class="hero-stat__label">continents</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat__number" id="stat-projects">20</span>
-            <span class="hero-stat__label">projects</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat__number" id="stat-publications">30</span>
-            <span class="hero-stat__label">publications</span>
-          </div>
-        </div>
-
+    <a href="/publications/" class="panel panel--violet" data-color="var(--signal-violet)">
+      <div class="panel__bg"></div>
+      <div class="panel__content">
+        <span class="panel__number mono">02</span>
+        <h2 class="panel__title">Publications</h2>
+        <p class="panel__desc">Academic papers, investigations,<br>books &amp; tutorials.</p>
+        <span class="panel__cta mono">Explore &rarr;</span>
       </div>
+    </a>
 
-      <!-- Bio -->
-      <div class="hero-bio reveal">
-        <p>
-          Combining expertise in communication, open-source technologies, and data
-          to address important social concerns.
-        </p>
-        <p>
-          Currently collaborating with the
-          <a href="https://www.jointdatacenter.org/">Joint Data Center on Forced Displacement</a>
-          and the <a href="https://netlab.eco.ufrj.br/">Netlab</a> laboratory from the Federal University of Rio de Janeiro.
-        </p>
-        <p>
-          MSc in Social Data Science from the
-          <span class="data-badge data-badge--violet">Oxford Internet Institute</span>.
-          Collaborated with
-          <span class="data-badge data-badge--warm">Bellingcat</span>
-          <span class="data-badge">Forensic Architecture</span>
-          <span class="data-badge data-badge--teal">UNHCR</span>
-          and
-          <span class="data-badge data-badge--warm">Agência Pública</span>.
-        </p>
+    <a href="/events/" class="panel panel--warm" data-color="var(--signal-warm)">
+      <div class="panel__bg"></div>
+      <div class="panel__content">
+        <span class="panel__number mono">03</span>
+        <h2 class="panel__title">Events</h2>
+        <p class="panel__desc">Conferences, lectures, workshops<br>across four continents.</p>
+        <span class="panel__cta mono">Explore &rarr;</span>
       </div>
+    </a>
 
-      <hr />
-
-      <!-- Navigation cards -->
-      <div class="home-cards">
-        <a href="/code/" class="home-card reveal">
-          <div class="home-card__indicator home-card__indicator--teal"></div>
-          <div class="home-card__title">Code</div>
-          <div class="home-card__desc">Data projects and code repositories. NLP, geodata, network analysis.</div>
-          <div class="home-card__arrow">Explore <span>&rarr;</span></div>
-        </a>
-
-        <a href="/publications/" class="home-card reveal">
-          <div class="home-card__indicator home-card__indicator--violet"></div>
-          <div class="home-card__title">Publications</div>
-          <div class="home-card__desc">Academic papers, investigations, books, and tutorials in English & Portuguese.</div>
-          <div class="home-card__arrow">Explore <span>&rarr;</span></div>
-        </a>
-
-        <a href="/events/" class="home-card reveal">
-          <div class="home-card__indicator home-card__indicator--warm"></div>
-          <div class="home-card__title">Events</div>
-          <div class="home-card__desc">Conferences, lectures, workshops, and courses across four continents.</div>
-          <div class="home-card__arrow">Explore <span>&rarr;</span></div>
-        </a>
+    <a href="/about/" class="panel panel--blue" data-color="var(--signal-primary)">
+      <div class="panel__bg"></div>
+      <div class="panel__content">
+        <span class="panel__number mono">04</span>
+        <h2 class="panel__title">About</h2>
+        <p class="panel__desc">CV, education, experience<br>&amp; collaborations.</p>
+        <span class="panel__cta mono">Explore &rarr;</span>
       </div>
+    </a>
 
-    </section>
+  </section>
 
-  </div>
 </BaseLayout>
 
 <style>
-  .signal-hero {
-    max-width: 760px;
-    margin: 2rem auto 2rem;
+  /* ============================
+     HERO — Full viewport
+     ============================ */
+  .hero {
     position: relative;
-    min-height: 70vh;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%);
+    background: var(--ink);
   }
 
-  /* --- Particle canvas --- */
-  .particle-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
+  #network-canvas {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     z-index: 0;
-    opacity: 0;
   }
 
-  /* --- SVG network overlay --- */
-  .hero-svg {
-    position: absolute;
-    top: -2rem;
-    left: -12%;
-    width: 124%;
-    height: 500px;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0;
-  }
-
-  .svg-line {
-    stroke: var(--signal-primary);
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    opacity: 0.25;
-  }
-
-  .svg-node {
-    fill: var(--signal-primary);
-    opacity: 0;
-  }
-
-  /* --- Coordinate labels --- */
-  .hero-coords {
-    position: absolute;
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.08em;
-    color: var(--ink-tertiary);
-    z-index: 1;
-    opacity: 0;
-  }
-
-  .hero-coords--tl {
-    top: 0;
-    right: 0;
-  }
-
-  .hero-coords--br {
-    bottom: 12rem;
-    left: 0;
-  }
-
-  /* --- Hero content --- */
-  .hero-content {
+  .hero__content {
     position: relative;
     z-index: 1;
-    padding-top: 2rem;
+    text-align: center;
+    padding: 0 2rem;
   }
 
-  .hero-name-block {
+  .hero__name {
+    font-size: clamp(3.5rem, 12vw, 10rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+    color: var(--canvas);
+    margin: 0;
+  }
+
+  .hero__line {
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .hero__tagline {
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    color: var(--signal-primary);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    opacity: 0;
+  }
+
+  /* Scroll hint */
+  .hero__scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .hero__scroll-hint span {
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--signal-primary), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  }
+
+  /* ============================
+     BIO SECTION
+     ============================ */
+  .bio-section {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .bio-section__inner {
+    max-width: 680px;
+  }
+
+  .bio-section__text {
+    font-size: 1.2rem;
+    line-height: 2;
     margin-bottom: 1.5rem;
   }
 
-  .hero-prefix {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--signal-primary);
-    letter-spacing: 0.04em;
+  .bio-section__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  /* ============================
+     NAVIGATION PANELS — Full bleed
+     ============================ */
+  .panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 100vh;
+  }
+
+  .panel {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+    min-height: 50vh;
+    text-decoration: none;
+    color: var(--canvas);
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .panel__bg {
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 0;
+  }
+
+  .panel:hover .panel__bg {
+    transform: scale(1.05);
+  }
+
+  .panel__content {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .panel__number {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: rgba(248, 247, 244, 0.4);
+    display: block;
     margin-bottom: 0.75rem;
-    opacity: 0;
   }
 
-  .hero-title {
-    font-size: 5rem;
-    letter-spacing: -0.05em;
-    line-height: 1.0;
+  .panel__title {
+    font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 700;
-  }
-
-  .hero-first,
-  .hero-last {
-    display: inline-block;
-    opacity: 0;
-  }
-
-  /* --- Subtitle block --- */
-  .hero-subtitle-block {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-  }
-
-  .hero-role {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--ink-secondary);
-    letter-spacing: 0.02em;
-  }
-
-  /* Enhanced waveform */
-  .hero-waveform {
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
-  }
-
-  .hero-waveform span {
-    display: inline-block;
-    width: 2px;
-    background: var(--signal-primary);
-    border-radius: 1px;
-    transform: scaleY(0);
-  }
-
-  .hero-waveform span:nth-child(1)  { height: 8px; }
-  .hero-waveform span:nth-child(2)  { height: 16px; }
-  .hero-waveform span:nth-child(3)  { height: 12px; }
-  .hero-waveform span:nth-child(4)  { height: 22px; }
-  .hero-waveform span:nth-child(5)  { height: 10px; }
-  .hero-waveform span:nth-child(6)  { height: 18px; }
-  .hero-waveform span:nth-child(7)  { height: 26px; }
-  .hero-waveform span:nth-child(8)  { height: 14px; }
-  .hero-waveform span:nth-child(9)  { height: 20px; }
-  .hero-waveform span:nth-child(10) { height: 8px; }
-  .hero-waveform span:nth-child(11) { height: 16px; }
-  .hero-waveform span:nth-child(12) { height: 12px; }
-
-  /* --- Stat counters --- */
-  .hero-stats {
-    display: flex;
-    gap: 3rem;
-    margin-bottom: 2rem;
-    opacity: 0;
-  }
-
-  .hero-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.15rem;
-  }
-
-  .hero-stat__number {
-    font-family: var(--font-mono);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--signal-primary);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
+    color: var(--canvas);
+    margin: 0 0 0.75rem;
     line-height: 1;
   }
 
-  .hero-stat__label {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: var(--ink-tertiary);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  .panel__desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(248, 247, 244, 0.6);
+    margin-bottom: 1.5rem;
   }
 
-  /* --- Bio --- */
-  .hero-bio {
-    position: relative;
-    z-index: 1;
-    font-size: 0.95rem;
-    line-height: 1.85;
-    max-width: 620px;
-  }
-
-  .hero-bio p {
-    margin-bottom: 1rem;
-  }
-
-  .hero-bio .data-badge {
-    margin: 0.15rem 0.1rem;
-  }
-
-  /* --- Home cards --- */
-  .home-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-top: 0.5rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .home-card {
-    background: var(--canvas-raised);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-decoration: none;
-    color: var(--ink);
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .home-card:hover {
-    border-color: var(--signal-primary);
-    box-shadow: 0 0 0 1px var(--signal-primary), var(--shadow-md);
-  }
-
-  .home-card__indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--signal-primary);
-    margin-bottom: 0.25rem;
-  }
-
-  .home-card__indicator--teal { background: var(--signal-teal); }
-  .home-card__indicator--violet { background: var(--signal-violet); }
-  .home-card__indicator--warm { background: var(--signal-warm); }
-
-  .home-card__title {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .home-card__desc {
-    font-size: 0.82rem;
-    color: var(--ink-secondary);
-    line-height: 1.6;
-    flex: 1;
-  }
-
-  .home-card__arrow {
-    font-family: var(--font-mono);
+  .panel__cta {
     font-size: 0.75rem;
-    color: var(--signal-primary);
-    margin-top: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--canvas);
+    border-bottom: 1px solid rgba(248, 247, 244, 0.3);
+    padding-bottom: 0.25rem;
+    transition: border-color 0.3s ease;
   }
 
-  .home-card__arrow span {
-    display: inline-block;
-    transition: transform 0.2s ease;
+  .panel:hover .panel__cta {
+    border-color: var(--canvas);
   }
 
-  .home-card:hover .home-card__arrow span {
-    transform: translateX(4px);
-  }
+  /* Panel accent colors — thin top border glow */
+  .panel--teal .panel__bg { border-top: 3px solid var(--signal-teal); }
+  .panel--violet .panel__bg { border-top: 3px solid var(--signal-violet); }
+  .panel--warm .panel__bg { border-top: 3px solid var(--signal-warm); }
+  .panel--blue .panel__bg { border-top: 3px solid var(--signal-primary); }
 
-  /* Card-specific hover colors */
-  .home-card:has(.home-card__indicator--teal):hover {
-    border-color: var(--signal-teal);
-    box-shadow: 0 0 0 1px var(--signal-teal), var(--shadow-md);
-  }
+  /* On hover, the accent color lights up the background */
+  .panel--teal:hover .panel__bg { background: color-mix(in srgb, var(--ink) 92%, var(--signal-teal)); }
+  .panel--violet:hover .panel__bg { background: color-mix(in srgb, var(--ink) 92%, var(--signal-violet)); }
+  .panel--warm:hover .panel__bg { background: color-mix(in srgb, var(--ink) 92%, var(--signal-warm)); }
+  .panel--blue:hover .panel__bg { background: color-mix(in srgb, var(--ink) 92%, var(--signal-primary)); }
 
-  .home-card:has(.home-card__indicator--violet):hover {
-    border-color: var(--signal-violet);
-    box-shadow: 0 0 0 1px var(--signal-violet), var(--shadow-md);
-  }
-
-  .home-card:has(.home-card__indicator--warm):hover {
-    border-color: var(--signal-warm);
-    box-shadow: 0 0 0 1px var(--signal-warm), var(--shadow-md);
-  }
-
+  /* ============================
+     RESPONSIVE
+     ============================ */
   @media screen and (max-width: 768px) {
-    .signal-hero {
-      margin: 1rem auto 1rem;
-      min-height: auto;
+    .hero__name {
+      font-size: clamp(2.5rem, 14vw, 5rem);
     }
 
-    .hero-title {
-      font-size: 3rem;
-    }
-
-    .hero-svg {
-      display: none;
-    }
-
-    .hero-coords {
-      display: none;
-    }
-
-    .hero-stats {
-      gap: 2rem;
-    }
-
-    .hero-stat__number {
-      font-size: 1.5rem;
-    }
-
-    .home-cards {
+    .panels {
       grid-template-columns: 1fr;
+    }
+
+    .panel {
+      min-height: 40vh;
+    }
+
+    .bio-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .bio-section__text {
+      font-size: 1.05rem;
     }
   }
 
   @media screen and (max-width: 480px) {
-    .hero-title {
-      font-size: 2.25rem;
+    .panel {
+      padding: 2rem;
+      min-height: 35vh;
     }
 
-    .hero-subtitle-block {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
+    .panel__title {
+      font-size: 2rem;
     }
   }
 </style>
@@ -468,267 +331,285 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
-  import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
-  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-  import { TextPlugin } from "gsap/TextPlugin";
   import { CustomEase } from "gsap/CustomEase";
 
-  gsap.registerPlugin(ScrollTrigger, SplitText, ScrambleTextPlugin, DrawSVGPlugin, TextPlugin, CustomEase);
+  gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 
-  // Custom eases
-  CustomEase.create("signalResolve", "M0,0 C0.14,0 0.27,0.56 0.34,0.72 0.46,0.97 0.65,1 1,1");
-  CustomEase.create("dataSnap", "M0,0 C0.22,0.61 0.36,1 0.59,1 0.68,1 0.82,0.98 1,1");
+  CustomEase.create("heroReveal", "M0,0 C0.11,0.49 0.17,0.98 0.37,1 0.55,1.02 0.68,1 1,1");
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ========================================
-  // PARTICLE NETWORK CANVAS
+  // INTERACTIVE PARTICLE NETWORK
   // ========================================
-  const canvas = document.getElementById("particle-network") as HTMLCanvasElement;
-  if (canvas) {
-    const ctx = canvas.getContext("2d");
-    let particles: Array<{x: number; y: number; vx: number; vy: number; radius: number; opacity: number}> = [];
-    let animFrameId: number;
+  const canvas = document.getElementById("network-canvas") as HTMLCanvasElement;
+  const ctx = canvas?.getContext("2d");
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+  interface Node {
+    x: number;
+    y: number;
+    baseX: number;
+    baseY: number;
+    vx: number;
+    vy: number;
+    radius: number;
+    color: string;
+  }
+
+  const mouse = { x: -9999, y: -9999, active: false };
+  let nodes: Node[] = [];
+  const COLORS = [
+    "rgba(37, 99, 235,",   // blue
+    "rgba(13, 148, 136,",  // teal
+    "rgba(124, 58, 237,",  // violet
+    "rgba(232, 93, 4,",    // warm
+    "rgba(248, 247, 244,", // white
+  ];
+  const CONNECTION_DIST = 180;
+  const MOUSE_RADIUS = 200;
+  const MOUSE_FORCE = 0.08;
+
+  function resize() {
+    if (!canvas) return;
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    initNodes();
+  }
+
+  function initNodes() {
+    if (!canvas) return;
+    nodes = [];
+    const area = canvas.width * canvas.height;
+    const count = Math.min(120, Math.max(40, Math.floor(area / 12000)));
+    for (let i = 0; i < count; i++) {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      nodes.push({
+        x, y,
+        baseX: x,
+        baseY: y,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 2.5 + 1,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      });
     }
+  }
 
-    function initParticles() {
-      particles = [];
-      const count = Math.min(60, Math.floor((window.innerWidth * window.innerHeight) / 20000));
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          radius: Math.random() * 2 + 1,
-          opacity: Math.random() * 0.5 + 0.1,
-        });
-      }
-    }
+  function animate() {
+    if (!ctx || !canvas) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    function drawParticles() {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Update + draw
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
 
-      // Draw connections
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(37, 99, 235, ${0.08 * (1 - dist / 150)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
+      // Mouse interaction — push nodes away
+      if (mouse.active) {
+        const dx = a.x - mouse.x;
+        const dy = a.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MOUSE_RADIUS && dist > 0) {
+          const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS * MOUSE_FORCE;
+          a.vx += (dx / dist) * force * 8;
+          a.vy += (dy / dist) * force * 8;
         }
       }
 
-      // Draw particles
-      for (const p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(37, 99, 235, ${p.opacity})`;
-        ctx.fill();
+      // Drift + slight gravity back to base
+      a.vx += (a.baseX - a.x) * 0.0005;
+      a.vy += (a.baseY - a.y) * 0.0005;
 
-        // Move
-        p.x += p.vx;
-        p.y += p.vy;
+      // Friction
+      a.vx *= 0.98;
+      a.vy *= 0.98;
 
-        // Bounce
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      a.x += a.vx;
+      a.y += a.vy;
+
+      // Bounce off edges
+      if (a.x < 0) { a.x = 0; a.vx *= -0.5; }
+      if (a.x > canvas.width) { a.x = canvas.width; a.vx *= -0.5; }
+      if (a.y < 0) { a.y = 0; a.vy *= -0.5; }
+      if (a.y > canvas.height) { a.y = canvas.height; a.vy *= -0.5; }
+
+      // Draw connections
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        const ddx = a.x - b.x;
+        const ddy = a.y - b.y;
+        const d = Math.sqrt(ddx * ddx + ddy * ddy);
+        if (d < CONNECTION_DIST) {
+          const alpha = (1 - d / CONNECTION_DIST) * 0.15;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(37, 99, 235, ${alpha})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
       }
 
-      animFrameId = requestAnimationFrame(drawParticles);
+      // Draw mouse connections to nearby nodes
+      if (mouse.active) {
+        const mdx = a.x - mouse.x;
+        const mdy = a.y - mouse.y;
+        const md = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (md < MOUSE_RADIUS) {
+          const alpha = (1 - md / MOUSE_RADIUS) * 0.3;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(248, 247, 244, ${alpha})`;
+          ctx.lineWidth = 0.4;
+          ctx.stroke();
+        }
+      }
+
+      // Draw node
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
+      ctx.fillStyle = a.color + "0.6)";
+      ctx.fill();
     }
 
-    resizeCanvas();
-    initParticles();
-    drawParticles();
-    window.addEventListener("resize", () => { resizeCanvas(); initParticles(); });
+    requestAnimationFrame(animate);
+  }
 
-    // Fade in canvas
-    gsap.to(canvas, { opacity: 1, duration: 2, delay: 0.5, ease: "power2.inOut" });
+  if (canvas && ctx && !prefersReducedMotion) {
+    resize();
+    animate();
+    window.addEventListener("resize", resize);
 
-    // Fade out particles as user scrolls past hero
+    canvas.parentElement?.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    });
+
+    canvas.parentElement?.addEventListener("mouseleave", () => {
+      mouse.active = false;
+      mouse.x = -9999;
+      mouse.y = -9999;
+    });
+
+    // Touch support
+    canvas.parentElement?.addEventListener("touchmove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const t = e.touches[0];
+      mouse.x = t.clientX - rect.left;
+      mouse.y = t.clientY - rect.top;
+      mouse.active = true;
+    }, { passive: true });
+
+    canvas.parentElement?.addEventListener("touchend", () => {
+      mouse.active = false;
+    });
+  } else if (canvas && ctx && prefersReducedMotion) {
+    // Static snapshot
+    resize();
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
+      ctx.fillStyle = a.color + "0.4)";
+      ctx.fill();
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < CONNECTION_DIST) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(37, 99, 235, ${(1 - d / CONNECTION_DIST) * 0.1})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  // ========================================
+  // HERO TEXT ANIMATION
+  // ========================================
+  if (!prefersReducedMotion) {
+    const master = gsap.timeline({ delay: 0.3 });
+
+    // Name — SplitText per-character with 3D transforms
+    const line1Split = SplitText.create("#line-1", { type: "chars" });
+    const line2Split = SplitText.create("#line-2", { type: "chars" });
+
+    master.to("#line-1", { opacity: 1, duration: 0.01 });
+    master.from(line1Split.chars, {
+      y: 80,
+      rotationX: -80,
+      opacity: 0,
+      duration: 0.8,
+      ease: "heroReveal",
+      stagger: 0.04,
+    });
+
+    master.to("#line-2", { opacity: 1, duration: 0.01 }, "-=0.4");
+    master.from(line2Split.chars, {
+      y: 80,
+      rotationX: -80,
+      opacity: 0,
+      duration: 0.8,
+      ease: "heroReveal",
+      stagger: 0.04,
+    }, "-=0.4");
+
+    // Tagline fade
+    master.to("#hero-tagline", {
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+    }, "-=0.3");
+
+    // Scroll hint
+    master.to("#scroll-hint", {
+      opacity: 1,
+      duration: 0.8,
+      ease: "power2.out",
+    }, "-=0.5");
+
+    // Parallax hero on scroll
     ScrollTrigger.create({
-      trigger: ".signal-hero",
+      trigger: ".hero",
       start: "top top",
       end: "bottom top",
-      onLeave: () => gsap.to(canvas, { opacity: 0, duration: 0.5 }),
-      onEnterBack: () => gsap.to(canvas, { opacity: 1, duration: 0.5 }),
+      scrub: 0.5,
+      onUpdate: (self) => {
+        const p = self.progress;
+        gsap.set(".hero__content", { y: p * 120, opacity: 1 - p * 1.5 });
+        gsap.set("#scroll-hint", { opacity: Math.max(0, 1 - p * 4) });
+      },
     });
+  } else {
+    // Show everything immediately for reduced motion
+    gsap.set("#line-1, #line-2, #hero-tagline, #scroll-hint", { opacity: 1 });
   }
 
   // ========================================
-  // CINEMATIC HERO TIMELINE
+  // PANEL SCROLL REVEALS
   // ========================================
-  const master = gsap.timeline({ delay: 0.4 });
+  document.querySelectorAll(".panel__content").forEach((content) => {
+    if (prefersReducedMotion) {
+      gsap.set(content, { opacity: 1, y: 0 });
+      return;
+    }
 
-  // === ACT 1: Signal prefix types in ===
-  master.fromTo("#hero-prefix",
-    { opacity: 0 },
-    { opacity: 1, duration: 0.3, ease: "power2.out" }
-  );
-  master.to("#hero-prefix", {
-    duration: 0.8,
-    text: { value: "// signal.decode()", delimiter: "" },
-    ease: "none",
-  }, "<");
-
-  // === ACT 2: Name scrambles from data noise to clarity ===
-  master.fromTo("#hero-first",
-    { opacity: 0 },
-    { opacity: 1, duration: 0.01 },
-    "+=0.2"
-  );
-  master.to("#hero-first", {
-    duration: 1.6,
-    scrambleText: {
-      text: "Adriano",
-      chars: "01!<>-_\\/[]{}=+*^?#_SIGNAL",
-      revealDelay: 0.4,
-      speed: 0.4,
-      newClass: "scramble-resolved",
-    },
-    ease: "signalResolve",
-  }, "<");
-
-  master.fromTo("#hero-last",
-    { opacity: 0 },
-    { opacity: 1, duration: 0.01 },
-    "-=1.2"
-  );
-  master.to("#hero-last", {
-    duration: 1.8,
-    scrambleText: {
-      text: "Belisario",
-      chars: "01!<>-_\\/[]{}=+*^?#_DATA",
-      revealDelay: 0.5,
-      speed: 0.35,
-      newClass: "scramble-resolved",
-    },
-    ease: "signalResolve",
-  }, "<");
-
-  // === ACT 3: SVG network draws itself ===
-  master.to(".hero-svg", { opacity: 1, duration: 0.3 }, "-=1.0");
-
-  master.from(".svg-line", {
-    drawSVG: "0%",
-    duration: 1.2,
-    ease: "power2.inOut",
-    stagger: 0.1,
-  }, "-=1.0");
-
-  master.fromTo(".svg-node",
-    { opacity: 0, scale: 0 },
-    {
-      opacity: 0.4,
-      scale: 1,
-      duration: 0.4,
-      ease: "back.out(2)",
-      stagger: 0.05,
-      transformOrigin: "center center",
-    },
-    "-=0.6"
-  );
-
-  // === ACT 4: Subtitle splits in per-character ===
-  master.to("#hero-subtitle-block", { opacity: 1, duration: 0.01 }, "-=0.3");
-
-  const roleSplit = SplitText.create("#hero-role", { type: "chars" });
-  master.from(roleSplit.chars, {
-    opacity: 0,
-    y: 20,
-    rotationX: -90,
-    duration: 0.5,
-    ease: "back.out(1.7)",
-    stagger: 0.02,
-  }, "-=0.2");
-
-  // === ACT 5: Waveform bars spring up ===
-  master.to("#hero-waveform span", {
-    scaleY: 1,
-    duration: 0.4,
-    ease: "elastic.out(1, 0.5)",
-    stagger: 0.04,
-  }, "-=0.3");
-
-  // Continuous waveform animation after initial reveal
-  master.add(() => {
-    gsap.to("#hero-waveform span", {
-      scaleY: 0.3,
-      duration: 0.6,
-      ease: "sine.inOut",
-      stagger: { each: 0.08, repeat: -1, yoyo: true },
+    gsap.to(content, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: content.closest(".panel"),
+        start: "top 75%",
+        once: true,
+      },
     });
   });
-
-  // === ACT 6: Stats count up ===
-  master.to("#hero-stats", { opacity: 1, duration: 0.3, ease: "power2.out" }, "-=0.5");
-
-  master.from("#stat-continents", {
-    textContent: 0,
-    duration: 1.2,
-    ease: "power2.out",
-    snap: { textContent: 1 },
-    stagger: 0.1,
-  }, "<");
-
-  master.from("#stat-projects", {
-    textContent: 0,
-    duration: 1.4,
-    ease: "power2.out",
-    snap: { textContent: 1 },
-  }, "<0.1");
-
-  master.from("#stat-publications", {
-    textContent: 0,
-    duration: 1.6,
-    ease: "power2.out",
-    snap: { textContent: 1 },
-  }, "<0.1");
-
-  // === ACT 7: Coordinate labels fade in ===
-  master.to(".hero-coords", {
-    opacity: 0.6,
-    duration: 0.8,
-    ease: "power2.out",
-    stagger: 0.2,
-  }, "-=1.0");
-
-  // === ACT 8: Cards stagger in ===
-  master.fromTo(".home-card",
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.12 },
-    "-=0.4"
-  );
-
-  // ========================================
-  // SVG NODE PULSE (continuous after draw)
-  // ========================================
-  master.add(() => {
-    gsap.to(".svg-node", {
-      opacity: 0.15,
-      duration: 1.5,
-      ease: "sine.inOut",
-      stagger: { each: 0.2, repeat: -1, yoyo: true },
-    });
-  }, "-=1.0");
-
-  // ========================================
-  // REDUCED MOTION
-  // ========================================
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    master.progress(1);
-    const particleEl = document.getElementById("particle-network");
-    if (particleEl) particleEl.style.display = "none";
-  }
 </script>

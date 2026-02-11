@@ -1,1 +1,0 @@
-import{g as e,S as o}from"./ScrollTrigger.C0eCJjti.js";e.registerPlugin(o);document.querySelectorAll(".timeline").forEach(r=>{e.from(r,{"--line-scale":0,scrollTrigger:{trigger:r,start:"top 80%",end:"bottom 20%",scrub:.5}})});

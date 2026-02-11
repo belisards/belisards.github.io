@@ -1,1 +1,0 @@
-import{g as r,S as t}from"./ScrollTrigger.C0eCJjti.js";r.registerPlugin(t);t.batch(".project-card",{onEnter:o=>{r.fromTo(o,{y:40,opacity:0},{y:0,opacity:1,duration:.5,ease:"power2.out",stagger:.1})},start:"top 90%",once:!0});

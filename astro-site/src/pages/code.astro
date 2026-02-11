@@ -21,7 +21,7 @@ const projects = loadProjects().map(p => ({
   <div class="page-wrapper">
 
     <div class="page-header-wide">
-      <h1>Projects</h1>
+      <h1 id="page-title">Projects</h1>
       <p class="secondary">Data projects and code repositories — NLP, geodata, network analysis, machine learning.</p>
     </div>
 
@@ -69,7 +69,17 @@ const projects = loadProjects().map(p => ({
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
+  import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+  gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
+
+  // ScrambleText heading decode
+  const title = document.getElementById("page-title");
+  if (title && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.from(title, {
+      scrambleText: { text: title.textContent || "", chars: "01!<>-_\\/[]{}=+*^?#", revealDelay: 0.3, speed: 0.4 },
+      duration: 1.2, delay: 0.4,
+    });
+  }
 
   ScrollTrigger.batch(".project-card", {
     onEnter: (elements) => {

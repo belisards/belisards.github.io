@@ -10,7 +10,7 @@ const events = loadYaml('events.yml');
     <div class="content-wrapper">
 
       <div class="page-header">
-        <h1>Events</h1>
+        <h1 id="page-title">Events</h1>
         <p class="secondary">Conferences, lectures, workshops, and courses across four continents.</p>
       </div>
 
@@ -148,7 +148,17 @@ const events = loadYaml('events.yml');
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
+  import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+  gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
+
+  // ScrambleText heading decode
+  const title = document.getElementById("page-title");
+  if (title && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.from(title, {
+      scrambleText: { text: title.textContent || "", chars: "01!<>-_\\/[]{}=+*^?#", revealDelay: 0.3, speed: 0.4 },
+      duration: 1.2, delay: 0.4,
+    });
+  }
 
   // Draw timeline lines as they scroll into view
   document.querySelectorAll('.timeline').forEach(timeline => {
