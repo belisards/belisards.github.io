@@ -7,18 +7,85 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="signal-hero">
 
-      <!-- Hero name with signal-lock animation -->
-      <div class="hero-name">
-        <h1 class="hero-title signal-lock" id="hero-name">Adriano<br>Belisario</h1>
-        <div class="scan-line" id="scan-line"></div>
+      <!-- Canvas particle network -->
+      <canvas id="particle-network" class="particle-canvas" aria-hidden="true"></canvas>
+
+      <!-- Decorative SVG data network lines -->
+      <svg class="hero-svg" viewBox="0 0 800 500" fill="none" aria-hidden="true">
+        <!-- Top-left cluster -->
+        <path class="svg-line" d="M 20 40 L 120 80 L 200 30" stroke-width="1"/>
+        <path class="svg-line" d="M 120 80 L 160 160" stroke-width="1"/>
+        <circle class="svg-node" cx="20" cy="40" r="3"/>
+        <circle class="svg-node" cx="120" cy="80" r="4"/>
+        <circle class="svg-node" cx="200" cy="30" r="3"/>
+        <circle class="svg-node" cx="160" cy="160" r="3"/>
+
+        <!-- Right cluster -->
+        <path class="svg-line" d="M 620 60 L 720 120 L 780 80" stroke-width="1"/>
+        <path class="svg-line" d="M 720 120 L 680 200 L 760 240" stroke-width="1"/>
+        <circle class="svg-node" cx="620" cy="60" r="3"/>
+        <circle class="svg-node" cx="720" cy="120" r="4"/>
+        <circle class="svg-node" cx="780" cy="80" r="3"/>
+        <circle class="svg-node" cx="680" cy="200" r="3"/>
+        <circle class="svg-node" cx="760" cy="240" r="3"/>
+
+        <!-- Bottom accent -->
+        <path class="svg-line" d="M 80 420 L 200 380 L 340 440" stroke-width="1"/>
+        <path class="svg-line" d="M 500 400 L 640 360 L 740 420" stroke-width="1"/>
+        <circle class="svg-node" cx="80" cy="420" r="3"/>
+        <circle class="svg-node" cx="200" cy="380" r="3"/>
+        <circle class="svg-node" cx="340" cy="440" r="3"/>
+        <circle class="svg-node" cx="500" cy="400" r="3"/>
+        <circle class="svg-node" cx="640" cy="360" r="3"/>
+        <circle class="svg-node" cx="740" cy="420" r="3"/>
+      </svg>
+
+      <!-- Coordinate labels -->
+      <div class="hero-coords hero-coords--tl" aria-hidden="true">
+        <span class="coord-text">47.3769° N, 8.5417° E</span>
+      </div>
+      <div class="hero-coords hero-coords--br" aria-hidden="true">
+        <span class="coord-text">-22.9068° S, 43.1729° W</span>
       </div>
 
-      <!-- Subtitle with waveform -->
-      <div class="hero-subtitle" id="hero-subtitle">
-        <div class="waveform" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span>
+      <!-- Main hero content -->
+      <div class="hero-content">
+
+        <!-- Name with scramble decode -->
+        <div class="hero-name-block">
+          <div class="hero-prefix mono" id="hero-prefix">&nbsp;</div>
+          <h1 class="hero-title" id="hero-name">
+            <span class="hero-first" id="hero-first">Adriano</span><br>
+            <span class="hero-last" id="hero-last">Belisario</span>
+          </h1>
         </div>
-        <span>Data journalist & researcher</span>
+
+        <!-- Subtitle with SplitText char animation -->
+        <div class="hero-subtitle-block" id="hero-subtitle-block">
+          <div class="hero-role" id="hero-role">Data journalist & researcher</div>
+          <div class="hero-waveform" id="hero-waveform" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span>
+          </div>
+        </div>
+
+        <!-- Stat counters -->
+        <div class="hero-stats" id="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat__number" id="stat-continents">4</span>
+            <span class="hero-stat__label">continents</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat__number" id="stat-projects">20</span>
+            <span class="hero-stat__label">projects</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat__number" id="stat-publications">30</span>
+            <span class="hero-stat__label">publications</span>
+          </div>
+        </div>
+
       </div>
 
       <!-- Bio -->
@@ -78,35 +145,181 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <style>
   .signal-hero {
     max-width: 760px;
-    margin: 4rem auto 2rem;
+    margin: 2rem auto 2rem;
     position: relative;
+    min-height: 70vh;
   }
 
-  .hero-name {
+  /* --- Particle canvas --- */
+  .particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+  }
+
+  /* --- SVG network overlay --- */
+  .hero-svg {
+    position: absolute;
+    top: -2rem;
+    left: -12%;
+    width: 124%;
+    height: 500px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+  }
+
+  .svg-line {
+    stroke: var(--signal-primary);
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    opacity: 0.25;
+  }
+
+  .svg-node {
+    fill: var(--signal-primary);
+    opacity: 0;
+  }
+
+  /* --- Coordinate labels --- */
+  .hero-coords {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-tertiary);
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .hero-coords--tl {
+    top: 0;
+    right: 0;
+  }
+
+  .hero-coords--br {
+    bottom: 12rem;
+    left: 0;
+  }
+
+  /* --- Hero content --- */
+  .hero-content {
     position: relative;
+    z-index: 1;
+    padding-top: 2rem;
+  }
+
+  .hero-name-block {
     margin-bottom: 1.5rem;
-    overflow: hidden;
+  }
+
+  .hero-prefix {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--signal-primary);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+    opacity: 0;
   }
 
   .hero-title {
-    font-size: 4rem;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
+    font-size: 5rem;
+    letter-spacing: -0.05em;
+    line-height: 1.0;
     font-weight: 700;
   }
 
-  .hero-subtitle {
+  .hero-first,
+  .hero-last {
+    display: inline-block;
+    opacity: 0;
+  }
+
+  /* --- Subtitle block --- */
+  .hero-subtitle-block {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--ink-secondary);
+    gap: 1rem;
     margin-bottom: 2.5rem;
     opacity: 0;
   }
 
+  .hero-role {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    letter-spacing: 0.02em;
+  }
+
+  /* Enhanced waveform */
+  .hero-waveform {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .hero-waveform span {
+    display: inline-block;
+    width: 2px;
+    background: var(--signal-primary);
+    border-radius: 1px;
+    transform: scaleY(0);
+  }
+
+  .hero-waveform span:nth-child(1)  { height: 8px; }
+  .hero-waveform span:nth-child(2)  { height: 16px; }
+  .hero-waveform span:nth-child(3)  { height: 12px; }
+  .hero-waveform span:nth-child(4)  { height: 22px; }
+  .hero-waveform span:nth-child(5)  { height: 10px; }
+  .hero-waveform span:nth-child(6)  { height: 18px; }
+  .hero-waveform span:nth-child(7)  { height: 26px; }
+  .hero-waveform span:nth-child(8)  { height: 14px; }
+  .hero-waveform span:nth-child(9)  { height: 20px; }
+  .hero-waveform span:nth-child(10) { height: 8px; }
+  .hero-waveform span:nth-child(11) { height: 16px; }
+  .hero-waveform span:nth-child(12) { height: 12px; }
+
+  /* --- Stat counters --- */
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .hero-stat__number {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--signal-primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .hero-stat__label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* --- Bio --- */
   .hero-bio {
+    position: relative;
+    z-index: 1;
     font-size: 0.95rem;
     line-height: 1.85;
     max-width: 620px;
@@ -120,12 +333,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 0.15rem 0.1rem;
   }
 
-  /* Home cards */
+  /* --- Home cards --- */
   .home-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
     margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
   }
 
   .home-card {
@@ -207,47 +422,313 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   @media screen and (max-width: 768px) {
     .signal-hero {
-      margin: 2rem auto 1rem;
+      margin: 1rem auto 1rem;
+      min-height: auto;
     }
 
     .hero-title {
-      font-size: 2.75rem;
+      font-size: 3rem;
+    }
+
+    .hero-svg {
+      display: none;
+    }
+
+    .hero-coords {
+      display: none;
+    }
+
+    .hero-stats {
+      gap: 2rem;
+    }
+
+    .hero-stat__number {
+      font-size: 1.5rem;
     }
 
     .home-cards {
       grid-template-columns: 1fr;
     }
   }
+
+  @media screen and (max-width: 480px) {
+    .hero-title {
+      font-size: 2.25rem;
+    }
+
+    .hero-subtitle-block {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
 </style>
 
 <script>
   import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+  import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+  import { TextPlugin } from "gsap/TextPlugin";
+  import { CustomEase } from "gsap/CustomEase";
 
-  const tl = gsap.timeline({ delay: 0.3 });
+  gsap.registerPlugin(ScrollTrigger, SplitText, ScrambleTextPlugin, DrawSVGPlugin, TextPlugin, CustomEase);
 
-  // 1. Name resolves from blur
-  tl.fromTo("#hero-name",
-    { filter: "blur(12px)", opacity: 0.15 },
-    { filter: "blur(0px)", opacity: 1, duration: 1.4, ease: "power2.out" }
+  // Custom eases
+  CustomEase.create("signalResolve", "M0,0 C0.14,0 0.27,0.56 0.34,0.72 0.46,0.97 0.65,1 1,1");
+  CustomEase.create("dataSnap", "M0,0 C0.22,0.61 0.36,1 0.59,1 0.68,1 0.82,0.98 1,1");
+
+  // ========================================
+  // PARTICLE NETWORK CANVAS
+  // ========================================
+  const canvas = document.getElementById("particle-network") as HTMLCanvasElement;
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    let particles: Array<{x: number; y: number; vx: number; vy: number; radius: number; opacity: number}> = [];
+    let animFrameId: number;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function initParticles() {
+      particles = [];
+      const count = Math.min(60, Math.floor((window.innerWidth * window.innerHeight) / 20000));
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          radius: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.5 + 0.1,
+        });
+      }
+    }
+
+    function drawParticles() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(37, 99, 235, ${0.08 * (1 - dist / 150)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw particles
+      for (const p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(37, 99, 235, ${p.opacity})`;
+        ctx.fill();
+
+        // Move
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Bounce
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      }
+
+      animFrameId = requestAnimationFrame(drawParticles);
+    }
+
+    resizeCanvas();
+    initParticles();
+    drawParticles();
+    window.addEventListener("resize", () => { resizeCanvas(); initParticles(); });
+
+    // Fade in canvas
+    gsap.to(canvas, { opacity: 1, duration: 2, delay: 0.5, ease: "power2.inOut" });
+
+    // Fade out particles as user scrolls past hero
+    ScrollTrigger.create({
+      trigger: ".signal-hero",
+      start: "top top",
+      end: "bottom top",
+      onLeave: () => gsap.to(canvas, { opacity: 0, duration: 0.5 }),
+      onEnterBack: () => gsap.to(canvas, { opacity: 1, duration: 0.5 }),
+    });
+  }
+
+  // ========================================
+  // CINEMATIC HERO TIMELINE
+  // ========================================
+  const master = gsap.timeline({ delay: 0.4 });
+
+  // === ACT 1: Signal prefix types in ===
+  master.fromTo("#hero-prefix",
+    { opacity: 0 },
+    { opacity: 1, duration: 0.3, ease: "power2.out" }
+  );
+  master.to("#hero-prefix", {
+    duration: 0.8,
+    text: { value: "// signal.decode()", delimiter: "" },
+    ease: "none",
+  }, "<");
+
+  // === ACT 2: Name scrambles from data noise to clarity ===
+  master.fromTo("#hero-first",
+    { opacity: 0 },
+    { opacity: 1, duration: 0.01 },
+    "+=0.2"
+  );
+  master.to("#hero-first", {
+    duration: 1.6,
+    scrambleText: {
+      text: "Adriano",
+      chars: "01!<>-_\\/[]{}=+*^?#_SIGNAL",
+      revealDelay: 0.4,
+      speed: 0.4,
+      newClass: "scramble-resolved",
+    },
+    ease: "signalResolve",
+  }, "<");
+
+  master.fromTo("#hero-last",
+    { opacity: 0 },
+    { opacity: 1, duration: 0.01 },
+    "-=1.2"
+  );
+  master.to("#hero-last", {
+    duration: 1.8,
+    scrambleText: {
+      text: "Belisario",
+      chars: "01!<>-_\\/[]{}=+*^?#_DATA",
+      revealDelay: 0.5,
+      speed: 0.35,
+      newClass: "scramble-resolved",
+    },
+    ease: "signalResolve",
+  }, "<");
+
+  // === ACT 3: SVG network draws itself ===
+  master.to(".hero-svg", { opacity: 1, duration: 0.3 }, "-=1.0");
+
+  master.from(".svg-line", {
+    drawSVG: "0%",
+    duration: 1.2,
+    ease: "power2.inOut",
+    stagger: 0.1,
+  }, "-=1.0");
+
+  master.fromTo(".svg-node",
+    { opacity: 0, scale: 0 },
+    {
+      opacity: 0.4,
+      scale: 1,
+      duration: 0.4,
+      ease: "back.out(2)",
+      stagger: 0.05,
+      transformOrigin: "center center",
+    },
+    "-=0.6"
   );
 
-  // 2. Scan line sweeps across
-  tl.fromTo("#scan-line",
-    { left: "0%", opacity: 0.8 },
-    { left: "100%", opacity: 0, duration: 1.0, ease: "power1.inOut" },
-    "<0.2"
-  );
+  // === ACT 4: Subtitle splits in per-character ===
+  master.to("#hero-subtitle-block", { opacity: 1, duration: 0.01 }, "-=0.3");
 
-  // 3. Subtitle fades in
-  tl.to("#hero-subtitle",
-    { opacity: 1, duration: 0.6, ease: "power2.out" },
+  const roleSplit = SplitText.create("#hero-role", { type: "chars" });
+  master.from(roleSplit.chars, {
+    opacity: 0,
+    y: 20,
+    rotationX: -90,
+    duration: 0.5,
+    ease: "back.out(1.7)",
+    stagger: 0.02,
+  }, "-=0.2");
+
+  // === ACT 5: Waveform bars spring up ===
+  master.to("#hero-waveform span", {
+    scaleY: 1,
+    duration: 0.4,
+    ease: "elastic.out(1, 0.5)",
+    stagger: 0.04,
+  }, "-=0.3");
+
+  // Continuous waveform animation after initial reveal
+  master.add(() => {
+    gsap.to("#hero-waveform span", {
+      scaleY: 0.3,
+      duration: 0.6,
+      ease: "sine.inOut",
+      stagger: { each: 0.08, repeat: -1, yoyo: true },
+    });
+  });
+
+  // === ACT 6: Stats count up ===
+  master.to("#hero-stats", { opacity: 1, duration: 0.3, ease: "power2.out" }, "-=0.5");
+
+  master.from("#stat-continents", {
+    textContent: 0,
+    duration: 1.2,
+    ease: "power2.out",
+    snap: { textContent: 1 },
+    stagger: 0.1,
+  }, "<");
+
+  master.from("#stat-projects", {
+    textContent: 0,
+    duration: 1.4,
+    ease: "power2.out",
+    snap: { textContent: 1 },
+  }, "<0.1");
+
+  master.from("#stat-publications", {
+    textContent: 0,
+    duration: 1.6,
+    ease: "power2.out",
+    snap: { textContent: 1 },
+  }, "<0.1");
+
+  // === ACT 7: Coordinate labels fade in ===
+  master.to(".hero-coords", {
+    opacity: 0.6,
+    duration: 0.8,
+    ease: "power2.out",
+    stagger: 0.2,
+  }, "-=1.0");
+
+  // === ACT 8: Cards stagger in ===
+  master.fromTo(".home-card",
+    { y: 30, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.12 },
     "-=0.4"
   );
 
-  // 4. Home cards stagger in
-  tl.fromTo(".home-card",
-    { y: 24, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.1 },
-    "-=0.2"
-  );
+  // ========================================
+  // SVG NODE PULSE (continuous after draw)
+  // ========================================
+  master.add(() => {
+    gsap.to(".svg-node", {
+      opacity: 0.15,
+      duration: 1.5,
+      ease: "sine.inOut",
+      stagger: { each: 0.2, repeat: -1, yoyo: true },
+    });
+  }, "-=1.0");
+
+  // ========================================
+  // REDUCED MOTION
+  // ========================================
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    master.progress(1);
+    const particleEl = document.getElementById("particle-network");
+    if (particleEl) particleEl.style.display = "none";
+  }
 </script>
