@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { loadYaml } from '../lib/data';
+import { loadProjects } from '../lib/data';
+import { CODE_FRAGMENTS, KEYWORDS, DATA_VALUES } from '../data/hero-corpus';
 
 /**
  * HERO_MODE: Switch between hero animation concepts
@@ -7,9 +10,70 @@ import BaseLayout from '../layouts/BaseLayout.astro';
  *   "signal"    — Concept B: Noise-to-meaning with emerging text fragments
  */
 const HERO_MODE: "terminal" | "signal" = "signal";
+
+// ── Pull real text from YAML data at build time ──
+const pubs = loadYaml('publications.yml');
+const events = loadYaml('events.yml');
+const about = loadYaml('about.yml');
+const projects = loadProjects();
+
+// Extract publication titles (all sections, all entries)
+function extractPubTitles(data: any): string[] {
+  const titles: string[] = [];
+  for (const section of data.sections || []) {
+    for (const entry of section.entries || []) {
+      if (entry.title) titles.push(entry.title);
+    }
+    for (const sub of section.subsections || []) {
+      for (const entry of sub.entries || []) {
+        if (entry.title) titles.push(entry.title);
+      }
+      for (const book of sub.books || []) {
+        if (book.title) titles.push(book.title);
+      }
+    }
+  }
+  return titles;
+}
+
+// Extract talk/event titles (strip HTML tags)
+function extractEventTitles(data: any): string[] {
+  const titles: string[] = [];
+  for (const section of data.sections || []) {
+    for (const group of section.entries || []) {
+      for (const item of group.items || []) {
+        const text = item.text?.replace(/<[^>]+>/g, '') || '';
+        const match = text.match(/^([^.]+)/);
+        if (match) titles.push(match[1].trim());
+      }
+    }
+  }
+  return titles;
+}
+
+// Extract org names from experience
+function extractOrgs(data: any): string[] {
+  return (data.experience || []).map((e: any) => e.org).filter(Boolean);
+}
+
+// Build the corpus object to inject into client
+const heroCorpus = {
+  publications: extractPubTitles(pubs),
+  events: extractEventTitles(events),
+  orgs: [...extractOrgs(about), 'Oxford Internet Institute', 'Bellingcat', 'Forensic Architecture'],
+  projects: projects.map((p: any) => p.title || p.description || '').filter(Boolean),
+  code: CODE_FRAGMENTS,
+  keywords: KEYWORDS,
+  data: DATA_VALUES,
+};
 ---
 
 <BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture." hideNavInitially={true}>
+
+<!-- Inject YAML-sourced corpus for client-side hero animation -->
+<script is:inline define:vars={{ heroCorpus }}>
+  window.__HERO_CORPUS__ = heroCorpus;
+</script>
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero" data-hero-mode={HERO_MODE}>
@@ -539,13 +603,15 @@ const HERO_MODE: "terminal" | "signal" = "signal";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   import { CustomEase } from "gsap/CustomEase";
-  import {
-    CODE_FRAGMENTS,
-    PUBLICATION_FRAGMENTS,
-    KEYWORDS,
-    ENTITIES,
-    DATA_VALUES,
-  } from "../data/hero-corpus";
+
+  // Corpus injected from YAML at build time, with static fallbacks
+  const corpus = (window as any).__HERO_CORPUS__ || {};
+  const CODE_FRAGMENTS: string[] = corpus.code || [];
+  const PUBLICATION_FRAGMENTS: string[] = corpus.publications || [];
+  const KEYWORDS: string[] = corpus.keywords || [];
+  const ENTITIES: string[] = [...(corpus.orgs || []), ...(corpus.events || []).slice(0, 15)];
+  const DATA_VALUES: string[] = corpus.data || [];
+  const PROJECT_NAMES: string[] = corpus.projects || [];
 
   gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
   CustomEase.create("smooth", "M0,0 C0.22,0.61 0.36,1 0.59,1 0.68,1 0.82,0.98 1,1");
@@ -635,6 +701,7 @@ const HERO_MODE: "terminal" | "signal" = "signal";
       KEYWORDS.forEach(t => pool.push({ text: `[${t}]`, type: "keyword", color: "blue" }));
       ENTITIES.forEach(t => pool.push({ text: t, type: "entity", color: "warm" }));
       DATA_VALUES.forEach(t => pool.push({ text: t, type: "data", color: "dim" }));
+      PROJECT_NAMES.forEach(t => pool.push({ text: t, type: "pub", color: "teal" }));
       return pool;
     }
 
@@ -851,15 +918,16 @@ const HERO_MODE: "terminal" | "signal" = "signal";
   }
 
   // ========================================
-  // CONCEPT B: "SIGNAL DETECTION"
+  // CONCEPT B: "SIGNAL DETECTION" v2
   //
-  // Canvas starts as visual static / interference.
-  // Fragments of real text emerge autonomously from
-  // the noise — code, titles, keywords — becoming
-  // momentarily legible before dissolving back.
-  // Literalizes "Finding signal in the noise."
-  // Touch/mouse creates a clarity zone where more
-  // text becomes readable simultaneously.
+  // Chaotic but subtle. Multiple noise layers
+  // create a restless interference field. Text
+  // fragments drift and jitter, barely emerging
+  // before dissolving. Random glitch bursts tear
+  // across the canvas. Pointer creates a calm
+  // clarity zone amidst the chaos.
+  // YAML-sourced: real publication titles, events,
+  // orgs, code, all pulled at build time.
   // ========================================
   function initSignal() {
     if (!canvas || !ctx) return;
@@ -867,12 +935,14 @@ const HERO_MODE: "terminal" | "signal" = "signal";
     const DPR = Math.min(window.devicePixelRatio || 1, 2);
     let frameCount = 0;
 
-    // All text sources combined
+    // All text sources combined — weighted toward real YAML content
     const ALL_TEXT = [
-      ...CODE_FRAGMENTS,
       ...PUBLICATION_FRAGMENTS,
-      ...KEYWORDS.map(k => `[${k}]`),
+      ...PUBLICATION_FRAGMENTS.filter(() => Math.random() > 0.5), // double weight pubs
       ...ENTITIES,
+      ...PROJECT_NAMES,
+      ...CODE_FRAGMENTS,
+      ...KEYWORDS.map(k => `[${k}]`),
       ...DATA_VALUES,
     ];
 
@@ -882,7 +952,68 @@ const HERO_MODE: "terminal" | "signal" = "signal";
       ctx!.scale(DPR, DPR);
     }
 
-    // A text fragment that emerges from noise
+    // ── Noise layer: ImageData-based static ──
+    // Much faster than individual fillRects — renders thousands of pixels via buffer
+    let noiseImageData: ImageData | null = null;
+
+    function renderNoise(W: number, H: number) {
+      if (!ctx) return;
+      if (!noiseImageData || noiseImageData.width !== W * DPR || noiseImageData.height !== H * DPR) {
+        noiseImageData = ctx.createImageData(W, H);
+      }
+      const data = noiseImageData.data;
+      const len = data.length;
+      // Only update ~20% of pixels per frame for shimmer
+      for (let i = 0; i < len; i += 4) {
+        if (Math.random() > 0.2) continue;
+        const bright = Math.random() * 35;
+        // Occasional color tint
+        if (Math.random() < 0.008) {
+          const ck = COLOR_KEYS[Math.floor(Math.random() * (COLOR_KEYS.length - 1))]; // skip 'dim'
+          const c = COLORS[ck];
+          data[i] = c.r * 0.4;
+          data[i + 1] = c.g * 0.4;
+          data[i + 2] = c.b * 0.4;
+          data[i + 3] = 12 + Math.random() * 20;
+        } else {
+          data[i] = bright;
+          data[i + 1] = bright;
+          data[i + 2] = bright + 5;
+          data[i + 3] = Math.random() * 10;
+        }
+      }
+      ctx.putImageData(noiseImageData, 0, 0);
+    }
+
+    // ── Glitch tears — horizontal displacement bursts ──
+    interface GlitchTear {
+      y: number;
+      height: number;
+      offset: number;
+      life: number;
+      maxLife: number;
+      colorKey: keyof typeof COLORS;
+    }
+    let glitches: GlitchTear[] = [];
+
+    function maybeSpawnGlitch(H: number) {
+      // Random bursts — more frequent = more chaotic
+      if (Math.random() < 0.03) {
+        const count = 1 + Math.floor(Math.random() * 3);
+        for (let i = 0; i < count; i++) {
+          glitches.push({
+            y: Math.random() * H,
+            height: 1 + Math.random() * 4,
+            offset: (Math.random() - 0.5) * 30,
+            life: 0,
+            maxLife: 3 + Math.floor(Math.random() * 8),
+            colorKey: COLOR_KEYS[Math.floor(Math.random() * (COLOR_KEYS.length - 1))],
+          });
+        }
+      }
+    }
+
+    // ── Text fragments ──
     interface SignalFragment {
       text: string;
       x: number;
@@ -894,238 +1025,201 @@ const HERO_MODE: "terminal" | "signal" = "signal";
       emergeDuration: number;
       visibleDuration: number;
       dissolveDuration: number;
-      noiseOffsetX: number;
-      noiseOffsetY: number;
-      // Per-character noise: each char has its own scramble state
       charStates: number[];
+      driftX: number;  // slow horizontal drift
+      driftY: number;  // slow vertical drift
+      jitter: number;  // per-frame position noise intensity
     }
 
-    // Noise characters for scramble effect
-    const NOISE_CHARS = "▓▒░█▄▀─│┼╳◼◻◾◽▪▫●○◌◈◆◇▲△▼▽⬡⬢◊";
+    const NOISE_CHARS = "▓▒░█▄▀─│┼╳·.,:;'\"_-+~<>{}()[]";
 
     let fragments: SignalFragment[] = [];
-
-    // Static noise grid
-    interface NoisePixel {
-      x: number; y: number;
-      size: number;
-      alpha: number;
-      speed: number;
-      phase: number;
-    }
-
-    let noiseGrid: NoisePixel[] = [];
-
-    function initNoise() {
-      noiseGrid = [];
-      const W = canvas.offsetWidth;
-      const H = canvas.offsetHeight;
-      const density = Math.min(3000, Math.floor((W * H) / 400));
-      for (let i = 0; i < density; i++) {
-        noiseGrid.push({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          size: 1 + Math.random() * 2.5,
-          alpha: Math.random() * 0.15,
-          speed: 0.5 + Math.random() * 2,
-          phase: Math.random() * Math.PI * 2,
-        });
-      }
-    }
 
     function spawnFragment(): SignalFragment {
       const W = canvas.offsetWidth;
       const H = canvas.offsetHeight;
       const text = ALL_TEXT[Math.floor(Math.random() * ALL_TEXT.length)];
-      const fontSize = 10 + Math.random() * 8;
-      const colorKey = COLOR_KEYS[Math.floor(Math.random() * COLOR_KEYS.length)];
+      const fontSize = 9 + Math.random() * 6; // smaller = subtler
+      const colorKey = COLOR_KEYS[Math.floor(Math.random() * (COLOR_KEYS.length - 1))]; // skip 'dim'
 
       return {
         text,
-        x: 30 + Math.random() * (W - 200),
-        y: 40 + Math.random() * (H - 80),
+        x: 20 + Math.random() * (W - 180),
+        y: 30 + Math.random() * (H - 60),
         fontSize,
         colorKey,
         phase: "emerging",
         phaseTime: 0,
-        emergeDuration: 40 + Math.random() * 60,
-        visibleDuration: 60 + Math.random() * 120,
-        dissolveDuration: 30 + Math.random() * 50,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-        charStates: new Array(text.length).fill(0), // 0 = noise, 1 = revealed
+        emergeDuration: 60 + Math.random() * 90,   // slower emerge
+        visibleDuration: 30 + Math.random() * 60,   // brief visibility
+        dissolveDuration: 40 + Math.random() * 70,  // slow dissolve
+        charStates: new Array(text.length).fill(0),
+        driftX: (Math.random() - 0.5) * 0.15,
+        driftY: (Math.random() - 0.5) * 0.08,
+        jitter: 0.3 + Math.random() * 0.5,
       };
     }
 
-    // Max simultaneous fragments
-    const W = canvas.offsetWidth;
-    const H = canvas.offsetHeight;
-    const maxFragments = Math.min(20, Math.max(5, Math.floor((W * H) / 60000)));
-    const spawnRate = Math.max(15, Math.floor(80 / maxFragments * 3));
+    const W0 = canvas.offsetWidth;
+    const H0 = canvas.offsetHeight;
+    const maxFragments = Math.min(25, Math.max(6, Math.floor((W0 * H0) / 45000)));
+    const spawnRate = Math.max(10, Math.floor(50 / maxFragments * 3));
 
     function tick() {
       if (!ctx) return;
       const W = canvas.offsetWidth;
       const H = canvas.offsetHeight;
 
-      // Clear
-      ctx.fillStyle = "#06060a";
+      // ── Layer 1: dark base with very slight persistence ──
+      ctx.fillStyle = "rgba(6, 6, 10, 0.85)";
       ctx.fillRect(0, 0, W, H);
 
       frameCount++;
 
-      // Draw background noise — flickering static
-      for (const np of noiseGrid) {
-        np.phase += np.speed * 0.02;
-        const flicker = (Math.sin(np.phase) + 1) * 0.5;
-        const a = np.alpha * flicker;
-        if (a < 0.01) continue;
+      // ── Layer 2: pixel noise ──
+      renderNoise(W, H);
 
-        // Color tint — mostly grey with occasional color
-        if (Math.random() < 0.03) {
-          const ck = COLOR_KEYS[Math.floor(Math.random() * COLOR_KEYS.length)];
-          ctx.fillStyle = rgba(COLORS[ck], a * 2);
-        } else {
-          ctx.fillStyle = `rgba(120,120,140,${a})`;
-        }
-        ctx.fillRect(np.x, np.y, np.size, np.size);
-
-        // Randomly reposition some noise pixels for shimmer
-        if (Math.random() < 0.002) {
-          np.x = Math.random() * W;
-          np.y = Math.random() * H;
-        }
+      // ── Layer 3: glitch tears ──
+      maybeSpawnGlitch(H);
+      for (let i = glitches.length - 1; i >= 0; i--) {
+        const g = glitches[i];
+        g.life++;
+        if (g.life > g.maxLife) { glitches.splice(i, 1); continue; }
+        const c = COLORS[g.colorKey];
+        const a = 0.06 * (1 - g.life / g.maxLife);
+        ctx.fillStyle = rgba(c, a);
+        ctx.fillRect(g.offset > 0 ? 0 : W + g.offset, g.y, Math.abs(g.offset), g.height);
+        // Also draw a thin bright line
+        ctx.fillStyle = rgba(c, a * 3);
+        ctx.fillRect(0, g.y, W, 0.5);
       }
 
-      // Spawn fragments
+      // ── Spawn fragments ──
       if (frameCount % spawnRate === 0 && fragments.filter(f => f.phase !== "dead").length < maxFragments) {
         fragments.push(spawnFragment());
       }
 
-      // Clarity zone near pointer
+      // ── Clarity zone near pointer ──
       let clarityX = -9999, clarityY = -9999, clarityRadius = 0;
       if (pointer.active) {
         clarityX = pointer.x;
         clarityY = pointer.y;
-        clarityRadius = 200 * pointer.strength;
+        clarityRadius = 180 * pointer.strength;
 
-        // Draw subtle clarity glow
+        // Very subtle glow
         const grad = ctx.createRadialGradient(clarityX, clarityY, 0, clarityX, clarityY, clarityRadius);
-        grad.addColorStop(0, "rgba(13, 148, 136, 0.04)");
-        grad.addColorStop(0.5, "rgba(37, 99, 235, 0.02)");
+        grad.addColorStop(0, "rgba(13, 148, 136, 0.03)");
         grad.addColorStop(1, "transparent");
         ctx.fillStyle = grad;
-        ctx.fillRect(clarityX - clarityRadius, clarityY - clarityRadius, clarityRadius * 2, clarityRadius * 2);
+        ctx.beginPath();
+        ctx.arc(clarityX, clarityY, clarityRadius, 0, Math.PI * 2);
+        ctx.fill();
       }
 
-      // Update and draw fragments
+      // ── Update and draw fragments ──
       for (let i = fragments.length - 1; i >= 0; i--) {
         const frag = fragments[i];
-        if (frag.phase === "dead") {
-          fragments.splice(i, 1);
-          continue;
-        }
+        if (frag.phase === "dead") { fragments.splice(i, 1); continue; }
 
         frag.phaseTime++;
 
-        // Check if near clarity zone — accelerate reveal
+        // Drift
+        frag.x += frag.driftX;
+        frag.y += frag.driftY;
+
+        // Clarity check
         const dx = clarityX - frag.x;
         const dy = clarityY - frag.y;
         const distToPointer = Math.sqrt(dx * dx + dy * dy);
         const inClarity = distToPointer < clarityRadius;
-        const clarityBoost = inClarity ? 2.5 * (1 - distToPointer / clarityRadius) : 0;
+        const clarityBoost = inClarity ? 2 * (1 - distToPointer / clarityRadius) : 0;
 
         // Phase transitions
-        if (frag.phase === "emerging" && frag.phaseTime > frag.emergeDuration * (inClarity ? 0.3 : 1)) {
-          frag.phase = "visible";
-          frag.phaseTime = 0;
+        if (frag.phase === "emerging" && frag.phaseTime > frag.emergeDuration * (inClarity ? 0.25 : 1)) {
+          frag.phase = "visible"; frag.phaseTime = 0;
         } else if (frag.phase === "visible" && frag.phaseTime > frag.visibleDuration) {
-          frag.phase = "dissolving";
-          frag.phaseTime = 0;
+          frag.phase = "dissolving"; frag.phaseTime = 0;
         } else if (frag.phase === "dissolving" && frag.phaseTime > frag.dissolveDuration) {
-          frag.phase = "dead";
-          continue;
+          frag.phase = "dead"; continue;
         }
 
-        // Update per-character reveal states
+        // Character reveal — non-linear, random per-char
         const revealProgress =
           frag.phase === "emerging" ? frag.phaseTime / frag.emergeDuration :
           frag.phase === "visible" ? 1 :
           1 - (frag.phaseTime / frag.dissolveDuration);
-
-        const boostedProgress = Math.min(1, revealProgress + clarityBoost * 0.5);
+        const boosted = Math.min(1, revealProgress + clarityBoost * 0.4);
 
         for (let ci = 0; ci < frag.charStates.length; ci++) {
-          const charThreshold = ci / frag.charStates.length;
+          // Random reveal order — not strictly left-to-right
+          const threshold = (Math.sin(ci * 2.7 + frag.x * 0.01) + 1) * 0.5;
           if (frag.phase === "dissolving") {
-            // Dissolve from end
-            const dissolveThreshold = 1 - (ci / frag.charStates.length);
-            frag.charStates[ci] = revealProgress > dissolveThreshold ? 1 : 0;
+            frag.charStates[ci] = revealProgress > threshold * 0.7 ? 1 : 0;
           } else {
-            frag.charStates[ci] = boostedProgress > charThreshold ? 1 : 0;
+            frag.charStates[ci] = boosted > threshold ? 1 : 0;
           }
         }
 
-        // Global alpha
+        // Alpha — very subtle overall
         let alpha: number;
         if (frag.phase === "emerging") {
-          alpha = 0.2 + boostedProgress * 0.6;
+          alpha = 0.08 + boosted * 0.25;
         } else if (frag.phase === "visible") {
-          alpha = 0.6 + (inClarity ? 0.4 : 0);
+          alpha = 0.25 + (inClarity ? 0.45 : 0.1);
         } else {
-          alpha = Math.max(0, 0.6 * revealProgress);
+          alpha = Math.max(0, 0.3 * revealProgress);
         }
 
-        // Draw each character
+        // Jitter
+        const jx = (Math.random() - 0.5) * frag.jitter;
+        const jy = (Math.random() - 0.5) * frag.jitter * 0.5;
+
+        // Draw characters
         const c = COLORS[frag.colorKey];
         ctx.font = `${frag.fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
 
-        let cursorX = frag.x;
+        let cursorX = frag.x + jx;
+        const drawY = frag.y + jy;
+
         for (let ci = 0; ci < frag.text.length; ci++) {
           const revealed = frag.charStates[ci] === 1;
-          const char = revealed ? frag.text[ci] : NOISE_CHARS[Math.floor(Math.random() * NOISE_CHARS.length)];
+          const char = revealed ? frag.text[ci] :
+                       NOISE_CHARS[Math.floor(Math.random() * NOISE_CHARS.length)];
 
           if (revealed) {
             ctx.fillStyle = rgba(c, alpha);
           } else {
-            // Noise characters in dimmer color
-            ctx.fillStyle = rgba(COLORS.dim, alpha * 0.4);
+            ctx.fillStyle = rgba(COLORS.dim, alpha * 0.2);
           }
 
-          ctx.fillText(char, cursorX, frag.y);
+          // Occasional per-char glitch offset
+          const charJitter = (!revealed && Math.random() < 0.05) ? (Math.random() - 0.5) * 3 : 0;
+          ctx.fillText(char, cursorX + charJitter, drawY);
           cursorX += ctx.measureText(frag.text[ci]).width;
-        }
-
-        // Underline for fully revealed fragments
-        if (frag.phase === "visible" && boostedProgress >= 0.95) {
-          ctx.strokeStyle = rgba(c, alpha * 0.3);
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(frag.x, frag.y + 4);
-          ctx.lineTo(cursorX, frag.y + 4);
-          ctx.stroke();
         }
       }
 
-      // Horizontal scan line
-      const scanY = (frameCount * 0.5) % H;
-      ctx.fillStyle = "rgba(13, 148, 136, 0.03)";
-      ctx.fillRect(0, scanY, W, 1);
+      // ── Scan lines — multiple, varying speeds ──
+      const scan1 = (frameCount * 0.3) % H;
+      const scan2 = (frameCount * 0.7 + H * 0.6) % H;
+      ctx.fillStyle = "rgba(13, 148, 136, 0.015)";
+      ctx.fillRect(0, scan1, W, 1);
+      ctx.fillStyle = "rgba(124, 58, 237, 0.01)";
+      ctx.fillRect(0, scan2, W, 1);
 
-      // Subtle vignette
-      const vigGrad = ctx.createRadialGradient(W / 2, H / 2, H * 0.3, W / 2, H / 2, H * 0.9);
-      vigGrad.addColorStop(0, "transparent");
-      vigGrad.addColorStop(1, "rgba(6, 6, 10, 0.4)");
-      ctx.fillStyle = vigGrad;
+      // ── Vignette — heavier for subtlety ──
+      const vig = ctx.createRadialGradient(W / 2, H / 2, H * 0.25, W / 2, H / 2, H * 0.85);
+      vig.addColorStop(0, "transparent");
+      vig.addColorStop(1, "rgba(6, 6, 10, 0.55)");
+      ctx.fillStyle = vig;
       ctx.fillRect(0, 0, W, H);
 
       requestAnimationFrame(tick);
     }
 
     resize();
-    initNoise();
     tick();
-    window.addEventListener("resize", () => { resize(); initNoise(); });
+    window.addEventListener("resize", resize);
     setupPointer(canvas.parentElement);
   }
 
@@ -1148,7 +1242,7 @@ const HERO_MODE: "terminal" | "signal" = "signal";
     ctx.fillStyle = "#06060a";
     ctx.fillRect(0, 0, W, H);
 
-    const allText = [...CODE_FRAGMENTS, ...KEYWORDS.map(k => `[${k}]`), ...DATA_VALUES];
+    const allText = [...CODE_FRAGMENTS, ...PUBLICATION_FRAGMENTS.slice(0, 20), ...KEYWORDS.map(k => `[${k}]`), ...DATA_VALUES, ...PROJECT_NAMES];
     ctx.font = "11px 'JetBrains Mono', monospace";
     for (let i = 0; i < 40; i++) {
       const t = allText[Math.floor(Math.random() * allText.length)];
