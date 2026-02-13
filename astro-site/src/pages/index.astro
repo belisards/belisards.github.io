@@ -35,8 +35,12 @@ const hero = loadHero();
   <section class="statement">
     <div class="statement__inner">
       <p class="statement__text" id="statement-1">
-        Combining expertise in communication, open&#8209;source technologies,
-        and data to address important social concerns.
+        Data journalist and researcher combining expertise in communication,
+        open&#8209;source technologies, and data to address human rights concerns.
+        Currently at the Joint Data Center on Forced Displacement, a collaboration
+        between the World Bank and UNHCR. Previously contributed to Forensic Architecture,
+        Agência Pública, The Intercept Brasil, and Open Knowledge Brazil.
+        Holds an MSc in Social Data Science from the Oxford Internet Institute.
       </p>
     </div>
   </section>
@@ -45,11 +49,9 @@ const hero = loadHero();
   <section class="logo-strip">
     <p class="logo-strip__label mono">Collaborated with</p>
     <div class="logo-strip__inner">
-      <img src="/images/logos/oxford.svg" alt="Oxford" class="logo-strip__img" />
       <img src="/images/logos/unhcr.svg" alt="UNHCR" class="logo-strip__img" />
       <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
       <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
-      <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
       <img src="/images/logos/world-bank.svg" alt="World Bank" class="logo-strip__img" />
     </div>
   </section>
@@ -221,6 +223,7 @@ const hero = loadHero();
      STATEMENT
      ============================ */
   .statement {
+    position: relative;
     padding: 10rem 2rem;
     display: flex;
     align-items: center;
@@ -229,7 +232,21 @@ const hero = loadHero();
     background: #ffffff;
   }
 
+  .statement::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, #06060a 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .statement__inner {
+    position: relative;
+    z-index: 1;
     max-width: 900px;
   }
 
