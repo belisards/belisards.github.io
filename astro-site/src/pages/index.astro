@@ -20,13 +20,7 @@ const hero = loadHero();
       <h1 class="hero__pairs" id="hero-pairs"
           aria-label={hero.pairs.map(p => `${p.from} to ${p.to}`).join(', ')}>
         <span class="hero__from" id="pair-from">{hero.pairs[0].from}</span>
-        <span class="hero__arrow" id="hero-arrow" aria-hidden="true">
-          <svg viewBox="0 0 80 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line id="arrow-line" x1="0" y1="16" x2="60" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <polyline id="arrow-head" points="50,6 64,16 50,26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <circle id="arrow-dot" cx="0" cy="16" r="3" fill="currentColor" opacity="0"/>
-          </svg>
-        </span>
+        <span class="hero__to-word" id="hero-to-word">to</span>
         <span class="hero__to" id="pair-to">{hero.pairs[0].to}</span>
       </h1>
       <p class="hero__byline" id="hero-byline">
@@ -46,6 +40,18 @@ const hero = loadHero();
         Combining expertise in communication, open&#8209;source technologies,
         and data to address important social concerns.
       </p>
+    </div>
+  </section>
+
+  <!-- ========== LOGO STRIP ========== -->
+  <section class="logo-strip">
+    <p class="logo-strip__label mono">Collaborated with</p>
+    <div class="logo-strip__inner">
+      <img src="/images/logos/oxford.svg" alt="Oxford" class="logo-strip__img" />
+      <img src="/images/logos/unhcr.svg" alt="UNHCR" class="logo-strip__img" />
+      <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
+      <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
+      <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
     </div>
   </section>
 
@@ -90,18 +96,6 @@ const hero = loadHero();
         <span class="panel__cta mono">Explore &rarr;</span>
       </div>
     </a>
-  </section>
-
-  <!-- ========== LOGO STRIP ========== -->
-  <section class="logo-strip">
-    <p class="logo-strip__label mono">Collaborated with</p>
-    <div class="logo-strip__inner">
-      <img src="/images/logos/oxford.svg" alt="Oxford" class="logo-strip__img" />
-      <img src="/images/logos/unhcr.svg" alt="UNHCR" class="logo-strip__img" />
-      <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
-      <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
-      <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
-    </div>
   </section>
 
 </BaseLayout>
@@ -150,17 +144,17 @@ const hero = loadHero();
   }
 
   .hero__pairs {
-    font-size: clamp(2rem, 6vw, 5rem);
+    font-size: clamp(1.8rem, 8vw, 5rem);
     font-weight: 700;
     letter-spacing: -0.04em;
     line-height: 1.1;
     color: var(--canvas);
     margin: 0;
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 0.3em;
-    flex-wrap: wrap;
+    gap: 0.1em;
   }
 
   .hero__from,
@@ -169,18 +163,26 @@ const hero = loadHero();
     min-width: 2ch;
   }
 
-  .hero__arrow {
-    display: inline-flex;
-    align-items: center;
-    width: clamp(2.5rem, 5vw, 5rem);
+  .hero__to-word {
+    font-family: var(--font-mono);
+    font-size: 0.35em;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--signal-teal);
     opacity: 0;
   }
 
-  .hero__arrow svg {
-    width: 100%;
-    height: auto;
-    color: var(--signal-teal);
-    filter: drop-shadow(0 0 6px rgba(13, 148, 136, 0.4));
+  @media screen and (min-width: 769px) {
+    .hero__pairs {
+      flex-direction: row;
+      gap: 0.3em;
+      align-items: baseline;
+    }
+
+    .hero__to-word {
+      font-size: 0.3em;
+    }
   }
 
   .hero__byline {
@@ -455,17 +457,6 @@ const hero = loadHero();
      RESPONSIVE
      ============================ */
   @media screen and (max-width: 768px) {
-    .hero__pairs {
-      font-size: clamp(1.5rem, 8vw, 2.5rem);
-      flex-direction: column;
-      gap: 0.15em;
-    }
-
-    .hero__arrow {
-      width: clamp(1.5rem, 6vw, 2.5rem);
-      transform: rotate(90deg);
-    }
-
     .panels {
       grid-template-columns: 1fr;
     }
@@ -801,46 +792,6 @@ const hero = loadHero();
   const fromEl = document.getElementById("pair-from");
   const toEl = document.getElementById("pair-to");
 
-  const arrowLine = document.getElementById("arrow-line");
-  const arrowHead = document.getElementById("arrow-head");
-  const arrowDot = document.getElementById("arrow-dot");
-
-  function animateArrow() {
-    if (!arrowLine || !arrowHead || !arrowDot) return;
-
-    const tl = gsap.timeline();
-
-    // Dot shoots across the line
-    tl.fromTo(arrowDot,
-      { attr: { cx: 0 }, opacity: 0.8 },
-      { attr: { cx: 60 }, opacity: 0, duration: 0.5, ease: "power2.in" },
-      0
-    );
-
-    // Line draws from left to right via stroke-dashoffset
-    const lineLen = 60;
-    gsap.set(arrowLine, { attr: { "stroke-dasharray": lineLen, "stroke-dashoffset": lineLen } });
-    tl.to(arrowLine,
-      { attr: { "stroke-dashoffset": 0 }, duration: 0.6, ease: "power2.out" },
-      0
-    );
-
-    // Head draws in
-    const headLen = 30;
-    gsap.set(arrowHead, { attr: { "stroke-dasharray": headLen, "stroke-dashoffset": headLen } });
-    tl.to(arrowHead,
-      { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power2.out" },
-      0.25
-    );
-
-    // Glow pulse
-    tl.fromTo(".hero__arrow svg",
-      { filter: "drop-shadow(0 0 12px rgba(13, 148, 136, 0.8))" },
-      { filter: "drop-shadow(0 0 6px rgba(13, 148, 136, 0.4))", duration: 0.8, ease: "power2.out" },
-      0.2
-    );
-  }
-
   if (pairs && fromEl && toEl && !reducedMotion) {
     let currentIndex = 0;
 
@@ -850,9 +801,6 @@ const hero = loadHero();
 
       // Trigger flow field burst
       triggerBurst();
-
-      // Animate arrow redraw
-      animateArrow();
 
       gsap.to(fromEl, {
         duration: 1.2,
@@ -886,32 +834,10 @@ const hero = loadHero();
   // HERO ENTRANCE
   // ========================================
   if (!reducedMotion) {
-    // Pre-hide arrow SVG strokes
-    if (arrowLine && arrowHead) {
-      gsap.set(arrowLine, { attr: { "stroke-dasharray": 60, "stroke-dashoffset": 60 } });
-      gsap.set(arrowHead, { attr: { "stroke-dasharray": 30, "stroke-dashoffset": 30 } });
-    }
-
     const tl = gsap.timeline({ delay: 0.5 });
     tl.fromTo("#pair-from", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "heroReveal" });
-
-    // Arrow entrance — fade in + draw strokes + dot fly
-    tl.to(".hero__arrow", { opacity: 1, duration: 0.1 }, "-=0.3");
-    if (arrowDot) {
-      tl.fromTo(arrowDot,
-        { attr: { cx: 0 }, opacity: 0.9 },
-        { attr: { cx: 60 }, opacity: 0, duration: 0.5, ease: "power2.in" },
-        "<"
-      );
-    }
-    if (arrowLine) {
-      tl.to(arrowLine, { attr: { "stroke-dashoffset": 0 }, duration: 0.6, ease: "power2.out" }, "<");
-    }
-    if (arrowHead) {
-      tl.to(arrowHead, { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power2.out" }, "<+0.25");
-    }
-
-    tl.fromTo("#pair-to", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "heroReveal" }, "-=0.3");
+    tl.to("#hero-to-word", { opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.3");
+    tl.fromTo("#pair-to", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "heroReveal" }, "-=0.2");
     tl.to("#hero-byline", { opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.3");
     tl.to("#hero-scroll", { opacity: 1, duration: 0.6, ease: "power2.out" }, "-=0.4");
 
@@ -940,7 +866,7 @@ const hero = loadHero();
       });
     }
   } else {
-    gsap.set("#pair-from, .hero__arrow, #pair-to, #hero-byline, #hero-scroll", { opacity: 1 });
+    gsap.set("#pair-from, #hero-to-word, #pair-to, #hero-byline, #hero-scroll", { opacity: 1 });
 
     const navBar = document.querySelector('.nav-bar');
     if (navBar) {
