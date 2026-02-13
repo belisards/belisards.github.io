@@ -23,6 +23,7 @@ const hero = loadHero();
         <span class="hero__to-word" id="hero-to-word">to</span>
         <span class="hero__to" id="pair-to">{hero.pairs[0].to}</span>
       </h1>
+      <p class="hero__byline" id="hero-byline">Adriano Belisario</p>
     </div>
 
     <div class="hero__scroll" id="hero-scroll">
@@ -49,6 +50,7 @@ const hero = loadHero();
       <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
       <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
       <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
+      <img src="/images/logos/world-bank.svg" alt="World Bank" class="logo-strip__img" />
     </div>
   </section>
 
@@ -180,6 +182,16 @@ const hero = loadHero();
     .hero__to-word {
       font-size: 0.3em;
     }
+  }
+
+  .hero__byline {
+    font-family: var(--font-mono);
+    font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+    color: rgba(248, 247, 244, 0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    opacity: 0;
   }
 
   /* Scroll indicator */
@@ -590,8 +602,8 @@ const hero = loadHero();
 
   // Fade-away: particles stop spawning after FADE_START seconds,
   // canvas fully dark by ~FADE_START + 6s as remaining trails die out
-  const FADE_START = 8;       // seconds before fade begins
-  const FADE_DURATION = 6;    // seconds over which spawning ramps to zero
+  const FADE_START = 10;      // seconds before fade begins
+  const FADE_DURATION = 8;    // seconds over which spawning ramps to zero
   let elapsedTime = 0;
   let lastTimestamp = 0;
 
@@ -841,6 +853,7 @@ const hero = loadHero();
     tl.fromTo("#pair-from", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "heroReveal" });
     tl.to("#hero-to-word", { opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.3");
     tl.fromTo("#pair-to", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "heroReveal" }, "-=0.2");
+    tl.to("#hero-byline", { opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.3");
     tl.to("#hero-scroll", { opacity: 1, duration: 0.6, ease: "power2.out" }, "-=0.4");
 
     // Parallax
@@ -868,7 +881,7 @@ const hero = loadHero();
       });
     }
   } else {
-    gsap.set("#pair-from, #hero-to-word, #pair-to, #hero-scroll", { opacity: 1 });
+    gsap.set("#pair-from, #hero-to-word, #pair-to, #hero-byline, #hero-scroll", { opacity: 1 });
 
     const navBar = document.querySelector('.nav-bar');
     if (navBar) {
