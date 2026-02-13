@@ -18,3 +18,10 @@ export function loadYaml(file: string) {
   const filePath = path.resolve('src', 'data', file);
   return yaml.load(fs.readFileSync(filePath, 'utf-8')) as Record<string, any>;
 }
+
+export function loadHero() {
+  return loadYaml('hero.yml') as {
+    tagline: string;
+    pairs: { from: string; to: string }[];
+  };
+}

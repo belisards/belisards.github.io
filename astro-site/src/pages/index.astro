@@ -1,91 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { loadYaml } from '../lib/data';
-import { loadProjects } from '../lib/data';
-import { CODE_FRAGMENTS, KEYWORDS, DATA_VALUES } from '../data/hero-corpus';
+import { loadHero } from '../lib/data';
 
-/**
- * HERO_MODE: Switch between hero animation concepts
- *   "terminal"  — Concept A: Live investigation feed with real code/text
- *   "signal"    — Concept B: Noise-to-meaning with emerging text fragments
- */
-const HERO_MODE: "terminal" | "signal" = "signal";
-
-// ── Pull real text from YAML data at build time ──
-const pubs = loadYaml('publications.yml');
-const events = loadYaml('events.yml');
-const about = loadYaml('about.yml');
-const projects = loadProjects();
-
-// Extract publication titles (all sections, all entries)
-function extractPubTitles(data: any): string[] {
-  const titles: string[] = [];
-  for (const section of data.sections || []) {
-    for (const entry of section.entries || []) {
-      if (entry.title) titles.push(entry.title);
-    }
-    for (const sub of section.subsections || []) {
-      for (const entry of sub.entries || []) {
-        if (entry.title) titles.push(entry.title);
-      }
-      for (const book of sub.books || []) {
-        if (book.title) titles.push(book.title);
-      }
-    }
-  }
-  return titles;
-}
-
-// Extract talk/event titles (strip HTML tags)
-function extractEventTitles(data: any): string[] {
-  const titles: string[] = [];
-  for (const section of data.sections || []) {
-    for (const group of section.entries || []) {
-      for (const item of group.items || []) {
-        const text = item.text?.replace(/<[^>]+>/g, '') || '';
-        const match = text.match(/^([^.]+)/);
-        if (match) titles.push(match[1].trim());
-      }
-    }
-  }
-  return titles;
-}
-
-// Extract org names from experience
-function extractOrgs(data: any): string[] {
-  return (data.experience || []).map((e: any) => e.org).filter(Boolean);
-}
-
-// Build the corpus object to inject into client
-const heroCorpus = {
-  publications: extractPubTitles(pubs),
-  events: extractEventTitles(events),
-  orgs: [...extractOrgs(about), 'Oxford Internet Institute', 'Bellingcat', 'Forensic Architecture'],
-  projects: projects.map((p: any) => p.title || p.description || '').filter(Boolean),
-  code: CODE_FRAGMENTS,
-  keywords: KEYWORDS,
-  data: DATA_VALUES,
-};
+const hero = loadHero();
 ---
 
 <BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture." hideNavInitially={true}>
 
-<!-- Inject YAML-sourced corpus for client-side hero animation -->
-<script is:inline define:vars={{ heroCorpus }}>
-  window.__HERO_CORPUS__ = heroCorpus;
+<script is:inline define:vars={{ heroPairs: hero.pairs }}>
+  window.__heroPairs = heroPairs;
 </script>
 
   <!-- ========== HERO ========== -->
-  <section class="hero" id="hero" data-hero-mode={HERO_MODE}>
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <section class="hero" id="hero">
+    <canvas id="flow-canvas" aria-hidden="true"></canvas>
     <div class="hero__grain" aria-hidden="true"></div>
 
     <div class="hero__content">
-      <p class="hero__catchphrase mono" id="hero-catchphrase">Finding signal in the noise</p>
-      <h1 class="hero__name" id="hero-name" aria-label="Adriano Belisario">
-        <span class="hero__line" id="line-1">Adriano</span>
-        <span class="hero__line" id="line-2">Belisario</span>
+      <h1 class="hero__pairs" id="hero-pairs"
+          aria-label={hero.pairs.map(p => `${p.from} to ${p.to}`).join(', ')}>
+        <span class="hero__from" id="pair-from">{hero.pairs[0].from}</span>
+        <span class="hero__arrow" id="hero-arrow" aria-hidden="true">
+          <svg viewBox="0 0 80 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line id="arrow-line" x1="0" y1="16" x2="60" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <polyline id="arrow-head" points="50,6 64,16 50,26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle id="arrow-dot" cx="0" cy="16" r="3" fill="currentColor" opacity="0"/>
+          </svg>
+        </span>
+        <span class="hero__to" id="pair-to">{hero.pairs[0].to}</span>
       </h1>
+      <p class="hero__byline" id="hero-byline">
+        Adriano Belisario<span class="hero__byline-sep">&mdash;</span>{hero.tagline}
+      </p>
     </div>
 
     <div class="hero__scroll" id="hero-scroll">
@@ -103,56 +49,46 @@ const heroCorpus = {
     </div>
   </section>
 
-  <!-- ========== AFFILIATIONS ========== -->
-  <section class="affiliations">
-    <div class="affiliations__inner">
-      <p class="affiliations__text reveal">
-        Currently collaborating with the
-        <a href="https://www.jointdatacenter.org/">Joint Data Center on Forced Displacement</a>
-        and <a href="https://netlab.eco.ufrj.br/">Netlab/UFRJ</a>.
-        MSc in Social Data Science,
-        <strong>Oxford Internet Institute</strong>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ========== NAVIGATION PANELS ========== -->
+  <!-- ========== NAVIGATION PANELS — 2x2 Grid ========== -->
   <section class="panels">
-    <a href="/code/" class="panel" data-color="teal">
+    <a href="/code/" class="panel panel--teal" data-color="teal">
       <div class="panel__bg" aria-hidden="true"></div>
-      <span class="panel__index mono">01</span>
-      <div class="panel__body">
+      <div class="panel__content">
+        <span class="panel__number mono">01</span>
         <h2 class="panel__title">Code</h2>
-        <p class="panel__desc">Data projects & code — NLP, geodata, network analysis, machine learning.</p>
+        <p class="panel__desc">Data projects &amp; code repositories.<br>NLP, geodata, network analysis.</p>
+        <span class="panel__cta mono">Explore &rarr;</span>
       </div>
-      <span class="panel__arrow">&rarr;</span>
     </a>
-    <a href="/publications/" class="panel" data-color="violet">
+
+    <a href="/publications/" class="panel panel--violet" data-color="violet">
       <div class="panel__bg" aria-hidden="true"></div>
-      <span class="panel__index mono">02</span>
-      <div class="panel__body">
+      <div class="panel__content">
+        <span class="panel__number mono">02</span>
         <h2 class="panel__title">Publications</h2>
-        <p class="panel__desc">Academic papers, investigations, books & tutorials in English & Portuguese.</p>
+        <p class="panel__desc">Academic papers, investigations,<br>books &amp; tutorials.</p>
+        <span class="panel__cta mono">Explore &rarr;</span>
       </div>
-      <span class="panel__arrow">&rarr;</span>
     </a>
-    <a href="/events/" class="panel" data-color="warm">
+
+    <a href="/events/" class="panel panel--warm" data-color="warm">
       <div class="panel__bg" aria-hidden="true"></div>
-      <span class="panel__index mono">03</span>
-      <div class="panel__body">
+      <div class="panel__content">
+        <span class="panel__number mono">03</span>
         <h2 class="panel__title">Events</h2>
-        <p class="panel__desc">Conferences, lectures, workshops & courses across four continents.</p>
+        <p class="panel__desc">Conferences, lectures, workshops<br>across four continents.</p>
+        <span class="panel__cta mono">Explore &rarr;</span>
       </div>
-      <span class="panel__arrow">&rarr;</span>
     </a>
-    <a href="/about/" class="panel" data-color="blue">
+
+    <a href="/about/" class="panel panel--blue" data-color="blue">
       <div class="panel__bg" aria-hidden="true"></div>
-      <span class="panel__index mono">04</span>
-      <div class="panel__body">
+      <div class="panel__content">
+        <span class="panel__number mono">04</span>
         <h2 class="panel__title">About</h2>
-        <p class="panel__desc">CV, education, professional experience & collaborations.</p>
+        <p class="panel__desc">CV, education, experience<br>&amp; collaborations.</p>
+        <span class="panel__cta mono">Explore &rarr;</span>
       </div>
-      <span class="panel__arrow">&rarr;</span>
     </a>
   </section>
 
@@ -172,7 +108,7 @@ const heroCorpus = {
 
 <style>
   /* ============================
-     HERO — Generative Flow Field
+     HERO — Signal Detection background + Pairs layout
      ============================ */
   .hero {
     position: relative;
@@ -187,7 +123,7 @@ const heroCorpus = {
     background: #06060a;
   }
 
-  #hero-canvas {
+  #flow-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -210,50 +146,56 @@ const heroCorpus = {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
 
-  .hero__catchphrase {
-    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
-    letter-spacing: 0.15em;
-    color: var(--signal-teal);
-    margin-bottom: 2rem;
-    opacity: 0;
-    text-shadow: 0 0 40px rgba(13, 148, 136, 0.4);
-  }
-
-  .hero__catchphrase::after {
-    content: '|';
-    animation: cursorBlink 0.8s step-end infinite;
-    color: var(--signal-teal);
-    margin-left: 2px;
-    font-weight: 300;
-  }
-
-  .hero__catchphrase.typing-done::after {
-    display: none;
-  }
-
-  @keyframes cursorBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
-  /* Name — massive, bright white, unmissable on any screen */
-  .hero__name {
-    font-size: clamp(4rem, 18vw, 14rem);
+  .hero__pairs {
+    font-size: clamp(2rem, 6vw, 5rem);
     font-weight: 700;
     letter-spacing: -0.04em;
-    line-height: 0.88;
+    line-height: 1.1;
+    color: var(--canvas);
     margin: 0;
-    color: #ffffff;
-    opacity: 0;
-    transform: translateY(30px);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.3em;
+    flex-wrap: wrap;
   }
 
-  .hero__line {
-    display: block;
-    will-change: transform, opacity;
+  .hero__from,
+  .hero__to {
+    display: inline-block;
+    min-width: 2ch;
+  }
+
+  .hero__arrow {
+    display: inline-flex;
+    align-items: center;
+    width: clamp(2.5rem, 5vw, 5rem);
+    opacity: 0;
+  }
+
+  .hero__arrow svg {
+    width: 100%;
+    height: auto;
+    color: var(--signal-teal);
+    filter: drop-shadow(0 0 6px rgba(13, 148, 136, 0.4));
+  }
+
+  .hero__byline {
+    font-family: var(--font-mono);
+    font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+    color: rgba(248, 247, 244, 0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    opacity: 0;
+  }
+
+  .hero__byline-sep {
+    margin: 0 0.5em;
+    opacity: 0.3;
   }
 
   /* Scroll indicator */
@@ -277,6 +219,194 @@ const heroCorpus = {
   @keyframes linePulse {
     0%, 100% { transform: scaleY(0.3); opacity: 0.2; transform-origin: top; }
     50% { transform: scaleY(1); opacity: 0.8; transform-origin: top; }
+  }
+
+  /* ============================
+     STATEMENT
+     ============================ */
+  .statement {
+    padding: 10rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background: #ffffff;
+  }
+
+  .statement__inner {
+    max-width: 900px;
+  }
+
+  .statement__text {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  :global(.statement__text .char-dim) {
+    color: var(--ink-tertiary);
+    transition: color 0.3s ease;
+  }
+
+  /* ============================
+     PANELS — 2x2 Grid with breathing backgrounds
+     ============================ */
+  .panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 100vh;
+  }
+
+  .panel {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+    min-height: 50vh;
+    text-decoration: none;
+    color: var(--canvas);
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--ink);
+  }
+
+  .panel__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .panel:hover .panel__bg {
+    transform: scale(1.05);
+  }
+
+  .panel__content {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .panel__number {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: rgba(248, 247, 244, 0.4);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .panel__title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--canvas);
+    margin: 0 0 0.75rem;
+    line-height: 1;
+  }
+
+  .panel__desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(248, 247, 244, 0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  .panel__cta {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--canvas);
+    border-bottom: 1px solid rgba(248, 247, 244, 0.3);
+    padding-bottom: 0.25rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .panel:hover .panel__cta {
+    border-color: var(--canvas);
+  }
+
+  /* Breathing color backgrounds */
+  .panel--teal .panel__bg {
+    background: radial-gradient(
+      ellipse 120% 200% at 0% 50%,
+      rgba(13, 148, 136, 0.15) 0%,
+      rgba(13, 148, 136, 0.05) 50%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    border-top: 3px solid var(--signal-teal);
+    animation: bgBreatheTeal 6s ease-in-out infinite alternate;
+  }
+
+  .panel--violet .panel__bg {
+    background: radial-gradient(
+      ellipse 120% 200% at 100% 50%,
+      rgba(124, 58, 237, 0.15) 0%,
+      rgba(124, 58, 237, 0.05) 50%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    border-top: 3px solid var(--signal-violet);
+    animation: bgBreatheViolet 7s ease-in-out infinite alternate;
+  }
+
+  .panel--warm .panel__bg {
+    background: radial-gradient(
+      ellipse 120% 200% at 0% 50%,
+      rgba(232, 93, 4, 0.15) 0%,
+      rgba(232, 93, 4, 0.05) 50%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    border-top: 3px solid var(--signal-warm);
+    animation: bgBreatheWarm 5s ease-in-out infinite alternate;
+  }
+
+  .panel--blue .panel__bg {
+    background: radial-gradient(
+      ellipse 120% 200% at 100% 50%,
+      rgba(37, 99, 235, 0.15) 0%,
+      rgba(37, 99, 235, 0.05) 50%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    border-top: 3px solid var(--signal-primary);
+    animation: bgBreatheBlue 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes bgBreatheTeal {
+    0%   { opacity: 0.4; background-position: 0% 50%; }
+    50%  { opacity: 0.8; }
+    100% { opacity: 1; background-position: 100% 50%; }
+  }
+
+  @keyframes bgBreatheViolet {
+    0%   { opacity: 0.3; background-position: 100% 0%; }
+    50%  { opacity: 0.7; }
+    100% { opacity: 1; background-position: 0% 100%; }
+  }
+
+  @keyframes bgBreatheWarm {
+    0%   { opacity: 0.35; background-position: 0% 100%; }
+    50%  { opacity: 0.75; }
+    100% { opacity: 1; background-position: 100% 0%; }
+  }
+
+  @keyframes bgBreatheBlue {
+    0%   { opacity: 0.3; background-position: 50% 0%; }
+    50%  { opacity: 0.7; }
+    100% { opacity: 1; background-position: 50% 100%; }
+  }
+
+  .panel:hover .panel__bg {
+    opacity: 1 !important;
+    animation-play-state: paused;
   }
 
   /* ============================
@@ -322,236 +452,35 @@ const heroCorpus = {
   }
 
   /* ============================
-     STATEMENT
-     ============================ */
-  .statement {
-    padding: 10rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    background: #ffffff;
-  }
-
-  .statement__inner {
-    max-width: 900px;
-  }
-
-  .statement__text {
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    font-weight: 400;
-    line-height: 1.4;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  :global(.statement__text .char-dim) {
-    color: var(--ink-tertiary);
-    transition: color 0.3s ease;
-  }
-
-  /* ============================
-     AFFILIATIONS
-     ============================ */
-  .affiliations {
-    padding: 0 2rem 8rem;
-    background: #ffffff;
-  }
-
-  .affiliations__inner {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .affiliations__text {
-    font-size: 1.1rem;
-    line-height: 2;
-    color: var(--ink-secondary);
-    margin-bottom: 2rem;
-  }
-
-  /* ============================
-     PANELS — with generative canvases
-     ============================ */
-  .panels {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    border-top: 1px solid var(--border);
-    background: #ffffff;
-  }
-
-  .panel {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 2.5rem 3rem;
-    text-decoration: none;
-    color: var(--ink);
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-  }
-
-  /* Organic color background — always breathing */
-  .panel__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-  }
-
-  .panel[data-color="teal"] .panel__bg {
-    background: radial-gradient(
-      ellipse 120% 200% at 0% 50%,
-      rgba(13, 148, 136, 0.12) 0%,
-      rgba(13, 148, 136, 0.04) 50%,
-      transparent 100%
-    );
-    background-size: 200% 200%;
-    animation: bgBreatheTeal 6s ease-in-out infinite alternate;
-  }
-
-  .panel[data-color="violet"] .panel__bg {
-    background: radial-gradient(
-      ellipse 120% 200% at 100% 50%,
-      rgba(124, 58, 237, 0.12) 0%,
-      rgba(124, 58, 237, 0.04) 50%,
-      transparent 100%
-    );
-    background-size: 200% 200%;
-    animation: bgBreatheViolet 7s ease-in-out infinite alternate;
-  }
-
-  .panel[data-color="warm"] .panel__bg {
-    background: radial-gradient(
-      ellipse 120% 200% at 0% 50%,
-      rgba(232, 93, 4, 0.12) 0%,
-      rgba(232, 93, 4, 0.04) 50%,
-      transparent 100%
-    );
-    background-size: 200% 200%;
-    animation: bgBreatheWarm 5s ease-in-out infinite alternate;
-  }
-
-  .panel[data-color="blue"] .panel__bg {
-    background: radial-gradient(
-      ellipse 120% 200% at 100% 50%,
-      rgba(37, 99, 235, 0.12) 0%,
-      rgba(37, 99, 235, 0.04) 50%,
-      transparent 100%
-    );
-    background-size: 200% 200%;
-    animation: bgBreatheBlue 8s ease-in-out infinite alternate;
-  }
-
-  /* Breathing animations — organic, different rhythms per panel */
-  @keyframes bgBreatheTeal {
-    0%   { opacity: 0.4; background-position: 0% 50%; }
-    50%  { opacity: 0.8; }
-    100% { opacity: 1; background-position: 100% 50%; }
-  }
-
-  @keyframes bgBreatheViolet {
-    0%   { opacity: 0.3; background-position: 100% 0%; }
-    50%  { opacity: 0.7; }
-    100% { opacity: 1; background-position: 0% 100%; }
-  }
-
-  @keyframes bgBreatheWarm {
-    0%   { opacity: 0.35; background-position: 0% 100%; }
-    50%  { opacity: 0.75; }
-    100% { opacity: 1; background-position: 100% 0%; }
-  }
-
-  @keyframes bgBreatheBlue {
-    0%   { opacity: 0.3; background-position: 50% 0%; }
-    50%  { opacity: 0.7; }
-    100% { opacity: 1; background-position: 50% 100%; }
-  }
-
-  /* Hover locks at full intensity */
-  .panel:hover .panel__bg {
-    opacity: 1 !important;
-    animation-play-state: paused;
-  }
-
-  .panel__index, .panel__body, .panel__arrow {
-    position: relative;
-    z-index: 1;
-  }
-
-  .panel__index {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    color: var(--ink-tertiary);
-    flex-shrink: 0;
-    width: 2rem;
-    transition: color 0.3s ease;
-  }
-
-  .panel__body {
-    flex: 1;
-  }
-
-  .panel__title {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin: 0 0 0.25rem;
-    line-height: 1.1;
-    color: var(--ink);
-    transition: color 0.3s ease;
-  }
-
-  .panel__desc {
-    font-size: 0.85rem;
-    color: var(--ink-secondary);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .panel__arrow {
-    font-size: 1.5rem;
-    color: var(--ink-tertiary);
-    flex-shrink: 0;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .panel:hover .panel__arrow {
-    transform: translateX(8px);
-  }
-
-  /* Per-color hover tints */
-  .panel[data-color="teal"]:hover .panel__title,
-  .panel[data-color="teal"]:hover .panel__arrow,
-  .panel[data-color="teal"]:hover .panel__index { color: var(--signal-teal); }
-
-  .panel[data-color="violet"]:hover .panel__title,
-  .panel[data-color="violet"]:hover .panel__arrow,
-  .panel[data-color="violet"]:hover .panel__index { color: var(--signal-violet); }
-
-  .panel[data-color="warm"]:hover .panel__title,
-  .panel[data-color="warm"]:hover .panel__arrow,
-  .panel[data-color="warm"]:hover .panel__index { color: var(--signal-warm); }
-
-  .panel[data-color="blue"]:hover .panel__title,
-  .panel[data-color="blue"]:hover .panel__arrow,
-  .panel[data-color="blue"]:hover .panel__index { color: var(--signal-primary); }
-
-  /* ============================
      RESPONSIVE
      ============================ */
   @media screen and (max-width: 768px) {
-    .hero__name {
-      font-size: clamp(3.2rem, 18vw, 6rem);
+    .hero__pairs {
+      font-size: clamp(1.5rem, 8vw, 2.5rem);
+      flex-direction: column;
+      gap: 0.15em;
     }
 
-    .hero__catchphrase {
-      font-size: clamp(0.7rem, 3.5vw, 0.95rem);
-      margin-bottom: 1.2rem;
+    .hero__arrow {
+      width: clamp(1.5rem, 6vw, 2.5rem);
+      transform: rotate(90deg);
+    }
+
+    .panels {
+      grid-template-columns: 1fr;
+    }
+
+    .panel {
+      min-height: 40vh;
+    }
+
+    .statement {
+      padding: 6rem 1.5rem;
+      min-height: auto;
+    }
+
+    .statement__text {
+      font-size: clamp(1.3rem, 5vw, 2rem);
     }
 
     .logo-strip {
@@ -569,31 +498,16 @@ const heroCorpus = {
     .logo-strip__img {
       height: 18px;
     }
+  }
 
-    .statement {
-      padding: 6rem 1.5rem;
-      min-height: auto;
-    }
-
-    .statement__text {
-      font-size: clamp(1.3rem, 5vw, 2rem);
-    }
-
-    .affiliations {
-      padding: 0 1.5rem 5rem;
-    }
-
+  @media screen and (max-width: 480px) {
     .panel {
-      padding: 2rem 1.5rem;
-      gap: 1rem;
+      padding: 2rem;
+      min-height: 35vh;
     }
 
     .panel__title {
-      font-size: 1.4rem;
-    }
-
-    .panel__desc {
-      display: none;
+      font-size: 2rem;
     }
   }
 </style>
@@ -602,707 +516,406 @@ const heroCorpus = {
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
+  import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
   import { CustomEase } from "gsap/CustomEase";
 
-  // Corpus injected from YAML at build time, with static fallbacks
-  const corpus = (window as any).__HERO_CORPUS__ || {};
-  const CODE_FRAGMENTS: string[] = corpus.code || [];
-  const PUBLICATION_FRAGMENTS: string[] = corpus.publications || [];
-  const KEYWORDS: string[] = corpus.keywords || [];
-  const ENTITIES: string[] = [...(corpus.orgs || []), ...(corpus.events || []).slice(0, 15)];
-  const DATA_VALUES: string[] = corpus.data || [];
-  const PROJECT_NAMES: string[] = corpus.projects || [];
-
-  gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
-  CustomEase.create("smooth", "M0,0 C0.22,0.61 0.36,1 0.59,1 0.68,1 0.82,0.98 1,1");
+  gsap.registerPlugin(ScrollTrigger, SplitText, ScrambleTextPlugin, CustomEase);
+  CustomEase.create("heroReveal", "M0,0 C0.11,0.49 0.17,0.98 0.37,1 0.55,1.02 0.68,1 1,1");
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const heroSection = document.getElementById("hero") as HTMLElement;
-  const heroMode = heroSection?.dataset.heroMode || "terminal";
-  const canvas = document.getElementById("hero-canvas") as HTMLCanvasElement;
+
+  // ========================================
+  // SIMPLEX NOISE (2D)
+  // ========================================
+  const F2 = 0.5 * (Math.sqrt(3) - 1);
+  const G2 = (3 - Math.sqrt(3)) / 6;
+  const grad3: [number, number][] = [[1,1],[-1,1],[1,-1],[-1,-1],[1,0],[-1,0],[0,1],[0,-1]];
+  const perm = new Uint8Array(512);
+  const permMod8 = new Uint8Array(512);
+
+  (function seedNoise() {
+    const p = new Uint8Array(256);
+    for (let i = 0; i < 256; i++) p[i] = i;
+    for (let i = 255; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [p[i], p[j]] = [p[j], p[i]];
+    }
+    for (let i = 0; i < 512; i++) {
+      perm[i] = p[i & 255];
+      permMod8[i] = perm[i] % 8;
+    }
+  })();
+
+  function simplex2(xin: number, yin: number): number {
+    const s = (xin + yin) * F2;
+    const i = Math.floor(xin + s);
+    const j = Math.floor(yin + s);
+    const t = (i + j) * G2;
+    const x0 = xin - (i - t);
+    const y0 = yin - (j - t);
+    const i1 = x0 > y0 ? 1 : 0;
+    const j1 = x0 > y0 ? 0 : 1;
+    const x1 = x0 - i1 + G2;
+    const y1 = y0 - j1 + G2;
+    const x2 = x0 - 1 + 2 * G2;
+    const y2 = y0 - 1 + 2 * G2;
+    const ii = i & 255;
+    const jj = j & 255;
+
+    let n0 = 0, n1 = 0, n2 = 0;
+    let t0 = 0.5 - x0 * x0 - y0 * y0;
+    if (t0 >= 0) {
+      const g = grad3[permMod8[ii + perm[jj]]];
+      t0 *= t0;
+      n0 = t0 * t0 * (g[0] * x0 + g[1] * y0);
+    }
+    let t1 = 0.5 - x1 * x1 - y1 * y1;
+    if (t1 >= 0) {
+      const g = grad3[permMod8[ii + i1 + perm[jj + j1]]];
+      t1 *= t1;
+      n1 = t1 * t1 * (g[0] * x1 + g[1] * y1);
+    }
+    let t2 = 0.5 - x2 * x2 - y2 * y2;
+    if (t2 >= 0) {
+      const g = grad3[permMod8[ii + 1 + perm[jj + 1]]];
+      t2 *= t2;
+      n2 = t2 * t2 * (g[0] * x2 + g[1] * y2);
+    }
+    return 70 * (n0 + n1 + n2);
+  }
+
+  // ========================================
+  // FLOW FIELD
+  // ========================================
+  const canvas = document.getElementById("flow-canvas") as HTMLCanvasElement;
   const ctx = canvas?.getContext("2d");
-  const pointer = { x: -9999, y: -9999, active: false, strength: 1 };
 
-  // ========================================
-  // SHARED — Color palette
-  // ========================================
-  const COLORS = {
-    blue:   { r: 37, g: 99, b: 235 },
-    teal:   { r: 13, g: 148, b: 136 },
-    violet: { r: 124, g: 58, b: 237 },
-    warm:   { r: 232, g: 93, b: 4 },
-    dim:    { r: 60, g: 60, b: 80 },
-  };
-  const COLOR_KEYS = Object.keys(COLORS) as (keyof typeof COLORS)[];
-
-  function rgba(c: {r:number,g:number,b:number}, a: number) {
-    return `rgba(${c.r},${c.g},${c.b},${a})`;
+  interface FlowParticle {
+    x: number; y: number; prevX: number; prevY: number;
+    speed: number; colorIdx: number; life: number; maxLife: number;
   }
 
-  // ========================================
-  // SHARED — Pointer events (mouse + touch)
-  // ========================================
-  function setupPointer(el: HTMLElement | null) {
-    if (!el || !canvas) return;
-    el.addEventListener("mousemove", (e) => {
-      const r = canvas.getBoundingClientRect();
-      pointer.x = e.clientX - r.left;
-      pointer.y = e.clientY - r.top;
-      pointer.active = true;
-      pointer.strength = 1;
-    });
-    el.addEventListener("mouseleave", () => {
-      pointer.active = false; pointer.x = -9999; pointer.y = -9999;
-    });
-    el.addEventListener("touchstart", (e) => {
-      const r = canvas.getBoundingClientRect();
-      const t = e.touches[0];
-      pointer.x = t.clientX - r.left;
-      pointer.y = t.clientY - r.top;
-      pointer.active = true;
-      pointer.strength = 1.5;
-    }, { passive: true });
-    el.addEventListener("touchmove", (e) => {
-      const r = canvas.getBoundingClientRect();
-      const t = e.touches[0];
-      pointer.x = t.clientX - r.left;
-      pointer.y = t.clientY - r.top;
-      pointer.active = true;
-    }, { passive: true });
-    el.addEventListener("touchend", () => {
-      pointer.active = false; pointer.x = -9999; pointer.y = -9999;
-    });
+  const COLORS = [
+    [37, 99, 235],   // blue
+    [13, 148, 136],  // teal
+    [124, 58, 237],  // violet
+    [232, 93, 4],    // warm
+  ];
+
+  const INK_RGB = "27, 27, 30";
+  const mouse = { x: -9999, y: -9999, active: false };
+  let particles: FlowParticle[] = [];
+  let W = 0, H = 0;
+  let zOff = 0;
+  const NOISE_SCALE = 0.003;
+  const Z_SPEED = 0.0003;
+  const PARTICLE_SPEED = 1.8;
+  const TRAIL_ALPHA = 0.015;
+  const FADE_ALPHA = 0.012;
+  const MOUSE_RADIUS = 250;
+  const MOUSE_TURBULENCE = 3;
+
+  // Burst system — triggered by word rotation
+  const burst = { active: false, cx: 0, cy: 0, radius: 0, maxRadius: 0, strength: 0, frame: 0, maxFrames: 60 };
+
+  function triggerBurst() {
+    burst.active = true;
+    burst.cx = W / 2;
+    burst.cy = H / 2;
+    burst.radius = 0;
+    burst.maxRadius = Math.max(W, H) * 0.8;
+    burst.strength = 1;
+    burst.frame = 0;
   }
 
-  // ========================================
-  // CONCEPT A: "THE TERMINAL"
-  //
-  // A dark canvas resembling a live investigation feed.
-  // Real code fragments, publication titles, keywords
-  // stream upward in monospace. Lines get "processed":
-  // highlighted, tagged with colored labels.
-  // Touch/mouse creates a query burst — nearby text
-  // converges toward the pointer like a search filter.
-  // ========================================
-  function initTerminal() {
+  function isMobile() { return window.innerWidth < 768; }
+  function getParticleCount() { return isMobile() ? 1500 : 3500; }
+
+  function resize() {
     if (!canvas || !ctx) return;
-
-    // Build the feed pool — mix all corpus categories with type tags
-    interface FeedLine {
-      text: string;
-      type: "code" | "pub" | "keyword" | "entity" | "data";
-      color: keyof typeof COLORS;
-    }
-
-    function buildPool(): FeedLine[] {
-      const pool: FeedLine[] = [];
-      CODE_FRAGMENTS.forEach(t => pool.push({ text: t, type: "code", color: "teal" }));
-      PUBLICATION_FRAGMENTS.forEach(t => pool.push({ text: t, type: "pub", color: "violet" }));
-      KEYWORDS.forEach(t => pool.push({ text: `[${t}]`, type: "keyword", color: "blue" }));
-      ENTITIES.forEach(t => pool.push({ text: t, type: "entity", color: "warm" }));
-      DATA_VALUES.forEach(t => pool.push({ text: t, type: "data", color: "dim" }));
-      PROJECT_NAMES.forEach(t => pool.push({ text: t, type: "pub", color: "teal" }));
-      return pool;
-    }
-
-    const pool = buildPool();
-    function pickRandom(): FeedLine {
-      return pool[Math.floor(Math.random() * pool.length)];
-    }
-
-    // Active lines on screen
-    interface ActiveLine {
-      feed: FeedLine;
-      x: number;
-      y: number;
-      targetY: number;
-      speed: number;
-      alpha: number;
-      targetAlpha: number;
-      charReveal: number;    // how many chars visible (typewriter)
-      revealSpeed: number;
-      highlighted: boolean;  // "processed" state
-      highlightTime: number;
-      fontSize: number;
-      born: number;
-    }
-
-    let lines: ActiveLine[] = [];
-    let frameCount = 0;
-    const DPR = Math.min(window.devicePixelRatio || 1, 2);
-
-    function resize() {
-      canvas.width = canvas.offsetWidth * DPR;
-      canvas.height = canvas.offsetHeight * DPR;
-      ctx!.scale(DPR, DPR);
-    }
-
-    // Spawn a new line at the bottom
-    function spawnLine(): ActiveLine {
-      const w = canvas.offsetWidth;
-      const h = canvas.offsetHeight;
-      const feed = pickRandom();
-      const fontSize = feed.type === "code" ? 11 + Math.random() * 3 :
-                       feed.type === "keyword" ? 10 + Math.random() * 2 :
-                       feed.type === "data" ? 9 + Math.random() * 2 :
-                       12 + Math.random() * 4;
-      return {
-        feed,
-        x: 20 + Math.random() * (w - 200),
-        y: h + 20 + Math.random() * 60,
-        targetY: -50,
-        speed: 0.15 + Math.random() * 0.35,
-        alpha: 0,
-        targetAlpha: 0.15 + Math.random() * 0.25,
-        charReveal: 0,
-        revealSpeed: 0.3 + Math.random() * 0.7,
-        highlighted: false,
-        highlightTime: 0,
-        fontSize,
-        born: frameCount,
-      };
-    }
-
-    // Determine how many lines to keep alive based on viewport
-    const w = canvas.offsetWidth;
-    const h = canvas.offsetHeight;
-    const maxLines = Math.min(60, Math.max(15, Math.floor((w * h) / 25000)));
-    const spawnInterval = Math.max(8, Math.floor(60 / maxLines * 5));
-
-    // Pre-populate with scattered lines
-    for (let i = 0; i < Math.floor(maxLines * 0.6); i++) {
-      const line = spawnLine();
-      line.y = Math.random() * h;
-      line.charReveal = line.feed.text.length;
-      line.alpha = line.targetAlpha;
-      lines.push(line);
-    }
-
-    function tick() {
-      if (!ctx) return;
-      const W = canvas.offsetWidth;
-      const H = canvas.offsetHeight;
-
-      // Clear with trail
-      ctx.fillStyle = "rgba(6, 6, 10, 0.12)";
-      ctx.fillRect(0, 0, W, H);
-
-      frameCount++;
-
-      // Spawn new lines periodically
-      if (frameCount % spawnInterval === 0 && lines.length < maxLines) {
-        lines.push(spawnLine());
-      }
-
-      // Randomly highlight a line (simulate "processing")
-      if (frameCount % 90 === 0) {
-        const candidates = lines.filter(l => !l.highlighted && l.charReveal >= l.feed.text.length * 0.8);
-        if (candidates.length > 0) {
-          const pick = candidates[Math.floor(Math.random() * candidates.length)];
-          pick.highlighted = true;
-          pick.highlightTime = 0;
-          pick.targetAlpha = 0.7 + Math.random() * 0.3;
-        }
-      }
-
-      for (let i = lines.length - 1; i >= 0; i--) {
-        const line = lines[i];
-
-        // Movement — scroll upward
-        line.y -= line.speed;
-
-        // Pointer attraction — touch/mouse pulls nearby lines
-        if (pointer.active) {
-          const dx = pointer.x - line.x;
-          const dy = pointer.y - line.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const radius = 250;
-          if (dist < radius && dist > 0) {
-            const pull = ((radius - dist) / radius) * 0.4 * pointer.strength;
-            line.x += (dx / dist) * pull;
-            line.y += (dy / dist) * pull * 0.3;
-            // Boost visibility near pointer
-            line.targetAlpha = Math.min(1, line.targetAlpha + 0.3);
-            if (!line.highlighted && dist < 100) {
-              line.highlighted = true;
-              line.highlightTime = 0;
-            }
-          }
-        }
-
-        // Typewriter reveal
-        if (line.charReveal < line.feed.text.length) {
-          line.charReveal += line.revealSpeed;
-        }
-
-        // Alpha easing
-        line.alpha += (line.targetAlpha - line.alpha) * 0.04;
-
-        // Fade out near top
-        if (line.y < 80) {
-          line.alpha *= line.y / 80;
-        }
-
-        // Remove offscreen
-        if (line.y < -50 || line.alpha < 0.005) {
-          lines.splice(i, 1);
-          continue;
-        }
-
-        // Highlight decay
-        if (line.highlighted) {
-          line.highlightTime++;
-          if (line.highlightTime > 120) {
-            line.targetAlpha = Math.max(0.1, line.targetAlpha - 0.01);
-          }
-        }
-
-        // Draw
-        const c = COLORS[line.feed.color];
-        const visibleText = line.feed.text.slice(0, Math.floor(line.charReveal));
-
-        ctx.font = `${line.fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
-
-        if (line.highlighted && line.highlightTime < 180) {
-          // Highlighted: draw background tag + brighter text
-          const metrics = ctx.measureText(visibleText);
-          const tagH = line.fontSize + 6;
-          const tagW = metrics.width + 12;
-
-          ctx.fillStyle = rgba(c, line.alpha * 0.15);
-          ctx.fillRect(line.x - 4, line.y - line.fontSize + 1, tagW, tagH);
-
-          // Left accent bar
-          ctx.fillStyle = rgba(c, line.alpha * 0.8);
-          ctx.fillRect(line.x - 4, line.y - line.fontSize + 1, 2, tagH);
-
-          ctx.fillStyle = rgba(c, line.alpha);
-          ctx.fillText(visibleText, line.x + 2, line.y + 2);
-
-          // Tag label for certain types
-          if (line.feed.type === "keyword" || line.feed.type === "data") {
-            const label = line.feed.type === "keyword" ? "TAG" : "VAL";
-            ctx.font = `9px 'JetBrains Mono', monospace`;
-            ctx.fillStyle = rgba(c, line.alpha * 0.5);
-            ctx.fillText(label, line.x + tagW + 6, line.y + 2);
-          }
-        } else {
-          // Normal dim text
-          ctx.fillStyle = rgba(c, line.alpha);
-          ctx.fillText(visibleText, line.x, line.y);
-        }
-
-        // Cursor blink while typing
-        if (line.charReveal < line.feed.text.length) {
-          const partial = ctx.measureText(visibleText);
-          if (Math.floor(frameCount / 20) % 2 === 0) {
-            ctx.fillStyle = rgba(c, line.alpha * 1.5);
-            ctx.fillRect(line.x + partial.width + 1, line.y - line.fontSize + 4, 1.5, line.fontSize);
-          }
-        }
-      }
-
-      // Scanline effect — subtle horizontal lines
-      ctx.fillStyle = "rgba(255,255,255,0.008)";
-      for (let sy = 0; sy < H; sy += 3) {
-        ctx.fillRect(0, sy, W, 1);
-      }
-
-      requestAnimationFrame(tick);
-    }
-
-    resize();
-    tick();
-    window.addEventListener("resize", resize);
-    setupPointer(canvas.parentElement);
-  }
-
-  // ========================================
-  // CONCEPT B: "SIGNAL DETECTION" v2
-  //
-  // Chaotic but subtle. Multiple noise layers
-  // create a restless interference field. Text
-  // fragments drift and jitter, barely emerging
-  // before dissolving. Random glitch bursts tear
-  // across the canvas. Pointer creates a calm
-  // clarity zone amidst the chaos.
-  // YAML-sourced: real publication titles, events,
-  // orgs, code, all pulled at build time.
-  // ========================================
-  function initSignal() {
-    if (!canvas || !ctx) return;
-
-    const DPR = Math.min(window.devicePixelRatio || 1, 2);
-    let frameCount = 0;
-
-    // All text sources combined — weighted toward real YAML content
-    const ALL_TEXT = [
-      ...PUBLICATION_FRAGMENTS,
-      ...PUBLICATION_FRAGMENTS.filter(() => Math.random() > 0.5), // double weight pubs
-      ...ENTITIES,
-      ...PROJECT_NAMES,
-      ...CODE_FRAGMENTS,
-      ...KEYWORDS.map(k => `[${k}]`),
-      ...DATA_VALUES,
-    ];
-
-    function resize() {
-      canvas.width = canvas.offsetWidth * DPR;
-      canvas.height = canvas.offsetHeight * DPR;
-      ctx!.scale(DPR, DPR);
-    }
-
-    // ── Noise layer: ImageData-based static ──
-    // Much faster than individual fillRects — renders thousands of pixels via buffer
-    let noiseImageData: ImageData | null = null;
-
-    function renderNoise(W: number, H: number) {
-      if (!ctx) return;
-      if (!noiseImageData || noiseImageData.width !== W * DPR || noiseImageData.height !== H * DPR) {
-        noiseImageData = ctx.createImageData(W, H);
-      }
-      const data = noiseImageData.data;
-      const len = data.length;
-      // Only update ~20% of pixels per frame for shimmer
-      for (let i = 0; i < len; i += 4) {
-        if (Math.random() > 0.2) continue;
-        const bright = Math.random() * 35;
-        // Occasional color tint
-        if (Math.random() < 0.008) {
-          const ck = COLOR_KEYS[Math.floor(Math.random() * (COLOR_KEYS.length - 1))]; // skip 'dim'
-          const c = COLORS[ck];
-          data[i] = c.r * 0.4;
-          data[i + 1] = c.g * 0.4;
-          data[i + 2] = c.b * 0.4;
-          data[i + 3] = 12 + Math.random() * 20;
-        } else {
-          data[i] = bright;
-          data[i + 1] = bright;
-          data[i + 2] = bright + 5;
-          data[i + 3] = Math.random() * 10;
-        }
-      }
-      ctx.putImageData(noiseImageData, 0, 0);
-    }
-
-    // ── Glitch tears — horizontal displacement bursts ──
-    interface GlitchTear {
-      y: number;
-      height: number;
-      offset: number;
-      life: number;
-      maxLife: number;
-      colorKey: keyof typeof COLORS;
-    }
-    let glitches: GlitchTear[] = [];
-
-    function maybeSpawnGlitch(H: number) {
-      // Random bursts — more frequent = more chaotic
-      if (Math.random() < 0.03) {
-        const count = 1 + Math.floor(Math.random() * 3);
-        for (let i = 0; i < count; i++) {
-          glitches.push({
-            y: Math.random() * H,
-            height: 1 + Math.random() * 4,
-            offset: (Math.random() - 0.5) * 30,
-            life: 0,
-            maxLife: 3 + Math.floor(Math.random() * 8),
-            colorKey: COLOR_KEYS[Math.floor(Math.random() * (COLOR_KEYS.length - 1))],
-          });
-        }
-      }
-    }
-
-    // ── Text fragments ──
-    interface SignalFragment {
-      text: string;
-      x: number;
-      y: number;
-      fontSize: number;
-      colorKey: keyof typeof COLORS;
-      phase: "emerging" | "visible" | "dissolving" | "dead";
-      phaseTime: number;
-      emergeDuration: number;
-      visibleDuration: number;
-      dissolveDuration: number;
-      charStates: number[];
-      driftX: number;  // slow horizontal drift
-      driftY: number;  // slow vertical drift
-      jitter: number;  // per-frame position noise intensity
-    }
-
-    const NOISE_CHARS = "▓▒░█▄▀─│┼╳·.,:;'\"_-+~<>{}()[]";
-
-    let fragments: SignalFragment[] = [];
-
-    function spawnFragment(): SignalFragment {
-      const W = canvas.offsetWidth;
-      const H = canvas.offsetHeight;
-      const text = ALL_TEXT[Math.floor(Math.random() * ALL_TEXT.length)];
-      const fontSize = 9 + Math.random() * 6; // smaller = subtler
-      const colorKey = COLOR_KEYS[Math.floor(Math.random() * (COLOR_KEYS.length - 1))]; // skip 'dim'
-
-      return {
-        text,
-        x: 20 + Math.random() * (W - 180),
-        y: 30 + Math.random() * (H - 60),
-        fontSize,
-        colorKey,
-        phase: "emerging",
-        phaseTime: 0,
-        emergeDuration: 60 + Math.random() * 90,   // slower emerge
-        visibleDuration: 30 + Math.random() * 60,   // brief visibility
-        dissolveDuration: 40 + Math.random() * 70,  // slow dissolve
-        charStates: new Array(text.length).fill(0),
-        driftX: (Math.random() - 0.5) * 0.15,
-        driftY: (Math.random() - 0.5) * 0.08,
-        jitter: 0.3 + Math.random() * 0.5,
-      };
-    }
-
-    const W0 = canvas.offsetWidth;
-    const H0 = canvas.offsetHeight;
-    const maxFragments = Math.min(25, Math.max(6, Math.floor((W0 * H0) / 45000)));
-    const spawnRate = Math.max(10, Math.floor(50 / maxFragments * 3));
-
-    function tick() {
-      if (!ctx) return;
-      const W = canvas.offsetWidth;
-      const H = canvas.offsetHeight;
-
-      // ── Layer 1: dark base with very slight persistence ──
-      ctx.fillStyle = "rgba(6, 6, 10, 0.85)";
-      ctx.fillRect(0, 0, W, H);
-
-      frameCount++;
-
-      // ── Layer 2: pixel noise ──
-      renderNoise(W, H);
-
-      // ── Layer 3: glitch tears ──
-      maybeSpawnGlitch(H);
-      for (let i = glitches.length - 1; i >= 0; i--) {
-        const g = glitches[i];
-        g.life++;
-        if (g.life > g.maxLife) { glitches.splice(i, 1); continue; }
-        const c = COLORS[g.colorKey];
-        const a = 0.06 * (1 - g.life / g.maxLife);
-        ctx.fillStyle = rgba(c, a);
-        ctx.fillRect(g.offset > 0 ? 0 : W + g.offset, g.y, Math.abs(g.offset), g.height);
-        // Also draw a thin bright line
-        ctx.fillStyle = rgba(c, a * 3);
-        ctx.fillRect(0, g.y, W, 0.5);
-      }
-
-      // ── Spawn fragments ──
-      if (frameCount % spawnRate === 0 && fragments.filter(f => f.phase !== "dead").length < maxFragments) {
-        fragments.push(spawnFragment());
-      }
-
-      // ── Clarity zone near pointer ──
-      let clarityX = -9999, clarityY = -9999, clarityRadius = 0;
-      if (pointer.active) {
-        clarityX = pointer.x;
-        clarityY = pointer.y;
-        clarityRadius = 180 * pointer.strength;
-
-        // Very subtle glow
-        const grad = ctx.createRadialGradient(clarityX, clarityY, 0, clarityX, clarityY, clarityRadius);
-        grad.addColorStop(0, "rgba(13, 148, 136, 0.03)");
-        grad.addColorStop(1, "transparent");
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(clarityX, clarityY, clarityRadius, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      // ── Update and draw fragments ──
-      for (let i = fragments.length - 1; i >= 0; i--) {
-        const frag = fragments[i];
-        if (frag.phase === "dead") { fragments.splice(i, 1); continue; }
-
-        frag.phaseTime++;
-
-        // Drift
-        frag.x += frag.driftX;
-        frag.y += frag.driftY;
-
-        // Clarity check
-        const dx = clarityX - frag.x;
-        const dy = clarityY - frag.y;
-        const distToPointer = Math.sqrt(dx * dx + dy * dy);
-        const inClarity = distToPointer < clarityRadius;
-        const clarityBoost = inClarity ? 2 * (1 - distToPointer / clarityRadius) : 0;
-
-        // Phase transitions
-        if (frag.phase === "emerging" && frag.phaseTime > frag.emergeDuration * (inClarity ? 0.25 : 1)) {
-          frag.phase = "visible"; frag.phaseTime = 0;
-        } else if (frag.phase === "visible" && frag.phaseTime > frag.visibleDuration) {
-          frag.phase = "dissolving"; frag.phaseTime = 0;
-        } else if (frag.phase === "dissolving" && frag.phaseTime > frag.dissolveDuration) {
-          frag.phase = "dead"; continue;
-        }
-
-        // Character reveal — non-linear, random per-char
-        const revealProgress =
-          frag.phase === "emerging" ? frag.phaseTime / frag.emergeDuration :
-          frag.phase === "visible" ? 1 :
-          1 - (frag.phaseTime / frag.dissolveDuration);
-        const boosted = Math.min(1, revealProgress + clarityBoost * 0.4);
-
-        for (let ci = 0; ci < frag.charStates.length; ci++) {
-          // Random reveal order — not strictly left-to-right
-          const threshold = (Math.sin(ci * 2.7 + frag.x * 0.01) + 1) * 0.5;
-          if (frag.phase === "dissolving") {
-            frag.charStates[ci] = revealProgress > threshold * 0.7 ? 1 : 0;
-          } else {
-            frag.charStates[ci] = boosted > threshold ? 1 : 0;
-          }
-        }
-
-        // Alpha — very subtle overall
-        let alpha: number;
-        if (frag.phase === "emerging") {
-          alpha = 0.08 + boosted * 0.25;
-        } else if (frag.phase === "visible") {
-          alpha = 0.25 + (inClarity ? 0.45 : 0.1);
-        } else {
-          alpha = Math.max(0, 0.3 * revealProgress);
-        }
-
-        // Jitter
-        const jx = (Math.random() - 0.5) * frag.jitter;
-        const jy = (Math.random() - 0.5) * frag.jitter * 0.5;
-
-        // Draw characters
-        const c = COLORS[frag.colorKey];
-        ctx.font = `${frag.fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
-
-        let cursorX = frag.x + jx;
-        const drawY = frag.y + jy;
-
-        for (let ci = 0; ci < frag.text.length; ci++) {
-          const revealed = frag.charStates[ci] === 1;
-          const char = revealed ? frag.text[ci] :
-                       NOISE_CHARS[Math.floor(Math.random() * NOISE_CHARS.length)];
-
-          if (revealed) {
-            ctx.fillStyle = rgba(c, alpha);
-          } else {
-            ctx.fillStyle = rgba(COLORS.dim, alpha * 0.2);
-          }
-
-          // Occasional per-char glitch offset
-          const charJitter = (!revealed && Math.random() < 0.05) ? (Math.random() - 0.5) * 3 : 0;
-          ctx.fillText(char, cursorX + charJitter, drawY);
-          cursorX += ctx.measureText(frag.text[ci]).width;
-        }
-      }
-
-      // ── Scan lines — multiple, varying speeds ──
-      const scan1 = (frameCount * 0.3) % H;
-      const scan2 = (frameCount * 0.7 + H * 0.6) % H;
-      ctx.fillStyle = "rgba(13, 148, 136, 0.015)";
-      ctx.fillRect(0, scan1, W, 1);
-      ctx.fillStyle = "rgba(124, 58, 237, 0.01)";
-      ctx.fillRect(0, scan2, W, 1);
-
-      // ── Vignette — heavier for subtlety ──
-      const vig = ctx.createRadialGradient(W / 2, H / 2, H * 0.25, W / 2, H / 2, H * 0.85);
-      vig.addColorStop(0, "transparent");
-      vig.addColorStop(1, "rgba(6, 6, 10, 0.55)");
-      ctx.fillStyle = vig;
-      ctx.fillRect(0, 0, W, H);
-
-      requestAnimationFrame(tick);
-    }
-
-    resize();
-    tick();
-    window.addEventListener("resize", resize);
-    setupPointer(canvas.parentElement);
-  }
-
-  // ========================================
-  // INIT — launch the selected hero mode
-  // ========================================
-  if (canvas && ctx && !reducedMotion) {
-    if (heroMode === "terminal") {
-      initTerminal();
-    } else {
-      initSignal();
-    }
-  } else if (canvas && ctx) {
-    // Reduced motion fallback — static scattered text
-    const DPR = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = canvas.offsetWidth * DPR;
-    canvas.height = canvas.offsetHeight * DPR;
-    ctx.scale(DPR, DPR);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
-    ctx.fillStyle = "#06060a";
+    const dpr = Math.min(window.devicePixelRatio, 2);
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initParticles();
+    ctx.fillStyle = `rgb(${INK_RGB})`;
     ctx.fillRect(0, 0, W, H);
+  }
 
-    const allText = [...CODE_FRAGMENTS, ...PUBLICATION_FRAGMENTS.slice(0, 20), ...KEYWORDS.map(k => `[${k}]`), ...DATA_VALUES, ...PROJECT_NAMES];
-    ctx.font = "11px 'JetBrains Mono', monospace";
-    for (let i = 0; i < 40; i++) {
-      const t = allText[Math.floor(Math.random() * allText.length)];
-      const ck = COLOR_KEYS[Math.floor(Math.random() * COLOR_KEYS.length)];
-      const c = COLORS[ck];
-      ctx.fillStyle = rgba(c, 0.1 + Math.random() * 0.15);
-      ctx.fillText(t, 20 + Math.random() * (W - 200), 30 + Math.random() * (H - 60));
+  function initParticles() {
+    const count = getParticleCount();
+    particles = [];
+    for (let i = 0; i < count; i++) particles.push(spawnParticle());
+  }
+
+  function spawnParticle(): FlowParticle {
+    const x = Math.random() * W;
+    const y = Math.random() * H;
+    return {
+      x, y, prevX: x, prevY: y,
+      speed: PARTICLE_SPEED * (0.5 + Math.random() * 0.5),
+      colorIdx: Math.floor(Math.random() * COLORS.length),
+      life: 0, maxLife: 200 + Math.random() * 300,
+    };
+  }
+
+  function animate() {
+    if (!ctx) return;
+    ctx.fillStyle = `rgba(${INK_RGB}, ${FADE_ALPHA})`;
+    ctx.fillRect(0, 0, W, H);
+    zOff += Z_SPEED;
+
+    // Update burst
+    if (burst.active) {
+      burst.frame++;
+      const progress = burst.frame / burst.maxFrames;
+      burst.radius = burst.maxRadius * progress;
+      burst.strength = 1 - progress;
+      if (burst.frame >= burst.maxFrames) burst.active = false;
+    }
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.prevX = p.x;
+      p.prevY = p.y;
+
+      let angle = simplex2(p.x * NOISE_SCALE, p.y * NOISE_SCALE + zOff) * Math.PI * 2;
+
+      if (mouse.active) {
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MOUSE_RADIUS && dist > 0) {
+          const influence = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
+          angle += Math.atan2(dy, dx) * influence * MOUSE_TURBULENCE;
+        }
+      }
+
+      // Burst shockwave — radial push from center
+      if (burst.active) {
+        const bdx = p.x - burst.cx;
+        const bdy = p.y - burst.cy;
+        const bDist = Math.sqrt(bdx * bdx + bdy * bdy);
+        const ringDist = Math.abs(bDist - burst.radius);
+        const ringWidth = 150;
+        if (ringDist < ringWidth && bDist > 0) {
+          const wave = (1 - ringDist / ringWidth) * burst.strength;
+          const pushAngle = Math.atan2(bdy, bdx);
+          p.x += Math.cos(pushAngle) * wave * 12;
+          p.y += Math.sin(pushAngle) * wave * 12;
+        }
+      }
+
+      p.x += Math.cos(angle) * p.speed;
+      p.y += Math.sin(angle) * p.speed;
+      p.life++;
+
+      if (p.x < 0 || p.x > W || p.y < 0 || p.y > H || p.life > p.maxLife) {
+        particles[i] = spawnParticle();
+        continue;
+      }
+
+      const lifeRatio = p.life / p.maxLife;
+      const fadeIn = Math.min(lifeRatio * 10, 1);
+      const fadeOut = Math.max(1 - (lifeRatio - 0.7) / 0.3, 0);
+      let alpha = TRAIL_ALPHA * fadeIn * (lifeRatio > 0.7 ? fadeOut : 1);
+
+      // Brighten particles near the burst ring
+      if (burst.active) {
+        const bdx = p.x - burst.cx;
+        const bdy = p.y - burst.cy;
+        const bDist = Math.sqrt(bdx * bdx + bdy * bdy);
+        const ringDist = Math.abs(bDist - burst.radius);
+        if (ringDist < 120) {
+          alpha += (1 - ringDist / 120) * burst.strength * 0.08;
+        }
+      }
+
+      const c = COLORS[p.colorIdx];
+      ctx.beginPath();
+      ctx.moveTo(p.prevX, p.prevY);
+      ctx.lineTo(p.x, p.y);
+      ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${alpha})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  if (canvas && ctx && !reducedMotion) {
+    ctx.fillStyle = `rgb(${INK_RGB})`;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    resize();
+    animate();
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 250);
+    });
+
+    canvas.parentElement?.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    });
+    canvas.parentElement?.addEventListener("mouseleave", () => { mouse.active = false; });
+    canvas.parentElement?.addEventListener("touchmove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const t = e.touches[0];
+      mouse.x = t.clientX - rect.left;
+      mouse.y = t.clientY - rect.top;
+      mouse.active = true;
+    }, { passive: true });
+    canvas.parentElement?.addEventListener("touchend", () => { mouse.active = false; });
+  } else if (canvas && ctx && reducedMotion) {
+    resize();
+    ctx.fillStyle = `rgb(${INK_RGB})`;
+    ctx.fillRect(0, 0, W, H);
+    for (let frame = 0; frame < 200; frame++) {
+      for (const p of particles) {
+        p.prevX = p.x;
+        p.prevY = p.y;
+        const angle = simplex2(p.x * NOISE_SCALE, p.y * NOISE_SCALE) * Math.PI * 2;
+        p.x += Math.cos(angle) * p.speed;
+        p.y += Math.sin(angle) * p.speed;
+        if (p.x < 0 || p.x > W || p.y < 0 || p.y > H) continue;
+        const c = COLORS[p.colorIdx];
+        ctx.beginPath();
+        ctx.moveTo(p.prevX, p.prevY);
+        ctx.lineTo(p.x, p.y);
+        ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},0.01)`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
     }
   }
 
   // ========================================
-  // HERO ENTRANCE — bold, immediate
+  // CAPABILITY PAIRS ROTATION
+  // ========================================
+  const pairs = (window as any).__heroPairs as { from: string; to: string }[];
+  const fromEl = document.getElementById("pair-from");
+  const toEl = document.getElementById("pair-to");
+
+  const arrowLine = document.getElementById("arrow-line");
+  const arrowHead = document.getElementById("arrow-head");
+  const arrowDot = document.getElementById("arrow-dot");
+
+  function animateArrow() {
+    if (!arrowLine || !arrowHead || !arrowDot) return;
+
+    const tl = gsap.timeline();
+
+    // Dot shoots across the line
+    tl.fromTo(arrowDot,
+      { attr: { cx: 0 }, opacity: 0.8 },
+      { attr: { cx: 60 }, opacity: 0, duration: 0.5, ease: "power2.in" },
+      0
+    );
+
+    // Line draws from left to right via stroke-dashoffset
+    const lineLen = 60;
+    gsap.set(arrowLine, { attr: { "stroke-dasharray": lineLen, "stroke-dashoffset": lineLen } });
+    tl.to(arrowLine,
+      { attr: { "stroke-dashoffset": 0 }, duration: 0.6, ease: "power2.out" },
+      0
+    );
+
+    // Head draws in
+    const headLen = 30;
+    gsap.set(arrowHead, { attr: { "stroke-dasharray": headLen, "stroke-dashoffset": headLen } });
+    tl.to(arrowHead,
+      { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power2.out" },
+      0.25
+    );
+
+    // Glow pulse
+    tl.fromTo(".hero__arrow svg",
+      { filter: "drop-shadow(0 0 12px rgba(13, 148, 136, 0.8))" },
+      { filter: "drop-shadow(0 0 6px rgba(13, 148, 136, 0.4))", duration: 0.8, ease: "power2.out" },
+      0.2
+    );
+  }
+
+  if (pairs && fromEl && toEl && !reducedMotion) {
+    let currentIndex = 0;
+
+    function rotatePair() {
+      currentIndex = (currentIndex + 1) % pairs.length;
+      const next = pairs[currentIndex];
+
+      // Trigger flow field burst
+      triggerBurst();
+
+      // Animate arrow redraw
+      animateArrow();
+
+      gsap.to(fromEl, {
+        duration: 1.2,
+        scrambleText: { text: next.from, chars: "lowerCase", speed: 0.4 },
+        ease: "none",
+      });
+      gsap.to(toEl, {
+        duration: 1.2,
+        scrambleText: { text: next.to, chars: "lowerCase", speed: 0.4 },
+        ease: "none",
+        delay: 0.15,
+      });
+    }
+
+    let rotationActive = true;
+    function scheduleNext() {
+      if (rotationActive) gsap.delayedCall(3.5, () => { rotatePair(); scheduleNext(); });
+    }
+    scheduleNext();
+
+    ScrollTrigger.create({
+      trigger: ".hero",
+      start: "top top",
+      end: "bottom top",
+      onLeave: () => { rotationActive = false; },
+      onEnterBack: () => { rotationActive = true; scheduleNext(); },
+    });
+  }
+
+  // ========================================
+  // HERO ENTRANCE
   // ========================================
   if (!reducedMotion) {
-    const catchEl = document.getElementById("hero-catchphrase") as HTMLElement;
-    const phrase = "Finding signal in the noise";
+    // Pre-hide arrow SVG strokes
+    if (arrowLine && arrowHead) {
+      gsap.set(arrowLine, { attr: { "stroke-dasharray": 60, "stroke-dashoffset": 60 } });
+      gsap.set(arrowHead, { attr: { "stroke-dasharray": 30, "stroke-dashoffset": 30 } });
+    }
 
-    catchEl.textContent = "";
-    gsap.set(catchEl, { opacity: 1 });
+    const tl = gsap.timeline({ delay: 0.5 });
+    tl.fromTo("#pair-from", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "heroReveal" });
 
-    const heroTl = gsap.timeline({ delay: 0.3 });
+    // Arrow entrance — fade in + draw strokes + dot fly
+    tl.to(".hero__arrow", { opacity: 1, duration: 0.1 }, "-=0.3");
+    if (arrowDot) {
+      tl.fromTo(arrowDot,
+        { attr: { cx: 0 }, opacity: 0.9 },
+        { attr: { cx: 60 }, opacity: 0, duration: 0.5, ease: "power2.in" },
+        "<"
+      );
+    }
+    if (arrowLine) {
+      tl.to(arrowLine, { attr: { "stroke-dashoffset": 0 }, duration: 0.6, ease: "power2.out" }, "<");
+    }
+    if (arrowHead) {
+      tl.to(arrowHead, { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power2.out" }, "<+0.25");
+    }
 
-    // Type the catchphrase
-    let charIndex = 0;
-    heroTl.to({}, {
-      duration: phrase.length * 0.05,
-      ease: "none",
-      onUpdate: function() {
-        const progress = this.progress();
-        const newIndex = Math.floor(progress * phrase.length);
-        if (newIndex > charIndex) {
-          charIndex = newIndex;
-          catchEl.textContent = phrase.slice(0, charIndex);
-        }
-      },
-      onComplete: () => { catchEl.textContent = phrase; }
-    });
+    tl.fromTo("#pair-to", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "heroReveal" }, "-=0.3");
+    tl.to("#hero-byline", { opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.3");
+    tl.to("#hero-scroll", { opacity: 1, duration: 0.6, ease: "power2.out" }, "-=0.4");
 
-    heroTl.add(() => catchEl.classList.add("typing-done"), "+=0.3");
-
-    // Name — slam in from below, pure white, unmissable
-    heroTl.to("#hero-name", {
-      opacity: 1, y: 0, duration: 1.0,
-      ease: "power4.out",
-    }, "+=0.1");
-
-    // Catchphrase fades subtle
-    heroTl.to(catchEl, {
-      color: "rgba(248, 247, 244, 0.2)",
-      textShadow: "none",
-      duration: 1.0,
-      ease: "power2.out",
-    }, "<+0.3");
-
-    // Scroll indicator
-    heroTl.to("#hero-scroll", {
-      opacity: 1, duration: 1.0, ease: "power2.out"
-    }, "-=0.3");
-
-    // Parallax on scroll
+    // Parallax
     ScrollTrigger.create({
       trigger: ".hero",
       start: "top top",
@@ -1310,11 +923,13 @@ const heroCorpus = {
       scrub: true,
       onUpdate: (self) => {
         const p = self.progress;
-        gsap.set(".hero__content", { y: p * 150, opacity: 1 - p * 2 });
-        gsap.set("#hero-scroll", { opacity: Math.max(0, 1 - p * 5) });
+        gsap.set(".hero__content", { y: p * 150, opacity: 1 - p * 1.8 });
+        gsap.set("#flow-canvas", { y: p * -80, opacity: 1 - p });
+        gsap.set("#hero-scroll", { opacity: Math.max(0, 1 - p * 10) });
       },
     });
 
+    // Nav reveal
     const navBar = document.querySelector('.nav-bar');
     if (navBar) {
       ScrollTrigger.create({
@@ -1325,10 +940,7 @@ const heroCorpus = {
       });
     }
   } else {
-    const catchEl = document.getElementById("hero-catchphrase") as HTMLElement;
-    catchEl.classList.add("typing-done");
-    gsap.set("#hero-catchphrase, #hero-name, #hero-scroll", { opacity: 1 });
-    gsap.set("#hero-name", { y: 0 });
+    gsap.set("#pair-from, .hero__arrow, #pair-to, #hero-byline, #hero-scroll", { opacity: 1 });
 
     const navBar = document.querySelector('.nav-bar');
     if (navBar) {
@@ -1348,7 +960,6 @@ const heroCorpus = {
   if (stEl && !reducedMotion) {
     const split = SplitText.create(stEl, { type: "words" });
     split.words.forEach((w: HTMLElement) => w.classList.add("char-dim"));
-
     ScrollTrigger.create({
       trigger: ".statement",
       start: "top 70%",
@@ -1365,21 +976,20 @@ const heroCorpus = {
   }
 
   // ========================================
-  // PANEL REVEALS — staggered entrance
+  // PANEL SCROLL REVEALS
   // ========================================
-  if (!reducedMotion) {
-    gsap.utils.toArray<HTMLElement>(".panel").forEach((panel, i) => {
-      gsap.from(panel, {
-        y: 40, opacity: 0,
-        duration: 0.7,
-        delay: i * 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: panel,
-          start: "top 92%",
-          once: true,
-        },
-      });
+  document.querySelectorAll(".panel__content").forEach((content) => {
+    if (reducedMotion) {
+      gsap.set(content, { opacity: 1, y: 0 });
+      return;
+    }
+    gsap.to(content, {
+      opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
+      scrollTrigger: {
+        trigger: content.closest(".panel"),
+        start: "top 75%",
+        once: true,
+      },
     });
-  }
+  });
 </script>
