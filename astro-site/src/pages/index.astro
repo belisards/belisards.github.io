@@ -240,7 +240,7 @@ const hero = loadHero();
     top: 0;
     left: 0;
     width: 100%;
-    height: 20%;
+    height: 50%;
     background: linear-gradient(to bottom, var(--hero-bg) 0%, transparent 100%);
     pointer-events: none;
     z-index: 0;
@@ -821,7 +821,115 @@ const hero = loadHero();
     requestAnimationFrame(animate);
   }
 
-  if (canvas && ctx && !reducedMotion) {
+  // ========================================
+  // OCEAN WAVES — Midnight theme only
+  // ========================================
+  const WAVE_COUNT = 18;
+  const WAVE_COLORS = [
+    [20, 50, 100],
+    [30, 70, 130],
+    [15, 80, 120],
+    [40, 100, 160],
+    [25, 60, 110],
+    [50, 120, 180],
+  ];
+
+  interface WaveLine {
+    baseY: number;       // vertical position (0-1 normalized)
+    amplitude: number;   // wave height
+    frequency: number;   // wave density
+    speed: number;       // horizontal drift speed
+    phase: number;       // phase offset
+    colorIdx: number;
+    alpha: number;
+    lineWidth: number;
+  }
+
+  let waves: WaveLine[] = [];
+
+  function initWaves() {
+    waves = [];
+    for (let i = 0; i < WAVE_COUNT; i++) {
+      const t = i / (WAVE_COUNT - 1); // 0 to 1
+      const baseY = 0.35 + t * 0.6;  // waves from 35% to 95% of screen height
+      waves.push({
+        baseY,
+        amplitude: 8 + Math.random() * 25 + (1 - t) * 20, // bigger near top
+        frequency: 0.003 + Math.random() * 0.004,
+        speed: 0.2 + Math.random() * 0.5,
+        phase: Math.random() * Math.PI * 2,
+        colorIdx: Math.floor(Math.random() * WAVE_COLORS.length),
+        alpha: 0.04 + t * 0.12, // more opaque toward bottom
+        lineWidth: 0.5 + t * 1.0, // thicker toward bottom
+      });
+    }
+  }
+
+  let waveTime = 0;
+
+  function animateWaves(timestamp = 0) {
+    if (!ctx) return;
+    waveTime += 0.008;
+
+    // Clear with dark bg
+    ctx.fillStyle = `rgba(${INK_RGB}, 0.06)`;
+    ctx.fillRect(0, 0, W, H);
+
+    for (const wave of waves) {
+      const c = WAVE_COLORS[wave.colorIdx];
+      ctx.beginPath();
+      ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${wave.alpha})`;
+      ctx.lineWidth = wave.lineWidth;
+
+      const y0 = wave.baseY * H;
+      const step = 3;
+
+      for (let x = 0; x <= W; x += step) {
+        // Layer multiple sine waves for organic feel
+        const noise = simplex2(x * 0.002, waveTime * 0.3 + wave.phase) * 0.5;
+        const y = y0
+          + Math.sin(x * wave.frequency + waveTime * wave.speed + wave.phase) * wave.amplitude
+          + Math.sin(x * wave.frequency * 2.3 + waveTime * wave.speed * 0.7 + wave.phase * 1.5) * wave.amplitude * 0.3
+          + noise * wave.amplitude * 0.6;
+
+        if (x === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      }
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(animateWaves);
+  }
+
+  if (canvas && ctx && !reducedMotion && isMidnight) {
+    // Ocean wave mode
+    const dpr = Math.min(window.devicePixelRatio, 2);
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = `rgb(${INK_RGB})`;
+    ctx.fillRect(0, 0, W, H);
+    initWaves();
+    animateWaves();
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        W = canvas.offsetWidth;
+        H = canvas.offsetHeight;
+        const dpr2 = Math.min(window.devicePixelRatio, 2);
+        canvas.width = W * dpr2;
+        canvas.height = H * dpr2;
+        ctx!.setTransform(dpr2, 0, 0, dpr2, 0, 0);
+        initWaves();
+      }, 250);
+    });
+  } else if (canvas && ctx && !reducedMotion) {
     ctx.fillStyle = `rgb(${INK_RGB})`;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     resize();
