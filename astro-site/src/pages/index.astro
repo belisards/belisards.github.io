@@ -613,7 +613,16 @@ const hero = loadHero();
     speed: number; colorIdx: number; life: number; maxLife: number;
   }
 
-  const COLORS = [
+  // Theme-aware colors
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'signal';
+  const isMidnight = currentTheme === 'midnight';
+
+  const COLORS = isMidnight ? [
+    [96, 165, 250],   // soft blue
+    [45, 212, 191],   // cyan/teal
+    [167, 139, 250],  // lavender
+    [96, 165, 250],   // blue again (weighted)
+  ] : [
     [37, 99, 235],   // blue
     [13, 148, 136],  // teal
     [124, 58, 237],  // violet
@@ -676,13 +685,23 @@ const hero = loadHero();
   }
 
   function spawnParticle(): FlowParticle {
-    const x = Math.random() * W;
-    const y = Math.random() * H;
+    let x: number, y: number;
+    if (isMidnight) {
+      // Spawn from top half, flowing downward
+      x = Math.random() * W;
+      y = Math.random() * H * 0.4;
+    } else {
+      x = Math.random() * W;
+      y = Math.random() * H;
+    }
     return {
       x, y, prevX: x, prevY: y,
-      speed: PARTICLE_SPEED * (0.5 + Math.random() * 0.5),
+      speed: isMidnight
+        ? PARTICLE_SPEED * (0.3 + Math.random() * 0.7)
+        : PARTICLE_SPEED * (0.5 + Math.random() * 0.5),
       colorIdx: Math.floor(Math.random() * COLORS.length),
-      life: 0, maxLife: 200 + Math.random() * 300,
+      life: 0,
+      maxLife: isMidnight ? 300 + Math.random() * 500 : 200 + Math.random() * 300,
     };
   }
 
@@ -714,7 +733,14 @@ const hero = loadHero();
       p.prevX = p.x;
       p.prevY = p.y;
 
-      let angle = simplex2(p.x * NOISE_SCALE, p.y * NOISE_SCALE + zOff) * Math.PI * 2;
+      let angle: number;
+      if (isMidnight) {
+        // Cybernetic waves flowing downward
+        const waveX = simplex2(p.x * NOISE_SCALE * 2, p.y * NOISE_SCALE * 0.5 + zOff) * 0.6;
+        angle = Math.PI * 0.5 + waveX; // PI/2 = straight down, plus horizontal wave
+      } else {
+        angle = simplex2(p.x * NOISE_SCALE, p.y * NOISE_SCALE + zOff) * Math.PI * 2;
+      }
 
       if (mouse.active) {
         const dx = p.x - mouse.x;
@@ -776,8 +802,15 @@ const hero = loadHero();
       ctx.beginPath();
       ctx.moveTo(p.prevX, p.prevY);
       ctx.lineTo(p.x, p.y);
-      ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${alpha})`;
-      ctx.lineWidth = 0.8;
+      if (isMidnight) {
+        // Brighter in upper portion, fade toward bottom
+        const vertFade = 1 - (p.y / H) * 0.7;
+        ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${alpha * 1.5 * vertFade})`;
+        ctx.lineWidth = 0.6;
+      } else {
+        ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${alpha})`;
+        ctx.lineWidth = 0.8;
+      }
       ctx.stroke();
     }
 
