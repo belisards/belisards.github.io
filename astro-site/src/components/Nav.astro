@@ -34,9 +34,54 @@ const navItems = [
       <li class="nav-item nav-item--external">
         <a href="https://github.com/belisards" target="_blank" rel="noopener">GitHub &#x2197;</a>
       </li>
+      <li class="nav-item nav-item--theme">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+          <span class="theme-toggle__label" id="theme-label">signal</span>
+        </button>
+      </li>
     </ul>
   </div>
 </nav>
+
+<style>
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink-tertiary);
+    background: none;
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+  }
+
+  .theme-toggle:hover {
+    color: var(--ink);
+    border-color: var(--border-hover);
+  }
+
+  .theme-toggle::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--signal-primary);
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+  }
+
+  .nav-item--theme {
+    margin-left: 0.25rem;
+  }
+</style>
 
 <script>
   const toggle = document.getElementById('nav-toggle');
@@ -44,5 +89,27 @@ const navItems = [
   toggle?.addEventListener('click', () => {
     toggle.classList.toggle('open');
     links?.classList.toggle('open');
+  });
+
+  // Theme switcher
+  const themes = ['signal', 'midnight', 'warm'] as const;
+  const themeBtn = document.getElementById('theme-toggle');
+  const themeLabel = document.getElementById('theme-label');
+
+  function setTheme(theme: string) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (themeLabel) themeLabel.textContent = theme;
+  }
+
+  // Initialize label from current theme
+  const current = document.documentElement.getAttribute('data-theme') || 'signal';
+  if (themeLabel) themeLabel.textContent = current;
+
+  themeBtn?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'signal';
+    const idx = themes.indexOf(current as typeof themes[number]);
+    const next = themes[(idx + 1) % themes.length];
+    setTheme(next);
   });
 </script>

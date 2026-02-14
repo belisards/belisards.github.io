@@ -47,6 +47,14 @@ const pageTitle = title === 'Adriano Belisario' ? title : `${title} — Adriano 
   <meta name="twitter:description" content={description} />
   <meta name="twitter:creator" content="@belisards" />
 
+  <!-- Theme initialization (runs before paint to avoid flash) -->
+  <script is:inline>
+    (function(){
+      var t = localStorage.getItem('theme') || 'signal';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NE9CBZWC4K"></script>
   <script is:inline>

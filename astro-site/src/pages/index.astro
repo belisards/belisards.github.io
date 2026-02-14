@@ -115,7 +115,7 @@ const hero = loadHero();
     justify-content: center;
     overflow: hidden;
     margin-left: calc(-50vw + 50%);
-    background: #06060a;
+    background: var(--hero-bg);
   }
 
   #flow-canvas {
@@ -149,7 +149,7 @@ const hero = loadHero();
     font-weight: 700;
     letter-spacing: -0.04em;
     line-height: 1.1;
-    color: var(--canvas);
+    color: var(--hero-text);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -189,7 +189,8 @@ const hero = loadHero();
   .hero__byline {
     font-family: var(--font-mono);
     font-size: clamp(0.65rem, 1.2vw, 0.85rem);
-    color: rgba(248, 247, 244, 0.5);
+    color: var(--hero-text);
+    opacity: 0.5;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: 2rem;
@@ -229,7 +230,8 @@ const hero = loadHero();
     align-items: center;
     justify-content: center;
     min-height: 60vh;
-    background: #ffffff;
+    background: var(--statement-bg);
+    transition: var(--theme-transition);
   }
 
   .statement::before {
@@ -239,7 +241,7 @@ const hero = loadHero();
     left: 0;
     width: 100%;
     height: 20%;
-    background: linear-gradient(to bottom, #06060a 0%, transparent 100%);
+    background: linear-gradient(to bottom, var(--hero-bg) 0%, transparent 100%);
     pointer-events: none;
     z-index: 0;
   }
@@ -255,7 +257,7 @@ const hero = loadHero();
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: -0.02em;
-    color: var(--ink);
+    color: var(--statement-text);
   }
 
   :global(.statement__text .char-dim) {
@@ -281,10 +283,11 @@ const hero = loadHero();
     padding: 3rem;
     min-height: 50vh;
     text-decoration: none;
-    color: var(--canvas);
+    color: var(--panel-text);
     overflow: hidden;
     cursor: pointer;
-    background: var(--ink);
+    background: var(--panel-bg);
+    transition: var(--theme-transition);
   }
 
   .panel__bg {
@@ -309,7 +312,8 @@ const hero = loadHero();
   .panel__number {
     font-size: 0.7rem;
     letter-spacing: 0.2em;
-    color: rgba(248, 247, 244, 0.4);
+    color: var(--panel-text);
+    opacity: 0.4;
     display: block;
     margin-bottom: 0.75rem;
   }
@@ -318,7 +322,7 @@ const hero = loadHero();
     font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 700;
     letter-spacing: -0.04em;
-    color: var(--canvas);
+    color: var(--panel-text);
     margin: 0 0 0.75rem;
     line-height: 1;
   }
@@ -326,7 +330,8 @@ const hero = loadHero();
   .panel__desc {
     font-size: 0.85rem;
     line-height: 1.7;
-    color: rgba(248, 247, 244, 0.6);
+    color: var(--panel-text);
+    opacity: 0.6;
     margin-bottom: 1.5rem;
   }
 
@@ -334,14 +339,16 @@ const hero = loadHero();
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--canvas);
-    border-bottom: 1px solid rgba(248, 247, 244, 0.3);
+    color: var(--panel-text);
+    border-bottom: 1px solid currentColor;
+    border-bottom-color: inherit;
+    opacity: 0.6;
     padding-bottom: 0.25rem;
-    transition: border-color 0.3s ease;
+    transition: opacity 0.3s ease;
   }
 
   .panel:hover .panel__cta {
-    border-color: var(--canvas);
+    opacity: 1;
   }
 
   /* Breathing color backgrounds */
@@ -428,8 +435,9 @@ const hero = loadHero();
   .logo-strip {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    background: #f0eeeb;
+    background: var(--logo-strip-bg);
     padding: 4rem 2rem;
+    transition: var(--theme-transition);
     border-top: 1px solid var(--border);
     text-align: center;
   }
@@ -457,6 +465,14 @@ const hero = loadHero();
     opacity: 0.4;
     filter: grayscale(1);
     transition: opacity 0.4s ease, filter 0.4s ease;
+  }
+
+  :global([data-theme="midnight"]) .logo-strip__img {
+    filter: grayscale(1) invert(1);
+  }
+
+  :global([data-theme="midnight"]) .logo-strip__img:hover {
+    filter: invert(1);
   }
 
   .logo-strip__img:hover {

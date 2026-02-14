@@ -3,48 +3,122 @@
    Finding patterns in data, clarity in noise
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* --- CSS Custom Properties --- */
 :root {
-  /* Base */
+  /* Layout (shared across themes) */
+  --max-width: 1100px;
+  --content-width: 760px;
+  --nav-height: 56px;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Theme transition */
+  --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ========== SIGNAL (default) ========== */
+:root,
+[data-theme="signal"] {
   --canvas: #f8f7f4;
   --canvas-raised: #ffffff;
   --ink: #1b1b1e;
   --ink-secondary: #52525b;
   --ink-tertiary: #a1a1aa;
-
-  /* Signal Accents (data-viz inspired) */
   --signal-primary: #2563eb;
   --signal-warm: #e85d04;
   --signal-teal: #0d9488;
   --signal-violet: #7c3aed;
-
-  /* Structural */
   --grid-line: rgba(27, 27, 30, 0.05);
   --grid-line-strong: rgba(27, 27, 30, 0.10);
   --border: rgba(27, 27, 30, 0.10);
   --border-hover: rgba(27, 27, 30, 0.20);
-
-  /* Glows */
   --glow-blue: rgba(37, 99, 235, 0.08);
   --glow-warm: rgba(232, 93, 4, 0.08);
   --glow-teal: rgba(13, 148, 136, 0.08);
   --glow-violet: rgba(124, 58, 237, 0.08);
-
-  /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 4px rgba(0,0,0,0.03);
   --shadow-md: 0 2px 8px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
   --shadow-lg: 0 4px 16px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06);
-
-  /* Typography */
   --font-display: 'DM Sans', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Homepage section colors */
+  --hero-bg: #06060a;
+  --hero-text: var(--canvas);
+  --statement-bg: #ffffff;
+  --statement-text: var(--ink);
+  --logo-strip-bg: #f0eeeb;
+  --panel-bg: var(--ink);
+  --panel-text: var(--canvas);
+  --nav-bg: rgba(248, 247, 244, 0.92);
+  --nav-bg-solid: #f8f7f4;
+}
 
-  /* Layout */
-  --max-width: 1100px;
-  --content-width: 760px;
-  --nav-height: 56px;
+/* ========== MIDNIGHT ========== */
+[data-theme="midnight"] {
+  --canvas: #0f0f13;
+  --canvas-raised: #1a1a22;
+  --ink: #e4e4e8;
+  --ink-secondary: #a1a1aa;
+  --ink-tertiary: #5a5a66;
+  --signal-primary: #60a5fa;
+  --signal-warm: #fb923c;
+  --signal-teal: #2dd4bf;
+  --signal-violet: #a78bfa;
+  --grid-line: rgba(255, 255, 255, 0.04);
+  --grid-line-strong: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+  --glow-blue: rgba(96, 165, 250, 0.1);
+  --glow-warm: rgba(251, 146, 60, 0.1);
+  --glow-teal: rgba(45, 212, 191, 0.1);
+  --glow-violet: rgba(167, 139, 250, 0.1);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2), 0 1px 4px rgba(0,0,0,0.15);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.4), 0 8px 32px rgba(0,0,0,0.3);
+  --font-display: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --hero-bg: #06060a;
+  --hero-text: #e4e4e8;
+  --statement-bg: #0f0f13;
+  --statement-text: #e4e4e8;
+  --logo-strip-bg: #16161e;
+  --panel-bg: #1a1a22;
+  --panel-text: #e4e4e8;
+  --nav-bg: rgba(15, 15, 19, 0.92);
+  --nav-bg-solid: #0f0f13;
+}
+
+/* ========== WARM PAPER ========== */
+[data-theme="warm"] {
+  --canvas: #f5ebe0;
+  --canvas-raised: #fdf8f3;
+  --ink: #3d2c1e;
+  --ink-secondary: #6b5744;
+  --ink-tertiary: #a89279;
+  --signal-primary: #b45309;
+  --signal-warm: #c2410c;
+  --signal-teal: #4d7c6f;
+  --signal-violet: #7e5bab;
+  --grid-line: rgba(61, 44, 30, 0.06);
+  --grid-line-strong: rgba(61, 44, 30, 0.10);
+  --border: rgba(61, 44, 30, 0.12);
+  --border-hover: rgba(61, 44, 30, 0.22);
+  --glow-blue: rgba(180, 83, 9, 0.08);
+  --glow-warm: rgba(194, 65, 12, 0.08);
+  --glow-teal: rgba(77, 124, 111, 0.08);
+  --glow-violet: rgba(126, 91, 171, 0.08);
+  --shadow-sm: 0 1px 2px rgba(60,40,20,0.06), 0 1px 4px rgba(60,40,20,0.04);
+  --shadow-md: 0 2px 8px rgba(60,40,20,0.08), 0 4px 16px rgba(60,40,20,0.05);
+  --shadow-lg: 0 4px 16px rgba(60,40,20,0.10), 0 8px 32px rgba(60,40,20,0.07);
+  --font-display: 'Libre Baskerville', 'Georgia', serif;
+  --hero-bg: #2c1e10;
+  --hero-text: #f5ebe0;
+  --statement-bg: #fdf8f3;
+  --statement-text: #3d2c1e;
+  --logo-strip-bg: #ede2d4;
+  --panel-bg: #3d2c1e;
+  --panel-text: #f5ebe0;
+  --nav-bg: rgba(245, 235, 224, 0.92);
+  --nav-bg-solid: #f5ebe0;
 }
 
 /* --- Reset --- */
@@ -66,6 +140,7 @@ body {
   background-color: var(--canvas);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: var(--theme-transition);
 }
 
 /* --- Typography --- */

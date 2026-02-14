@@ -6,10 +6,11 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(248, 247, 244, 0.92);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  transition: var(--theme-transition);
 }
 
 .nav-inner {
@@ -130,7 +131,7 @@ body[data-hide-nav="true"] .nav-bar .nav-brand {
 
 /* Once scrolled past hero, full nav appears */
 body[data-hide-nav="true"] .nav-bar.nav--visible {
-  background: rgba(248, 247, 244, 0.92);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--border);
