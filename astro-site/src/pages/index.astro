@@ -823,44 +823,49 @@ const hero = loadHero();
 
   // ========================================
   // OCEAN WAVES — Midnight theme only
+  // Waves cascade from the top of the screen downward,
+  // like looking up at the ocean surface from below.
   // ========================================
-  const WAVE_COUNT = 18;
-  const WAVE_COLORS = [
-    [20, 50, 100],
-    [30, 70, 130],
-    [15, 80, 120],
-    [40, 100, 160],
-    [25, 60, 110],
-    [50, 120, 180],
-  ];
+  const WAVE_LAYER_COUNT = 7;
 
-  interface WaveLine {
-    baseY: number;       // vertical position (0-1 normalized)
-    amplitude: number;   // wave height
-    frequency: number;   // wave density
-    speed: number;       // horizontal drift speed
+  interface WaveLayer {
+    baseY: number;       // vertical position (0-1 normalized, 0 = top)
+    amplitude: number;   // wave height in px
+    frequency: number;   // horizontal wave density
+    speed: number;       // animation speed
     phase: number;       // phase offset
-    colorIdx: number;
-    alpha: number;
-    lineWidth: number;
+    color: [number, number, number];
+    alpha: number;       // fill opacity
   }
 
-  let waves: WaveLine[] = [];
+  let waveLayers: WaveLayer[] = [];
+
+  // Colors from deep dark at top to brighter ocean at the leading edge
+  const WAVE_PALETTE: [number, number, number][] = [
+    [8, 15, 40],       // almost black — top of ocean
+    [12, 25, 60],      // very deep blue
+    [18, 40, 85],      // deep ocean
+    [22, 55, 110],     // ocean blue
+    [28, 70, 130],     // mid ocean
+    [35, 90, 150],     // brighter blue
+    [50, 115, 170],    // leading wave edge — lightest
+  ];
 
   function initWaves() {
-    waves = [];
-    for (let i = 0; i < WAVE_COUNT; i++) {
-      const t = i / (WAVE_COUNT - 1); // 0 to 1
-      const baseY = 0.35 + t * 0.6;  // waves from 35% to 95% of screen height
-      waves.push({
-        baseY,
-        amplitude: 8 + Math.random() * 25 + (1 - t) * 20, // bigger near top
-        frequency: 0.003 + Math.random() * 0.004,
-        speed: 0.2 + Math.random() * 0.5,
+    waveLayers = [];
+    for (let i = 0; i < WAVE_LAYER_COUNT; i++) {
+      const t = i / (WAVE_LAYER_COUNT - 1); // 0 (top) to 1 (bottom/leading edge)
+      waveLayers.push({
+        // Stack from top: first wave at ~5% of screen, last at ~65%
+        baseY: 0.05 + t * 0.60,
+        // Front waves have bigger amplitude, back waves are calmer
+        amplitude: 10 + t * 30 + Math.random() * 12,
+        frequency: 0.002 + Math.random() * 0.002,
+        speed: 0.15 + t * 0.25 + Math.random() * 0.1,
         phase: Math.random() * Math.PI * 2,
-        colorIdx: Math.floor(Math.random() * WAVE_COLORS.length),
-        alpha: 0.04 + t * 0.12, // more opaque toward bottom
-        lineWidth: 0.5 + t * 1.0, // thicker toward bottom
+        color: WAVE_PALETTE[i],
+        // Deeper layers more opaque (they are background), front layers slightly transparent
+        alpha: 0.85 - t * 0.25,
       });
     }
   }
@@ -869,28 +874,30 @@ const hero = loadHero();
 
   function animateWaves(timestamp = 0) {
     if (!ctx) return;
-    waveTime += 0.008;
+    waveTime += 0.006;
 
-    // Clear with dark bg
-    ctx.fillStyle = `rgba(${INK_RGB}, 0.06)`;
+    // Clear to dark ocean sky
+    ctx.fillStyle = '#06060a';
     ctx.fillRect(0, 0, W, H);
 
-    for (const wave of waves) {
-      const c = WAVE_COLORS[wave.colorIdx];
-      ctx.beginPath();
-      ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${wave.alpha})`;
-      ctx.lineWidth = wave.lineWidth;
-
+    // Draw each wave layer as a filled shape from its wave line to the bottom of the screen.
+    // Back layers (index 0) are drawn first, front layers paint over them.
+    for (let i = 0; i < waveLayers.length; i++) {
+      const wave = waveLayers[i];
+      const c = wave.color;
       const y0 = wave.baseY * H;
-      const step = 3;
+      const step = 4;
+
+      ctx.beginPath();
 
       for (let x = 0; x <= W; x += step) {
-        // Layer multiple sine waves for organic feel
-        const noise = simplex2(x * 0.002, waveTime * 0.3 + wave.phase) * 0.5;
-        const y = y0
-          + Math.sin(x * wave.frequency + waveTime * wave.speed + wave.phase) * wave.amplitude
-          + Math.sin(x * wave.frequency * 2.3 + waveTime * wave.speed * 0.7 + wave.phase * 1.5) * wave.amplitude * 0.3
-          + noise * wave.amplitude * 0.6;
+        // Combine multiple sine waves + simplex noise for organic ocean movement
+        const primary = Math.sin(x * wave.frequency + waveTime * wave.speed + wave.phase) * wave.amplitude;
+        const secondary = Math.sin(x * wave.frequency * 2.1 + waveTime * wave.speed * 0.6 + wave.phase * 1.7) * wave.amplitude * 0.3;
+        const tertiary = Math.sin(x * wave.frequency * 0.5 + waveTime * wave.speed * 0.3 + wave.phase * 0.5) * wave.amplitude * 0.5;
+        const noise = simplex2(x * 0.0015 + waveTime * 0.1, wave.phase + waveTime * 0.15) * wave.amplitude * 0.4;
+
+        const y = y0 + primary + secondary + tertiary + noise;
 
         if (x === 0) {
           ctx.moveTo(x, y);
@@ -898,7 +905,32 @@ const hero = loadHero();
           ctx.lineTo(x, y);
         }
       }
-      ctx.stroke();
+
+      // Close the shape: go down to bottom-right, then bottom-left
+      ctx.lineTo(W, H);
+      ctx.lineTo(0, H);
+      ctx.closePath();
+
+      ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${wave.alpha})`;
+      ctx.fill();
+
+      // Draw a subtle bright line along the wave crest (foam/highlight)
+      if (i >= WAVE_LAYER_COUNT - 3) {
+        ctx.beginPath();
+        for (let x = 0; x <= W; x += step) {
+          const primary = Math.sin(x * wave.frequency + waveTime * wave.speed + wave.phase) * wave.amplitude;
+          const secondary = Math.sin(x * wave.frequency * 2.1 + waveTime * wave.speed * 0.6 + wave.phase * 1.7) * wave.amplitude * 0.3;
+          const tertiary = Math.sin(x * wave.frequency * 0.5 + waveTime * wave.speed * 0.3 + wave.phase * 0.5) * wave.amplitude * 0.5;
+          const noise = simplex2(x * 0.0015 + waveTime * 0.1, wave.phase + waveTime * 0.15) * wave.amplitude * 0.4;
+          const y = y0 + primary + secondary + tertiary + noise;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        const foamAlpha = 0.08 + (i / WAVE_LAYER_COUNT) * 0.12;
+        ctx.strokeStyle = `rgba(140, 180, 220, ${foamAlpha})`;
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+      }
     }
 
     requestAnimationFrame(animateWaves);
