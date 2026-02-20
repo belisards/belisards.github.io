@@ -261,7 +261,7 @@ const hero = loadHero();
   }
 
   :global(.statement__text .char-dim) {
-    color: var(--ink-tertiary);
+    color: color-mix(in srgb, var(--statement-text) 30%, transparent);
     transition: color 0.3s ease;
   }
 
@@ -1120,7 +1120,7 @@ const hero = loadHero();
         const progress = self.progress;
         split.words.forEach((w: HTMLElement, i: number) => {
           const wordProgress = i / split.words.length;
-          w.style.color = progress > wordProgress ? "var(--ink)" : "";
+          w.style.color = progress > wordProgress ? "var(--statement-text)" : "";
         });
       },
     });

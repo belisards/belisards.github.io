@@ -44,8 +44,8 @@
   /* Homepage section colors */
   --hero-bg: #06060a;
   --hero-text: var(--canvas);
-  --statement-bg: #ffffff;
-  --statement-text: var(--ink);
+  --statement-bg: var(--hero-bg);
+  --statement-text: var(--hero-text);
   --logo-strip-bg: #f0eeeb;
   --panel-bg: var(--ink);
   --panel-text: var(--canvas);
@@ -78,8 +78,8 @@
   --font-display: 'DM Sans', system-ui, -apple-system, sans-serif;
   --hero-bg: #06060a;
   --hero-text: #e4e4e8;
-  --statement-bg: #0f0f13;
-  --statement-text: #e4e4e8;
+  --statement-bg: var(--hero-bg);
+  --statement-text: var(--hero-text);
   --logo-strip-bg: #16161e;
   --panel-bg: #1a1a22;
   --panel-text: #e4e4e8;
@@ -112,8 +112,8 @@
   --font-display: 'Libre Baskerville', 'Georgia', serif;
   --hero-bg: #2c1e10;
   --hero-text: #f5ebe0;
-  --statement-bg: #fdf8f3;
-  --statement-text: #3d2c1e;
+  --statement-bg: var(--hero-bg);
+  --statement-text: var(--hero-text);
   --logo-strip-bg: #ede2d4;
   --panel-bg: #3d2c1e;
   --panel-text: #f5ebe0;
