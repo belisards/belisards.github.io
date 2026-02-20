@@ -44,8 +44,8 @@
   /* Homepage section colors */
   --hero-bg: #06060a;
   --hero-text: var(--canvas);
-  --statement-bg: var(--hero-bg);
-  --statement-text: var(--hero-text);
+  --statement-bg: #0a1628;
+  --statement-text: #e4e4e8;
   --logo-strip-bg: #f0eeeb;
   --panel-bg: var(--ink);
   --panel-text: var(--canvas);
@@ -78,8 +78,8 @@
   --font-display: 'DM Sans', system-ui, -apple-system, sans-serif;
   --hero-bg: #06060a;
   --hero-text: #e4e4e8;
-  --statement-bg: var(--hero-bg);
-  --statement-text: var(--hero-text);
+  --statement-bg: #0a1628;
+  --statement-text: #e4e4e8;
   --logo-strip-bg: #16161e;
   --panel-bg: #1a1a22;
   --panel-text: #e4e4e8;
