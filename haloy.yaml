@@ -1,0 +1,15 @@
+name: "belisario-website"
+server: haloy.yourserver.com
+
+domains:
+  - domain: "site.omeu.website"
+
+port: 80
+health_check_path: "/"
+
+image:
+  repository: "belisario-website"
+  build: true
+  build_config:
+    context: "."
+    dockerfile: "Dockerfile"
