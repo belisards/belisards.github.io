@@ -1,0 +1,45 @@
+---
+title: "Do ‘ver para crer’ ao ‘crer para ver’"
+description: |
+  Aperfeiçoamento das técnicas de desinformação fará a confiança vir mais da credibilidade de quem publica do que da imagem publicada.
+date: 2019-12-19
+author:
+  - name: Adriano Belisário
+categories: [Jornalismo, Desinformação, Fact-checking]
+open-graph: true
+draft: false
+---
+
+*Aperfeiçoamento das técnicas de desinformação fará a confiança vir mais da credibilidade de quem publica do que da imagem publicada*
+
+Menos de R$ 20 e 250 fotos. Basta aguardar dois dias e, pronto, temos todo o necessário para encomendar um vídeo falso de alguém, inserindo o rosto de uma pessoa em uma cena da qual ela não participou, segundo um dos serviços mapeados em uma [pesquisa recente sobre o assunto](https://deeptracelabs.com/resources/), publicada pelo DeepTrace Lab. Tudo feito de forma automatizada, com técnicas de inteligência artificial. As chamadas *deep fakes* são uma das fronteiras mais relevantes no campo da verificação de fatos e devem movimentar esforços jornalísticos em 2020 e, provavelmente, na próxima década.
+
+Se mal nos acostumamos com a viralização e fácil aceitação de notícias falsas ou imagens adulteradas de forma grotesca, a tendência para 2020 é que tenhamos novos problemas. Vídeos manipulados por algoritmos vão se tornar cada vez mais comuns e sofisticados, impondo desafios maiores no combate às ações de desinformação ou manipulação da opinião pública.
+
+Hoje, o conhecimento técnico e o poder de computação necessários para gerar imagens falsas podem ser um obstáculo, porém, serviços online devem contornar essa limitação, oferecendo soluções acessíveis a leigos. De acordo com o relatório do DeepTrace Lab, as *deep fakes* e a criação das chamadas “mídias sintéticas” devem se tornar um serviço ou mercadoria como outra qualquer, uma *commodity*. No caso dos vídeos, uma vez que boa parte do trabalho está concentrada em reunir as imagens e preparar um modelo de inteligência artificial com as feições de uma pessoa, é possível que esses modelos sejam comercializados, criando um mercado de dados “treinados” para produzir imagens falsas de determinadas pessoas.
+
+Na [primeira reunião nacional sobre o tema no Brasil](https://portugues.witness.org/relatorio-da-witness-mostra-os-desafios-enfrentados-pelos-brasileiros-para-combater-deepfake/), realizada pela Witness em outubro de 2019, pesquisadores, jornalistas e ativistas mostraram que não há solução fácil, nem meramente técnica. No momento, ainda é possível identificar algumas *deep fakes* analisando detalhes do vídeo, como o movimento dos olhos e a textura do cabelo. Porém, com o avançar da tecnologia, essas características serão mais facilmente falsificáveis. Ou seja, ver para crer não é mais suficiente.
+
+Também é difícil apostar em qualquer solução somente tecnológica para identificar imagens falsas, pois as mesmas técnicas utilizadas para detectar conteúdos falsos podem ser utilizadas para aprimorar sua criação. De fato, essa é uma das bases por trás de uma das principais tecnologias utilizadas na elaboração de *deep fakes*, as Redes Adversárias Generativas (*Generative Adversarial Networks* ou GAN). Elas criam uma espécie de competição entre dois algoritmos: um toma os dados utilizados para treinamento (por exemplo, um conjunto de fotos reais de uma pessoa) e tenta gerar novos dados que o reproduzam, enquanto o outro tenta diferenciar esses resultados artificiais dos reais, usados para o treinamento. O objetivo é alcançar resultados cada vez mais verossimilhantes, com o mínimo de intervenção humana no processo.
+
+O mapeamento do DeepTrace identificou que as *deep fakes* são um fenômeno eminentemente pornográfico e atingem na maioria mulheres, que veem seus rostos e feições “transplantadas” para cenas de sexo. Nada menos que 96% dos quase 15 mil vídeos mapeados eram pornográficos e tinham mulheres como alvo. Quanto aos poucos conteúdos não pornográficos no YouTube, a maior parte (80%) das *deep fakes* identificadas eram de entretenimento, com representações de políticos e conteúdos de mídia respondendo por cerca de 17% do total identificado.
+
+Devido à quantidade de imagens necessárias para se treinar os algoritmos capazes de criar *deep fakes*, pelo menos aqueles mais disseminados hoje, a tendência é que usos maliciosos para fins de desinformação tenham como alvo ataques à reputação de figuras públicas, como políticos, ativistas ou comunicadores bastante conhecidos. Além disso, as tecnologias de inteligência artificial podem ser aplicadas para fazer síntese de voz, imitando características de fala de uma pessoa. Ou para criar textos que podem aparecer em caixas de comentários, sites de notícias falsas e postagens em redes sociais, com mais alcance e veracidade do que as atuais estratégias semi-automatizadas, que ainda dependem de trabalho humano.
+
+A disseminação das *deep fakes* parece preocupante em uma cultura dominada por imagens, como a nossa. No limite, a difusão de *deep fakes* e imagens sintéticas pode levar a um estado de ceticismo visual permanente, onde ver imagens de algo já não é suficiente como critério de verdade. Talvez, no futuro, a máxima se inverta: será necessário crer para ver. Ou seja, a confiança virá menos da imagem em si, e sim da credibilidade da fonte que a publica.
+
+Para 2020, é provável que as *deep fakes* sigam sendo um fenômeno pornográfico. No entanto, é possível que observemos exemplos de seu uso como arma político-eleitoral, em especial em momentos decisivos, como vésperas de eleições, quando o impacto é maior, e o tempo de reação para mitigar os impactos da desinformação, menor.
+
+Em conversa com um produtor de vídeo que trabalha com técnicas de inteligência artificial no Brasil, ouvi que seus serviços já foram buscados tanto pelo empresário de um artista famoso interessado em ampliar a presença midiática de seu cliente, como por uma pessoa ligada à política partidária, já de olho nas eleições de 2020.
+
+Os desafios são diversos. Não é à toa que o líder do Media Forensics Committee do Wall Street Journal definiu o desafio dos *deep fakes* para a verificação de fatos como um “[jogo de gato e rato](https://medium.com/global-editors-network/wsj-on-deepfakes-its-a-cat-mouse-game-212c3c7c6a4)”. Entretanto, como alertou a Witness e a First Draft em [relatório sobre o tema em 2018](https://lab.witness.org/projects/synthetic-media-and-deep-fakes/), ainda temos algum tempo para nos preparar.
+
+Do ponto de vista tecnológico, há discussões sobre como melhorar a capacidade de rastrear autenticidade, integridade e proveniência das imagens digitais e como fazer isso sem comprometer a privacidade dos usuários. Outro tópico relevante para jornalistas envolve o aprimoramento de ferramentas de busca reversa de imagens, que são bastante úteis na hora de analisar a veracidade de uma determinada imagem. Além disso, é preciso cobrar comprometimento explícito e transparência das grandes empresas de tecnologia em suas ações de combate à desinformação. Cabe à imprensa também realizar uma cobertura mais crítica da área de tecnologia, deixando de lado o fetichismo por produtos e *gadgets* para reconhecer as profundas implicações e impactos sociopolíticos das tecnologias e plataformas digitais.
+
+Jornalistas ou comunicadores populares podem — e devem — se aproximar deste debate, não como meros usuários das tecnologias e soluções desenvolvidas por grandes corporações, mas exercendo uma voz ativa nas discussões. Além disso, também podem colaborar com iniciativas de educação midiática, desenvolvendo metodologias, modelos de ameaças e capacitações para lidar com os desafios das notícias falsas e “imagens sintéticas”.
+
+Esses treinamentos são fundamentais para os próprios comunicadores, que podem aprimorar suas habilidades de verificação com áreas como a análise forense de mídias digitais ou técnicas de “inteligência de código-aberto” (*open source intelligence* ou OSINT), mas também para comunidades de base ou grupos potencialmente afetados, como o público de cidades do interior, que receberão os pleitos municipais em 2020. Afinal, em uma época em que já não basta ver para crer, a habilidade de realizar uma produção e leitura crítica dos conteúdos midiáticos não pode ser exclusividade de jornalistas ou *fact-checkers*.
+
+---
+
+Este texto faz parte da série **[O Jornalismo no Brasil em 2020](https://medium.com/o-jornalismo-no-brasil-em-2020)**. A opinião dos autores não necessariamente representa a opinião da **[Abraji](http://abraji.org.br/)** ou do **[Farol Jornalismo](https://medium.com/farol-jornalismo/)**.
