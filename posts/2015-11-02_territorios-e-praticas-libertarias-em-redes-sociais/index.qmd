@@ -12,6 +12,10 @@ open-graph: true
 draft: false
 ---
 
+::: {.callout-note appearance="simple"}
+Texto de 2012, publicado originalmente no blog [Baobá Voador](https://baobavoador.noblogs.org/post/category/software-livre/). Esta cópia preserva o texto e as referências originais; ajustes mínimos de marcação foram feitos para leitura na web.
+:::
+
 > “Es necesario desprenderse de las vinculaciones de la racionalidad-modernidad con la colonialidad, en primer término, y en definitiva con todo poder no constituido en la decision libre de gentes libres.”
 >
 > — Aníbal Quijano, “Colonialidad y Modernidad/Racionalidad”
@@ -174,6 +178,3 @@ As mudanças partem das pessoas e do “espírito do tempo”, não de determina
 22. [“1789–2011?”, de Robert Darnton](http://www.nybooks.com/blogs/nyrblog/2011/feb/22/1789-2011/).
 23. [Referência no Passa Palavra](http://passapalavra.info/?p=39994).
 
----
-
-*Texto de 2012, publicado no blog [Baobá Voador](https://baobavoador.noblogs.org/post/2015/11/02/territorios-e-praticas-libertarias-em-redes-sociais-geopolitica-do-desconhecimento/) em 2 de novembro de 2015. Esta cópia preserva o texto e as referências originais; ajustes mínimos de marcação foram feitos para leitura na web.*
