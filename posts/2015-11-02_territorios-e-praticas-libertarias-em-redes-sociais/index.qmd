@@ -14,7 +14,7 @@ draft: false
 ---
 
 ::: {.callout-note appearance="simple"}
-Texto de 2012, publicado originalmente no blog [Baobá Voador](https://baobavoador.noblogs.org/post/category/software-livre/). Esta cópia preserva o texto e as referências originais; ajustes mínimos de marcação foram feitos para leitura na web.
+Texto de 2012, publicado originalmente no blog [Baobá Voador](https://baobavoador.noblogs.org/post/category/software-livre/). Esta cópia preserva o texto e as referências originais.
 :::
 
 > “Es necesario desprenderse de las vinculaciones de la racionalidad-modernidad con la colonialidad, en primer término, y en definitiva con todo poder no constituido en la decision libre de gentes libres.”
