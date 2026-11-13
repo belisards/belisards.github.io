@@ -3,7 +3,8 @@ title: "Territórios e práticas libertárias em redes sociais"
 subtitle: "Geopolítica do (des)conhecimento"
 description: |
   Redes sociais proprietárias, vigilância e as experiências de redes livres e federadas como alternativa para os movimentos sociais.
-date: 2015-11-02
+date: 2012-01-01
+date-format: "YYYY"
 author:
   - name: Tatiana Wells
   - name: Adriano Belisário
