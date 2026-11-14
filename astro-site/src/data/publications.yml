@@ -6,6 +6,24 @@ sections:
         meta: "Proceedings of the ACM on Human-Computer Interaction, 2025. Co-authorship with Scott Hale and Luc Rocher."
         type: academic
         featured: true
+      - title: "Unequal data access regimes in social media"
+        url: "https://doi.org/10.25358/openscience-15829"
+        meta: "Political Communication Report, issue 33, 2026. Co-authorship with Rose Marie Santini, Hugo Leal and Bruno Mattos."
+        type: academic
+        featured: true
+      - title: "Cross-platform gendertrolling: a case study on a prominent harassment case in Brazil"
+        url: "https://doi.org/10.5210/spir.v2024i0.15065"
+        meta: "AoIR Selected Papers of Internet Research, 2026. Co-authorship with Rose Marie Santini, Débora Salles and Luciane Leopoldo Belin."
+        type: academic
+      - title: "Data Not Found: Social Media Data Transparency for Information Integrity"
+        url: "https://doi.org/10.17863/CAM.128976"
+        meta: "NetLab UFRJ and Minderoo Centre for Technology and Democracy, 2026. Project coordinator."
+        type: journalism
+        featured: true
+      - title: "Research reveals lack of transparency in ad data of digital platforms"
+        url: "https://doi.org/10.64628/ade.tm6mgkun3"
+        meta: "The Conversation, 2026. Co-authorship with the Data Not Found research team."
+        type: journalism
       - title: "Easy AI: A Simplified Approach to Classifying Images with Off-the-Shelf AI Models"
         url: "https://www.bellingcat.com/resources/how-tos/2024/08/15/easy-ai-zero-shot-ai-image-classification-smart-image-sorter/"
         meta: 'Bellingcat, 2024. Also published in <a href="https://escoladedados.org/tutoriais/easy-ai-classificacao-imagens-tutorial/">Portuguese</a>.'
@@ -67,7 +85,7 @@ sections:
             image: "/images/covers/tcnxmnsm.png"
             alt: "Tecnoxamanismo"
           - title: "Tecnomagia"
-            caption: '<a href="https://imotiro.org/livros/tecnomagia-2/"><strong>Tecnomagia</strong></a>, 2016. Editora Imotirõ.'
+            caption: '<a href="https://imotiro.org/livros/tecnomagia-2/"><strong>Tecnomagia</strong></a>, 2016. Editora Imotirõ. <a href="https://doi.org/10.5281/zenodo.13685553">Zenodo record</a>.'
             image: "/images/covers/tecnomagia.png"
             alt: "Tecnomagia"
           - title: "Copyfight"
@@ -90,6 +108,27 @@ sections:
             caption: "<strong>Ponha-se na Rua</strong>, 2008. Editora Luminatti."
             image: "/images/covers/ponhasenarua.jpg"
             alt: "Ponha-se na Rua"
+
+      - title: "Reports, chapters and other research"
+        entries:
+          - title: "OSINT no jornalismo: indo mais fundo com fontes abertas"
+            url: "https://repositorio.idp.edu.br/bitstream/123456789/5713/1/Ebook%20DataJor-Final.pdf"
+            meta: "In <em>Jornalismo de Dados: das Ciências Sociais à Inteligência Artificial</em>, IDP, 2025. Chapter authorship."
+            type: essay
+            featured: true
+          - title: "Data Not Found: Transparência de redes sociais para a integridade da informação"
+            url: "https://doi.org/10.5281/zenodo.20084860"
+            meta: "NetLab UFRJ and Minderoo Centre for Technology and Democracy, 2026. Project coordinator."
+            type: journalism
+          - title: "Estudo revela falta de transparência no modelo de negócio das plataformas digitais"
+            url: "https://doi.org/10.64628/ade.ksk9ksef7"
+            meta: "The Conversation, 2026. Co-authorship with the Data Not Found research team."
+            type: journalism
+          - title: "Aprenda a evitar ‘esse tipo’ de mulher: estratégias discursivas e monetização da misoginia no YouTube"
+            url: "https://doi.org/10.5281/zenodo.14803413"
+            meta: "NetLab UFRJ, 2024. Research coordination and computational analysis."
+            type: journalism
+            featured: true
 
       - title: "Academic papers"
         entries:
