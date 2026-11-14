@@ -15,12 +15,12 @@ services:
       - traefik.enable=true
       # HTTP → HTTPS redirect
       - traefik.http.routers.belisario-http.entryPoints=http
-      - traefik.http.routers.belisario-http.rule=Host(`site.omeu.website`)
+      - traefik.http.routers.belisario-http.rule=Host(`site.omeu.website`) || Host(`belisario.website`) || Host(`www.belisario.website`)
       - traefik.http.routers.belisario-http.middlewares=redirect-to-https
       - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
       # HTTPS
       - traefik.http.routers.belisario-https.entryPoints=https
-      - traefik.http.routers.belisario-https.rule=Host(`site.omeu.website`)
+      - traefik.http.routers.belisario-https.rule=Host(`site.omeu.website`) || Host(`belisario.website`) || Host(`www.belisario.website`)
       - traefik.http.routers.belisario-https.tls=true
       - traefik.http.routers.belisario-https.tls.certresolver=letsencrypt
       - traefik.http.routers.belisario-https.middlewares=gzip
