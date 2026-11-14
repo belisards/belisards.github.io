@@ -5,7 +5,7 @@ date: 2024-08-15
 # author: 
 #   - name: Adriano Belisario
 
-image: "feat_image.jpg"
+image: "feat_image.webp"
 # image-alt: 
 categories: [python]
 links:

@@ -7,6 +7,9 @@ export default defineConfig({
   outDir: '../docs',
   integrations: [sitemap()],
   vite: {
+    server: {
+      allowedHosts: ['91.99.71.223.sslip.io'],
+    },
     build: {
       assetsInlineLimit: 0,
     },

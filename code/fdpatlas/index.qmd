@@ -6,7 +6,7 @@ date: 2023-12-10
 # author: 
 #   - name: Adriano Belisario
 site-url: https://huggingface.co/belisards/gun_violence_ptbr
-image: "cover.png"
+image: "cover.webp"
 # image-alt: 
 categories: [R,Shiny,dashboard]
 links:

@@ -129,6 +129,11 @@ sections:
       - title: "Journalistic investigations"
         badge: "Journalism"
         entries:
+          - title: "Do ‘ver para crer’ ao ‘crer para ver’"
+            url: "https://site.omeu.website/posts/do-ver-para-crer/"
+            meta: "Ensaio, 2019. Publicado originalmente no Medium, na série O jornalismo no Brasil em 2020."
+            type: essay
+            featured: true
           - title: "Brazão tentou beneficiar região ao lado de área que seria recompensa por morte de Marielle"
             url: "https://apublica.org/2024/05/chiquinho-brazao-tentou-beneficiar-regiao-ao-lado-de-area-que-seria-recompensa-por-morte-de-marielle/"
             meta: "Agência Pública, 2024."
@@ -314,7 +319,7 @@ sections:
             meta: "2015."
             type: essay
           - title: "Territórios e práticas libertárias em redes sociais – Geopolítica do (des)conhecimento"
-            url: "https://baobavoador.noblogs.org/post/2015/11/02/territorios-e-praticas-libertarias-em-redes-sociais-geopolitica-do-desconhecimento/"
+            url: "/posts/territorios-e-praticas-libertarias-em-redes-sociais/"
             meta: "2012."
             type: essay
           - title: "Por uma ideia de cinema radical"

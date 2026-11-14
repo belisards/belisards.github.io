@@ -2,15 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { loadProjects } from '../lib/data';
 
-const imageMap: Record<string, string> = {
-  'cover.png': 'png',
-  'feat_image.jpg': 'jpg',
-};
-
 const projects = loadProjects().map(p => ({
   title: p.title,
   desc: p.description?.trim() || '',
-  image: `/images/projects/${p.slug}.${p.image === 'feat_image.jpg' ? 'jpg' : 'png'}`,
+  image: `/images/projects/${p.slug}.webp`,
   date: new Date(p.date).getFullYear().toString(),
   categories: (p.categories || []).map((c: string) => c.charAt(0).toUpperCase() + c.slice(1)),
   links: p.links || {},
@@ -29,7 +24,7 @@ const projects = loadProjects().map(p => ({
       {projects.map((project) => (
         <div class="project-card reveal">
           <div class="project-card__image-wrap">
-            <img src={project.image} alt={project.title} class="project-card__image" loading="lazy" />
+            <img src={project.image} alt={project.title} class="project-card__image" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
           </div>
           <div class="project-card__body">
             <div class="project-card__meta">

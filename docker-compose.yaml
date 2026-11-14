@@ -8,7 +8,9 @@ services:
     expose:
       - "80"
     networks:
-      - coolify
+      web:
+        aliases:
+          - belisario-website
     labels:
       - traefik.enable=true
       # HTTP → HTTPS redirect
@@ -27,5 +29,5 @@ services:
       - traefik.http.services.belisario-website.loadbalancer.server.port=80
 
 networks:
-  coolify:
+  web:
     external: true

@@ -9,7 +9,7 @@ author:
   - name: Adriano Belisario
     role: System development and architecture
 site-url: https://www.elasnocongresso.com.br/
-image: "cover.png"
+image: "cover.webp"
 image-alt: "QuitérIA, feminist AI from Elas no Congresso"
 categories: [Python, NLP, machine learning, civic tech, gender]
 links:
