@@ -7,6 +7,9 @@ const pubs = loadYaml('publications.yml');
 const englishSection = pubs.sections[0];
 const ptSection = pubs.sections[1];
 
+const yearOf = (entry: any) => Number(entry.meta?.match(/\b(19|20)\d{2}\b/)?.[0] || 0);
+const chronological = (entries: any[]) => [...entries].sort((a, b) => yearOf(b) - yearOf(a));
+
 const tocItems = [
   { label: 'English', id: 'english' },
   { label: 'Portuguese', id: 'portuguese' },
@@ -31,7 +34,7 @@ const tocItems = [
 
         <h2 class="reveal" id="english">{englishSection.title}</h2>
 
-        {englishSection.entries.map((entry: any) => (
+        {chronological(englishSection.entries).map((entry: any) => (
           <div class={`pub-entry pub-entry--${entry.type} reveal`}>
             <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title">{entry.url ? <a href={entry.url}>{entry.title}</a> : entry.title}</span></div>
             {entry.meta && <div class="pub-entry__meta" set:html={entry.meta} />}
@@ -58,7 +61,7 @@ const tocItems = [
             </div>
           )}
 
-          {sub.entries && sub.entries.map((entry: any) => (
+          {sub.entries && chronological(sub.entries).map((entry: any) => (
             <div class={`pub-entry pub-entry--${entry.type} reveal`}>
               <div>{entry.featured && <span class="pub-featured"></span>}<span class="pub-entry__title">{entry.url ? <a href={entry.url}>{entry.title}</a> : entry.title}</span></div>
               {entry.meta && <div class="pub-entry__meta" set:html={entry.meta} />}
