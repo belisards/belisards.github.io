@@ -1,0 +1,57 @@
+---
+title: "QuitérIA — Feminist AI for Legislative Monitoring"
+description: |
+  Feminist AI system for classifying and assessing Brazilian legislative proposals
+  on gender, race, women's rights and LGBTQIAPN+ rights, combining NLP,
+  specialist-labelled data and human validation.
+date: 2025-11-01
+author:
+  - name: Adriano Belisario
+    role: System development and architecture
+site-url: https://www.elasnocongresso.com.br/
+image: "cover.png"
+image-alt: "QuitérIA, feminist AI from Elas no Congresso"
+categories: [Python, NLP, machine learning, civic tech, gender]
+links:
+  platform: https://www.elasnocongresso.com.br/
+  technology: https://www.elasnocongresso.com.br/ia-feminista/
+  code: https://github.com/institutoazmina/ia-feminista-elas-no-congresso
+  data-collection: https://github.com/institutoazmina/elasnocongressobot
+  launch: https://azmina.com.br/reportagens/azmina-lanca-ia-feminista/
+  awards: https://premio.jornalismodedados.org.br/edicoes/2026/
+open-graph: false
+draft: false
+---
+
+QuitérIA is a feminist artificial intelligence system developed for the Instituto AzMina's [Elas no Congresso](https://www.elasnocongresso.com.br/) project. It helps analyse, classify and assess Brazilian legislative proposals that affect women, girls and LGBTQIAPN+ people.
+
+The system combines public legislative data, natural language processing and a dataset built through years of specialist human evaluation. It identifies thematic categories and estimates whether proposals may advance or threaten gender rights. Human review remains part of the process: the model supports analysis and does not replace political, legal or contextual judgement.
+
+## My contribution
+
+I worked on the **development and architecture of the system**, including the AI and data-modelling components that connect legislative data, model training, classification and validation.
+
+## Technical approach
+
+- Data collected from public APIs of the Brazilian Chamber of Deputies and Federal Senate.
+- Portuguese-language NLP models based on BERTimbau.
+- Multi-label thematic classification across ten areas of gender policy.
+- A second model to assess whether proposals are favourable or unfavourable to monitored rights.
+- Human validation and iterative retraining to identify errors and reduce blind spots.
+- Open code, documentation and methodology whenever possible.
+
+## Recognition
+
+- **World Summit Awards Brasil 2026** — Government and Citizen Engagement.
+- **VIII Prêmio Cláudio Weber Abramo de Jornalismo de Dados 2026** — Innovation and Experimentation. The jury highlighted the use of AI to organise large volumes of public data without replacing human analysis, with open code and specialist oversight.
+
+## Links
+
+- Platform: [Elas no Congresso](https://www.elasnocongresso.com.br/)
+- How the technology works: [QuitérIA](https://www.elasnocongresso.com.br/ia-feminista/)
+- Source code: [ia-feminista-elas-no-congresso](https://github.com/institutoazmina/ia-feminista-elas-no-congresso)
+- Data collection: [elasnocongressobot](https://github.com/institutoazmina/elasnocongressobot)
+- Launch article: [AzMina](https://azmina.com.br/reportagens/azmina-lanca-ia-feminista/)
+- Awards: [VIII Prêmio Cláudio Weber Abramo](https://premio.jornalismodedados.org.br/edicoes/2026/)
+
+Cover image: Instituto AzMina, [QuitérIA launch article](https://azmina.com.br/reportagens/azmina-lanca-ia-feminista/).
