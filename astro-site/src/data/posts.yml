@@ -1,5 +1,8 @@
 # Blog posts. Each entry needs a matching page in src/pages/posts/<slug>.astro.
 # Newest first is not required; the loader sorts by date.
+# New posts are announced automatically. Set social: false to opt out.
+# draft: true excludes an entry from RSS and social announcements.
+# Draft Astro pages themselves must be kept outside src/pages until publication.
 posts:
   - slug: "do-ver-para-crer"
     title: "Do “ver para crer” ao “crer para ver”"
@@ -7,9 +10,11 @@ posts:
     kicker: "O jornalismo no Brasil em 2020"
     excerpt: "Aperfeiçoamento das técnicas de desinformação fará a confiança vir mais da credibilidade de quem publica do que da imagem publicada."
     lang: "pt"
+    social: false # Archive: include in RSS, but do not announce again.
   - slug: "territorios-e-praticas-libertarias-em-redes-sociais"
     title: "Territórios e práticas libertárias em redes sociais"
     date: 2012-11-30
     kicker: "Arquivo · Redes livres"
     excerpt: "Geopolítica do (des)conhecimento: apropriações tecnológicas de movimentos sociais em redes proprietárias e experiências de redes sociais livres e federadas."
     lang: "pt"
+    social: false # Archive: include in RSS, but do not announce again.
