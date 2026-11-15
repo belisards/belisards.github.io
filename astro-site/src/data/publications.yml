@@ -62,8 +62,12 @@ sections:
   - title: "Portuguese & Other Languages"
     subsections:
       - title: "Books and published writing"
-        badge: "10 titles"
+        badge: "11 titles"
         books:
+          - title: "Jornalismo de Dados"
+            caption: '<a href="https://repositorio.idp.edu.br/bitstream/123456789/5713/1/Ebook%20DataJor-Final.pdf"><strong>Jornalismo de Dados: das Ciências Sociais à Inteligência Artificial</strong></a>, 2026. IDP. Chapter: "OSINT no jornalismo: indo mais fundo com fontes abertas".'
+            image: "/images/covers/jornalismo_de_dados.jpg"
+            alt: "Jornalismo de Dados: das Ciências Sociais à Inteligência Artificial"
           - title: "Espectro e vigilância"
             caption: "<strong>Espectro e vigilância</strong>, 2018. Editora Boitempo."
             image: "/images/covers/tecnopolitica.jpg"
@@ -107,11 +111,6 @@ sections:
 
       - title: "Reports, chapters and other research"
         entries:
-          - title: "OSINT no jornalismo: indo mais fundo com fontes abertas"
-            url: "https://repositorio.idp.edu.br/bitstream/123456789/5713/1/Ebook%20DataJor-Final.pdf"
-            meta: "In <em>Jornalismo de Dados: das Ciências Sociais à Inteligência Artificial</em>, IDP, 2025. Chapter authorship."
-            type: essay
-            featured: true
           - title: "Data Not Found: Transparência de redes sociais para a integridade da informação"
             url: "https://doi.org/10.5281/zenodo.20084860"
             meta: "NetLab UFRJ and Minderoo Centre for Technology and Democracy, 2026. Project coordinator."
@@ -164,11 +163,6 @@ sections:
       - title: "Journalistic investigations"
         badge: "Journalism"
         entries:
-          - title: "Do ‘ver para crer’ ao ‘crer para ver’"
-            url: "https://site.omeu.website/posts/do-ver-para-crer/"
-            meta: "Ensaio, 2019. Publicado originalmente no Medium, na série O jornalismo no Brasil em 2020."
-            type: essay
-            featured: true
           - title: "Brazão tentou beneficiar região ao lado de área que seria recompensa por morte de Marielle"
             url: "https://apublica.org/2024/05/chiquinho-brazao-tentou-beneficiar-regiao-ao-lado-de-area-que-seria-recompensa-por-morte-de-marielle/"
             meta: "Agência Pública, 2024."
@@ -344,6 +338,11 @@ sections:
 
       - title: "Essays and other writings"
         entries:
+          - title: "Do ‘ver para crer’ ao ‘crer para ver’"
+            url: "https://site.omeu.website/posts/do-ver-para-crer/"
+            meta: "Ensaio, 2019. Publicado originalmente no Medium, na série O jornalismo no Brasil em 2020."
+            type: essay
+            featured: true
           - title: "Cartilha de segurança digital e atuação no campo"
             url: "https://apublica.org/2020/10/sem-seguranc%CC%A7a-na%CC%83o-existe-pauta/"
             meta: "Agência Pública, 2020."

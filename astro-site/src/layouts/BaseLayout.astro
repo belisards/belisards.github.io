@@ -49,10 +49,7 @@ const pageTitle = title === 'Adriano Belisario' ? title : `${title} — Adriano 
 
   <!-- Theme initialization (runs before paint to avoid flash) -->
   <script is:inline>
-    (function(){
-      var t = localStorage.getItem('theme') || 'signal';
-      document.documentElement.setAttribute('data-theme', t);
-    })();
+    document.documentElement.setAttribute('data-theme', 'signal');
   </script>
 
   <!-- Google Analytics -->
