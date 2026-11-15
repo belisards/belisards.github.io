@@ -1,0 +1,15 @@
+# Blog posts. Each entry needs a matching page in src/pages/posts/<slug>.astro.
+# Newest first is not required; the loader sorts by date.
+posts:
+  - slug: "do-ver-para-crer"
+    title: "Do “ver para crer” ao “crer para ver”"
+    date: 2019-12-19
+    kicker: "O jornalismo no Brasil em 2020"
+    excerpt: "Aperfeiçoamento das técnicas de desinformação fará a confiança vir mais da credibilidade de quem publica do que da imagem publicada."
+    lang: "pt"
+  - slug: "territorios-e-praticas-libertarias-em-redes-sociais"
+    title: "Territórios e práticas libertárias em redes sociais"
+    date: 2012-11-30
+    kicker: "Arquivo · Redes livres"
+    excerpt: "Geopolítica do (des)conhecimento: apropriações tecnológicas de movimentos sociais em redes proprietárias e experiências de redes sociais livres e federadas."
+    lang: "pt"

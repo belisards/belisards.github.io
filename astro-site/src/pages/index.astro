@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { loadHero } from '../lib/data';
+import { loadHero, loadPosts, formatPostDate } from '../lib/data';
 
 const hero = loadHero();
+const posts = loadPosts().slice(0, 3);
 ---
 
 <BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture." hideNavInitially={true}>
@@ -14,6 +15,7 @@ const hero = loadHero();
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <canvas id="flow-canvas" aria-hidden="true"></canvas>
+    <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
 
     <div class="hero__content">
@@ -23,16 +25,27 @@ const hero = loadHero();
         <span class="hero__to-word" id="hero-to-word">to</span>
         <span class="hero__to" id="pair-to">{hero.pairs[0].to}</span>
       </h1>
-      <p class="hero__byline" id="hero-byline">Adriano Belisario</p>
+      <p class="hero__byline" id="hero-byline">
+        <span class="hero__name">Adriano Belisario</span>
+        <span class="hero__sep" aria-hidden="true">/</span>
+        <span class="hero__tagline">{hero.tagline}</span>
+      </p>
+      <nav class="hero__links" id="hero-links" aria-label="Sections">
+        <a href="/publications/">Publications</a>
+        <a href="/code/">Code</a>
+        <a href="#blog">Blog</a>
+        <a href="/about/">Bio</a>
+      </nav>
     </div>
 
-    <div class="hero__scroll" id="hero-scroll">
+    <a href="#statement" class="hero__scroll" id="hero-scroll" aria-label="Scroll to introduction">
+      <span class="hero__scroll-label">scroll</span>
       <div class="hero__scroll-line"><span></span></div>
-    </div>
+    </a>
   </section>
 
   <!-- ========== STATEMENT ========== -->
-  <section class="statement">
+  <section class="statement" id="statement">
     <div class="statement__inner">
       <p class="statement__text" id="statement-1">
         Data journalist and researcher combining expertise in communication,
@@ -57,6 +70,32 @@ const hero = loadHero();
       <img src="/images/logos/fogo-cruzado.png" alt="Instituto Fogo Cruzado" class="logo-strip__img" />
       <img src="/images/logos/okbr.svg" alt="Open Knowledge Brasil" class="logo-strip__img logo-strip__img--tall" />
       <img src="/images/logos/ufrj.svg" alt="Universidade Federal do Rio de Janeiro (UFRJ)" class="logo-strip__img logo-strip__img--tall" />
+    </div>
+  </section>
+
+  <!-- ========== BLOG ========== -->
+  <section class="blog" id="blog" aria-labelledby="blog-title">
+    <div class="blog__inner">
+      <header class="blog__head">
+        <p class="blog__label mono">Blog</p>
+        <h2 class="blog__title" id="blog-title">Writing</h2>
+        <a href="/posts/" class="blog__all mono">All posts &rarr;</a>
+      </header>
+      <ol class="blog__list">
+        {posts.map(post => (
+          <li class="blog__item">
+            <a href={`/posts/${post.slug}/`} class="blog__link" lang={post.lang}>
+              <time class="blog__date mono" datetime={post.date.toISOString().slice(0, 10)}>{formatPostDate(post.date)}</time>
+              <div class="blog__body">
+                {post.kicker && <p class="blog__kicker mono">{post.kicker}</p>}
+                <h3 class="blog__post-title">{post.title}</h3>
+                <p class="blog__excerpt">{post.excerpt}</p>
+              </div>
+              <span class="blog__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
@@ -174,7 +213,7 @@ const hero = loadHero();
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--signal-teal);
+    color: #5eead4;
     opacity: 0;
   }
 
@@ -190,15 +229,64 @@ const hero = loadHero();
     }
   }
 
+  /* Legibility: soft dark pool behind the text + fade into the statement */
+  .hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 40% at 50% 50%, rgba(6, 8, 18, 0.55) 0%, rgba(6, 8, 18, 0) 100%),
+      linear-gradient(to bottom, rgba(6, 6, 10, 0) 70%, var(--statement-bg) 100%);
+  }
+
   .hero__byline {
     font-family: var(--font-mono);
-    font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+    font-size: clamp(0.7rem, 1.2vw, 0.85rem);
     color: var(--hero-text);
-    opacity: 0.5;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: 2rem;
     opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35em 0.8em;
+  }
+
+  .hero__name { color: #fff; }
+  .hero__sep { color: #5eead4; }
+  .hero__tagline { color: rgba(228, 228, 232, 0.7); }
+
+  .hero__links {
+    margin-top: 2.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0;
+  }
+
+  .hero__links a {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(228, 228, 232, 0.85);
+    text-decoration: none;
+    padding: 0.55em 1.1em;
+    border: 1px solid rgba(228, 228, 232, 0.22);
+    border-radius: 999px;
+    background: rgba(6, 8, 18, 0.25);
+    backdrop-filter: blur(4px);
+    transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  }
+
+  .hero__links a:hover,
+  .hero__links a:focus-visible {
+    color: #fff;
+    border-color: #5eead4;
+    background: rgba(94, 234, 212, 0.12);
   }
 
   /* Scroll indicator */
@@ -209,13 +297,26 @@ const hero = loadHero();
     transform: translateX(-50%);
     z-index: 2;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .hero__scroll-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(228, 228, 232, 0.55);
   }
 
   .hero__scroll-line span {
     display: block;
     width: 1px;
     height: 48px;
-    background: linear-gradient(to bottom, rgba(13, 148, 136, 0.6), transparent);
+    background: linear-gradient(to bottom, rgba(228, 228, 232, 0.8), transparent);
     animation: linePulse 2.5s ease-in-out infinite;
   }
 
@@ -498,6 +599,133 @@ const hero = loadHero();
   }
 
   /* ============================
+     BLOG
+     ============================ */
+  .blog {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background: var(--canvas);
+    border-top: 1px solid var(--border);
+    padding: 6rem 2rem;
+  }
+
+  .blog { scroll-margin-top: var(--nav-height); }
+
+  .blog__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .blog__head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 0.5rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .blog__label {
+    grid-column: 1 / -1;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--signal-teal);
+    margin: 0;
+  }
+
+  .blog__title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .blog__all {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.2rem;
+  }
+
+  .blog__all:hover { color: var(--signal-teal); }
+
+  .blog__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .blog__item { border-bottom: 1px solid var(--border); }
+
+  .blog__link {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.75rem 0;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .blog__date {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-tertiary);
+  }
+
+  .blog__kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-secondary);
+    margin: 0 0 0.4rem;
+  }
+
+  .blog__post-title {
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+    color: var(--ink);
+    transition: color 0.25s ease;
+  }
+
+  .blog__excerpt {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .blog__arrow {
+    font-size: 1.25rem;
+    color: var(--ink-tertiary);
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+
+  .blog__link:hover .blog__post-title,
+  .blog__link:focus-visible .blog__post-title { color: var(--signal-teal); }
+  .blog__link:hover .blog__arrow { transform: translateX(4px); color: var(--signal-teal); }
+
+  @media screen and (max-width: 640px) {
+    .hero__byline { flex-direction: column; align-items: center; }
+    .hero__sep { display: none; }
+    .hero__links { gap: 0.4rem; }
+    .hero__links a { font-size: 0.66rem; padding: 0.5em 0.85em; letter-spacing: 0.08em; }
+    .blog { padding: 4rem 1.25rem; }
+    .blog__link { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.5rem 0; }
+    .blog__arrow { display: none; }
+  }
+
+  /* ============================
      RESPONSIVE
      ============================ */
   @media screen and (max-width: 768px) {
@@ -674,6 +902,7 @@ const hero = loadHero();
   const burst = { active: false, cx: 0, cy: 0, radius: 0, maxRadius: 0, strength: 0, frame: 0, maxFrames: 60 };
 
   function triggerBurst() {
+    if (useWaves) { swell = 1; return; }
     burst.active = true;
     burst.cx = W / 2;
     burst.cy = H / 2;
@@ -843,146 +1072,176 @@ const hero = loadHero();
   }
 
   // ========================================
-  // OCEAN WAVES — default hero visual (all themes)
-  // Waves flow vertically downward from the top of the screen,
-  // pulling the eye down and inviting the user to scroll.
+  // OCEAN WAVES — default hero visual
+  // Layered swells drawn back to front. Middle layers carry the light;
+  // the front layers deepen toward the statement colour, so the hero
+  // flows into the next section without a seam. Layers bob and travel
+  // sideways (no modulo wrap, so no jumps), lean with the pointer, and
+  // swell briefly each time the capability pair rotates.
   // ========================================
-  const WAVE_LAYER_COUNT = 8;
+  const WAVE_LAYER_COUNT = 9;
 
   interface WaveLayer {
-    baseY: number;       // starting vertical position (0-1 normalized)
+    baseY: number;       // resting vertical position (0-1 normalized)
     amplitude: number;   // wave displacement in px
-    frequency: number;   // vertical wave density
-    speed: number;       // downward drift speed (each layer drifts at its own pace)
+    frequency: number;   // horizontal wave density
+    speed: number;       // travel + bob speed
     phase: number;       // phase offset
+    depth: number;       // 0 = far, 1 = near (parallax weight)
     color: [number, number, number];
     alpha: number;
   }
 
   let waveLayers: WaveLayer[] = [];
 
-  // Deep ocean palette — darker at top, lighter toward bottom
+  // Far → near. Light peaks in the middle distance, then the near
+  // layers sink back into deep water (#0a1628 = --statement-bg).
   const WAVE_PALETTE: [number, number, number][] = [
-    [6, 12, 35],       // near-black deep
-    [10, 20, 50],      // very deep blue
-    [15, 35, 75],      // deep ocean
-    [20, 50, 100],     // ocean blue
-    [25, 65, 120],     // mid ocean
-    [32, 80, 140],     // brighter
-    [42, 100, 160],    // wave body
-    [55, 120, 175],    // leading edge — lightest
+    [10, 18, 44],
+    [14, 30, 68],
+    [20, 46, 96],
+    [28, 66, 126],
+    [38, 88, 150],
+    [44, 100, 160],
+    [30, 72, 122],
+    [18, 44, 80],
+    [10, 22, 40],
   ];
 
   function initWaves() {
     waveLayers = [];
+    const narrow = W < 768;
     for (let i = 0; i < WAVE_LAYER_COUNT; i++) {
-      const t = i / (WAVE_LAYER_COUNT - 1); // 0 (top/back) to 1 (front)
+      const t = i / (WAVE_LAYER_COUNT - 1);
       waveLayers.push({
-        baseY: 0.02 + t * 0.55,
-        amplitude: 15 + t * 25 + Math.random() * 10,
-        frequency: 0.004 + Math.random() * 0.003,
-        // Each layer drifts downward at a slightly different speed
-        speed: 0.3 + t * 0.4 + Math.random() * 0.15,
+        baseY: 0.22 + t * 0.66,
+        amplitude: (narrow ? 10 : 14) + t * (narrow ? 18 : 30) + Math.random() * 8,
+        frequency: (narrow ? 0.007 : 0.0035) + Math.random() * 0.0025,
+        speed: 0.25 + t * 0.35 + Math.random() * 0.1,
         phase: Math.random() * Math.PI * 2,
+        depth: t,
         color: WAVE_PALETTE[i],
-        alpha: 0.9 - t * 0.2,
+        alpha: 0.92,
       });
     }
   }
 
   let waveTime = 0;
+  let swell = 0;                         // 0..1, decays after each rotation
+  const lean = { x: 0, y: 0, tx: 0, ty: 0 }; // eased pointer offset (-1..1)
 
   function getWaveY(wave: WaveLayer, x: number, baseY: number): number {
-    // Horizontal undulation (gives the wave its shape across the screen)
-    const primary = Math.sin(x * wave.frequency + wave.phase) * wave.amplitude;
-    const secondary = Math.sin(x * wave.frequency * 2.3 + wave.phase * 1.7) * wave.amplitude * 0.25;
-    // Slow breathing/heaving motion over time
-    const breathe = Math.sin(waveTime * wave.speed * 0.4 + wave.phase) * wave.amplitude * 0.3;
-    // Simplex noise for organic variation that also shifts over time
-    const noise = simplex2(x * 0.001 + waveTime * 0.05, wave.phase + waveTime * 0.08) * wave.amplitude * 0.35;
-    return baseY + primary + secondary + breathe + noise;
+    const travel = waveTime * wave.speed * 0.6;
+    const amp = wave.amplitude * (1 + swell * 0.45 * wave.depth);
+    const primary = Math.sin(x * wave.frequency + wave.phase + travel) * amp;
+    const secondary = Math.sin(x * wave.frequency * 2.3 + wave.phase * 1.7 - travel * 0.7) * amp * 0.25;
+    const noise = simplex2(x * 0.0012 + waveTime * 0.05, wave.phase + waveTime * 0.06) * amp * 0.4;
+    return baseY + primary + secondary + noise;
   }
 
-  function animateWaves(timestamp = 0) {
+  function drawWaves() {
     if (!ctx) return;
-    waveTime += 0.007;
-
-    // Clear to dark sky
-    ctx.fillStyle = '#06060a';
+    // Sky: near-black, with a faint glow just above the horizon
+    const sky = ctx.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0, '#06060a');
+    sky.addColorStop(0.35, '#08101f');
+    sky.addColorStop(1, '#0a1628');
+    ctx.fillStyle = sky;
     ctx.fillRect(0, 0, W, H);
 
-    const step = 4;
+    const step = 6;
+    lean.x += (lean.tx - lean.x) * 0.04;
+    lean.y += (lean.ty - lean.y) * 0.04;
 
     for (let i = 0; i < waveLayers.length; i++) {
       const wave = waveLayers[i];
       const c = wave.color;
+      const bob = Math.sin(waveTime * wave.speed * 0.5 + wave.phase) * wave.amplitude * 0.35;
+      const y0 = wave.baseY * H + bob + lean.y * 18 * wave.depth;
+      const xShift = lean.x * 40 * wave.depth;
 
-      // KEY: baseY drifts downward over time, then wraps — creates the
-      // continuous downward flow that invites scrolling.
-      // Each layer uses its own speed so they move at different rates (parallax).
-      const drift = (waveTime * wave.speed * 0.06) % 1.0;
-      // Offset the base position downward; wrap smoothly
-      const y0 = (wave.baseY + drift) * H;
-
-      // --- Draw filled wave body ---
       ctx.beginPath();
-      for (let x = 0; x <= W; x += step) {
-        const y = getWaveY(wave, x, y0);
-        if (x === 0) ctx.moveTo(x, y);
+      for (let x = -step; x <= W + step; x += step) {
+        const y = getWaveY(wave, x + xShift, y0);
+        if (x === -step) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
-      // Close shape to bottom of canvas
-      ctx.lineTo(W, H);
-      ctx.lineTo(0, H);
+      ctx.lineTo(W + step, H);
+      ctx.lineTo(-step, H);
       ctx.closePath();
-
       ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${wave.alpha})`;
       ctx.fill();
 
-      // --- Foam / crest highlight on the front 3 layers ---
-      if (i >= WAVE_LAYER_COUNT - 3) {
-        ctx.beginPath();
-        for (let x = 0; x <= W; x += step) {
-          const y = getWaveY(wave, x, y0);
-          if (x === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        const foamAlpha = 0.06 + (i / WAVE_LAYER_COUNT) * 0.14;
-        ctx.strokeStyle = `rgba(140, 185, 225, ${foamAlpha})`;
-        ctx.lineWidth = 1.0 + (i / WAVE_LAYER_COUNT) * 0.6;
+      // Crest highlight: brightest in the lit middle layers
+      const lit = 1 - Math.abs(wave.depth - 0.6) / 0.6;
+      if (lit > 0.15) {
+        ctx.strokeStyle = `rgba(150, 195, 235, ${0.04 + lit * 0.14 + swell * 0.08})`;
+        ctx.lineWidth = 0.8 + lit * 0.8;
         ctx.stroke();
       }
     }
-
-    requestAnimationFrame(animateWaves);
   }
 
-  const useWaves = true;
-  if (canvas && ctx && !reducedMotion && useWaves) {
-    // Ocean wave mode
-    const dpr = Math.min(window.devicePixelRatio, 2);
+  let wavesRunning = false;
+  let heroVisible = true;
+
+  function waveLoop() {
+    if (!heroVisible || document.hidden) { wavesRunning = false; return; }
+    waveTime += 0.007;
+    swell *= 0.975;
+    drawWaves();
+    requestAnimationFrame(waveLoop);
+  }
+
+  function startWaves() {
+    if (wavesRunning || reducedMotion) return;
+    wavesRunning = true;
+    requestAnimationFrame(waveLoop);
+  }
+
+  function sizeCanvas() {
+    if (!canvas || !ctx) return;
+    const dpr = Math.min(window.devicePixelRatio, 1.5);
     W = canvas.offsetWidth;
     H = canvas.offsetHeight;
     canvas.width = W * dpr;
     canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = `rgb(${INK_RGB})`;
-    ctx.fillRect(0, 0, W, H);
+  }
+
+  const useWaves = true;
+  if (canvas && ctx && useWaves) {
+    sizeCanvas();
     initWaves();
-    animateWaves();
+    waveTime = 3; // start mid-motion so the first frame is not flat
+    drawWaves();
+    startWaves();
+
+    // Pause when the hero is off-screen or the tab is hidden
+    new IntersectionObserver((entries) => {
+      heroVisible = entries[0].isIntersecting;
+      if (heroVisible) startWaves();
+    }).observe(canvas);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) startWaves(); });
+
     let resizeTimer: ReturnType<typeof setTimeout>;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        W = canvas.offsetWidth;
-        H = canvas.offsetHeight;
-        const dpr2 = Math.min(window.devicePixelRatio, 2);
-        canvas.width = W * dpr2;
-        canvas.height = H * dpr2;
-        ctx!.setTransform(dpr2, 0, 0, dpr2, 0, 0);
+        sizeCanvas();
         initWaves();
+        drawWaves();
       }, 250);
     });
+
+    if (!reducedMotion) {
+      const hero = canvas.parentElement!;
+      hero.addEventListener("pointermove", (e) => {
+        lean.tx = (e.clientX / window.innerWidth) * 2 - 1;
+        lean.ty = (e.clientY / window.innerHeight) * 2 - 1;
+      });
+      hero.addEventListener("pointerleave", () => { lean.tx = 0; lean.ty = 0; });
+    }
   } else if (canvas && ctx && !reducedMotion) {
     ctx.fillStyle = `rgb(${INK_RGB})`;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -1009,7 +1268,7 @@ const hero = loadHero();
       mouse.active = true;
     }, { passive: true });
     canvas.parentElement?.addEventListener("touchend", () => { mouse.active = false; });
-  } else if (canvas && ctx && reducedMotion) {
+  } else if (canvas && ctx && reducedMotion && !useWaves) {
     resize();
     ctx.fillStyle = `rgb(${INK_RGB})`;
     ctx.fillRect(0, 0, W, H);
@@ -1086,6 +1345,7 @@ const hero = loadHero();
     tl.to("#hero-to-word", { opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.3");
     tl.fromTo("#pair-to", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "heroReveal" }, "-=0.2");
     tl.to("#hero-byline", { opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.3");
+    tl.fromTo("#hero-links", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4");
     tl.to("#hero-scroll", { opacity: 1, duration: 0.6, ease: "power2.out" }, "-=0.4");
 
     // Parallax
@@ -1113,7 +1373,7 @@ const hero = loadHero();
       });
     }
   } else {
-    gsap.set("#pair-from, #hero-to-word, #pair-to, #hero-byline, #hero-scroll", { opacity: 1 });
+    gsap.set("#pair-from, #hero-to-word, #pair-to, #hero-byline, #hero-links, #hero-scroll", { opacity: 1 });
 
     const navBar = document.querySelector('.nav-bar');
     if (navBar) {

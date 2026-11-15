@@ -25,3 +25,23 @@ export function loadHero() {
     pairs: { from: string; to: string }[];
   };
 }
+
+export type Post = {
+  slug: string;
+  title: string;
+  date: Date;
+  kicker?: string;
+  excerpt: string;
+  lang?: string;
+};
+
+export function loadPosts(): Post[] {
+  const { posts } = loadYaml('posts.yml') as { posts: Post[] };
+  return posts
+    .map(p => ({ ...p, date: new Date(p.date) }))
+    .sort((a, b) => b.date.getTime() - a.date.getTime());
+}
+
+export function formatPostDate(d: Date) {
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+}

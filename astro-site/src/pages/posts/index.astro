@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadPosts, formatPostDate } from '../../lib/data';
+
+const posts = loadPosts();
+---
+
+<BaseLayout title="Blog — Adriano Belisario" description="Essays and articles by Adriano Belisario on data, journalism, disinformation and free networks.">
+  <section class="posts-index">
+    <header class="posts-index__head">
+      <p class="posts-index__label mono">Blog</p>
+      <h1>Writing</h1>
+      <p class="posts-index__intro">Essays and articles on data, journalism, disinformation and free networks.</p>
+    </header>
+
+    <ol class="posts-index__list">
+      {posts.map(post => (
+        <li>
+          <a href={`/posts/${post.slug}/`} class="posts-index__link" lang={post.lang}>
+            <time class="mono" datetime={post.date.toISOString().slice(0, 10)}>{formatPostDate(post.date)}</time>
+            <div>
+              {post.kicker && <p class="posts-index__kicker mono">{post.kicker}</p>}
+              <h2>{post.title}</h2>
+              <p class="posts-index__excerpt">{post.excerpt}</p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
+
+<style>
+  .posts-index {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .posts-index__label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--signal-teal);
+    margin: 0 0 0.5rem;
+  }
+
+  .posts-index__head h1 {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0 0 1rem;
+  }
+
+  .posts-index__intro {
+    color: var(--ink-secondary);
+    margin: 0 0 3rem;
+  }
+
+  .posts-index__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .posts-index__list li { border-bottom: 1px solid var(--border); }
+
+  .posts-index__link {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.75rem 0;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .posts-index__link time {
+    font-size: 0.75rem;
+    color: var(--ink-tertiary);
+  }
+
+  .posts-index__kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-secondary);
+    margin: 0 0 0.4rem;
+  }
+
+  .posts-index__link h2 {
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+    transition: color 0.25s ease;
+  }
+
+  .posts-index__link:hover h2 { color: var(--signal-teal); }
+
+  .posts-index__excerpt {
+    color: var(--ink-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 640px) {
+    .posts-index__link { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+</style>
