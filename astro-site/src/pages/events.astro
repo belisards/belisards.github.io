@@ -5,12 +5,32 @@ import { loadYaml } from '../lib/data';
 
 const events = loadYaml('events.yml');
 
-const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+// Flatten all sections into one chronological timeline (newest first).
+// Each event keeps its section as a type tag.
+const yearKey = (label: string) => {
+  const m = String(label).match(/(\d{4})(?:\D+(\d{2,4}))?/);
+  if (!m) return [0, 0];
+  const start = Number(m[1]);
+  const end = m[2] ? Number(m[2].length === 2 ? m[1].slice(0, 2) + m[2] : m[2]) : start;
+  return [end, start];
+};
 
-const tocItems = events.sections.map((s: any) => ({
-  label: s.title,
-  id: slugify(s.title),
-}));
+const groups = new Map<string, any[]>();
+for (const section of events.sections) {
+  for (const entry of section.entries) {
+    const label = String(entry.year);
+    if (!groups.has(label)) groups.set(label, []);
+    groups.get(label)!.push({ ...entry, type: section.title, style: section.style || 'blue' });
+  }
+}
+
+const timeline = [...groups.entries()]
+  .map(([year, items]) => ({ year, key: yearKey(year), items }))
+  .sort((a, b) => b.key[0] - a.key[0] || b.key[1] - a.key[1]);
+
+const yearId = (y: string) => `y-${y.replace(/[^0-9]+/g, '-')}`;
+
+const tocItems = timeline.map((g) => ({ label: g.year, id: yearId(g.year) }));
 ---
 
 <BaseLayout title="Events" description="Conferences, lectures, workshops, and courses.">
@@ -24,30 +44,31 @@ const tocItems = events.sections.map((s: any) => ({
           <p class="secondary">Conferences, lectures, workshops, and courses across four continents.</p>
         </div>
 
-        {events.sections.map((section: any, sIdx: number) => (
-          <>
-            <div class={`section-label${section.style ? ` section-label--${section.style}` : ''} reveal`} id={slugify(section.title)}>{section.title}</div>
+        <p class="reveal" set:html={events.intro} />
 
-            {sIdx === 0 && <p class="reveal" set:html={events.intro} />}
-
-            <div class="timeline">
-              {section.entries.map((entry: any) => (
-                <div class="timeline-entry reveal">
-                  <div class="timeline-date"><span class={`data-badge${entry.badge_style ? ` data-badge--${entry.badge_style}` : ''}`}>{entry.year}</span></div>
-                  <div class="timeline-content">
-                    {entry.location && <div class="timeline-location">// {entry.location}</div>}
+        <div class="timeline">
+          {timeline.map((group) => (
+            <div class="timeline-entry reveal" id={yearId(group.year)}>
+              <div class="timeline-date"><span class="data-badge">{group.year}</span></div>
+              <div class="timeline-content">
+                {group.items.map((entry: any, eIdx: number) => (
+                  <div class={`timeline-event${eIdx > 0 ? ' timeline-event--next' : ''}`}>
+                    <div class="timeline-meta">
+                      <span class={`event-type event-type--${entry.style}`}>{entry.type}</span>
+                      {entry.location && <span class="timeline-location">// {entry.location}</span>}
+                    </div>
                     {entry.items.map((item: any, iIdx: number) => (
                       <>
-                        {item.location && <div class={`timeline-location${iIdx > 0 ? '' : ''}`} style={iIdx > 0 ? 'margin-top:0.75rem' : undefined}>// {item.location}</div>}
+                        {item.location && <div class="timeline-location" style={iIdx > 0 ? 'margin-top:0.75rem' : undefined}>// {item.location}</div>}
                         <div style={!item.location && iIdx > 0 ? 'margin-top:0.5rem' : undefined} set:html={item.text} />
                       </>
                     ))}
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </>
-        ))}
+          ))}
+        </div>
 
       </div>
     </div>
@@ -132,6 +153,45 @@ const tocItems = events.sections.map((s: any) => ({
     font-size: 0.9rem;
     line-height: 1.7;
   }
+
+  .timeline-event--next {
+    margin-top: 1.25rem;
+  }
+
+  .timeline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-meta .timeline-location {
+    margin-bottom: 0;
+  }
+
+  .event-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-secondary);
+  }
+
+  .event-type::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--signal-primary);
+  }
+
+  .event-type--warm::before { background: var(--signal-warm); }
+  .event-type--teal::before { background: var(--signal-teal); }
+  .event-type--violet::before { background: var(--signal-violet); }
 
   .timeline-location {
     font-family: var(--font-mono);

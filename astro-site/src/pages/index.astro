@@ -37,9 +37,7 @@ const hero = loadHero();
       <p class="statement__text" id="statement-1">
         Data journalist and researcher combining expertise in communication,
         open&#8209;source technologies, and data to address human rights concerns.
-        Currently at the Joint Data Center on Forced Displacement, a collaboration
-        between the World Bank and UNHCR. Previously contributed to Forensic Architecture,
-        Agência Pública, The Intercept Brasil, and Open Knowledge Brazil.
+        PhD candidate in Communication at the Federal University of Rio de Janeiro (UFRJ).
         Holds an MSc in Social Data Science from the Oxford Internet Institute.
       </p>
     </div>
@@ -49,10 +47,14 @@ const hero = loadHero();
   <section class="logo-strip">
     <p class="logo-strip__label mono">Collaborated with</p>
     <div class="logo-strip__inner">
-      <img src="/images/logos/unhcr.svg" alt="UNHCR" class="logo-strip__img" />
+      <img src="/images/logos/jdc.png" alt="World Bank–UNHCR Joint Data Center on Forced Displacement" class="logo-strip__img logo-strip__img--tall" />
+      <img src="/images/logos/iachr.svg" alt="OAS Inter-American Commission on Human Rights (IACHR)" class="logo-strip__img logo-strip__img--tall" />
       <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
       <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
-      <img src="/images/logos/world-bank.svg" alt="World Bank" class="logo-strip__img" />
+      <img src="/images/logos/witness.png" alt="WITNESS" class="logo-strip__img" />
+      <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
+      <img src="/images/logos/okbr.svg" alt="Open Knowledge Brasil" class="logo-strip__img logo-strip__img--tall" />
+      <img src="/images/logos/ufrj.svg" alt="Universidade Federal do Rio de Janeiro (UFRJ)" class="logo-strip__img logo-strip__img--tall" />
     </div>
   </section>
 
@@ -456,7 +458,7 @@ const hero = loadHero();
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3.5rem;
+    gap: 2rem 3rem;
     flex-wrap: wrap;
   }
 
@@ -473,6 +475,10 @@ const hero = loadHero();
 
   :global([data-theme="midnight"]) .logo-strip__img:hover {
     filter: invert(1);
+  }
+
+  .logo-strip__img--tall {
+    height: 32px;
   }
 
   .logo-strip__img:hover {
@@ -515,6 +521,10 @@ const hero = loadHero();
 
     .logo-strip__img {
       height: 18px;
+    }
+
+    .logo-strip__img--tall {
+      height: 26px;
     }
   }
 
@@ -822,7 +832,7 @@ const hero = loadHero();
   }
 
   // ========================================
-  // OCEAN WAVES — Midnight theme only
+  // OCEAN WAVES — default hero visual (all themes)
   // Waves flow vertically downward from the top of the screen,
   // pulling the eye down and inviting the user to scroll.
   // ========================================
@@ -936,7 +946,8 @@ const hero = loadHero();
     requestAnimationFrame(animateWaves);
   }
 
-  if (canvas && ctx && !reducedMotion && isMidnight) {
+  const useWaves = true;
+  if (canvas && ctx && !reducedMotion && useWaves) {
     // Ocean wave mode
     const dpr = Math.min(window.devicePixelRatio, 2);
     W = canvas.offsetWidth;
