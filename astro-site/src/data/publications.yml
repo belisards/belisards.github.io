@@ -339,7 +339,7 @@ sections:
       - title: "Essays and other writings"
         entries:
           - title: "Do ‘ver para crer’ ao ‘crer para ver’"
-            url: "https://site.omeu.website/posts/do-ver-para-crer/"
+            url: "/posts/do-ver-para-crer/"
             meta: "Ensaio, 2019. Publicado originalmente no Medium, na série O jornalismo no Brasil em 2020."
             type: essay
             featured: true
