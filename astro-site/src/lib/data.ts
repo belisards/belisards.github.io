@@ -57,6 +57,7 @@ export type FeedItem = {
   excerpt?: string;      // posts only
   lang?: string;
   alt?: { label: string; url: string }; // other-language version
+  featured?: boolean;
 };
 
 const stripHtml = (s: string) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -66,7 +67,7 @@ const yearOf = (s: string) => {
 };
 
 /** Newest blog posts and publications, merged and sorted by year (then file order). */
-export function loadFeed(limit = 8): FeedItem[] {
+export function loadFeed(limit = 8, featuredOnly = false): FeedItem[] {
   const pubs: (FeedItem & { order: number; rawMeta: string })[] = [];
   let order = 0;
 
@@ -79,6 +80,7 @@ export function loadFeed(limit = 8): FeedItem[] {
       if (year) pubs.push({
         kind: 'publication', type: node.type ?? 'publication', title: node.title, url: node.url,
         year, meta: stripHtml(node.meta), rawMeta: node.meta, lang, order: order++,
+        featured: node.featured === true,
       });
     } else if (typeof node.caption === 'string') {
       const href = node.caption.match(/href="([^"]+)"/)?.[1];
@@ -88,6 +90,7 @@ export function loadFeed(limit = 8): FeedItem[] {
         kind: 'publication', type: 'book', title: stripHtml(title), url: href,
         year, meta: stripHtml(node.caption).replace(stripHtml(title), '').replace(/^[,.\s]+/, '').replace(/^(19|20)\d{2}\.\s*/, ''),
         rawMeta: node.caption, lang, order: order++,
+        featured: node.featured === true,
       });
     }
     for (const [k, v] of Object.entries(node)) {
@@ -112,14 +115,15 @@ export function loadFeed(limit = 8): FeedItem[] {
     merged.push(p);
   }
 
-  const posts = loadPosts();
+  const featuredUrls = new Set(merged.filter(p => p.featured).map(p => p.url));
+  const posts = loadPosts().filter(p => !featuredOnly || (p as any).featured === true || featuredUrls.has(`/posts/${p.slug}/`));
   const postUrls = new Set(posts.map(p => `/posts/${p.slug}/`));
   const postItems: (FeedItem & { order: number })[] = posts.map(p => ({
     kind: 'post', type: 'blog', title: p.title, url: `/posts/${p.slug}/`,
     year: p.date.getUTCFullYear(), date: p.date, excerpt: p.excerpt, lang: p.lang, order: -1,
   }));
 
-  return [...postItems, ...merged.filter(p => !postUrls.has(p.url))]
+  return [...postItems, ...merged.filter(p => !postUrls.has(p.url) && (!featuredOnly || p.featured))]
     .sort((a, b) => b.year - a.year || a.order - b.order)
     .slice(0, limit)
     .map(({ order, ...rest }: any) => { delete rest.rawMeta; return rest as FeedItem; });
