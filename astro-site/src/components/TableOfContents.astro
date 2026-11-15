@@ -6,12 +6,14 @@ interface TocItem {
 
 interface Props {
   items: TocItem[];
+  /** compact: short labels (e.g. years). No inner scroll box; horizontal sticky bar on small screens. */
+  variant?: 'default' | 'compact';
 }
 
-const { items } = Astro.props;
+const { items, variant = 'default' } = Astro.props;
 ---
 
-<nav class="toc" aria-label="Table of contents">
+<nav class={`toc${variant === 'compact' ? ' toc--compact' : ''}`} aria-label="Table of contents">
   <ul class="toc__list">
     {items.map((item) => (
       <li class="toc__item">
@@ -69,6 +71,51 @@ const { items } = Astro.props;
       display: none;
     }
   }
+
+  /* ---- Compact variant (year rail) ---- */
+  .toc--compact {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .toc--compact .toc__list {
+    gap: 0;
+  }
+
+  .toc--compact .toc__link {
+    padding: 0.2rem 0.75rem;
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .toc--compact {
+      display: block;
+      position: sticky;
+      top: var(--nav-height);
+      z-index: 5;
+      margin: 0 -1rem 1.5rem;
+      padding: 0.5rem 1rem;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      background: var(--canvas);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .toc--compact::-webkit-scrollbar {
+      display: none;
+    }
+
+    .toc--compact .toc__list {
+      flex-direction: row;
+      gap: 0.25rem;
+    }
+
+    .toc--compact .toc__link {
+      padding: 0.3rem 0.6rem;
+    }
+  }
 </style>
 
 <script>
@@ -87,7 +134,14 @@ const { items } = Astro.props;
         }
       }
       tocLinks.forEach(link => {
-        link.classList.toggle('active', link.dataset.tocLink === activeId);
+        const on = link.dataset.tocLink === activeId;
+        link.classList.toggle('active', on);
+        if (on && link.closest('.toc--compact')) {
+          const bar = link.closest('.toc--compact') as HTMLElement;
+          if (bar.scrollWidth > bar.clientWidth) {
+            bar.scrollLeft = link.offsetLeft - bar.clientWidth / 2 + link.offsetWidth / 2;
+          }
+        }
       });
     }
 

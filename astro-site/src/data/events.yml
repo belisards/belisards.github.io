@@ -28,10 +28,18 @@ sections:
         location: "São Paulo, Brazil"
         items:
           - text: '<a href="https://escoladedados.org/coda/coda2018/"><strong>Coda.Br</strong></a>. 3rd ed.'
-      - year: "2010–14"
+      - year: "2014"
         location: "Rio de Janeiro, Brazil"
         items:
-          - text: "<strong>Copyfight</strong>. 3 editions (2010, 2011, 2014)."
+          - text: "<strong>Copyfight</strong>. 3rd ed."
+      - year: "2011"
+        location: "Rio de Janeiro, Brazil"
+        items:
+          - text: "<strong>Copyfight</strong>. 2nd ed."
+      - year: "2010"
+        location: "Rio de Janeiro, Brazil"
+        items:
+          - text: "<strong>Copyfight</strong>. 1st ed."
 
   - title: "Talks & Lectures"
     entries:
