@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { loadHero, loadFeed, formatPostDate } from '../lib/data';
 
 const hero = loadHero();
-const feed = loadFeed(8);
+const feed = loadFeed(3);
 const typeLabel: Record<string, string> = { blog: 'Blog', academic: 'Paper', journalism: 'Report', tutorial: 'Tutorial', essay: 'Essay', book: 'Book' };
 ---
 
