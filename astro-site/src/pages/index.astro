@@ -52,7 +52,9 @@ const hero = loadHero();
       <img src="/images/logos/bellingcat.svg" alt="Bellingcat" class="logo-strip__img" />
       <img src="/images/logos/forensic-architecture.svg" alt="Forensic Architecture" class="logo-strip__img" />
       <img src="/images/logos/witness.png" alt="WITNESS" class="logo-strip__img" />
-      <img src="/images/logos/agencia-publica.svg" alt="Agência Pública" class="logo-strip__img" />
+      <img src="/images/logos/agencia-publica.png" alt="Agência Pública" class="logo-strip__img logo-strip__img--tall" />
+      <img src="/images/logos/azmina.svg" alt="AzMina" class="logo-strip__img logo-strip__img--tall logo-strip__img--pale" />
+      <img src="/images/logos/fogo-cruzado.png" alt="Instituto Fogo Cruzado" class="logo-strip__img" />
       <img src="/images/logos/okbr.svg" alt="Open Knowledge Brasil" class="logo-strip__img logo-strip__img--tall" />
       <img src="/images/logos/ufrj.svg" alt="Universidade Federal do Rio de Janeiro (UFRJ)" class="logo-strip__img logo-strip__img--tall" />
     </div>
@@ -484,6 +486,15 @@ const hero = loadHero();
   .logo-strip__img:hover {
     opacity: 0.8;
     filter: grayscale(0);
+  }
+
+  /* Light-coloured logos: render solid dark so they stay visible */
+  .logo-strip__img--pale {
+    filter: brightness(0);
+  }
+
+  .logo-strip__img--pale:hover {
+    filter: none;
   }
 
   /* ============================
