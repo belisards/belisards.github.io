@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { loadHero, loadPosts, formatPostDate } from '../lib/data';
+import { loadHero, loadFeed, formatPostDate } from '../lib/data';
 
 const hero = loadHero();
-const posts = loadPosts().slice(0, 3);
+const feed = loadFeed(8);
+const typeLabel: Record<string, string> = { blog: 'Blog', academic: 'Paper', journalism: 'Report', tutorial: 'Tutorial', essay: 'Essay', book: 'Book' };
 ---
 
 <BaseLayout title="Adriano Belisario" description="Data journalist & researcher. Oxford, UNHCR, Bellingcat, Forensic Architecture." hideNavInitially={true}>
@@ -33,7 +34,7 @@ const posts = loadPosts().slice(0, 3);
       <nav class="hero__links" id="hero-links" aria-label="Sections">
         <a href="/publications/">Publications</a>
         <a href="/code/">Code</a>
-        <a href="#blog">Blog</a>
+        <a href="#feed">Feed</a>
         <a href="/about/">Bio</a>
       </nav>
     </div>
@@ -73,28 +74,43 @@ const posts = loadPosts().slice(0, 3);
     </div>
   </section>
 
-  <!-- ========== BLOG ========== -->
-  <section class="blog" id="blog" aria-labelledby="blog-title">
+  <!-- ========== FEED ========== -->
+  <section class="blog" id="feed" aria-labelledby="feed-title">
     <div class="blog__inner">
       <header class="blog__head">
-        <p class="blog__label mono">Blog</p>
-        <h2 class="blog__title" id="blog-title">Writing</h2>
-        <a href="/posts/" class="blog__all mono">All posts &rarr;</a>
+        <p class="blog__label mono">Latest</p>
+        <h2 class="blog__title" id="feed-title">Feed</h2>
+        <div class="blog__alls">
+          <a href="/publications/" class="blog__all mono">All publications &rarr;</a>
+          <a href="/posts/" class="blog__all mono">Blog &rarr;</a>
+        </div>
       </header>
       <ol class="blog__list">
-        {posts.map(post => (
-          <li class="blog__item">
-            <a href={`/posts/${post.slug}/`} class="blog__link" lang={post.lang}>
-              <time class="blog__date mono" datetime={post.date.toISOString().slice(0, 10)}>{formatPostDate(post.date)}</time>
-              <div class="blog__body">
-                {post.kicker && <p class="blog__kicker mono">{post.kicker}</p>}
-                <h3 class="blog__post-title">{post.title}</h3>
-                <p class="blog__excerpt">{post.excerpt}</p>
-              </div>
-              <span class="blog__arrow" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-        ))}
+        {feed.map(item => {
+          const external = /^https?:/.test(item.url);
+          return (
+            <li class="blog__item">
+              <a href={item.url} class="blog__link" lang={item.lang}
+                 {...(external ? { target: '_blank', rel: 'noopener' } : {})}>
+                {item.date
+                  ? <time class="blog__date mono" datetime={item.date.toISOString().slice(0, 10)}>{formatPostDate(item.date)}</time>
+                  : <time class="blog__date mono" datetime={String(item.year)}>{item.year}</time>}
+                <div class="blog__body">
+                  <p class="blog__kicker mono">
+                    <span class={`blog__type blog__type--${item.type}`}>{typeLabel[item.type] ?? item.type}</span>
+                  </p>
+                  <h3 class="blog__post-title">{item.title}</h3>
+                  <p class="blog__excerpt">{item.excerpt ?? item.meta}</p>
+                </div>
+                <span class="blog__arrow" aria-hidden="true">{external ? '\u2197' : '\u2192'}</span>
+              </a>
+              {item.alt && (
+                <a href={item.alt.url} class="blog__alt mono" target="_blank" rel="noopener"
+                   aria-label={`${item.title} — ${item.alt.label} version`}>{item.alt.label}</a>
+              )}
+            </li>
+          );
+        })}
       </ol>
     </div>
   </section>
@@ -654,6 +670,40 @@ const posts = loadPosts().slice(0, 3);
 
   .blog__all:hover { color: var(--signal-teal); }
 
+  .blog__alls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: flex-end;
+  }
+
+  .blog__type {
+    display: inline-block;
+    padding-left: 0.6em;
+    border-left: 2px solid var(--ink-tertiary);
+  }
+  .blog__type--blog { border-color: var(--signal-teal); }
+  .blog__type--academic { border-color: var(--signal-violet); }
+  .blog__type--journalism { border-color: var(--signal-warm); }
+  .blog__type--tutorial { border-color: var(--signal-primary); }
+  .blog__type--book { border-color: var(--ink); }
+
+  .blog__item { position: relative; }
+
+  .blog__alt {
+    position: absolute;
+    right: 0;
+    bottom: 1.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-secondary);
+    text-decoration: none;
+    border: 1px solid var(--border-hover);
+    border-radius: 999px;
+    padding: 0.2em 0.7em;
+  }
+  .blog__alt:hover { color: var(--signal-teal); border-color: var(--signal-teal); }
+
   .blog__list {
     list-style: none;
     margin: 0;
@@ -716,6 +766,9 @@ const posts = loadPosts().slice(0, 3);
   .blog__link:hover .blog__arrow { transform: translateX(4px); color: var(--signal-teal); }
 
   @media screen and (max-width: 640px) {
+    .blog__head { grid-template-columns: 1fr; }
+    .blog__alls { justify-content: flex-start; }
+    .blog__alt { position: static; display: inline-block; margin: 0 0 1.25rem; }
     .hero__byline { flex-direction: column; align-items: center; }
     .hero__sep { display: none; }
     .hero__links { gap: 0.4rem; }
